@@ -1,11 +1,3 @@
-## Team #4:
-Sasha Stojanovic
-Max Svensson
-Andreas Olgrener
-Dennis Lundmark
-Rickard Ötvös
-Richard Moquist Sundh
-
 ## Systemutvecklingsprojekt
 Välkommen till Team #4:s Ski Center Repository!
 
