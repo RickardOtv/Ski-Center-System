@@ -1,4 +1,12 @@
-# SU_projekt
+## Team #4:
+Sasha Stojanovic
+Max Svensson
+Andreas Olgrener
+Dennis Lundmark
+Rickard Ötvös
+Richard Moquist Sundh
+
+## Systemutvecklingsprojekt
 Välkommen till Team #4:s Ski Center Repository!
 
 Här finner du den senaste och mest avancerade teknologin inom skidresorts management, utvecklad av vårt team som har en gedigen expertis inom .NET och C#. Vår passion för skidåkning och vår tekniska kompetens har möjliggjort skapandet av en innovativ applikation som kommer att revolutionera hanteringen av skidresorts.
