@@ -13,7 +13,7 @@ namespace WinFormsApp1
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
 
-            Console.WriteLine("Trollfar är ute efter er!");
+            Console.WriteLine("Apple, Batong, Kite, Padel - Skidor är den bästa hobbyn.");
         }
     }
 }
