@@ -13,7 +13,7 @@ namespace WinFormsApp1
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
 
-            Console.WriteLine("Hälsa MAx att det funkar :))))");
+            Console.WriteLine("Hälsa Andreas att det funkar :))))");
         }
     }
 }
