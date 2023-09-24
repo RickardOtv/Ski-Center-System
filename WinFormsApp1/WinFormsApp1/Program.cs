@@ -13,7 +13,7 @@ namespace WinFormsApp1
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
 
-            Console.WriteLine("Apple, Batong, Kite, Padel - Skidor är den bästa hobbyn.");
+            Console.WriteLine("Ny update igen :))) / Rille");
         }
     }
 }
