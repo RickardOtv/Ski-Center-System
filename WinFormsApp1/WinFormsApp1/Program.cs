@@ -13,7 +13,7 @@ namespace WinFormsApp1
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
 
-            Console.WriteLine("Kvinna med paralply :))))");
+            Console.WriteLine("Kvinna med 2 paralplyn :))))");
         }
     }
 }
