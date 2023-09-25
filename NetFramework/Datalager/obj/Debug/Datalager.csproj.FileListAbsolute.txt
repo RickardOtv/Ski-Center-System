@@ -1,0 +1,15 @@
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\Datalager.dll.config
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\Datalager.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\Datalager.pdb
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\Entitetslager.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\Entitetslager.pdb
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\Entitetslager.dll.config
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.xml
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.AssemblyReference.cache
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.CoreCompileInputs.cache
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.CopyComplete
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.pdb

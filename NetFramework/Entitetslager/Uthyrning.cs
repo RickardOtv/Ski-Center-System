@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    internal class Uthyrning
+    public class Uthyrning
     {
     }
 }

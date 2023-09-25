@@ -43,5 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datalager\Datalager.csproj">
+      <Project>{d61200a3-80eb-4b23-bc30-d56633da7be1}</Project>
+      <Name>Datalager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entitetslager\Entitetslager.csproj">
+      <Project>{727ce495-456f-4c9a-99b7-d9e43bb399fa}</Project>
+      <Name>Entitetslager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

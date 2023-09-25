@@ -1,0 +1,12 @@
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\Entitetslager.dll.config
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\Entitetslager.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\Entitetslager.pdb
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.xml
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.AssemblyReference.cache
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.CoreCompileInputs.cache
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.CopyComplete
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.dll
+C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.pdb

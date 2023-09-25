@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    internal class Anställd
+    public class Anställd
     {
-    }
+        public int AnställningsNr { get; set; }
+        public string Förnamn { get; set; }
+        public string Efternamn { get; set; }
+        public int Ålder { get; set; }
+        public Anställd(int anställningsNr, string förnamn, string efternamn, int ålder)
+        {
+            AnställningsNr = anställningsNr;
+            Förnamn = förnamn;
+            Efternamn = efternamn;
+            Ålder = ålder;
+        }
+
+        public Anställd()
+        {
+
+        }
+    }  
 }

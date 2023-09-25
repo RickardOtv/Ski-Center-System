@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    internal class Bokning
+    public class Bokning
     {
     }
 }

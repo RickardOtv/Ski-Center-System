@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    internal class Skidlektion
+    public class Skidlektion
     {
     }
 }

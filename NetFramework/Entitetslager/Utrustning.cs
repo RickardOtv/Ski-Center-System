@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    internal class Utrustning
+    public class Utrustning
     {
     }
 }
