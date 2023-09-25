@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HuvudMeny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HuvudMeny.Designer.cs">
+      <DependentUpon>HuvudMeny.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoggaIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HuvudMeny.resx">
+      <DependentUpon>HuvudMeny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoggaIn.resx">
       <DependentUpon>LoggaIn.cs</DependentUpon>
     </EmbeddedResource>
