@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace NetFramework
 {
-    public partial class Form1 : Form
+    public partial class LoggaIn : Form
     {
-        public Form1()
+        public LoggaIn()
         {
             InitializeComponent();
+        }
+
+        private void LoggaIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
