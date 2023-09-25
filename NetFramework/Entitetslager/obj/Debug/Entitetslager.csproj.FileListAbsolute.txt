@@ -10,3 +10,15 @@ C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Enti
 C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.CopyComplete
 C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.dll
 C:\Users\Sasha\source\repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.pdb
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\Entitetslager.dll.config
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\Entitetslager.dll
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\Entitetslager.pdb
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.dll
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.xml
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.AssemblyReference.cache
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.CoreCompileInputs.cache
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.csproj.CopyComplete
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.dll
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Entitetslager\obj\Debug\Entitetslager.pdb

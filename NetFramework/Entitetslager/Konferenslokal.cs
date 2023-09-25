@@ -7,22 +7,23 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    public class Utrustning
+    public class Konferenslokal
     {
         [Key]
-        public int UtrustningsID { get; set; }
+        public int KonferensID { get; set; }
         public string Typ { get; set; }
+        public bool IsAvailable { get; set; }
 
-        public string Storlek { get; set; }
 
-        public Utrustning(int utrustningsID, string typ, string storlek)
+        public Konferenslokal(int konferensID, string typ, bool isAvailable)
         {
-            UtrustningsID = utrustningsID;
+            KonferensID = konferensID;
             Typ = typ;
-            Storlek = storlek;
+            IsAvailable = isAvailable;
+
         }
 
-        public Utrustning()
+        public Konferenslokal()
         {
             
         }

@@ -18,13 +18,24 @@ namespace Datalager
     {
         #region DbSet
         public DbSet<Anställd> anställda { get; set; }
+        public DbSet<Bokning> bokningar { get; set; }
+        public DbSet<Skidlektion> skidlektioner { get; set; }
+        public DbSet<Uthyrning> uthyrningar { get; set; }
+        public DbSet<Utrustning> utrustningar { get; set; }
+        public DbSet<Faktura> fakturor { get; set; }
+        public DbSet<Företag> företag { get; set; }
+        public DbSet<Konferenslokal> konferenslokaler { get; set; }
+        public DbSet<Kund> kunder { get; set; }
+        public DbSet<Logi> logier { get; set; }
+        public DbSet<Privatperson> privatpersoner { get; set; }
+
 
         #endregion
         public UnitOfWork() 
             : base("suht2304") 
         {
-           //Reset();
-           Seed();
+         //  Reset();
+         //  Seed();
             
         }
 
@@ -53,8 +64,11 @@ namespace Datalager
 
         public void Seed()
         {
-            Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", 23);
-            anställda.Add(anställd1);
+           // Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", 23);
+           // anställda.Add(anställd1);
+         //  Företag företag1 = new Företag(100, "Apple");
+          //  företag.Add(företag1 );
+
             SaveChanges();
         }
 
