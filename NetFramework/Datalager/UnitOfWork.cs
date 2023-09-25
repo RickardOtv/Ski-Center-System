@@ -10,6 +10,7 @@ using System.Threading;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using Entitetslager;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Datalager
 {
@@ -22,8 +23,9 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
-            Reset();
-            Seed();
+           //Reset();
+           Seed();
+            
         }
 
         public void Reset()

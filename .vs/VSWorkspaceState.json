@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\NetFramework"
+    "\\NetFramework",
+    "\\NetFramework\\Entitetslager"
   ],
   "SelectedNode": "\\NetFramework\\NetFramework.sln",
   "PreviewInSolutionExplorer": false
