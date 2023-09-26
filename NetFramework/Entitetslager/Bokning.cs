@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,8 @@ namespace Entitetslager
         public Kund KundID { get; set; }
 
         public Logi LogiID { get; set; }
+
+        
 
 
         public Konferenslokal KonferensID { get; set; }
@@ -44,7 +47,7 @@ namespace Entitetslager
 
         public Bokning()
         {
-           
+
         }
     }
 }
