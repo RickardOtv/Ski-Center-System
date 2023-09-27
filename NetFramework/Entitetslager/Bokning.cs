@@ -20,11 +20,12 @@ namespace Entitetslager
         public Kund Kund { get; set; }
         public int KundID { get; set; }
         public Logi Logi { get; set; }
-        public int LogiID { get; set; }
+        public string LogiID { get; set; }
 
         public Skidlektion Skidlektion { get; set; }
         public int LektionsID { get; set; }
 
+        [Required]
         public Faktura Faktura { get; set; }
         public int FakturaID { get; set; }
         

@@ -34,7 +34,7 @@ namespace Datalager
             : base("suht2304") 
         {
            //Reset();
-           Seed();
+           //Seed();
             
         }
 
@@ -63,7 +63,7 @@ namespace Datalager
 
         public void Seed()
         {
-           Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", 23);
+            Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", "123", "Formell/byråkratiskt anställd");
            anställda.Add(anställd1);
            Företag företag1 = new Företag(100, "Apple");
            företag.Add(företag1 );
