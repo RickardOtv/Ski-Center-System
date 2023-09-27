@@ -9,17 +9,14 @@ namespace Entitetslager
 {
     public class Skidlektion
     {
-
         [Key]
         public int LektionsID { get; set; }
+        public Anställd Anställd { get; set; }
+        public int AnställningsNr { get; set; }
+        public Bokning Bokning { get; set; }
+        public int BokningsID { get; set; }
         public string Grupp { get; set; }
-
         public int Antal { get; set; }
-
-        public virtual Anställd anställd { get; set; }
-
-        [Required]
-        public virtual Bokning bokning { get; set; }
 
         public Skidlektion(int lektionsID, string grupp, int antal)
         {

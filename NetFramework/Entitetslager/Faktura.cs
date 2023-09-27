@@ -12,17 +12,16 @@ namespace Entitetslager
         [Key]
 
         public int FakturaID { get; set; }
-        public int Moms { get; set; }
+        public int Momsats { get; set; }
         public int Rabattsats { get; set; }
-        public int TotalPris { get; set; }
+        public float TotalPris { get; set; }
+        public Bokning Bokning { get; set; }
+        public int BokningsID { get; set; }
 
-        [Required]
-        public Bokning BokningsID { get; set; }
-
-        public Faktura(int fakturaID, int moms, int rabattsats, int totalpris)
+        public Faktura(int fakturaID, int moms, int rabattsats, float totalpris)
         {
             FakturaID = fakturaID;
-            Moms = moms;
+            Momsats = moms;
             Rabattsats = rabattsats;
             TotalPris = totalpris;
         }

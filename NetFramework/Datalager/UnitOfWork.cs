@@ -24,7 +24,6 @@ namespace Datalager
         public DbSet<Utrustning> utrustningar { get; set; }
         public DbSet<Faktura> fakturor { get; set; }
         public DbSet<Företag> företag { get; set; }
-        public DbSet<Konferenslokal> konferenslokaler { get; set; }
         public DbSet<Kund> kunder { get; set; }
         public DbSet<Logi> logier { get; set; }
         public DbSet<Privatperson> privatpersoner { get; set; }
@@ -35,7 +34,7 @@ namespace Datalager
             : base("suht2304") 
         {
            //Reset();
-           //Seed();
+           Seed();
             
         }
 

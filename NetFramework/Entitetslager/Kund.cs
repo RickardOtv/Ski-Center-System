@@ -12,17 +12,17 @@ namespace Entitetslager
         [Key]
         public int KundID { get; set; }
         public string Adress { get; set; }
+        public string PostOrt { get; set; }
+        public string Telefonnummer { get; set; }
+        public string Email { get; set; }
 
-       // public Bokning BokningsID { get; set; }
-
-
-        public int MyProperty { get; set; }
-
-        public Kund(int kundID, string adress/* Bokning bokningsID*/)
+        public Kund(int kundID, string adress, string postOrt, string telefonnummer, string email)
         {
             KundID = kundID;
             Adress = adress;
-           // BokningsID = bokningsID;
+            PostOrt = postOrt;
+            Telefonnummer = telefonnummer;
+            Email = email;
         }
 
         public Kund()

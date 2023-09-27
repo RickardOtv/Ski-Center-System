@@ -9,8 +9,6 @@ namespace Entitetslager
 {
     public class Företag : Kund
     {
-        [Key]
-
         public int FöretagsNr { get; set; }
         public string FöretagsNamn { get; set; }
 

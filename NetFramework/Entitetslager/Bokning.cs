@@ -12,36 +12,29 @@ namespace Entitetslager
     {
         [Key]
         public int BokningsID { get; set; }
-
-
-
-        // en massa FK´s, detta får vi titta på
-        public Uthyrning UthyrningsID { get; set; }
-
-        public Kund KundID { get; set; }
-
-        public Logi LogiID { get; set; }
-
-        
-
-
-        public Konferenslokal KonferensID { get; set; }
-
-        public Skidlektion LektionsID { get; set; }
-
-        public Faktura FakturaID { get; set; }
-
-
-
-
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
+        public Uthyrning Uthyrning { get; set; }
+        public int UthyrningsID { get; set; }
 
-        public Bokning(int bokningsID, DateTime från, DateTime till)
+        public Kund Kund { get; set; }
+        public int KundID { get; set; }
+        public Logi Logi { get; set; }
+        public int LogiID { get; set; }
+
+        public Skidlektion Skidlektion { get; set; }
+        public int LektionsID { get; set; }
+
+        public Faktura Faktura { get; set; }
+        public int FakturaID { get; set; }
+        
+
+        public Bokning(int bokningsID, DateTime från, DateTime till, int kundID)
         {
             BokningsID = bokningsID;
             Från = från;
             Till = till;
+            KundID = kundID;
         }
 
 

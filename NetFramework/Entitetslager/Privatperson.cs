@@ -9,7 +9,6 @@ namespace Entitetslager
 {
     public class Privatperson : Kund
     {
-        [Key]
         public int PersonNummer { get; set; }
         public string Namn { get; set; }
 

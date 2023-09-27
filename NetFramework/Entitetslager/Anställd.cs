@@ -13,13 +13,18 @@ namespace Entitetslager
         public int AnställningsNr { get; set; }
         public string Förnamn { get; set; }
         public string Efternamn { get; set; }
-        public int Ålder { get; set; }
-        public Anställd(int anställningsNr, string förnamn, string efternamn, int ålder)
+        public string Användarnamn { get; set; }
+        public string Lösenord { get; set; }
+        public string Behörighet { get; set; }
+
+
+        public Anställd(int anställningsNr, string förnamn, string efternamn, string lösenord, string behörighet)
         {
             AnställningsNr = anställningsNr;
             Förnamn = förnamn;
             Efternamn = efternamn;
-            Ålder = ålder;
+            Lösenord = lösenord;
+            Behörighet = behörighet;
         }
 
         public Anställd()
