@@ -28,7 +28,6 @@ namespace Datalager
         public DbSet<Logi> logier { get; set; }
         public DbSet<Privatperson> privatpersoner { get; set; }
 
-
         #endregion
         public UnitOfWork() 
             : base("suht2304") 
