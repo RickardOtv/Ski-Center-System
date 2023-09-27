@@ -28,6 +28,11 @@ namespace Entitetslager
             Lösenord = lösenord;
             Behörighet = behörighet;
         }
+        public bool VerifieraLösenord(string given)
+        {
+            return Lösenord == given;
+        }
+       // public string lösenord { get; set; }
 
         public Anställd()
         {

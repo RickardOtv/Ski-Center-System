@@ -1,4 +1,5 @@
-﻿using Datalager;
+﻿using Affärslager;
+using Datalager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace NetFramework
     {
 
 
-        ExpeditKontroller expeditKontroller = new ExpeditKontroller();
+        Kontroller kontroller = new Kontroller();
         UnitOfWork unitOfWork = new UnitOfWork();
         public LoggaIn()
         {
@@ -27,13 +28,13 @@ namespace NetFramework
         {
             int angivetAnstNr = int.Parse(txtAnstNr.Text);
             //LINQ-satser för att matcha anställningsnummer / lösenord med de lagrade värdena
-            var anstNr = (from exp in unitOfWork.expediter where exp.ExpeditID == angivetAnstNr select exp.ExpeditID).FirstOrDefault();
-            var lösen = (from exp in unitOfWork.expediter where exp.lösenord == txtLösen.Text select exp.lösenord).FirstOrDefault();
+            var anstNr = (from anst in unitOfWork.anställda where anst.AnställningsNr == angivetAnstNr select anst.AnställningsNr).FirstOrDefault();
+            var lösen = (from anst in unitOfWork.anställda where anst.Lösenord == txtLösen.Text select anst.Lösenord).FirstOrDefault();
 
-            bool inmatning = expeditKontroller.LoggaIn(anstNr, lösen);
+            bool inmatning = kontroller.LoggaIn(anstNr, lösen);
             if (inmatning == true)
             {
-                HuvudMeny huvudMeny = new HuvudMeny(this, expeditKontroller);
+                HuvudMeny huvudMeny = new HuvudMeny(this, kontroller);
                 huvudMeny.Show();
             }
             else
