@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Anställd.cs" />
     <Compile Include="Bokning.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="enTillSkräpKlassHahahh.cs" />
     <Compile Include="Faktura.cs" />
     <Compile Include="Företag.cs" />
