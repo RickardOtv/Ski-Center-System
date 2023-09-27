@@ -34,8 +34,8 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
-         //  Reset();
-         //  Seed();
+           //Reset();
+           //Seed();
             
         }
 
@@ -64,10 +64,10 @@ namespace Datalager
 
         public void Seed()
         {
-           // Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", 23);
-           // anställda.Add(anställd1);
-         //  Företag företag1 = new Företag(100, "Apple");
-          //  företag.Add(företag1 );
+           Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", 23);
+           anställda.Add(anställd1);
+           Företag företag1 = new Företag(100, "Apple");
+           företag.Add(företag1 );
 
             SaveChanges();
         }

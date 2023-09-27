@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NetFramework",
+    "\\NetFramework\\Datalager"
   ],
-  "SelectedNode": "\\NetFramework.sln",
+  "SelectedNode": "\\NetFramework\\Datalager\\App.config",
   "PreviewInSolutionExplorer": false
 }

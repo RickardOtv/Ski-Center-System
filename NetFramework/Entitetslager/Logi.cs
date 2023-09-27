@@ -11,18 +11,16 @@ namespace Entitetslager
     public class Logi
     {
         [Key]
-        public int LogiID { get; set; }
-        public int AntalBäddar { get; set; }
-        public int Area { get; set; }
+        public string LogiID { get; set; }
+        public string Typ { get; set; }
 
         public bool IsAvailable { get; set; }
 
 
-        public Logi(int logiID, int antalBäddar, int area, bool isAvailable)
+        public Logi(string logiID, string typ, bool isAvailable)
         {
             LogiID = logiID;
-            AntalBäddar = antalBäddar;
-            Area = area;
+            Typ = typ;
             IsAvailable = isAvailable;
         }
 

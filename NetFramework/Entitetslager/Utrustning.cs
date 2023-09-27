@@ -10,16 +10,19 @@ namespace Entitetslager
     public class Utrustning
     {
         [Key]
-        public int UtrustningsID { get; set; }
+        public string UtrustningsID { get; set; }
         public string Typ { get; set; }
 
-        public string Storlek { get; set; }
+        public int Storlek { get; set; }
 
-        public Utrustning(int utrustningsID, string typ, string storlek)
+        public bool isAvailable { get; set; }
+
+        public Utrustning(string utrustningsID, string typ, int storlek, bool isAvailable)
         {
             UtrustningsID = utrustningsID;
             Typ = typ;
             Storlek = storlek;
+            this.isAvailable = isAvailable;
         }
 
         public Utrustning()
