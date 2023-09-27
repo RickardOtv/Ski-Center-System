@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.vs/su_projekt/v17/.wsuo
+/NetFramework/Affärslager/obj/Debug/Affärslager.csproj.AssemblyReference.cache
+/NetFramework/Affärslager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/NetFramework/Datalager/obj/Debug/Datalager.csproj.AssemblyReference.cache
+/NetFramework/Datalager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/NetFramework/Entitetslager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/NetFramework/Entitetslager/obj/Debug/Entitetslager.csproj.AssemblyReference.cache
+/NetFramework/NetFramework/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/NetFramework/NetFramework/obj/Debug/Presentationslager.csproj.AssemblyReference.cache
