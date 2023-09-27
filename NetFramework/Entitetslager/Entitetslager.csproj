@@ -60,7 +60,6 @@
     <Compile Include="Privatperson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skidlektion.cs" />
-    <Compile Include="skräpKlass.cs" />
     <Compile Include="Uthyrning.cs" />
     <Compile Include="Utrustning.cs" />
   </ItemGroup>
