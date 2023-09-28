@@ -12,7 +12,8 @@ namespace Affärslager
     public class Kontroller
     {
 
-        UnitOfWork unitOfWork = new UnitOfWork();
+        private UnitOfWork unitOfWork;
+        public Kontroller() { }
         public Anställd LoggedIn
         {
             get; private set;
@@ -20,7 +21,7 @@ namespace Affärslager
 
         public bool LoggaIn(int anställningsNr, string lösenord)
         {
-            //unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork();
             Anställd a = (from anst in unitOfWork.anställda where anst.AnställningsNr == anställningsNr select anst).FirstOrDefault();
             if (a != null && a.VerifieraLösenord(lösenord))
             {
