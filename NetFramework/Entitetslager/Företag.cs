@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 namespace Entitetslager
 {
     [Table("Företag")]
-    public class Företag : Kund
+    public class Företag
     {
         [Key]
-        public int FöretagsNr { get; set; }
+        public int FöretagsID { get; set; }
         public string FöretagsNamn { get; set; }
 
 
-        public Företag(int företagsNr, string företagsnamn)
+        public Företag(int företagsID, string företagsnamn)
         {
-            FöretagsNr = företagsNr;
+            FöretagsID = företagsID;
             FöretagsNamn = företagsnamn;
 
         }

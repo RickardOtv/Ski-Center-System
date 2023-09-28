@@ -14,8 +14,6 @@ namespace NetFramework
 {
     public partial class LoggaIn : Form
     {
-
-
         Kontroller kontroller = new Kontroller();
         UnitOfWork unitOfWork = new UnitOfWork();
         public LoggaIn()
