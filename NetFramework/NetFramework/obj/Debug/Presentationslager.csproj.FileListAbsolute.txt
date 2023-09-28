@@ -76,3 +76,29 @@ C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Pre
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.exe
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.pdb
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.Bokningcs.resources
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\NetFramework.exe.config
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\NetFramework.exe
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\NetFramework.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Affärslager.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Datalager.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Entitetslager.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\EntityFramework.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Affärslager.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Affärslager.dll.config
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Datalager.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Datalager.dll.config
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Entitetslager.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\Entitetslager.dll.config
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\EntityFramework.xml
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Presentationslager.csproj.AssemblyReference.cache
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.Bokningcs.resources
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.HuvudMeny.resources
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.LoggaIn.resources
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.Properties.Resources.resources
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Presentationslager.csproj.GenerateResource.cache
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Presentationslager.csproj.CoreCompileInputs.cache
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Presentationslager.csproj.CopyComplete
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.exe
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.pdb

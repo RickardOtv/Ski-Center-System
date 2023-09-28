@@ -43,3 +43,18 @@ C:\Users\Richard\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datala
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.CopyComplete
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.dll
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\Datalager.dll.config
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\Datalager.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\Datalager.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\Entitetslager.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\Entitetslager.pdb
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\Entitetslager.dll.config
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.xml
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.AssemblyReference.cache
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.CoreCompileInputs.cache
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.csproj.CopyComplete
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.dll
+C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\Datalager\obj\Debug\Datalager.pdb
