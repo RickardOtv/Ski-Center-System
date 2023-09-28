@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace Entitetslager
 {
     [Table("Privatperson")]
-    public class Privatperson : Kund
+    public class Privatperson
     {
         [Key]
-        public int PersonNummer { get; set; }
+        public string PersonNummer { get; set; }
         public string Namn { get; set; }
 
-        public Privatperson(int personNummer, string namn)
+        public Privatperson(string personNummer, string namn)
         {
             PersonNummer = personNummer;
             Namn = namn;

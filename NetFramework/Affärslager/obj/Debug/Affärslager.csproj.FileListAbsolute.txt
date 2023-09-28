@@ -31,3 +31,6 @@ C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Affärslager\obj\Debug\Affä
 C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Affärslager\bin\Debug\Affärslager.dll.config
 C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Affärslager\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\maxer\Source\Repos\su_projekt\NetFramework\Affärslager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sasha\Source\Repos\su_projekt\NetFramework\Affärslager\bin\Debug\Affärslager.dll.config
+C:\Users\Sasha\Source\Repos\su_projekt\NetFramework\Affärslager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sasha\Source\Repos\su_projekt\NetFramework\Affärslager\bin\Debug\EntityFramework.SqlServer.xml

@@ -55,7 +55,6 @@
     <Compile Include="Bokning.cs" />
     <Compile Include="Faktura.cs" />
     <Compile Include="Företag.cs" />
-    <Compile Include="Kund.cs" />
     <Compile Include="Logi.cs" />
     <Compile Include="Privatperson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
