@@ -34,5 +34,6 @@ namespace Affärslager
             return false;
         }
 
+
     }
 }
