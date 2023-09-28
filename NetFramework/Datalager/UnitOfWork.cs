@@ -23,16 +23,17 @@ namespace Datalager
         public DbSet<Uthyrning> uthyrningar { get; set; }
         public DbSet<Utrustning> utrustningar { get; set; }
         public DbSet<Faktura> fakturor { get; set; }
-        public DbSet<Företag> företag { get; set; }
         public DbSet<Logi> logier { get; set; }
-        public DbSet<Privatperson> privatpersoner { get; set; }
+        public DbSet<Kund> kunder {  get; set; }
+
+        public DbSet<LogiPris> logiPris { get; set; }
 
         #endregion
         public UnitOfWork() 
             : base("suht2304") 
         {
            //Reset();
-           //Seed();
+          //Seed();
             
         }
 
@@ -63,8 +64,6 @@ namespace Datalager
         {
             Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", "123", "Formell/byråkratiskt anställd");
            anställda.Add(anställd1);
-           Företag företag1 = new Företag(100, "Apple");
-           företag.Add(företag1 );
 
             SaveChanges();
         }
