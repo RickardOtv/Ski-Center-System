@@ -25,7 +25,11 @@ namespace NetFramework
             this.kontroller = kontroller;
             InitializeComponent();
         }
-
+        public string InloggadAnvandare
+        {
+            get { return txtAnvandarnamn.Text; }
+            set { txtAnvandarnamn.Text = value; }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             // Create an instance of the new form
@@ -35,6 +39,9 @@ namespace NetFramework
             bokningcs.Show();
         }
 
-        
+        private void lblMata_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

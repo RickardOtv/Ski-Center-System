@@ -33,6 +33,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblAnstNr = new System.Windows.Forms.Label();
+            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -82,11 +84,29 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Huvudmeny";
             // 
+            // lblAnstNr
+            // 
+            this.lblAnstNr.AutoSize = true;
+            this.lblAnstNr.Location = new System.Drawing.Point(12, 9);
+            this.lblAnstNr.Name = "lblAnstNr";
+            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
+            this.lblAnstNr.TabIndex = 6;
+            this.lblAnstNr.Text = "Anställningsnummer:";
+            // 
+            // txtAnvandarnamn
+            // 
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(112, 6);
+            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
+            this.txtAnvandarnamn.TabIndex = 7;
+            // 
             // HuvudMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 552);
+            this.Controls.Add(this.txtAnvandarnamn);
+            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -107,5 +127,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAnstNr;
+        private System.Windows.Forms.TextBox txtAnvandarnamn;
     }
 }

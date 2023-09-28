@@ -16,6 +16,7 @@ namespace NetFramework
     {
         Kontroller kontroller = new Kontroller();
         UnitOfWork unitOfWork = new UnitOfWork();
+        
         public LoggaIn()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace NetFramework
             if (inmatning == true)
             {
                 HuvudMeny huvudMeny = new HuvudMeny(this, kontroller);
+                huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
                 huvudMeny.Show();
             }
             else
