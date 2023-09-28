@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bokningcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bokningcs.Designer.cs">
+      <DependentUpon>Bokningcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="HuvudMeny.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bokningcs.resx">
+      <DependentUpon>Bokningcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HuvudMeny.resx">
       <DependentUpon>HuvudMeny.cs</DependentUpon>
     </EmbeddedResource>

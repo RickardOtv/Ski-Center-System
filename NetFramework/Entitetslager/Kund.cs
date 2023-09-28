@@ -12,11 +12,14 @@ namespace Entitetslager
     public class Kund
     {
         [Key]
-        public int KundID {  get; set; }
-        public string Typ {  get; set; }
-        public int Maxbeloppskreditgräns {  get; set; }
-        public string Adress {  get; set; }
-        public string Namn {  get; set; }
+        public int KundID { get; set; }
+        public string Typ { get; set; }
+        public int Maxbeloppskreditgräns { get; set; }
+        public string Adress { get; set; }
+        public string PostOrt { get; set; }
+        public string PostNr { get; set; }
+        public string Personnummer { get; set; }
+        public string Namn { get; set; }
         public string Telefonnummer { get; set; }
         public string Email { get; set; }
 

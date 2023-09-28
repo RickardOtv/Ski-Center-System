@@ -25,18 +25,19 @@ namespace Entitetslager
         public Skidlektion Skidlektion { get; set; }
         public int LektionsID { get; set; }
 
+
         [Required]
         public Faktura Faktura { get; set; }
         public int FakturaID { get; set; }
-        
 
-        public Bokning(int bokningsID, DateTime från, DateTime till, int kundID)
+
+        public Bokning(DateTime från, DateTime till, string logiID, int kundID)
         {
-            BokningsID = bokningsID;
             Från = från;
             Till = till;
+            LogiID = logiID;
+            KundID = kundID;
         }
-
 
         public Bokning()
         {

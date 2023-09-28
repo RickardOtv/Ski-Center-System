@@ -75,3 +75,4 @@ C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Pre
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\Presentationslager.csproj.CopyComplete
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.exe
 C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.pdb
+C:\Users\Richard\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.Bokningcs.resources
