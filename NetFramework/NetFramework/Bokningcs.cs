@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Affärslager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,19 @@ namespace NetFramework
 {
     public partial class Bokningcs : Form
     {
-        public Bokningcs()
+        private BokningsMeny bokningsMeny;
+        private Kontroller kontroller;
+        public Bokningcs(BokningsMeny bokningsMeny, Kontroller kontroller)
         {
             InitializeComponent();
+            this.bokningsMeny = bokningsMeny;
+            this.kontroller = kontroller;
+        }
+
+        public string InloggadAnvandare
+        {
+            get { return txtAnvandarnamn.Text; }
+            set { txtAnvandarnamn.Text = value; }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
