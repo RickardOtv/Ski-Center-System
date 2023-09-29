@@ -42,7 +42,7 @@
             this.btnAvbryt.Location = new System.Drawing.Point(342, 244);
             this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(81, 29);
+            this.btnAvbryt.Size = new System.Drawing.Size(81, 54);
             this.btnAvbryt.TabIndex = 13;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             this.btnLoggaIn.Location = new System.Drawing.Point(153, 244);
             this.btnLoggaIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoggaIn.Name = "btnLoggaIn";
-            this.btnLoggaIn.Size = new System.Drawing.Size(84, 29);
+            this.btnLoggaIn.Size = new System.Drawing.Size(99, 54);
             this.btnLoggaIn.TabIndex = 12;
             this.btnLoggaIn.Text = "Logga In";
             this.btnLoggaIn.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // 
             this.lblLoggaIn.AutoSize = true;
             this.lblLoggaIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggaIn.Location = new System.Drawing.Point(232, 31);
+            this.lblLoggaIn.Location = new System.Drawing.Point(165, 31);
             this.lblLoggaIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggaIn.Name = "lblLoggaIn";
-            this.lblLoggaIn.Size = new System.Drawing.Size(142, 37);
+            this.lblLoggaIn.Size = new System.Drawing.Size(212, 55);
             this.lblLoggaIn.TabIndex = 7;
             this.lblLoggaIn.Text = "Logga In";
             // 
@@ -121,7 +121,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoggaIn";
             this.Text = "Form1";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
