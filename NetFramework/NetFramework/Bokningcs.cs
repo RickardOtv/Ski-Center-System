@@ -30,6 +30,8 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
+       
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
