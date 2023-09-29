@@ -406,3 +406,7 @@ FodyWeavers.xsd
 /NetFramework/Datalager/bin/Debug/Datalager.dll
 /NetFramework/Datalager/obj/Debug/Datalager.csproj.FileListAbsolute.txt
 /.vs/slnx.sqlite
+/NetFramework/NetFramework/obj/Release/Presentationslager.csproj.AssemblyReference.cache
+/NetFramework/Entitetslager/obj/Release/Entitetslager.csproj.AssemblyReference.cache
+/NetFramework/Datalager/obj/Release/Datalager.csproj.AssemblyReference.cache
+/NetFramework/Affärslager/obj/Release/Affärslager.csproj.AssemblyReference.cache
