@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUthyrning = new System.Windows.Forms.Button();
+            this.btnMarknad = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAnstNr = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
@@ -47,32 +47,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnUthyrning
             // 
-            this.button2.Location = new System.Drawing.Point(281, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(364, 33);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Uthyrning / Skidskola";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUthyrning.Location = new System.Drawing.Point(281, 201);
+            this.btnUthyrning.Name = "btnUthyrning";
+            this.btnUthyrning.Size = new System.Drawing.Size(364, 33);
+            this.btnUthyrning.TabIndex = 1;
+            this.btnUthyrning.Text = "Uthyrning";
+            this.btnUthyrning.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnMarknad
             // 
-            this.button3.Location = new System.Drawing.Point(281, 261);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(364, 32);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Marknadschefsvy";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMarknad.Location = new System.Drawing.Point(281, 261);
+            this.btnMarknad.Name = "btnMarknad";
+            this.btnMarknad.Size = new System.Drawing.Size(364, 32);
+            this.btnMarknad.TabIndex = 2;
+            this.btnMarknad.Text = "Marknadsvy";
+            this.btnMarknad.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnAdmin
             // 
-            this.button4.Location = new System.Drawing.Point(281, 321);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(364, 29);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Adminvy";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAdmin.Location = new System.Drawing.Point(281, 321);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(364, 29);
+            this.btnAdmin.TabIndex = 3;
+            this.btnAdmin.Text = "Adminvy";
+            this.btnAdmin.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -108,9 +108,9 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.btnMarknad);
+            this.Controls.Add(this.btnUthyrning);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HuvudMeny";
@@ -123,9 +123,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnUthyrning;
+        private System.Windows.Forms.Button btnMarknad;
+        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAnstNr;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
