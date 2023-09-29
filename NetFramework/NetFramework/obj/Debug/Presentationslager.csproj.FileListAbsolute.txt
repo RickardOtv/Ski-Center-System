@@ -103,3 +103,5 @@ C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\
 C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.exe
 C:\Users\Andreas Olgrener\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.pdb
 C:\Users\Sasha\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.Bokningcs.resources
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.Bokningcs.resources
+C:\Users\maxer\Source\Repos\su_projekt\NetFramework\NetFramework\obj\Debug\NetFramework.BokningsMeny.resources

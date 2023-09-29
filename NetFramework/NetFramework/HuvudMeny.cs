@@ -32,11 +32,12 @@ namespace NetFramework
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create an instance of the new form
-            Bokningcs bokningcs = new Bokningcs();
+            
+          
+            BokningsMeny bokningsMeny = new BokningsMeny(this, kontroller);
+            bokningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+            bokningsMeny.Show();
 
-            // Show the new form
-            bokningcs.Show();
         }
 
         private void lblMata_Click(object sender, EventArgs e)
