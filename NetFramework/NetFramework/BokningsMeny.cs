@@ -32,8 +32,10 @@ namespace NetFramework
 
         private void btnVisaBokning_Click(object sender, EventArgs e)
         {
-            Bokningcs bokningscs = new Bokningcs();
+            Bokningcs bokningscs = new Bokningcs(this, kontroller);
+            bokningscs.InloggadAnvandare = txtAnvandarnamn.Text;
             bokningscs.Show();
+
         }
 
         private void btnLediga_Click(object sender, EventArgs e)
