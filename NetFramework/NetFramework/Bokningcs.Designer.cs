@@ -35,6 +35,8 @@
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.lblAnstNr = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,29 +64,29 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(303, 595);
+            this.button1.Location = new System.Drawing.Point(831, 71);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 54);
+            this.button1.Size = new System.Drawing.Size(170, 40);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Hämta all logi";
+            this.button1.Text = "Visa ledig logi";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // startDatePicker
             // 
-            this.startDatePicker.Location = new System.Drawing.Point(176, 81);
+            this.startDatePicker.Location = new System.Drawing.Point(225, 80);
             this.startDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(298, 26);
+            this.startDatePicker.Size = new System.Drawing.Size(231, 26);
             this.startDatePicker.TabIndex = 6;
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(703, 81);
+            this.endDatePicker.Location = new System.Drawing.Point(563, 80);
             this.endDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(298, 26);
+            this.endDatePicker.Size = new System.Drawing.Size(233, 26);
             this.endDatePicker.TabIndex = 7;
             // 
             // txtAnvandarnamn
@@ -105,11 +107,33 @@
             this.lblAnstNr.TabIndex = 10;
             this.lblAnstNr.Text = "Anställningsnummer:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(172, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Från:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(525, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Till:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Bokningcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.endDatePicker);
@@ -135,5 +159,7 @@
         private System.Windows.Forms.DateTimePicker endDatePicker;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label lblAnstNr;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

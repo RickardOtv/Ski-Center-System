@@ -40,7 +40,9 @@ namespace NetFramework
 
         private void btnLediga_Click(object sender, EventArgs e)
         {
-
+            VisaLedigaLogi visaLedigaLogi = new VisaLedigaLogi(this, kontroller);
+            visaLedigaLogi.Show();
+            
         }
 
         private void btnBokning_Click(object sender, EventArgs e)
