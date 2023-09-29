@@ -16,7 +16,7 @@ namespace NetFramework
         //private HuvudMeny huvudMeny;
         private Kontroller kontroller;
         private HuvudMeny huvudMeny;
-        private LoggaIn loggaIn;
+       // private LoggaIn loggaIn;
 
         public BokningsMeny(HuvudMeny huvudMeny, Kontroller kontroller)
         {
