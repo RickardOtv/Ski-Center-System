@@ -14,8 +14,12 @@ namespace NetFramework
 {
     public partial class LoggaIn : Form
     {
+        //private HuvudMeny huvudMeny;
         Kontroller kontroller = new Kontroller();
         UnitOfWork unitOfWork = new UnitOfWork();
+       // public TextBox txtAnvandarnamn;
+
+
         public LoggaIn()
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace NetFramework
             if (inmatning == true)
             {
                 HuvudMeny huvudMeny = new HuvudMeny(this, kontroller);
+                huvudMeny.InloggadAnvandare = txtAnstNr.Text;
                 huvudMeny.Show();
             }
             else

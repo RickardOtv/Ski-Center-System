@@ -32,11 +32,12 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
+            //ResetTable();
            //Reset();
           //Seed();
             
         }
-
+        // Reseta alla tables
         public void Reset()
         {
             #region Remove Tables
@@ -59,6 +60,29 @@ namespace Datalager
             }
             #endregion
         }
+        //RS:a specifik table
+        public void ResetTable(string tableName)
+        {
+            #region
+            using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand($"ALTER TABLE {tableName} NOCHECK CONSTRAINT all; DROP TABLE {tableName}", conn))
+            {
+                conn.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Hantera fel här om tabellen inte kunde återställas.
+                    Console.WriteLine($"Fel vid återställning av tabellen {tableName}: {ex.Message}");
+                }
+                conn.Close();
+            }
+
+            #endregion
+        }
+
 
         public void Seed()
         {
