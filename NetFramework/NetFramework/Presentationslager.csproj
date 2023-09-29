@@ -135,6 +135,12 @@
   <ItemGroup>
     <None Include="Resources\1286ce2aae8bf42293dc770d573c0eb0.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-red-ski-equipment-at-the-ski-resort-png-image_5777618.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v1_txt2img_77f610f8-523e-4179-b8c4-568ee1e75053.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
