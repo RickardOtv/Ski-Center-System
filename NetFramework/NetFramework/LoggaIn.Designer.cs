@@ -63,7 +63,7 @@
             // 
             // txtLösen
             // 
-            this.txtLösen.Location = new System.Drawing.Point(321, 274);
+            this.txtLösen.Location = new System.Drawing.Point(321, 296);
             this.txtLösen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLösen.Name = "txtLösen";
             this.txtLösen.Size = new System.Drawing.Size(192, 31);
@@ -71,7 +71,7 @@
             // 
             // txtAnstNr
             // 
-            this.txtAnstNr.Location = new System.Drawing.Point(321, 209);
+            this.txtAnstNr.Location = new System.Drawing.Point(321, 225);
             this.txtAnstNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAnstNr.Name = "txtAnstNr";
             this.txtAnstNr.Size = new System.Drawing.Size(192, 31);
@@ -80,8 +80,8 @@
             // lblLösenord
             // 
             this.lblLösenord.AutoSize = true;
-            this.lblLösenord.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLösenord.Location = new System.Drawing.Point(213, 277);
+            this.lblLösenord.BackColor = System.Drawing.Color.Transparent;
+            this.lblLösenord.Location = new System.Drawing.Point(316, 269);
             this.lblLösenord.Name = "lblLösenord";
             this.lblLösenord.Size = new System.Drawing.Size(102, 25);
             this.lblLösenord.TabIndex = 9;
@@ -90,8 +90,8 @@
             // lblAnstNr
             // 
             this.lblAnstNr.AutoSize = true;
-            this.lblAnstNr.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAnstNr.Location = new System.Drawing.Point(106, 212);
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(316, 198);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(209, 25);
             this.lblAnstNr.TabIndex = 8;
@@ -100,11 +100,13 @@
             // lblLoggaIn
             // 
             this.lblLoggaIn.AutoSize = true;
-            this.lblLoggaIn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblLoggaIn.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoggaIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLoggaIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggaIn.ForeColor = System.Drawing.Color.Black;
             this.lblLoggaIn.Location = new System.Drawing.Point(121, 9);
             this.lblLoggaIn.Name = "lblLoggaIn";
-            this.lblLoggaIn.Size = new System.Drawing.Size(562, 73);
+            this.lblLoggaIn.Size = new System.Drawing.Size(564, 75);
             this.lblLoggaIn.TabIndex = 7;
             this.lblLoggaIn.Text = "Ski Center System";
             // 
@@ -114,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources._1286ce2aae8bf42293dc770d573c0eb0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(813, 485);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnLoggaIn);
             this.Controls.Add(this.txtLösen);
