@@ -31,12 +31,12 @@ namespace Entitetslager
         public int FakturaID { get; set; }
 
 
-        public Bokning(DateTime från, DateTime till, string logiID, int kundID)
+        public Bokning(DateTime från, DateTime till, Logi l, Kund k)
         {
             Från = från;
             Till = till;
-            LogiID = logiID;
-            KundID = kundID;
+            Logi = l;
+            Kund = k;
         }
 
         public Bokning()
