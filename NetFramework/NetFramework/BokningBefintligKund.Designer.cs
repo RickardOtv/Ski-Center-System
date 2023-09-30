@@ -115,6 +115,7 @@
             this.btnSök.TabIndex = 6;
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
+            this.btnSök.Click += new System.EventHandler(this.btnSök_Click);
             // 
             // lblFrån
             // 

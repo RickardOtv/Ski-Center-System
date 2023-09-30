@@ -64,6 +64,10 @@ namespace Affärslager
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.KundID == kundID);
         }
+        public Kund HittaKund(string personNummer)
+        {
+            return unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == personNummer);
+        }
         public Logi HittaLogi(string logiID)
         {
             return unitOfWork.logier.FirstOrDefault(l => l.LogiID == logiID);
