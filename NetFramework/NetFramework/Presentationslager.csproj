@@ -56,11 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bokningcs.cs">
+    <Compile Include="BokningNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bokningcs.Designer.cs">
-      <DependentUpon>Bokningcs.cs</DependentUpon>
+    <Compile Include="BokningNyKund.Designer.cs">
+      <DependentUpon>BokningNyKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BokningBefintligKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BokningBefintligKund.Designer.cs">
+      <DependentUpon>BokningBefintligKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BokningsTyp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BokningsTyp.Designer.cs">
+      <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisaLedigLogi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisaLedigLogi.Designer.cs">
+      <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </Compile>
     <Compile Include="BokningsMeny.cs">
       <SubType>Form</SubType>
@@ -82,8 +100,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bokningcs.resx">
-      <DependentUpon>Bokningcs.cs</DependentUpon>
+    <EmbeddedResource Include="BokningNyKund.resx">
+      <DependentUpon>BokningNyKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BokningBefintligKund.resx">
+      <DependentUpon>BokningBefintligKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BokningsTyp.resx">
+      <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisaLedigLogi.resx">
+      <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BokningsMeny.resx">
       <DependentUpon>BokningsMeny.cs</DependentUpon>

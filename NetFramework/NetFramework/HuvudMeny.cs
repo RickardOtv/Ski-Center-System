@@ -15,16 +15,13 @@ namespace NetFramework
 {
     public partial class HuvudMeny : Form
     {
-
-
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
         public HuvudMeny(LoggaIn loggaInMeny, Kontroller kontroller)
         {
-            InitializeComponent();
             this.loggaInMeny = loggaInMeny;
             this.kontroller = kontroller;
-
+            InitializeComponent();
         }
         public string InloggadAnvandare
         {
@@ -33,7 +30,7 @@ namespace NetFramework
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            BokningsMeny bokningsMeny = new BokningsMeny(this, kontroller);
+            BokningsMeny bokningsMeny = new BokningsMeny(loggaInMeny, kontroller);
             bokningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
             bokningsMeny.Show();
         }

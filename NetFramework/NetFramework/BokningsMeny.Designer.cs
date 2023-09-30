@@ -28,50 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVisaBokning = new System.Windows.Forms.Button();
+            this.btnSkapaBokning = new System.Windows.Forms.Button();
             this.btnLediga = new System.Windows.Forms.Button();
-            this.btnBokning = new System.Windows.Forms.Button();
+            this.btnVisaBokningar = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.lblAnstNr = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnVisaBokning
+            // btnSkapaBokning
             // 
-            this.btnVisaBokning.Location = new System.Drawing.Point(241, 87);
-            this.btnVisaBokning.Name = "btnVisaBokning";
-            this.btnVisaBokning.Size = new System.Drawing.Size(314, 44);
-            this.btnVisaBokning.TabIndex = 0;
-            this.btnVisaBokning.Text = "Visa bokningar";
-            this.btnVisaBokning.UseVisualStyleBackColor = true;
-            this.btnVisaBokning.Click += new System.EventHandler(this.btnVisaBokning_Click);
+            this.btnSkapaBokning.Location = new System.Drawing.Point(228, 224);
+            this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSkapaBokning.Name = "btnSkapaBokning";
+            this.btnSkapaBokning.Size = new System.Drawing.Size(576, 81);
+            this.btnSkapaBokning.TabIndex = 0;
+            this.btnSkapaBokning.Text = "Bokning av Logi";
+            this.btnSkapaBokning.UseVisualStyleBackColor = true;
+            this.btnSkapaBokning.Click += new System.EventHandler(this.btnSkapaBokning_Click);
             // 
             // btnLediga
             // 
-            this.btnLediga.Location = new System.Drawing.Point(241, 184);
+            this.btnLediga.Location = new System.Drawing.Point(228, 377);
+            this.btnLediga.Margin = new System.Windows.Forms.Padding(6);
             this.btnLediga.Name = "btnLediga";
-            this.btnLediga.Size = new System.Drawing.Size(314, 44);
+            this.btnLediga.Size = new System.Drawing.Size(576, 81);
             this.btnLediga.TabIndex = 1;
             this.btnLediga.Text = "Visa lediga logialternativ";
             this.btnLediga.UseVisualStyleBackColor = true;
             this.btnLediga.Click += new System.EventHandler(this.btnLediga_Click);
             // 
-            // btnBokning
+            // btnVisaBokningar
             // 
-            this.btnBokning.Location = new System.Drawing.Point(241, 292);
-            this.btnBokning.Name = "btnBokning";
-            this.btnBokning.Size = new System.Drawing.Size(314, 44);
-            this.btnBokning.TabIndex = 3;
-            this.btnBokning.Text = "Bokning av logi";
-            this.btnBokning.UseVisualStyleBackColor = true;
-            this.btnBokning.Click += new System.EventHandler(this.btnBokning_Click);
+            this.btnVisaBokningar.Location = new System.Drawing.Point(228, 534);
+            this.btnVisaBokningar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnVisaBokningar.Name = "btnVisaBokningar";
+            this.btnVisaBokningar.Size = new System.Drawing.Size(576, 81);
+            this.btnVisaBokningar.TabIndex = 3;
+            this.btnVisaBokningar.Text = "Visa bokningar";
+            this.btnVisaBokningar.UseVisualStyleBackColor = true;
+            this.btnVisaBokningar.Click += new System.EventHandler(this.btnVisaBokningar_Click);
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(45, 381);
+            this.btnTillbaka.Location = new System.Drawing.Point(3, 680);
+            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(6);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(149, 38);
+            this.btnTillbaka.Size = new System.Drawing.Size(190, 35);
             this.btnTillbaka.TabIndex = 2;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -79,42 +83,50 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(112, 6);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(191, 5);
+            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(6);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(22, 29);
             this.txtAnvandarnamn.TabIndex = 9;
             // 
             // lblAnstNr
             // 
             this.lblAnstNr.AutoSize = true;
-            this.lblAnstNr.Location = new System.Drawing.Point(12, 9);
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(-2, 9);
+            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAnstNr.Name = "lblAnstNr";
-            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
+            this.lblAnstNr.Size = new System.Drawing.Size(195, 25);
             this.lblAnstNr.TabIndex = 8;
             this.lblAnstNr.Text = "Anställningsnummer:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(319, 9);
+            this.label1.Location = new System.Drawing.Point(389, 95);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 39);
+            this.label1.Size = new System.Drawing.Size(243, 67);
             this.label1.TabIndex = 10;
             this.label1.Text = "Bokning";
             // 
             // BokningsMeny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1051, 713);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
-            this.Controls.Add(this.btnBokning);
+            this.Controls.Add(this.btnVisaBokningar);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnLediga);
-            this.Controls.Add(this.btnVisaBokning);
+            this.Controls.Add(this.btnSkapaBokning);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BokningsMeny";
             this.Text = "BokningsMeny";
             this.ResumeLayout(false);
@@ -124,9 +136,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnVisaBokning;
+        private System.Windows.Forms.Button btnSkapaBokning;
         private System.Windows.Forms.Button btnLediga;
-        private System.Windows.Forms.Button btnBokning;
+        private System.Windows.Forms.Button btnVisaBokningar;
         private System.Windows.Forms.Button btnTillbaka;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label lblAnstNr;

@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace NetFramework
 {
-    public partial class Bokningcs : Form
+    public partial class VisaLedigLogi : Form
     {
-        private BokningsMeny bokningsMeny;
+        private LoggaIn loggaIn;
         private Kontroller kontroller;
-        public Bokningcs(BokningsMeny bokningsMeny, Kontroller kontroller)
+        public VisaLedigLogi(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
-            this.bokningsMeny = bokningsMeny;
+            this.loggaIn = loggaIn;
             this.kontroller = kontroller;
         }
 
