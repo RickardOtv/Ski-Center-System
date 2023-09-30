@@ -34,5 +34,7 @@ namespace Entitetslager
             Telefonnummer = telefonnummer;
             Email = email;
         }
+        
+        public Kund() { }
     }
 }

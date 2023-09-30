@@ -27,13 +27,30 @@ namespace NetFramework
         
         internal void RefreshLogi()
         {
-            var logier = (from logi in unitOfWork.logier where logi.IsAvailable == true select logi).ToList<Logi>();
+            var logier = kontroller.HämtaTillgängligLogi();
             gridLogi.DataSource = logier;
+        }
+
+        internal void RefreshKunder()
+        {
+            var kunder = kontroller.HämtaKunder();
+            gridKunder.DataSource = kunder;
         }
 
         private void BokningBefintligKund_Load(object sender, EventArgs e)
         {
             RefreshLogi();
+            RefreshKunder();
+        }
+
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSkapaBokning_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,6 +35,12 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSök = new System.Windows.Forms.Button();
+            this.lblFrån = new System.Windows.Forms.Label();
+            this.lblTill = new System.Windows.Forms.Label();
+            this.dateFrån = new System.Windows.Forms.DateTimePicker();
+            this.dateTill = new System.Windows.Forms.DateTimePicker();
+            this.btnSkapaBokning = new System.Windows.Forms.Button();
+            this.btnAvbryt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +65,7 @@
             this.gridLogi.ReadOnly = true;
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
-            this.gridLogi.Size = new System.Drawing.Size(489, 672);
+            this.gridLogi.Size = new System.Drawing.Size(692, 672);
             this.gridLogi.TabIndex = 1;
             // 
             // lblKund
@@ -78,7 +84,7 @@
             this.lblLogi.AutoSize = true;
             this.lblLogi.BackColor = System.Drawing.Color.Transparent;
             this.lblLogi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogi.Location = new System.Drawing.Point(590, 86);
+            this.lblLogi.Location = new System.Drawing.Point(711, 105);
             this.lblLogi.Name = "lblLogi";
             this.lblLogi.Size = new System.Drawing.Size(361, 54);
             this.lblLogi.TabIndex = 3;
@@ -110,6 +116,60 @@
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
             // 
+            // lblFrån
+            // 
+            this.lblFrån.AutoSize = true;
+            this.lblFrån.BackColor = System.Drawing.Color.Transparent;
+            this.lblFrån.Location = new System.Drawing.Point(1326, 216);
+            this.lblFrån.Name = "lblFrån";
+            this.lblFrån.Size = new System.Drawing.Size(58, 25);
+            this.lblFrån.TabIndex = 7;
+            this.lblFrån.Text = "Från:";
+            // 
+            // lblTill
+            // 
+            this.lblTill.AutoSize = true;
+            this.lblTill.BackColor = System.Drawing.Color.Transparent;
+            this.lblTill.Location = new System.Drawing.Point(1341, 328);
+            this.lblTill.Name = "lblTill";
+            this.lblTill.Size = new System.Drawing.Size(43, 25);
+            this.lblTill.TabIndex = 10;
+            this.lblTill.Text = "Till:";
+            // 
+            // dateFrån
+            // 
+            this.dateFrån.Location = new System.Drawing.Point(1266, 244);
+            this.dateFrån.Name = "dateFrån";
+            this.dateFrån.Size = new System.Drawing.Size(200, 29);
+            this.dateFrån.TabIndex = 11;
+            // 
+            // dateTill
+            // 
+            this.dateTill.Location = new System.Drawing.Point(1266, 356);
+            this.dateTill.Name = "dateTill";
+            this.dateTill.Size = new System.Drawing.Size(200, 29);
+            this.dateTill.TabIndex = 12;
+            // 
+            // btnSkapaBokning
+            // 
+            this.btnSkapaBokning.Location = new System.Drawing.Point(1256, 450);
+            this.btnSkapaBokning.Name = "btnSkapaBokning";
+            this.btnSkapaBokning.Size = new System.Drawing.Size(219, 71);
+            this.btnSkapaBokning.TabIndex = 13;
+            this.btnSkapaBokning.Text = "Skapa Bokning";
+            this.btnSkapaBokning.UseVisualStyleBackColor = true;
+            this.btnSkapaBokning.Click += new System.EventHandler(this.btnSkapaBokning_Click);
+            // 
+            // btnAvbryt
+            // 
+            this.btnAvbryt.Location = new System.Drawing.Point(1315, 803);
+            this.btnAvbryt.Name = "btnAvbryt";
+            this.btnAvbryt.Size = new System.Drawing.Size(92, 34);
+            this.btnAvbryt.TabIndex = 14;
+            this.btnAvbryt.Text = "Avbryt";
+            this.btnAvbryt.UseVisualStyleBackColor = true;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -117,6 +177,12 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1498, 849);
+            this.Controls.Add(this.btnAvbryt);
+            this.Controls.Add(this.btnSkapaBokning);
+            this.Controls.Add(this.dateTill);
+            this.Controls.Add(this.dateFrån);
+            this.Controls.Add(this.lblTill);
+            this.Controls.Add(this.lblFrån);
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilter);
@@ -143,5 +209,11 @@
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.Label lblFrån;
+        private System.Windows.Forms.Label lblTill;
+        private System.Windows.Forms.DateTimePicker dateFrån;
+        private System.Windows.Forms.DateTimePicker dateTill;
+        private System.Windows.Forms.Button btnSkapaBokning;
+        private System.Windows.Forms.Button btnAvbryt;
     }
 }
