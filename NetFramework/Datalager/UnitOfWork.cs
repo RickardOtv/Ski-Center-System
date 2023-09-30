@@ -79,7 +79,7 @@ namespace Datalager
                 }
                 conn.Close();
             }
-
+            SaveChanges();
             #endregion
         }
 
@@ -87,7 +87,7 @@ namespace Datalager
         public void Seed()
         {
             Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", "123", "Formell/byråkratiskt anställd");
-           anställda.Add(anställd1);
+            anställda.Add(anställd1);
 
             SaveChanges();
         }
