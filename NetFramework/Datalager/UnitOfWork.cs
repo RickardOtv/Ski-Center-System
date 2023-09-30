@@ -63,7 +63,7 @@ namespace Datalager
         //RS:a specifik table
         public void ResetTable(string tableName)
         {
-            #region
+            #region script
             using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
             using (SqlCommand cmd = new SqlCommand($"ALTER TABLE {tableName} NOCHECK CONSTRAINT all; DROP TABLE {tableName}", conn))
             {
@@ -80,7 +80,7 @@ namespace Datalager
                 conn.Close();
             }
             SaveChanges();
-            #endregion
+            #endregion script
         }
 
 

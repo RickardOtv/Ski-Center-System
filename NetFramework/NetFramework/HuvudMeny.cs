@@ -21,9 +21,10 @@ namespace NetFramework
         private Kontroller kontroller;
         public HuvudMeny(LoggaIn loggaInMeny, Kontroller kontroller)
         {
+            InitializeComponent();
             this.loggaInMeny = loggaInMeny;
             this.kontroller = kontroller;
-            InitializeComponent();
+
         }
         public string InloggadAnvandare
         {
@@ -32,12 +33,9 @@ namespace NetFramework
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-          
             BokningsMeny bokningsMeny = new BokningsMeny(this, kontroller);
             bokningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
             bokningsMeny.Show();
-
         }
 
         private void lblMata_Click(object sender, EventArgs e)
