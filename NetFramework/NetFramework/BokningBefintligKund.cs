@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace NetFramework
         UnitOfWork unitOfWork = new UnitOfWork();
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
+        private Kund valdKund;
+        Logi valdLogi = new Logi();
         public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
         {
             this.loggaInMeny = loggaInMeny;
@@ -60,12 +63,23 @@ namespace NetFramework
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnSkapaBokning_Click(object sender, EventArgs e)
         {
+            DateTime från = DateTime.Parse(dateFrån.Text);
+            DateTime till = DateTime.Parse(dateTill.Text);
+            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
+            valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
 
+            if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
+            {
+                Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
+                RefreshLogi();
+                MessageBox.Show($"Från: {nyBokning.Från} \nTill: {nyBokning.Till} \n Vald logi: {nyBokning.Logi} \nBokningsID: {nyBokning.BokningsID}");
+                this.Close();
+            }
         }
 
         private void btnSök_Click(object sender, EventArgs e)

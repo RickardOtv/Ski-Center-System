@@ -32,10 +32,8 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
-            //ResetTable();
            //Reset();
-          //Seed();
-            
+           //Seed();
         }
         // Reseta alla tables
         public void Reset()
