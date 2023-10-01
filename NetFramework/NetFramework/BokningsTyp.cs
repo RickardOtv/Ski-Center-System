@@ -25,12 +25,14 @@ namespace NetFramework
         private void btnBefintlig_Click(object sender, EventArgs e)
         {
             BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
+            this.Close();
             befintligKund.Show();
         }
 
         private void btnNyKund_Click(object sender, EventArgs e)
         {
-            BokningNyKund nyKund = new BokningNyKund();
+            BokningNyKund nyKund = new BokningNyKund(loggaIn, kontroller);
+            this.Close();
             nyKund.Show();
         }
     }
