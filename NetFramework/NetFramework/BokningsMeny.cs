@@ -13,15 +13,13 @@ namespace NetFramework
 {
     public partial class BokningsMeny : Form
     {
-        //private HuvudMeny huvudMeny;
         private Kontroller kontroller;
-        private HuvudMeny huvudMeny;
-       // private LoggaIn loggaIn;
+        private LoggaIn loggaIn;
 
-        public BokningsMeny(HuvudMeny huvudMeny, Kontroller kontroller)
+        public BokningsMeny(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
-           this.huvudMeny = huvudMeny;
+           this.loggaIn = loggaIn;
            this.kontroller = kontroller;
         }
         public string InloggadAnvandare
@@ -30,27 +28,27 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-        private void btnVisaBokning_Click(object sender, EventArgs e)
-        {
-            Bokningcs bokningscs = new Bokningcs(this, kontroller);
-            bokningscs.InloggadAnvandare = txtAnvandarnamn.Text;
-            bokningscs.Show();
-
-        }
-
         private void btnLediga_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnBokning_Click(object sender, EventArgs e)
-        {
-
+            VisaLedigLogi ledigLogi = new VisaLedigLogi(loggaIn, kontroller);
+            ledigLogi.Show();
+            ledigLogi.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-           // HuvudMeny huvudMeny = new HuvudMeny();
+            Close();
+        }
+
+        private void btnSkapaBokning_Click(object sender, EventArgs e)
+        {
+            BokningsTyp bokningsTyp = new BokningsTyp(loggaIn, kontroller);
+            bokningsTyp.Show();
+        }
+
+        private void btnVisaBokningar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,11 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bokningcs.cs">
+    <Compile Include="BokningNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bokningcs.Designer.cs">
-      <DependentUpon>Bokningcs.cs</DependentUpon>
+    <Compile Include="BokningNyKund.Designer.cs">
+      <DependentUpon>BokningNyKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BokningBefintligKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BokningBefintligKund.Designer.cs">
+      <DependentUpon>BokningBefintligKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BokningsTyp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BokningsTyp.Designer.cs">
+      <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisaLedigLogi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisaLedigLogi.Designer.cs">
+      <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </Compile>
     <Compile Include="BokningsMeny.cs">
       <SubType>Form</SubType>
@@ -82,8 +100,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bokningcs.resx">
-      <DependentUpon>Bokningcs.cs</DependentUpon>
+    <EmbeddedResource Include="BokningNyKund.resx">
+      <DependentUpon>BokningNyKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BokningBefintligKund.resx">
+      <DependentUpon>BokningBefintligKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BokningsTyp.resx">
+      <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisaLedigLogi.resx">
+      <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BokningsMeny.resx">
       <DependentUpon>BokningsMeny.cs</DependentUpon>
@@ -102,6 +129,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -130,6 +158,15 @@
       <Project>{727ce495-456f-4c9a-99b7-d9e43bb399fa}</Project>
       <Name>Entitetslager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1286ce2aae8bf42293dc770d573c0eb0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-red-ski-equipment-at-the-ski-resort-png-image_5777618.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v1_txt2img_77f610f8-523e-4179-b8c4-568ee1e75053.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
