@@ -124,5 +124,10 @@ namespace Affärslager
 
             return totalPrice;
         }
+
+        public IList<Bokning> HämtaBokningar()
+        {
+            return unitOfWork.bokningar.ToList<Bokning>();
+        }
     }
 }
