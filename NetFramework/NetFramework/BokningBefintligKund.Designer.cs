@@ -85,7 +85,7 @@
             this.lblLogi.AutoSize = true;
             this.lblLogi.BackColor = System.Drawing.Color.Transparent;
             this.lblLogi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogi.Location = new System.Drawing.Point(446, 34);
+            this.lblLogi.Location = new System.Drawing.Point(446, 69);
             this.lblLogi.Name = "lblLogi";
             this.lblLogi.Size = new System.Drawing.Size(410, 63);
             this.lblLogi.TabIndex = 3;
@@ -206,7 +206,6 @@
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.gridLogi);
             this.Controls.Add(this.gridKunder);
-            this.KeyPreview = true;
             this.Name = "BokningBefintligKund";
             this.Text = "Befintlig Kund";
             this.Load += new System.EventHandler(this.BokningBefintligKund_Load);
