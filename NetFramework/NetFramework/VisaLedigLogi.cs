@@ -44,10 +44,12 @@ namespace NetFramework
                 DateTime startDate = startDatePicker.Value;
                 DateTime endDate = endDatePicker.Value;
 
-                string select = "SELECT Logi.*, Bokning.* " +
-                                "FROM Logi " +
-                                "LEFT JOIN Bokning ON Logi.LogiID = Bokning.LogiID " +
-                                "WHERE Från >= @StartDate AND Till <= @EndDate";
+                string select = "SELECT Logi.* " +
+               "FROM Logi " +
+               "LEFT JOIN Bokning ON Logi.LogiID = Bokning.LogiID " +
+               "AND (@EndDate >= Bokning.Från AND @StartDate <= Bokning.Till) " +
+               "WHERE Bokning.Från IS NULL";
+
                 var c = new SqlConnection(cs);
                 var dataAdapter = new SqlDataAdapter(select, c);
 
@@ -65,10 +67,6 @@ namespace NetFramework
                 dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
                 dataGridView1.Columns["IsAvailable"].HeaderText = "Tillgänglighet";
                 
-                
-                // Tabellnamn för bokningsdel
-                dataGridView1.Columns["Från"].HeaderText = "Startdatum";
-                dataGridView1.Columns["Till"].HeaderText = "Slutdatum";
 
                 label1.Text = "Du är ihopkopplad";
             }

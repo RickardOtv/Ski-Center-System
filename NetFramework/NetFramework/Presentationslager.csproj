@@ -74,6 +74,12 @@
     <Compile Include="BokningsTyp.Designer.cs">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisaBokningar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisaBokningar.Designer.cs">
+      <DependentUpon>VisaBokningar.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisaLedigLogi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BokningsTyp.resx">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisaBokningar.resx">
+      <DependentUpon>VisaBokningar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisaLedigLogi.resx">
       <DependentUpon>VisaLedigLogi.cs</DependentUpon>
