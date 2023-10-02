@@ -44,13 +44,11 @@ namespace NetFramework
 
             Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
             MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
-
-            //MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Logi.LogiID}
-
-
-
-
+            BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
+            this.Close();
+            befintligKund.Show();
         }
+
 
 
         private void btnTillbaka_Click(object sender, EventArgs e)
