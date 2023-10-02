@@ -100,6 +100,8 @@ namespace NetFramework
 
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
+            DateTime från = dateFrån.Value;
+            DateTime till = dateTill.Value;
             decimal pris = kontroller.KollaPris(från, till);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
