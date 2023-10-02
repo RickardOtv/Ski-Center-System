@@ -56,11 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bokningcs.cs">
+    <Compile Include="BokningNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bokningcs.Designer.cs">
-      <DependentUpon>Bokningcs.cs</DependentUpon>
+    <Compile Include="BokningNyKund.Designer.cs">
+      <DependentUpon>BokningNyKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BokningBefintligKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BokningBefintligKund.Designer.cs">
+      <DependentUpon>BokningBefintligKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BokningsTyp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BokningsTyp.Designer.cs">
+      <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisaLedigLogi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisaLedigLogi.Designer.cs">
+      <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </Compile>
     <Compile Include="BokningsMeny.cs">
       <SubType>Form</SubType>
@@ -82,14 +100,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisaLedigaLogi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VisaLedigaLogi.Designer.cs">
-      <DependentUpon>VisaLedigaLogi.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Bokningcs.resx">
-      <DependentUpon>Bokningcs.cs</DependentUpon>
+    <EmbeddedResource Include="BokningNyKund.resx">
+      <DependentUpon>BokningNyKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BokningBefintligKund.resx">
+      <DependentUpon>BokningBefintligKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BokningsTyp.resx">
+      <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisaLedigLogi.resx">
+      <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BokningsMeny.resx">
       <DependentUpon>BokningsMeny.cs</DependentUpon>
@@ -110,9 +131,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="VisaLedigaLogi.resx">
-      <DependentUpon>VisaLedigaLogi.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

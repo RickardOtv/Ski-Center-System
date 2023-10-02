@@ -32,10 +32,9 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
-            //ResetTable();
+            //ResetTable("LogiPris");
            //Reset();
-          //Seed();
-            
+           //Seed();
         }
         // Reseta alla tables
         public void Reset()
@@ -63,7 +62,7 @@ namespace Datalager
         //RS:a specifik table
         public void ResetTable(string tableName)
         {
-            #region
+            #region script
             using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
             using (SqlCommand cmd = new SqlCommand($"ALTER TABLE {tableName} NOCHECK CONSTRAINT all; DROP TABLE {tableName}", conn))
             {
@@ -80,15 +79,14 @@ namespace Datalager
                 conn.Close();
             }
             SaveChanges();
-            #endregion
+            #endregion script
         }
 
 
         public void Seed()
         {
-            Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", "123", "Formell/byråkratiskt anställd");
+            Anställd anställd1 = new Anställd(1, "Sasha","Stojanovic", "123", "Bokare" );
             anställda.Add(anställd1);
-
             SaveChanges();
         }
 

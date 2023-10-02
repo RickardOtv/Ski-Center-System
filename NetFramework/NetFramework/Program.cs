@@ -17,8 +17,6 @@ namespace NetFramework
         static void Main()
         {
             unitOfWork = new UnitOfWork();
-            //unitOfWork.Reset();
-            //unitOfWork.Seed();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
