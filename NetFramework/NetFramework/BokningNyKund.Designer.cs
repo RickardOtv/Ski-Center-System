@@ -32,14 +32,14 @@
             this.btnGaVidare = new System.Windows.Forms.Button();
             this.lblKund = new System.Windows.Forms.Label();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBoxAdress = new System.Windows.Forms.TextBox();
-            this.textBoxTelefonNr = new System.Windows.Forms.TextBox();
-            this.textBoxNamn = new System.Windows.Forms.TextBox();
-            this.txtboxPersonNr = new System.Windows.Forms.TextBox();
-            this.textBoxPostNr = new System.Windows.Forms.TextBox();
-            this.textBoxOrt = new System.Windows.Forms.TextBox();
-            this.textBoxTyp = new System.Windows.Forms.TextBox();
-            this.textBoxKredit = new System.Windows.Forms.TextBox();
+            this.txtBoxAdress = new System.Windows.Forms.TextBox();
+            this.txtBoxTelefonNr = new System.Windows.Forms.TextBox();
+            this.txtboxNamn = new System.Windows.Forms.TextBox();
+            this.txtBoxPersonNr = new System.Windows.Forms.TextBox();
+            this.txtBoxPostNr = new System.Windows.Forms.TextBox();
+            this.txtBoxOrt = new System.Windows.Forms.TextBox();
+            this.txtBoxTyp = new System.Windows.Forms.TextBox();
+            this.txtBoxKredit = new System.Windows.Forms.TextBox();
             this.lblLösenord = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,80 +90,96 @@
             this.txtBoxEmail.Size = new System.Drawing.Size(131, 20);
             this.txtBoxEmail.TabIndex = 6;
             this.txtBoxEmail.Text = "Email:";
+            this.txtBoxEmail.Enter += new System.EventHandler(this.txtBoxEmail_Enter);
+            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_Leave);
             // 
-            // textBoxAdress
+            // txtBoxAdress
             // 
-            this.textBoxAdress.Location = new System.Drawing.Point(255, 159);
-            this.textBoxAdress.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxAdress.Name = "textBoxAdress";
-            this.textBoxAdress.Size = new System.Drawing.Size(131, 20);
-            this.textBoxAdress.TabIndex = 7;
-            this.textBoxAdress.Text = "Adress:";
+            this.txtBoxAdress.Location = new System.Drawing.Point(255, 159);
+            this.txtBoxAdress.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxAdress.Name = "txtBoxAdress";
+            this.txtBoxAdress.Size = new System.Drawing.Size(131, 20);
+            this.txtBoxAdress.TabIndex = 7;
+            this.txtBoxAdress.Text = "Adress:";
+            this.txtBoxAdress.Enter += new System.EventHandler(this.txtBoxAdress_Enter);
+            this.txtBoxAdress.Leave += new System.EventHandler(this.txtBoxAdress_Leave);
             // 
-            // textBoxTelefonNr
+            // txtBoxTelefonNr
             // 
-            this.textBoxTelefonNr.Location = new System.Drawing.Point(255, 132);
-            this.textBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxTelefonNr.Name = "textBoxTelefonNr";
-            this.textBoxTelefonNr.Size = new System.Drawing.Size(131, 20);
-            this.textBoxTelefonNr.TabIndex = 8;
-            this.textBoxTelefonNr.Text = "Telefonnummer:";
+            this.txtBoxTelefonNr.Location = new System.Drawing.Point(255, 132);
+            this.txtBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxTelefonNr.Name = "txtBoxTelefonNr";
+            this.txtBoxTelefonNr.Size = new System.Drawing.Size(131, 20);
+            this.txtBoxTelefonNr.TabIndex = 8;
+            this.txtBoxTelefonNr.Text = "Telefonnummer:";
+            this.txtBoxTelefonNr.Enter += new System.EventHandler(this.txtBoxTelefonNr_Enter);
+            this.txtBoxTelefonNr.Leave += new System.EventHandler(this.txtBoxTelefonNr_Leave);
             // 
-            // textBoxNamn
+            // txtboxNamn
             // 
-            this.textBoxNamn.Location = new System.Drawing.Point(107, 132);
-            this.textBoxNamn.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxNamn.Name = "textBoxNamn";
-            this.textBoxNamn.Size = new System.Drawing.Size(131, 20);
-            this.textBoxNamn.TabIndex = 9;
-            this.textBoxNamn.Text = "Namn:";
+            this.txtboxNamn.Location = new System.Drawing.Point(107, 132);
+            this.txtboxNamn.Margin = new System.Windows.Forms.Padding(1);
+            this.txtboxNamn.Name = "txtboxNamn";
+            this.txtboxNamn.Size = new System.Drawing.Size(131, 20);
+            this.txtboxNamn.TabIndex = 9;
+            this.txtboxNamn.Text = "Namn:";
+            this.txtboxNamn.Enter += new System.EventHandler(this.textBoxNamn_Enter);
+            this.txtboxNamn.Leave += new System.EventHandler(this.textBoxNamn_Leave);
             // 
-            // txtboxPersonNr
+            // txtBoxPersonNr
             // 
-            this.txtboxPersonNr.Location = new System.Drawing.Point(107, 92);
-            this.txtboxPersonNr.Margin = new System.Windows.Forms.Padding(1);
-            this.txtboxPersonNr.Name = "txtboxPersonNr";
-            this.txtboxPersonNr.Size = new System.Drawing.Size(279, 20);
-            this.txtboxPersonNr.TabIndex = 10;
-            this.txtboxPersonNr.Text = "Personnummer:";
-            this.txtboxPersonNr.Enter += new System.EventHandler(this.TxtBox_EnterLeave);
-            this.txtboxPersonNr.Leave += new System.EventHandler(this.TxtBox_EnterLeave);
+            this.txtBoxPersonNr.Location = new System.Drawing.Point(107, 92);
+            this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxPersonNr.Name = "txtBoxPersonNr";
+            this.txtBoxPersonNr.Size = new System.Drawing.Size(279, 20);
+            this.txtBoxPersonNr.TabIndex = 10;
+            this.txtBoxPersonNr.Text = "Personnummer:";
+            this.txtBoxPersonNr.Enter += new System.EventHandler(this.txtboxPersonNr_Enter);
+            this.txtBoxPersonNr.Leave += new System.EventHandler(this.txtboxPersonNr_Leave);
             // 
-            // textBoxPostNr
+            // txtBoxPostNr
             // 
-            this.textBoxPostNr.Location = new System.Drawing.Point(107, 185);
-            this.textBoxPostNr.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxPostNr.Name = "textBoxPostNr";
-            this.textBoxPostNr.Size = new System.Drawing.Size(131, 20);
-            this.textBoxPostNr.TabIndex = 11;
-            this.textBoxPostNr.Text = "Postnummer:";
+            this.txtBoxPostNr.Location = new System.Drawing.Point(107, 185);
+            this.txtBoxPostNr.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxPostNr.Name = "txtBoxPostNr";
+            this.txtBoxPostNr.Size = new System.Drawing.Size(131, 20);
+            this.txtBoxPostNr.TabIndex = 11;
+            this.txtBoxPostNr.Text = "Postnummer:";
+            this.txtBoxPostNr.Enter += new System.EventHandler(this.txtBoxPostNr_Enter);
+            this.txtBoxPostNr.Leave += new System.EventHandler(this.textBoxPostNr_Leave);
             // 
-            // textBoxOrt
+            // txtBoxOrt
             // 
-            this.textBoxOrt.Location = new System.Drawing.Point(255, 185);
-            this.textBoxOrt.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxOrt.Name = "textBoxOrt";
-            this.textBoxOrt.Size = new System.Drawing.Size(131, 20);
-            this.textBoxOrt.TabIndex = 12;
-            this.textBoxOrt.Text = "Postort:";
+            this.txtBoxOrt.Location = new System.Drawing.Point(255, 185);
+            this.txtBoxOrt.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxOrt.Name = "txtBoxOrt";
+            this.txtBoxOrt.Size = new System.Drawing.Size(131, 20);
+            this.txtBoxOrt.TabIndex = 12;
+            this.txtBoxOrt.Text = "Postort:";
+            this.txtBoxOrt.Enter += new System.EventHandler(this.txtBoxOrt_Enter);
+            this.txtBoxOrt.Leave += new System.EventHandler(this.txtBoxOrt_Leave);
             // 
-            // textBoxTyp
+            // txtBoxTyp
             // 
-            this.textBoxTyp.Location = new System.Drawing.Point(107, 216);
-            this.textBoxTyp.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxTyp.Name = "textBoxTyp";
-            this.textBoxTyp.Size = new System.Drawing.Size(131, 20);
-            this.textBoxTyp.TabIndex = 13;
-            this.textBoxTyp.Text = "Privat/företag:";
+            this.txtBoxTyp.Location = new System.Drawing.Point(107, 216);
+            this.txtBoxTyp.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxTyp.Name = "txtBoxTyp";
+            this.txtBoxTyp.Size = new System.Drawing.Size(131, 20);
+            this.txtBoxTyp.TabIndex = 13;
+            this.txtBoxTyp.Text = "Privat/företag:";
+            this.txtBoxTyp.Enter += new System.EventHandler(this.txtBoxTyp_Enter);
+            this.txtBoxTyp.Leave += new System.EventHandler(this.textBoxTyp_Leave);
             // 
-            // textBoxKredit
+            // txtBoxKredit
             // 
-            this.textBoxKredit.Location = new System.Drawing.Point(255, 216);
-            this.textBoxKredit.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxKredit.Name = "textBoxKredit";
-            this.textBoxKredit.Size = new System.Drawing.Size(131, 20);
-            this.textBoxKredit.TabIndex = 14;
-            this.textBoxKredit.Text = "Kreditgräns:";
+            this.txtBoxKredit.Location = new System.Drawing.Point(255, 216);
+            this.txtBoxKredit.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBoxKredit.Name = "txtBoxKredit";
+            this.txtBoxKredit.Size = new System.Drawing.Size(131, 20);
+            this.txtBoxKredit.TabIndex = 14;
+            this.txtBoxKredit.Text = "Kreditgräns:";
+            this.txtBoxKredit.Enter += new System.EventHandler(this.txtBoxKredit_Enter);
+            this.txtBoxKredit.Leave += new System.EventHandler(this.txtBoxKredit_Leave);
             // 
             // lblLösenord
             // 
@@ -268,14 +284,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLösenord);
-            this.Controls.Add(this.textBoxKredit);
-            this.Controls.Add(this.textBoxTyp);
-            this.Controls.Add(this.textBoxOrt);
-            this.Controls.Add(this.textBoxPostNr);
-            this.Controls.Add(this.txtboxPersonNr);
-            this.Controls.Add(this.textBoxNamn);
-            this.Controls.Add(this.textBoxTelefonNr);
-            this.Controls.Add(this.textBoxAdress);
+            this.Controls.Add(this.txtBoxKredit);
+            this.Controls.Add(this.txtBoxTyp);
+            this.Controls.Add(this.txtBoxOrt);
+            this.Controls.Add(this.txtBoxPostNr);
+            this.Controls.Add(this.txtBoxPersonNr);
+            this.Controls.Add(this.txtboxNamn);
+            this.Controls.Add(this.txtBoxTelefonNr);
+            this.Controls.Add(this.txtBoxAdress);
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.btnGaVidare);
@@ -294,14 +310,14 @@
         private System.Windows.Forms.Button btnGaVidare;
         private System.Windows.Forms.Label lblKund;
         private System.Windows.Forms.TextBox txtBoxEmail;
-        private System.Windows.Forms.TextBox textBoxAdress;
-        private System.Windows.Forms.TextBox textBoxTelefonNr;
-        private System.Windows.Forms.TextBox textBoxNamn;
-        private System.Windows.Forms.TextBox txtboxPersonNr;
-        private System.Windows.Forms.TextBox textBoxPostNr;
-        private System.Windows.Forms.TextBox textBoxOrt;
-        private System.Windows.Forms.TextBox textBoxTyp;
-        private System.Windows.Forms.TextBox textBoxKredit;
+        private System.Windows.Forms.TextBox txtBoxAdress;
+        private System.Windows.Forms.TextBox txtBoxTelefonNr;
+        private System.Windows.Forms.TextBox txtboxNamn;
+        private System.Windows.Forms.TextBox txtBoxPersonNr;
+        private System.Windows.Forms.TextBox txtBoxPostNr;
+        private System.Windows.Forms.TextBox txtBoxOrt;
+        private System.Windows.Forms.TextBox txtBoxTyp;
+        private System.Windows.Forms.TextBox txtBoxKredit;
         private System.Windows.Forms.Label lblLösenord;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
