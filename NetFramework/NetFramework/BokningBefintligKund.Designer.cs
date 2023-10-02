@@ -32,7 +32,6 @@
             this.gridLogi = new System.Windows.Forms.DataGridView();
             this.lblKund = new System.Windows.Forms.Label();
             this.lblLogi = new System.Windows.Forms.Label();
-            this.txtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSök = new System.Windows.Forms.Button();
             this.lblFrån = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.btnSkapaBokning = new System.Windows.Forms.Button();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.btnKollaPris = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.gridLogi.ReadOnly = true;
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
-            this.gridLogi.Size = new System.Drawing.Size(550, 249);
+            this.gridLogi.Size = new System.Drawing.Size(558, 249);
             this.gridLogi.TabIndex = 1;
             // 
             // lblKund
@@ -90,13 +90,6 @@
             this.lblLogi.Size = new System.Drawing.Size(410, 63);
             this.lblLogi.TabIndex = 3;
             this.lblLogi.Text = "Välj logialterativ";
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(188, 597);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(264, 31);
-            this.txtFilter.TabIndex = 4;
             // 
             // label1
             // 
@@ -135,7 +128,7 @@
             this.lblTill.AutoSize = true;
             this.lblTill.BackColor = System.Drawing.Color.Transparent;
             this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTill.Location = new System.Drawing.Point(735, 117);
+            this.lblTill.Location = new System.Drawing.Point(743, 117);
             this.lblTill.Name = "lblTill";
             this.lblTill.Size = new System.Drawing.Size(51, 25);
             this.lblTill.TabIndex = 10;
@@ -150,7 +143,7 @@
             // 
             // dateTill
             // 
-            this.dateTill.Location = new System.Drawing.Point(740, 145);
+            this.dateTill.Location = new System.Drawing.Point(748, 145);
             this.dateTill.Name = "dateTill";
             this.dateTill.Size = new System.Drawing.Size(199, 31);
             this.dateTill.TabIndex = 12;
@@ -184,6 +177,13 @@
             this.btnKollaPris.Text = "Kolla Pris";
             this.btnKollaPris.UseVisualStyleBackColor = true;
             this.btnKollaPris.Click += new System.EventHandler(this.btnKollaPris_Click);
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(190, 597);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(264, 31);
+            this.txtFilter.TabIndex = 4;
             // 
             // BokningBefintligKund
             // 
@@ -222,7 +222,6 @@
         private System.Windows.Forms.DataGridView gridLogi;
         private System.Windows.Forms.Label lblKund;
         private System.Windows.Forms.Label lblLogi;
-        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.Label lblFrån;
@@ -232,5 +231,6 @@
         private System.Windows.Forms.Button btnSkapaBokning;
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Button btnKollaPris;
+        private System.Windows.Forms.TextBox txtFilter;
     }
 }
