@@ -32,6 +32,7 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
+            //ResetTable("LogiPris");
            //Reset();
            //Seed();
         }
@@ -84,9 +85,8 @@ namespace Datalager
 
         public void Seed()
         {
-            Anställd anställd1 = new Anställd(1, "Sasha", "Stojanovic", "123", "Formell/byråkratiskt anställd");
-            anställda.Add(anställd1);
-
+            Kund kund1 = new Kund();
+            kunder.Add(kund1);
             SaveChanges();
         }
 
