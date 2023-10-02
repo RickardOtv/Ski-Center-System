@@ -15,9 +15,7 @@ namespace Entitetslager
         [Key]
         public string LogiID { get; set; }
         public string Typ { get; set; }
-
         public bool IsAvailable { get; set; }
-
 
         public Logi(string logiID, string typ, bool isAvailable)
         {
