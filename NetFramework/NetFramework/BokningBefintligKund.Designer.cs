@@ -49,24 +49,24 @@
             // gridKunder
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridKunder.Location = new System.Drawing.Point(404, 586);
+            this.gridKunder.Location = new System.Drawing.Point(188, 651);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
             this.gridKunder.ReadOnly = true;
             this.gridKunder.RowHeadersWidth = 72;
             this.gridKunder.RowTemplate.Height = 31;
-            this.gridKunder.Size = new System.Drawing.Size(535, 161);
+            this.gridKunder.Size = new System.Drawing.Size(944, 339);
             this.gridKunder.TabIndex = 0;
             // 
             // gridLogi
             // 
             this.gridLogi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLogi.Location = new System.Drawing.Point(392, 205);
+            this.gridLogi.Location = new System.Drawing.Point(389, 192);
             this.gridLogi.Name = "gridLogi";
             this.gridLogi.ReadOnly = true;
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
-            this.gridLogi.Size = new System.Drawing.Size(547, 136);
+            this.gridLogi.Size = new System.Drawing.Size(550, 249);
             this.gridLogi.TabIndex = 1;
             // 
             // lblKund
@@ -74,7 +74,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(521, 425);
+            this.lblKund.Location = new System.Drawing.Point(536, 510);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(250, 63);
             this.lblKund.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(404, 537);
+            this.txtFilter.Location = new System.Drawing.Point(188, 597);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(264, 31);
             this.txtFilter.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 498);
+            this.label1.Location = new System.Drawing.Point(183, 569);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(684, 533);
+            this.btnSök.Location = new System.Drawing.Point(487, 593);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(78, 38);
             this.btnSök.TabIndex = 6;
@@ -143,21 +143,21 @@
             // 
             // dateFrån
             // 
-            this.dateFrån.Location = new System.Drawing.Point(392, 155);
+            this.dateFrån.Location = new System.Drawing.Point(389, 145);
             this.dateFrån.Name = "dateFrån";
             this.dateFrån.Size = new System.Drawing.Size(199, 31);
             this.dateFrån.TabIndex = 11;
             // 
             // dateTill
             // 
-            this.dateTill.Location = new System.Drawing.Point(740, 155);
+            this.dateTill.Location = new System.Drawing.Point(740, 145);
             this.dateTill.Name = "dateTill";
             this.dateTill.Size = new System.Drawing.Size(199, 31);
             this.dateTill.TabIndex = 12;
             // 
             // btnSkapaBokning
             // 
-            this.btnSkapaBokning.Location = new System.Drawing.Point(726, 347);
+            this.btnSkapaBokning.Location = new System.Drawing.Point(1103, 1009);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
             this.btnSkapaBokning.Size = new System.Drawing.Size(213, 49);
             this.btnSkapaBokning.TabIndex = 13;
@@ -167,7 +167,7 @@
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(30, 818);
+            this.btnAvbryt.Location = new System.Drawing.Point(27, 1017);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(100, 41);
             this.btnAvbryt.TabIndex = 14;
@@ -177,9 +177,9 @@
             // 
             // btnKollaPris
             // 
-            this.btnKollaPris.Location = new System.Drawing.Point(543, 347);
+            this.btnKollaPris.Location = new System.Drawing.Point(726, 447);
             this.btnKollaPris.Name = "btnKollaPris";
-            this.btnKollaPris.Size = new System.Drawing.Size(177, 49);
+            this.btnKollaPris.Size = new System.Drawing.Size(213, 49);
             this.btnKollaPris.TabIndex = 15;
             this.btnKollaPris.Text = "Kolla Pris";
             this.btnKollaPris.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1369, 884);
+            this.ClientSize = new System.Drawing.Size(1369, 1083);
             this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnSkapaBokning);
