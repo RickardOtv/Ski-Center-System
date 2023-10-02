@@ -54,6 +54,16 @@ namespace Affärslager
 
         }
 
+        public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
+        {
+            Kund kund = new Kund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
+            unitOfWork.kunder.Add(kund);
+            unitOfWork.SaveChanges();
+            return kund;
+
+        }
+
+        
         public void TaBortBokning(Bokning b)
         {
             b.Logi.IsAvailable = true;

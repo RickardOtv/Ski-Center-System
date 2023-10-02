@@ -24,15 +24,18 @@ namespace Entitetslager
         public string Email { get; set; }
 
 
-        public Kund(int kundID, string typ, int maxbeloppskreditgräns, string adress, string namn, string telefonnummer, string email)
+        public Kund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
         {
-            KundID = kundID;
-            Typ = typ;
-            Maxbeloppskreditgräns = maxbeloppskreditgräns;
-            Adress = adress;
+            Personnummer = personnummer;
             Namn = namn;
             Telefonnummer = telefonnummer;
             Email = email;
+            Adress = adress;
+            PostNr = postNr;
+            PostOrt = postOrt;
+            Typ = typ;
+            Maxbeloppskreditgräns = maxbeloppskreditgräns;
+            
         }
         
         public Kund() { }
