@@ -99,5 +99,9 @@ namespace Affärslager
             decimal totalPris = priser.Sum();
             return totalPris;
         }
+        public IList<Bokning> HämtaBokningar()
+        {
+            return unitOfWork.bokningar.ToList<Bokning>();
+        }
     }
 }
