@@ -49,24 +49,24 @@
             // gridKunder
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridKunder.Location = new System.Drawing.Point(145, 225);
+            this.gridKunder.Location = new System.Drawing.Point(404, 586);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
             this.gridKunder.ReadOnly = true;
             this.gridKunder.RowHeadersWidth = 72;
             this.gridKunder.RowTemplate.Height = 31;
-            this.gridKunder.Size = new System.Drawing.Size(503, 522);
+            this.gridKunder.Size = new System.Drawing.Size(535, 161);
             this.gridKunder.TabIndex = 0;
             // 
             // gridLogi
             // 
             this.gridLogi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLogi.Location = new System.Drawing.Point(725, 225);
+            this.gridLogi.Location = new System.Drawing.Point(392, 205);
             this.gridLogi.Name = "gridLogi";
             this.gridLogi.ReadOnly = true;
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
-            this.gridLogi.Size = new System.Drawing.Size(547, 522);
+            this.gridLogi.Size = new System.Drawing.Size(547, 136);
             this.gridLogi.TabIndex = 1;
             // 
             // lblKund
@@ -74,7 +74,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(269, 61);
+            this.lblKund.Location = new System.Drawing.Point(521, 425);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(250, 63);
             this.lblKund.TabIndex = 2;
@@ -85,15 +85,15 @@
             this.lblLogi.AutoSize = true;
             this.lblLogi.BackColor = System.Drawing.Color.Transparent;
             this.lblLogi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogi.Location = new System.Drawing.Point(790, 71);
+            this.lblLogi.Location = new System.Drawing.Point(446, 34);
             this.lblLogi.Name = "lblLogi";
-            this.lblLogi.Size = new System.Drawing.Size(820, 126);
+            this.lblLogi.Size = new System.Drawing.Size(410, 63);
             this.lblLogi.TabIndex = 3;
             this.lblLogi.Text = "Välj logialterativ";
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(145, 183);
+            this.txtFilter.Location = new System.Drawing.Point(404, 537);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(264, 31);
             this.txtFilter.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 144);
+            this.label1.Location = new System.Drawing.Point(399, 498);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(441, 176);
+            this.btnSök.Location = new System.Drawing.Point(684, 533);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(78, 38);
             this.btnSök.TabIndex = 6;
@@ -124,7 +124,7 @@
             this.lblFrån.AutoSize = true;
             this.lblFrån.BackColor = System.Drawing.Color.Transparent;
             this.lblFrån.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrån.Location = new System.Drawing.Point(720, 144);
+            this.lblFrån.Location = new System.Drawing.Point(387, 117);
             this.lblFrån.Name = "lblFrån";
             this.lblFrån.Size = new System.Drawing.Size(67, 25);
             this.lblFrån.TabIndex = 7;
@@ -135,7 +135,7 @@
             this.lblTill.AutoSize = true;
             this.lblTill.BackColor = System.Drawing.Color.Transparent;
             this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTill.Location = new System.Drawing.Point(1068, 144);
+            this.lblTill.Location = new System.Drawing.Point(735, 117);
             this.lblTill.Name = "lblTill";
             this.lblTill.Size = new System.Drawing.Size(51, 25);
             this.lblTill.TabIndex = 10;
@@ -143,21 +143,21 @@
             // 
             // dateFrån
             // 
-            this.dateFrån.Location = new System.Drawing.Point(725, 183);
+            this.dateFrån.Location = new System.Drawing.Point(392, 155);
             this.dateFrån.Name = "dateFrån";
             this.dateFrån.Size = new System.Drawing.Size(199, 31);
             this.dateFrån.TabIndex = 11;
             // 
             // dateTill
             // 
-            this.dateTill.Location = new System.Drawing.Point(1073, 181);
+            this.dateTill.Location = new System.Drawing.Point(740, 155);
             this.dateTill.Name = "dateTill";
             this.dateTill.Size = new System.Drawing.Size(199, 31);
             this.dateTill.TabIndex = 12;
             // 
             // btnSkapaBokning
             // 
-            this.btnSkapaBokning.Location = new System.Drawing.Point(1051, 768);
+            this.btnSkapaBokning.Location = new System.Drawing.Point(726, 347);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
             this.btnSkapaBokning.Size = new System.Drawing.Size(213, 49);
             this.btnSkapaBokning.TabIndex = 13;
@@ -177,7 +177,7 @@
             // 
             // btnKollaPris
             // 
-            this.btnKollaPris.Location = new System.Drawing.Point(849, 768);
+            this.btnKollaPris.Location = new System.Drawing.Point(543, 347);
             this.btnKollaPris.Name = "btnKollaPris";
             this.btnKollaPris.Size = new System.Drawing.Size(177, 49);
             this.btnKollaPris.TabIndex = 15;
