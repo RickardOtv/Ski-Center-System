@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using Datalager;
@@ -55,10 +57,22 @@ namespace Affärslager
 
         }
 
+        public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
+        {
+            Kund kund = new Kund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
+            unitOfWork.kunder.Add(kund);
+            unitOfWork.SaveChanges();
+            return kund;
+
+        }
+
+
+
         public void TaBortBokning(Bokning b, Logi l)
         {
             //Saknar att utrusning/skidskola blir available
             l.IsAvailable = true; //Buggat för nån anledning
+
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
@@ -83,26 +97,32 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
-
         public decimal KollaPris(DateTime från, DateTime till)
         {
-            var cultureInfo = CultureInfo.CurrentCulture;//Ingen aning vad detta är
-            var veckor = Enumerable.Range(0, (int)(till - från).TotalDays + 1)
-                .Select(offset => cultureInfo.Calendar.GetWeekOfYear(från.AddDays(offset), cultureInfo.DateTimeFormat.CalendarWeekRule, cultureInfo.DateTimeFormat.FirstDayOfWeek))
+            var cultureInfo = CultureInfo.CurrentCulture; // You can specify a specific culture if needed
+
+            // Find the relevant week and year combinations for the given date range
+            var relevantWeeksAndYears = Enumerable.Range(0, (int)(till - från).TotalDays + 1)
+                .Select(offset => new {
+                    WeekNumber = cultureInfo.Calendar.GetWeekOfYear(från.AddDays(offset), cultureInfo.DateTimeFormat.CalendarWeekRule, cultureInfo.DateTimeFormat.FirstDayOfWeek),
+                    Year = från.AddDays(offset).Year
+                })
                 .Distinct()
                 .ToList();
 
-            var priser = unitOfWork.logiPris
-                .Where(lp => veckor.Contains(lp.Vecka))
+            // Extract the week numbers from the relevantWeeksAndYears list
+            var relevantWeekNumbers = relevantWeeksAndYears.Select(ry => ry.WeekNumber).ToList();
+
+            // Query the LogisticsPrice table to get prices for the relevant week numbers
+            var prices = unitOfWork.logiPris
+                .Where(lp => relevantWeekNumbers.Contains(lp.Vecka))
                 .Select(lp => lp.Pris)
                 .ToList();
 
-            decimal totalPris = priser.Sum();
-            return totalPris;
-        }
-        public IList<Bokning> HämtaBokningar()
-        {
-            return unitOfWork.bokningar.ToList<Bokning>();
+            // Calculate the total price based on the prices for all relevant weeks
+            decimal totalPrice = prices.Sum();
+
+            return totalPrice;
         }
     }
 }
