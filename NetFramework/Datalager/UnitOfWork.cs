@@ -85,8 +85,8 @@ namespace Datalager
 
         public void Seed()
         {
-            Kund kund1 = new Kund();
-            kunder.Add(kund1);
+            Anställd anställd1 = new Anställd(1, "Sasha","Stojanovic", "123", "Bokare" );
+            anställda.Add(anställd1);
             SaveChanges();
         }
 
