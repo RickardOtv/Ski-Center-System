@@ -14,14 +14,13 @@ using System.Windows.Forms;
 
 namespace NetFramework
 {
-    public partial class visaBokningar : Form
+    public partial class VisaBokningar : Form
     {
         UnitOfWork unitOfWork = new UnitOfWork();
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
-        private Bokning valdBokning;
 
-        public visaBokningar(LoggaIn loggaInMeny, Kontroller kontroller)
+        public VisaBokningar(LoggaIn loggaInMeny, Kontroller kontroller)
         {
             this.loggaInMeny = loggaInMeny;
             this.kontroller = kontroller;
@@ -33,22 +32,24 @@ namespace NetFramework
         {
             var bokningar = kontroller.HämtaBokningar();
             gridBokningar.DataSource = bokningar;
+            /*
             gridBokningar.AutoGenerateColumns = false;
-            gridBokningar.Columns["Maxbeloppskreditgräns"].Visible = false;
-            gridBokningar.Columns["Adress"].Visible = false;
-            gridBokningar.Columns["PostOrt"].Visible = false;
-            gridBokningar.Columns["PostNr"].Visible = false;
-            gridBokningar.Columns["Telefonnummer"].Visible = false;
-            gridBokningar.Columns["Email"].Visible = false;
-            gridBokningar.Columns["KundID"].DisplayIndex = 0;
-            gridBokningar.Columns["Namn"].DisplayIndex = 1;
-            gridBokningar.Columns["Typ"].DisplayIndex = 2;
-            gridBokningar.Columns["Personnummer"].DisplayIndex = 3;
+            gridBokningar.Columns["Uthyrning"].Visible = false;
+            gridBokningar.Columns["Logi"].Visible = false;
+            gridBokningar.Columns["Kund"].Visible = false;
+            gridBokningar.Columns["Skidlektion"].Visible = false;
+            gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
+            gridBokningar.Columns["KundID"].DisplayIndex = 1;
+            gridBokningar.Columns["LogiID"].DisplayIndex = 2;
+            gridBokningar.Columns["UthyrningsID"].DisplayIndex = 3;
+            gridBokningar.Columns["Från"].DisplayIndex = 4;
+            gridBokningar.Columns["Till"].DisplayIndex = 5;
+            */
         }
 
-        private void visaBokningar_Load(object sender, EventArgs e)
+        private void VisaBokningar_Load(object sender, EventArgs e)
         {
-            RefreshBokningar();
+            RefreshBokningar(); 
         }
 
         private void btn_tillbaka_Click(object sender, EventArgs e)

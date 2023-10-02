@@ -48,7 +48,8 @@ namespace NetFramework
 
         private void btnVisaBokningar_Click(object sender, EventArgs e)
         {
-
+            VisaBokningar visabokningar = new VisaBokningar(loggaIn, kontroller);
+            visabokningar.Show();
         }
     }
 }

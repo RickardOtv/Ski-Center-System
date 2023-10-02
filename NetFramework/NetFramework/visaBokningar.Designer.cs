@@ -1,6 +1,6 @@
 ﻿namespace NetFramework
 {
-    partial class visaBokningar
+    partial class VisaBokningar
     {
         /// <summary>
         /// Required designer variable.
