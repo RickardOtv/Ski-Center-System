@@ -91,21 +91,7 @@ namespace NetFramework
                 MessageBox.Show("Bokning ej hittad, försök igen");
             }
         }
-        /*
-        private void btn_sökPersonNr_Click(object sender, EventArgs e)
-        {
-            string matadPeronNr = textBox_personNr.Text;
-            var matchadBokning = unitOfWork.bokningar.Wh(b => b.Kund.Personnummer == matadPeronNr);
-            if (matchadBokning != null)
-            {
-                gridBokningar.DataSource = new List<Bokning> { matchadBokning };
-            }
-            else
-            {
-                MessageBox.Show("Bokning ej hittad, försök igen");
-            }
-        }
-        */
+
         private void btn_sökPersonNr_Click(object sender, EventArgs e)
         {
             string matadPeronNr = textBox_personNr.Text;
