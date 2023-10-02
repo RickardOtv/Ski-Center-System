@@ -19,6 +19,7 @@ namespace NetFramework
         UnitOfWork unitOfWork = new UnitOfWork();
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
+        private Bokning valdBokning;
 
         public VisaBokningar(LoggaIn loggaInMeny, Kontroller kontroller)
         {
@@ -32,7 +33,7 @@ namespace NetFramework
         {
             var bokningar = kontroller.HämtaBokningar();
             gridBokningar.DataSource = bokningar;
-            /*
+
             gridBokningar.AutoGenerateColumns = false;
             gridBokningar.Columns["Uthyrning"].Visible = false;
             gridBokningar.Columns["Logi"].Visible = false;
@@ -44,8 +45,9 @@ namespace NetFramework
             gridBokningar.Columns["UthyrningsID"].DisplayIndex = 3;
             gridBokningar.Columns["Från"].DisplayIndex = 4;
             gridBokningar.Columns["Till"].DisplayIndex = 5;
-            */
+            
         }
+
 
         private void VisaBokningar_Load(object sender, EventArgs e)
         {
@@ -78,7 +80,15 @@ namespace NetFramework
 
         private void btn_taBort_Click(object sender, EventArgs e)
         {
+            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
 
+            if (gridBokningar.SelectedRows != null)
+            {
+                kontroller.TaBortBokning(valdBokning, valdBokning.Logi);
+                RefreshBokningar();
+                MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
+                this.Close();
+            }
         }
     }
 }

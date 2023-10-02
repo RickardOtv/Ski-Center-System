@@ -111,7 +111,7 @@
             this.btn_taBort.UseVisualStyleBackColor = true;
             this.btn_taBort.Click += new System.EventHandler(this.btn_taBort_Click);
             // 
-            // visaBokningar
+            // VisaBokningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,8 +124,9 @@
             this.Controls.Add(this.label_BokningsNr);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.gridBokningar);
-            this.Name = "visaBokningar";
+            this.Name = "VisaBokningar";
             this.Text = "visaBokningar";
+            this.Load += new System.EventHandler(this.VisaBokningar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
