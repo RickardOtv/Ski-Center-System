@@ -55,10 +55,19 @@ namespace Affärslager
 
         }
 
-        public void TaBortBokning(Bokning b, Logi l)
+        public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
         {
-            //Saknar att utrusning/skidskola blir available
-            l.IsAvailable = true; //Buggat för nån anledning
+            Kund kund = new Kund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
+            unitOfWork.kunder.Add(kund);
+            unitOfWork.SaveChanges();
+            return kund;
+
+        }
+
+        
+        public void TaBortBokning(Bokning b)
+        {
+            b.Logi.IsAvailable = true;
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
@@ -99,10 +108,6 @@ namespace Affärslager
 
             decimal totalPris = priser.Sum();
             return totalPris;
-        }
-        public IList<Bokning> HämtaBokningar()
-        {
-            return unitOfWork.bokningar.ToList<Bokning>();
         }
     }
 }
