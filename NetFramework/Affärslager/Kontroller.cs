@@ -84,7 +84,6 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
-
         public decimal KollaPris(DateTime från, DateTime till)
         {
             var cultureInfo = CultureInfo.CurrentCulture; // You can specify a specific culture if needed
