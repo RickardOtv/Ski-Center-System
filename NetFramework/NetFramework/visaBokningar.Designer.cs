@@ -76,6 +76,7 @@
             this.gridBokningar.MultiSelect = false;
             this.gridBokningar.Name = "gridBokningar";
             this.gridBokningar.ReadOnly = true;
+            this.gridBokningar.RowHeadersVisible = false;
             this.gridBokningar.RowHeadersWidth = 72;
             this.gridBokningar.RowTemplate.Height = 31;
             this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -50,10 +50,11 @@
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKunder.Location = new System.Drawing.Point(6, 89);
-            this.gridKunder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridKunder.Margin = new System.Windows.Forms.Padding(2);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
             this.gridKunder.ReadOnly = true;
+            this.gridKunder.RowHeadersVisible = false;
             this.gridKunder.RowHeadersWidth = 72;
             this.gridKunder.RowTemplate.Height = 31;
             this.gridKunder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -64,9 +65,10 @@
             // 
             this.gridLogi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLogi.Location = new System.Drawing.Point(290, 89);
-            this.gridLogi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridLogi.Margin = new System.Windows.Forms.Padding(2);
             this.gridLogi.Name = "gridLogi";
             this.gridLogi.ReadOnly = true;
+            this.gridLogi.RowHeadersVisible = false;
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
             this.gridLogi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -100,7 +102,7 @@
             // txtFilter
             // 
             this.txtFilter.Location = new System.Drawing.Point(80, 70);
-            this.txtFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFilter.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(134, 20);
             this.txtFilter.TabIndex = 4;
@@ -119,7 +121,7 @@
             // btnSök
             // 
             this.btnSök.Location = new System.Drawing.Point(220, 72);
-            this.btnSök.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSök.Margin = new System.Windows.Forms.Padding(2);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(34, 16);
             this.btnSök.TabIndex = 6;
@@ -152,7 +154,7 @@
             // dateFrån
             // 
             this.dateFrån.Location = new System.Drawing.Point(690, 132);
-            this.dateFrån.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateFrån.Margin = new System.Windows.Forms.Padding(2);
             this.dateFrån.Name = "dateFrån";
             this.dateFrån.Size = new System.Drawing.Size(111, 20);
             this.dateFrån.TabIndex = 11;
@@ -160,7 +162,7 @@
             // dateTill
             // 
             this.dateTill.Location = new System.Drawing.Point(690, 193);
-            this.dateTill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTill.Margin = new System.Windows.Forms.Padding(2);
             this.dateTill.Name = "dateTill";
             this.dateTill.Size = new System.Drawing.Size(111, 20);
             this.dateTill.TabIndex = 12;
@@ -168,7 +170,7 @@
             // btnSkapaBokning
             // 
             this.btnSkapaBokning.Location = new System.Drawing.Point(685, 244);
-            this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
             this.btnSkapaBokning.Size = new System.Drawing.Size(120, 38);
             this.btnSkapaBokning.TabIndex = 13;
@@ -179,7 +181,7 @@
             // btnAvbryt
             // 
             this.btnAvbryt.Location = new System.Drawing.Point(718, 435);
-            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(50, 18);
             this.btnAvbryt.TabIndex = 14;
@@ -190,7 +192,7 @@
             // btnKollaPris
             // 
             this.btnKollaPris.Location = new System.Drawing.Point(702, 215);
-            this.btnKollaPris.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKollaPris.Margin = new System.Windows.Forms.Padding(2);
             this.btnKollaPris.Name = "btnKollaPris";
             this.btnKollaPris.Size = new System.Drawing.Size(88, 25);
             this.btnKollaPris.TabIndex = 15;
@@ -219,7 +221,7 @@
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.gridLogi);
             this.Controls.Add(this.gridKunder);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BokningBefintligKund";
             this.Text = "Befintlig Kund";
             this.Load += new System.EventHandler(this.BokningBefintligKund_Load);
