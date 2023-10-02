@@ -105,5 +105,10 @@ namespace NetFramework
             decimal pris = kontroller.KollaPris(från, till);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
