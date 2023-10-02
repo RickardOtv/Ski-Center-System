@@ -102,9 +102,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(140, 150);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(140, 144);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Personnummer:";
             // 
@@ -122,9 +123,10 @@
             // 
             this.lblFrån.AutoSize = true;
             this.lblFrån.BackColor = System.Drawing.Color.Transparent;
-            this.lblFrån.Location = new System.Drawing.Point(720, 150);
+            this.lblFrån.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrån.Location = new System.Drawing.Point(720, 144);
             this.lblFrån.Name = "lblFrån";
-            this.lblFrån.Size = new System.Drawing.Size(62, 25);
+            this.lblFrån.Size = new System.Drawing.Size(67, 25);
             this.lblFrån.TabIndex = 7;
             this.lblFrån.Text = "Från:";
             // 
@@ -132,9 +134,10 @@
             // 
             this.lblTill.AutoSize = true;
             this.lblTill.BackColor = System.Drawing.Color.Transparent;
-            this.lblTill.Location = new System.Drawing.Point(1068, 150);
+            this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTill.Location = new System.Drawing.Point(1068, 144);
             this.lblTill.Name = "lblTill";
-            this.lblTill.Size = new System.Drawing.Size(46, 25);
+            this.lblTill.Size = new System.Drawing.Size(51, 25);
             this.lblTill.TabIndex = 10;
             this.lblTill.Text = "Till:";
             // 
@@ -166,7 +169,7 @@
             // 
             this.btnAvbryt.Location = new System.Drawing.Point(30, 818);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(100, 35);
+            this.btnAvbryt.Size = new System.Drawing.Size(100, 41);
             this.btnAvbryt.TabIndex = 14;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = true;
