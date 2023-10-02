@@ -49,24 +49,24 @@
             // gridKunder
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridKunder.Location = new System.Drawing.Point(13, 172);
+            this.gridKunder.Location = new System.Drawing.Point(145, 225);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
             this.gridKunder.ReadOnly = true;
             this.gridKunder.RowHeadersWidth = 72;
             this.gridKunder.RowTemplate.Height = 31;
-            this.gridKunder.Size = new System.Drawing.Size(448, 700);
+            this.gridKunder.Size = new System.Drawing.Size(503, 522);
             this.gridKunder.TabIndex = 0;
             // 
             // gridLogi
             // 
             this.gridLogi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLogi.Location = new System.Drawing.Point(580, 172);
+            this.gridLogi.Location = new System.Drawing.Point(725, 225);
             this.gridLogi.Name = "gridLogi";
             this.gridLogi.ReadOnly = true;
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
-            this.gridLogi.Size = new System.Drawing.Size(755, 700);
+            this.gridLogi.Size = new System.Drawing.Size(547, 522);
             this.gridLogi.TabIndex = 1;
             // 
             // lblKund
@@ -74,26 +74,26 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(82, 42);
+            this.lblKund.Location = new System.Drawing.Point(269, 61);
             this.lblKund.Name = "lblKund";
-            this.lblKund.Size = new System.Drawing.Size(265, 63);
+            this.lblKund.Size = new System.Drawing.Size(250, 63);
             this.lblKund.TabIndex = 2;
-            this.lblKund.Text = "Välj kund:";
+            this.lblKund.Text = "Välj kund";
             // 
             // lblLogi
             // 
             this.lblLogi.AutoSize = true;
             this.lblLogi.BackColor = System.Drawing.Color.Transparent;
             this.lblLogi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogi.Location = new System.Drawing.Point(776, 109);
+            this.lblLogi.Location = new System.Drawing.Point(790, 71);
             this.lblLogi.Name = "lblLogi";
-            this.lblLogi.Size = new System.Drawing.Size(425, 63);
+            this.lblLogi.Size = new System.Drawing.Size(820, 126);
             this.lblLogi.TabIndex = 3;
-            this.lblLogi.Text = "Välj logialterativ:";
+            this.lblLogi.Text = "Välj logialterativ";
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(159, 135);
+            this.txtFilter.Location = new System.Drawing.Point(145, 190);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(264, 31);
             this.txtFilter.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(-2, 143);
+            this.label1.Location = new System.Drawing.Point(140, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 25);
             this.label1.TabIndex = 5;
@@ -110,9 +110,9 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(440, 139);
+            this.btnSök.Location = new System.Drawing.Point(570, 181);
             this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(69, 31);
+            this.btnSök.Size = new System.Drawing.Size(78, 38);
             this.btnSök.TabIndex = 6;
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // 
             this.lblFrån.AutoSize = true;
             this.lblFrån.BackColor = System.Drawing.Color.Transparent;
-            this.lblFrån.Location = new System.Drawing.Point(1447, 225);
+            this.lblFrån.Location = new System.Drawing.Point(720, 160);
             this.lblFrån.Name = "lblFrån";
             this.lblFrån.Size = new System.Drawing.Size(62, 25);
             this.lblFrån.TabIndex = 7;
@@ -132,7 +132,7 @@
             // 
             this.lblTill.AutoSize = true;
             this.lblTill.BackColor = System.Drawing.Color.Transparent;
-            this.lblTill.Location = new System.Drawing.Point(1463, 342);
+            this.lblTill.Location = new System.Drawing.Point(1067, 160);
             this.lblTill.Name = "lblTill";
             this.lblTill.Size = new System.Drawing.Size(46, 25);
             this.lblTill.TabIndex = 10;
@@ -140,23 +140,23 @@
             // 
             // dateFrån
             // 
-            this.dateFrån.Location = new System.Drawing.Point(1381, 254);
+            this.dateFrån.Location = new System.Drawing.Point(725, 188);
             this.dateFrån.Name = "dateFrån";
-            this.dateFrån.Size = new System.Drawing.Size(218, 31);
+            this.dateFrån.Size = new System.Drawing.Size(199, 31);
             this.dateFrån.TabIndex = 11;
             // 
             // dateTill
             // 
-            this.dateTill.Location = new System.Drawing.Point(1381, 371);
+            this.dateTill.Location = new System.Drawing.Point(1073, 188);
             this.dateTill.Name = "dateTill";
-            this.dateTill.Size = new System.Drawing.Size(218, 31);
+            this.dateTill.Size = new System.Drawing.Size(199, 31);
             this.dateTill.TabIndex = 12;
             // 
             // btnSkapaBokning
             // 
-            this.btnSkapaBokning.Location = new System.Drawing.Point(1370, 469);
+            this.btnSkapaBokning.Location = new System.Drawing.Point(1051, 768);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
-            this.btnSkapaBokning.Size = new System.Drawing.Size(239, 74);
+            this.btnSkapaBokning.Size = new System.Drawing.Size(213, 49);
             this.btnSkapaBokning.TabIndex = 13;
             this.btnSkapaBokning.Text = "Skapa Bokning";
             this.btnSkapaBokning.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(1435, 836);
+            this.btnAvbryt.Location = new System.Drawing.Point(12, 837);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(100, 35);
             this.btnAvbryt.TabIndex = 14;
@@ -174,7 +174,7 @@
             // 
             // btnKollaPris
             // 
-            this.btnKollaPris.Location = new System.Drawing.Point(1403, 414);
+            this.btnKollaPris.Location = new System.Drawing.Point(849, 768);
             this.btnKollaPris.Name = "btnKollaPris";
             this.btnKollaPris.Size = new System.Drawing.Size(177, 49);
             this.btnKollaPris.TabIndex = 15;
