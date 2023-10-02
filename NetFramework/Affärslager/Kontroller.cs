@@ -81,5 +81,10 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
+
+        public IList<Bokning> HämtaBokningar()
+        {
+            return unitOfWork.bokningar.ToList<Bokning>();
+        }
     }
 }
