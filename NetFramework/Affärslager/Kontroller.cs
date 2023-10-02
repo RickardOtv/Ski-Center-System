@@ -57,7 +57,7 @@ namespace Affärslager
 
         public void TaBortBokning(Bokning b, Logi l)
         {
-            l.IsAvailable = true;
+            l.IsAvailable = true; //Buggat för nån anledning
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
