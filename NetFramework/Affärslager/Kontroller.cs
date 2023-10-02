@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,23 @@ namespace Affärslager
         public IList<Kund> HämtaKunder()
         {
             return unitOfWork.kunder.ToList<Kund>();
+        }
+
+        public decimal KollaPris(DateTime från, DateTime till)
+        {
+            var cultureInfo = CultureInfo.CurrentCulture;//Ingen aning vad detta är
+            var veckor = Enumerable.Range(0, (int)(till - från).TotalDays + 1)
+                .Select(offset => cultureInfo.Calendar.GetWeekOfYear(från.AddDays(offset), cultureInfo.DateTimeFormat.CalendarWeekRule, cultureInfo.DateTimeFormat.FirstDayOfWeek))
+                .Distinct()
+                .ToList();
+
+            var priser = unitOfWork.logiPris
+                .Where(lp => veckor.Contains(lp.Vecka))
+                .Select(lp => lp.Pris)
+                .ToList();
+
+            decimal totalPris = priser.Sum();
+            return totalPris;
         }
     }
 }

@@ -21,6 +21,8 @@ namespace NetFramework
         private Kontroller kontroller;
         private Kund valdKund;
         Logi valdLogi = new Logi();
+        DateTime från;
+        DateTime till;
         public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
         {
             this.loggaInMeny = loggaInMeny;
@@ -68,8 +70,8 @@ namespace NetFramework
 
         private void btnSkapaBokning_Click(object sender, EventArgs e)
         {
-            DateTime från = DateTime.Parse(dateFrån.Text);
-            DateTime till = DateTime.Parse(dateTill.Text);
+            från = DateTime.Parse(dateFrån.Text);
+            till = DateTime.Parse(dateTill.Text);
             valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
 
@@ -94,6 +96,12 @@ namespace NetFramework
             {
                 MessageBox.Show("Kund ej hittad, försök igen");
             }
+        }
+
+        private void btnKollaPris_Click(object sender, EventArgs e)
+        {
+            decimal pris = kontroller.KollaPris(från, till);
+            MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
     }
 }
