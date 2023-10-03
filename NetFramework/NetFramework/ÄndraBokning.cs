@@ -28,8 +28,11 @@ namespace NetFramework
             InitializeComponent();
             label_FrånDatum.Text = bokning.Från.ToString("yyyy-MM-dd");
             label_TillDatum.Text = bokning.Till.ToString("yyyy-MM-dd");
- 
+            valdBokning = bokning;
+            textBox_BokningsNr.Text = bokning.BokningsID.ToString();
         }
+
+
 
         public string InloggadAnvandare
         {
@@ -49,6 +52,11 @@ namespace NetFramework
 
         private void btn_Spara_Click(object sender, EventArgs e)
         {
+            DateTime startDate = DateTime.Parse(startDatePicker.Text);
+            DateTime endDate = DateTime.Parse(endDatePicker.Text);
+            kontroller.ÄndraBokning(startDate, endDate, valdBokning);
+
+            MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokning.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
             this.Close();
         }
     }

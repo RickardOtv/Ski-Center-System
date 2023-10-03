@@ -55,7 +55,7 @@ namespace NetFramework
         }
 
 
-        private void VisaBokningar_Load(object sender, EventArgs e)
+        public void VisaBokningar_Load(object sender, EventArgs e)
         {
             RefreshBokningar(); 
         }
@@ -79,7 +79,6 @@ namespace NetFramework
                 ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdBokning);
                 ändraBokning.Show();
                 ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
-                this.Close();
             }
         }
 
@@ -123,6 +122,11 @@ namespace NetFramework
             {
                 MessageBox.Show("Inga matchande bokningar hittades, försök igen");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RefreshBokningar();
         }
     }
 }
