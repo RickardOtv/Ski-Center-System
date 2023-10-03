@@ -72,7 +72,6 @@ namespace Affärslager
         {
             //Saknar att utrusning/skidskola blir available
             l.IsAvailable = true; //Buggat för nån anledning
-
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
