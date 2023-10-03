@@ -39,18 +39,17 @@ namespace NetFramework
             string adress = txtBoxAdress.Text;
             string postNr = txtBoxPostNr.Text;
             string postOrt = txtBoxOrt.Text;
-            string typ = txtBoxTyp.Text;
+            string typ = cmbTyp.SelectedItem.ToString();
             int maxbeloppskreditgräns = int.Parse(txtBoxKredit.Text);
 
+            
             Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
             MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
-
-            //MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Logi.LogiID}
-
-
-
-
+            BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
+            this.Close();
+            befintligKund.Show();
         }
+        
 
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -99,12 +98,14 @@ namespace NetFramework
         }
         private void txtBoxEmail_Enter(object sender, EventArgs e)
         {
+
             TextBox txtBoxEmail = (TextBox)sender;
             if (txtBoxEmail.Text == "Email:")
             {
                 txtBoxEmail.Text = "";
                 txtBoxEmail.ForeColor = SystemColors.WindowText; // Återställ textfärg om den har ändrats
             }
+            
         }
         private void txtBoxEmail_Leave(object sender, EventArgs e)
         {
@@ -133,25 +134,7 @@ namespace NetFramework
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-        private void txtBoxTyp_Enter(object sender, EventArgs e)
-        {
-            TextBox txtBoxTyp = (TextBox)sender;
-            if (txtBoxTyp.Text == "Privat/företag:")
-            {
-                txtBoxTyp.Text = "";
-                txtBoxTyp.ForeColor = SystemColors.WindowText; // Återställ textfärg om den har ändrats
-            }
-        }
-
-        private void textBoxTyp_Leave(object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = "Privat/företag:";
-                textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
-            }
-        }
+        
         private void txtBoxTelefonNr_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxTelefonNr = (TextBox)sender;

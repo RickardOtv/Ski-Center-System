@@ -17,18 +17,24 @@ namespace NetFramework
     public partial class VisaBokningar : Form
     {
         UnitOfWork unitOfWork = new UnitOfWork();
-        private LoggaIn loggaInMeny;
+        private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Bokning valdBokning;
 
-        public VisaBokningar(LoggaIn loggaInMeny, Kontroller kontroller)
+        public VisaBokningar(LoggaIn loggaIn, Kontroller kontroller)
         {
-            this.loggaInMeny = loggaInMeny;
+            this.loggaIn = loggaIn;
             this.kontroller = kontroller;
             InitializeComponent();
         }
 
-        // Fixa attributen!!!
+        public string InloggadAnvandare
+        {
+            get { return txtAnvandarnamn.Text; }
+            set { txtAnvandarnamn.Text = value; }
+        }
+
+
         internal void RefreshBokningar()
         {
             var bokningar = kontroller.HämtaBokningar();
@@ -63,6 +69,18 @@ namespace NetFramework
         private void btn_ändra_Click(object sender, EventArgs e)
         {
 
+            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+
+            if (gridBokningar.SelectedRows != null)
+            {
+                //kontroller.TaBortBokning(valdBokning, valdBokning.Logi);
+                //RefreshBokningar();
+                //MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
+                ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdBokning);
+                ändraBokning.Show();
+                ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
+                this.Close();
+            }
         }
 
         private void btn_taBort_Click(object sender, EventArgs e)
@@ -74,7 +92,7 @@ namespace NetFramework
                 kontroller.TaBortBokning(valdBokning, valdBokning.Logi);
                 RefreshBokningar();
                 MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
-                this.Close();
+                //this.Close();
             }
         }
 
