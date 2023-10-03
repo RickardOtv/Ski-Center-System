@@ -64,25 +64,34 @@ namespace NetFramework
                 dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
                 dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
                 dataGridView1.Columns["IsAvailable"].HeaderText = "Tillgänglighet";
-                
 
-                label1.Text = "Du är ihopkopplad";
+
+              
             }
             catch (Exception ex)
             {
-                label1.Text = "Det funkar inte" + ex.Message;
+                
                 conn.Close();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = startDatePicker.Value;
+            DateTime endDate = endDatePicker.Value;
+            decimal pris = kontroller.KollaPris(startDate, endDate);
+            MessageBox.Show($"Totalpris för valda datum:{pris}");
+        }
+
+        private void TillbakaKnapp_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

@@ -35,6 +35,8 @@
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.lblAnstNr = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.TillbakaKnapp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 387);
+            this.button1.Location = new System.Drawing.Point(117, 311);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 35);
             this.button1.TabIndex = 3;
@@ -69,7 +71,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(469, 53);
+            this.endDatePicker.Location = new System.Drawing.Point(467, 53);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(200, 20);
             this.endDatePicker.TabIndex = 7;
@@ -91,16 +93,25 @@
             this.lblAnstNr.TabIndex = 10;
             this.lblAnstNr.Text = "Anställningsnummer:";
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(447, 398);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "label1";
+            this.button2.Location = new System.Drawing.Point(117, 353);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 37);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Kolla pris";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // TillbakaKnapp
+            // 
+            this.TillbakaKnapp.Location = new System.Drawing.Point(13, 410);
+            this.TillbakaKnapp.Name = "TillbakaKnapp";
+            this.TillbakaKnapp.Size = new System.Drawing.Size(99, 28);
+            this.TillbakaKnapp.TabIndex = 14;
+            this.TillbakaKnapp.Text = "Tillbaka";
+            this.TillbakaKnapp.UseVisualStyleBackColor = true;
+            this.TillbakaKnapp.Click += new System.EventHandler(this.TillbakaKnapp_Click);
             // 
             // VisaLedigLogi
             // 
@@ -109,6 +120,8 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TillbakaKnapp);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
@@ -133,5 +146,7 @@
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label lblAnstNr;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button TillbakaKnapp;
     }
 }
