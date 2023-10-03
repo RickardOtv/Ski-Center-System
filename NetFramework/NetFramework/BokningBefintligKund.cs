@@ -14,103 +14,101 @@ using System.Windows.Forms;
 
 namespace NetFramework
 {
-        public partial class BokningBefintligKund : Form
+    public partial class BokningBefintligKund : Form
+    {
+        UnitOfWork unitOfWork = new UnitOfWork();
+        private LoggaIn loggaInMeny;
+        private Kontroller kontroller;
+        private Kund valdKund;
+        Logi valdLogi = new Logi();
+        DateTime från;
+        DateTime till;
+        public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
         {
-            UnitOfWork unitOfWork = new UnitOfWork();
-            private LoggaIn loggaInMeny;
-            private Kontroller kontroller;
-            private Kund valdKund;
-            Logi valdLogi = new Logi();
-            DateTime från;
-            DateTime till;
-            public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
-            {
-                this.loggaInMeny = loggaInMeny;
-                this.kontroller = kontroller;
-                InitializeComponent();
-            
-
-            
-            }
+            this.loggaInMeny = loggaInMeny;
+            this.kontroller = kontroller;
+            InitializeComponent();
+        }
         
-       
-       
+        internal void RefreshLogi()
+        {
+            var logier = kontroller.HämtaTillgängligLogi();
+            gridLogi.DataSource = logier;
+            gridLogi.AutoGenerateColumns = false;
+            gridLogi.Columns["IsAvailable"].Visible = false;
+            gridLogi.Columns["LogiID"].DisplayIndex = 0;
+            gridLogi.Columns["Typ"].DisplayIndex = 1;
+        }
 
+        internal void RefreshKunder()
+        {
+            var kunder = kontroller.HämtaKunder();
+            gridKunder.DataSource = kunder;
+            gridKunder.AutoGenerateColumns = false;
+            gridKunder.Columns["Maxbeloppskreditgräns"].Visible = false;
+            gridKunder.Columns["Adress"].Visible = false;
+            gridKunder.Columns["PostOrt"].Visible = false;
+            gridKunder.Columns["PostNr"].Visible = false;
+            gridKunder.Columns["Telefonnummer"].Visible = false;
+            gridKunder.Columns["Email"].Visible = false;
+            gridKunder.Columns["KundID"].DisplayIndex = 0;
+            gridKunder.Columns["Namn"].DisplayIndex = 1;
+            gridKunder.Columns["Typ"].DisplayIndex = 2;
+            gridKunder.Columns["Personnummer"].DisplayIndex = 3;
+        }
 
-            internal void RefreshLogi()
+        private void BokningBefintligKund_Load(object sender, EventArgs e)
+        {
+            RefreshLogi();
+            RefreshKunder();
+        }
+
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSkapaBokning_Click(object sender, EventArgs e)
+        {
+            från = DateTime.Parse(dateFrån.Text);
+            till = DateTime.Parse(dateTill.Text);
+            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
+            valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
+
+            if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
             {
-                var logier = kontroller.HämtaTillgängligLogi();
-                gridLogi.DataSource = logier;
-                gridLogi.AutoGenerateColumns = false;
-                gridLogi.Columns["IsAvailable"].Visible = false;
-                gridLogi.Columns["LogiID"].DisplayIndex = 0;
-                gridLogi.Columns["Typ"].DisplayIndex = 1;
-            }
-
-            internal void RefreshKunder()
-            {
-                var kunder = kontroller.HämtaKunder();
-                gridKunder.DataSource = kunder;
-                gridKunder.AutoGenerateColumns = false;
-                gridKunder.Columns["Maxbeloppskreditgräns"].Visible = false;
-                gridKunder.Columns["Adress"].Visible = false;
-                gridKunder.Columns["PostOrt"].Visible = false;
-                gridKunder.Columns["PostNr"].Visible = false;
-                gridKunder.Columns["Telefonnummer"].Visible = false;
-                gridKunder.Columns["Email"].Visible = false;
-                gridKunder.Columns["KundID"].DisplayIndex = 0;
-                gridKunder.Columns["Namn"].DisplayIndex = 1;
-                gridKunder.Columns["Typ"].DisplayIndex = 2;
-                gridKunder.Columns["Personnummer"].DisplayIndex = 3;
-            }
-
-            private void BokningBefintligKund_Load(object sender, EventArgs e)
-            {
+                Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
                 RefreshLogi();
-                RefreshKunder();
-            }
-
-            private void btnAvbryt_Click(object sender, EventArgs e)
-            {
+                MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Logi.LogiID} \nBokningsID: {nyBokning.BokningsID}");
                 this.Close();
             }
+        }
 
-            private void btnSkapaBokning_Click(object sender, EventArgs e)
+        private void btnSök_Click(object sender, EventArgs e)
+        {
+            string matatPersNr = txtFilter.Text;
+            var matchadKund = unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == matatPersNr);
+            if (matchadKund != null)
             {
-                från = DateTime.Parse(dateFrån.Text);
-                till = DateTime.Parse(dateTill.Text);
-                valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
-                valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
-
-                if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
-                {
-                    Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
-                    RefreshLogi();
-                    MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Logi.LogiID} \nBokningsID: {nyBokning.BokningsID}");
-                    this.Close();
-                }
+                gridKunder.DataSource = new List<Kund> { matchadKund };
             }
-
-            private void btnSök_Click(object sender, EventArgs e)
+            else
             {
-                string matatPersNr = txtPersonNr.Text;
-                var matchadKund = unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == matatPersNr);
-                if (matchadKund != null)
-                {
-                    gridKunder.DataSource = new List<Kund> { matchadKund };
-                }
-                else
-                {
-                    MessageBox.Show("Kund ej hittad, försök igen");
-                }
-            }
-
-            private void btnKollaPris_Click(object sender, EventArgs e)
-            {
-                DateTime från = dateFrån.Value;
-                DateTime till = dateTill.Value;
-                decimal pris = kontroller.KollaPris(från, till);
-                MessageBox.Show($"Totalpris för valda datum:{pris}");
+                MessageBox.Show("Kund ej hittad, försök igen");
             }
         }
+
+        private void btnKollaPris_Click(object sender, EventArgs e)
+        {
+            DateTime från = dateFrån.Value;
+            DateTime till = dateTill.Value;
+            decimal pris = kontroller.KollaPris(från, till);
+            MessageBox.Show($"Totalpris för valda datum:{pris}");
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
