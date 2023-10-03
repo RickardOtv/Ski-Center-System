@@ -20,6 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Bokning valdBokning;
+        private Logi valdLogi;
 
         public VisaBokningar(LoggaIn loggaIn, Kontroller kontroller)
         {
@@ -88,7 +89,8 @@ namespace NetFramework
 
             if (gridBokningar.SelectedRows != null)
             {
-                kontroller.TaBortBokning(valdBokning, valdBokning.Logi);
+                valdLogi = kontroller.HittaLogi(valdBokning.LogiID);
+                kontroller.TaBortBokning(valdBokning, valdLogi);
                 RefreshBokningar();
                 MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 //this.Close();
