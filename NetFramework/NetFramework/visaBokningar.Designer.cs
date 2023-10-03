@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblAnstNr = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,12 +166,27 @@
             this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 18;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(685, 88);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 41);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "↻ ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // VisaBokningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.ClientSize = new System.Drawing.Size(766, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.label1);
@@ -206,5 +222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAnstNr;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
+        private System.Windows.Forms.Button button1;
     }
 }

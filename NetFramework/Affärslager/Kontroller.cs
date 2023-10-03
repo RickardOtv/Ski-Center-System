@@ -129,6 +129,12 @@ namespace Affärslager
             return unitOfWork.bokningar.ToList<Bokning>();
         }
 
-        
+        public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
+        {
+            bokning.Från = från;
+            bokning.Till = till;
+            unitOfWork.SaveChanges();
+            //return bokning;
+        }
     }
 }
