@@ -128,5 +128,7 @@ namespace Affärslager
         {
             return unitOfWork.bokningar.ToList<Bokning>();
         }
+
+        
     }
 }
