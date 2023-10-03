@@ -34,9 +34,10 @@
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.lblAnstNr = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.TillbakaKnapp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +116,28 @@
             this.TillbakaKnapp.UseVisualStyleBackColor = true;
             this.TillbakaKnapp.Click += new System.EventHandler(this.TillbakaKnapp_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(156, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 14);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Välj Startdatum:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(530, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 14);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Välj Slutdatum:";
+            // 
             // VisaLedigLogi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,9 +145,10 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TillbakaKnapp);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.endDatePicker);
@@ -147,8 +171,9 @@
         private System.Windows.Forms.DateTimePicker endDatePicker;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label lblAnstNr;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button TillbakaKnapp;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
