@@ -134,25 +134,7 @@ namespace NetFramework
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-        private void txtBoxTyp_Enter(object sender, EventArgs e)
-        {
-            TextBox txtBoxTyp = (TextBox)sender;
-            if (txtBoxTyp.Text == "Privat/företag:")
-            {
-                txtBoxTyp.Text = "";
-                txtBoxTyp.ForeColor = SystemColors.WindowText; // Återställ textfärg om den har ändrats
-            }
-        }
-
-        private void textBoxTyp_Leave(object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = "Privat/företag:";
-                textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
-            }
-        }
+        
         private void txtBoxTelefonNr_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxTelefonNr = (TextBox)sender;
