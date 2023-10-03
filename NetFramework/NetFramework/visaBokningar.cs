@@ -59,20 +59,7 @@ namespace NetFramework
             this.Close();
         }
 
-        private void btnSök_Click(object sender, EventArgs e)
-        {
-            int matadBokningsNr = Int32.Parse(txtFilter.Text);
-            var matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
-            if (matchadBokning != null)
-            {
-                gridBokningar.DataSource = new List<Bokning> { matchadBokning };
-            }
-            else
-            {
-                MessageBox.Show("Bokning ej hittad, försök igen");
-            }
-        }
-
+      
         private void btn_ändra_Click(object sender, EventArgs e)
         {
 
@@ -88,6 +75,35 @@ namespace NetFramework
                 RefreshBokningar();
                 MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 this.Close();
+            }
+        }
+
+        private void btnSökBokNr_Click(object sender, EventArgs e)
+        {
+            int matadBokningsNr = Int32.Parse(txtFilter.Text);
+            var matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
+            if (matchadBokning != null)
+            {
+                gridBokningar.DataSource = new List<Bokning> { matchadBokning };
+            }
+            else
+            {
+                MessageBox.Show("Bokning ej hittad, försök igen");
+            }
+        }
+
+        private void btn_sökPersonNr_Click(object sender, EventArgs e)
+        {
+            string matadPeronNr = textBox_personNr.Text;
+            var matchadeBokningar = unitOfWork.bokningar.Where(b => b.Kund.Personnummer == matadPeronNr).ToList();
+
+            if (matchadeBokningar.Count > 0)
+            {
+                gridBokningar.DataSource = matchadeBokningar;
+            }
+            else
+            {
+                MessageBox.Show("Inga matchande bokningar hittades, försök igen");
             }
         }
     }

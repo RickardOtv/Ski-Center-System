@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSök = new System.Windows.Forms.Button();
+            this.btnSökBokNr = new System.Windows.Forms.Button();
             this.label_BokningsNr = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.gridBokningar = new System.Windows.Forms.DataGridView();
             this.btn_tillbaka = new System.Windows.Forms.Button();
             this.btn_ändra = new System.Windows.Forms.Button();
             this.btn_taBort = new System.Windows.Forms.Button();
+            this.textBox_personNr = new System.Windows.Forms.TextBox();
+            this.btn_sökPersonNr = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSök
+            // btnSökBokNr
             // 
-            this.btnSök.Location = new System.Drawing.Point(271, 64);
-            this.btnSök.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(57, 20);
-            this.btnSök.TabIndex = 10;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
-            this.btnSök.Click += new System.EventHandler(this.btnSök_Click);
+            this.btnSökBokNr.Location = new System.Drawing.Point(271, 64);
+            this.btnSökBokNr.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSökBokNr.Name = "btnSökBokNr";
+            this.btnSökBokNr.Size = new System.Drawing.Size(57, 20);
+            this.btnSökBokNr.TabIndex = 10;
+            this.btnSökBokNr.Text = "Sök";
+            this.btnSökBokNr.UseVisualStyleBackColor = true;
+            this.btnSökBokNr.Click += new System.EventHandler(this.btnSökBokNr_Click);
             // 
             // label_BokningsNr
             // 
@@ -71,14 +74,16 @@
             // gridBokningar
             // 
             this.gridBokningar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBokningar.Location = new System.Drawing.Point(75, 93);
+            this.gridBokningar.Location = new System.Drawing.Point(75, 134);
             this.gridBokningar.Margin = new System.Windows.Forms.Padding(2);
             this.gridBokningar.MultiSelect = false;
             this.gridBokningar.Name = "gridBokningar";
             this.gridBokningar.ReadOnly = true;
+            this.gridBokningar.RowHeadersVisible = false;
             this.gridBokningar.RowHeadersWidth = 72;
             this.gridBokningar.RowTemplate.Height = 31;
-            this.gridBokningar.Size = new System.Drawing.Size(654, 249);
+            this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridBokningar.Size = new System.Drawing.Size(654, 208);
             this.gridBokningar.TabIndex = 7;
             // 
             // btn_tillbaka
@@ -111,16 +116,49 @@
             this.btn_taBort.UseVisualStyleBackColor = true;
             this.btn_taBort.Click += new System.EventHandler(this.btn_taBort_Click);
             // 
+            // textBox_personNr
+            // 
+            this.textBox_personNr.Location = new System.Drawing.Point(75, 110);
+            this.textBox_personNr.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_personNr.Name = "textBox_personNr";
+            this.textBox_personNr.Size = new System.Drawing.Size(192, 20);
+            this.textBox_personNr.TabIndex = 14;
+            // 
+            // btn_sökPersonNr
+            // 
+            this.btn_sökPersonNr.Location = new System.Drawing.Point(271, 109);
+            this.btn_sökPersonNr.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_sökPersonNr.Name = "btn_sökPersonNr";
+            this.btn_sökPersonNr.Size = new System.Drawing.Size(57, 20);
+            this.btn_sökPersonNr.TabIndex = 15;
+            this.btn_sökPersonNr.Text = "Sök";
+            this.btn_sökPersonNr.UseVisualStyleBackColor = true;
+            this.btn_sökPersonNr.Click += new System.EventHandler(this.btn_sökPersonNr_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(72, 95);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "PersonNr:";
+            // 
             // VisaBokningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.ClientSize = new System.Drawing.Size(766, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_sökPersonNr);
+            this.Controls.Add(this.textBox_personNr);
             this.Controls.Add(this.btn_taBort);
             this.Controls.Add(this.btn_ändra);
             this.Controls.Add(this.btn_tillbaka);
-            this.Controls.Add(this.btnSök);
+            this.Controls.Add(this.btnSökBokNr);
             this.Controls.Add(this.label_BokningsNr);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.gridBokningar);
@@ -135,12 +173,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.Button btnSökBokNr;
         private System.Windows.Forms.Label label_BokningsNr;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.DataGridView gridBokningar;
         private System.Windows.Forms.Button btn_tillbaka;
         private System.Windows.Forms.Button btn_ändra;
         private System.Windows.Forms.Button btn_taBort;
+        private System.Windows.Forms.TextBox textBox_personNr;
+        private System.Windows.Forms.Button btn_sökPersonNr;
+        private System.Windows.Forms.Label label1;
     }
 }
