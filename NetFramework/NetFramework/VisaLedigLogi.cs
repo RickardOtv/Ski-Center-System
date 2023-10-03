@@ -30,8 +30,6 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-       
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -66,20 +64,15 @@ namespace NetFramework
                 dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
                 dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
                 dataGridView1.Columns["IsAvailable"].HeaderText = "Tillgänglighet";
-                
 
-                label1.Text = "Du är ihopkopplad";
+
+              
             }
             catch (Exception ex)
             {
-                label1.Text = "Det funkar inte" + ex.Message;
+                
                 conn.Close();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,14 +80,18 @@ namespace NetFramework
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            DateTime startDate = startDatePicker.Value;
+            DateTime endDate = endDatePicker.Value;
+            decimal pris = kontroller.KollaPris(startDate, endDate);
+            MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void TillbakaKnapp_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
+
     }
 }

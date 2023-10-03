@@ -50,6 +50,7 @@ namespace NetFramework
         {
             VisaBokningar visabokningar = new VisaBokningar(loggaIn, kontroller);
             visabokningar.Show();
+            visabokningar.InloggadAnvandare = txtAnvandarnamn.Text;
         }
     }
 }
