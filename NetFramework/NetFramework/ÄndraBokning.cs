@@ -26,10 +26,10 @@ namespace NetFramework
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
             InitializeComponent();
-            label_FrånDatum.Text = bokning.Från.ToString("yyyy-MM-dd");
-            label_TillDatum.Text = bokning.Till.ToString("yyyy-MM-dd");
             valdBokning = bokning;
             textBox_BokningsNr.Text = bokning.BokningsID.ToString();
+            startDatePicker.Value = valdBokning.Från;
+            endDatePicker.Value = valdBokning.Till;
         }
 
 
@@ -43,11 +43,7 @@ namespace NetFramework
 
         private void btn_Tillbaka_Click(object sender, EventArgs e)
         {
-            VisaBokningar visabokningar = new VisaBokningar(loggaIn, kontroller);
-            visabokningar.InloggadAnvandare = txtAnvandarnamn.Text;
-            this.Close();
-            visabokningar.Show();
-            
+            this.Close();        
         }
 
         private void btn_Spara_Click(object sender, EventArgs e)
