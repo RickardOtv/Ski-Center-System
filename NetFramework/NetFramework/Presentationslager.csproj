@@ -106,6 +106,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ÄndraBokning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÄndraBokning.Designer.cs">
+      <DependentUpon>ÄndraBokning.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BokningNyKund.resx">
       <DependentUpon>BokningNyKund.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +146,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ÄndraBokning.resx">
+      <DependentUpon>ÄndraBokning.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
