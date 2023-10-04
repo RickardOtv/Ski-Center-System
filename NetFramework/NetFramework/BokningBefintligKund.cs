@@ -79,7 +79,7 @@ namespace NetFramework
             {
                 Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
                 RefreshLogi();
-                MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Logi.LogiID} \nBokningsID: {nyBokning.BokningsID}");
+                MessageBox.Show($"Bokning genomförd! \nFrån: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Logi.LogiID} \nBokningsID: {nyBokning.BokningsID}");
                 this.Close();
             }
         }
