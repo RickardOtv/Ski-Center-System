@@ -58,6 +58,7 @@
             this.btnUthyrning.TabIndex = 1;
             this.btnUthyrning.Text = "Uthyrning";
             this.btnUthyrning.UseVisualStyleBackColor = true;
+            this.btnUthyrning.Click += new System.EventHandler(this.btnUthyrning_Click);
             // 
             // btnMarknad
             // 
@@ -68,6 +69,7 @@
             this.btnMarknad.TabIndex = 2;
             this.btnMarknad.Text = "Marknadsvy";
             this.btnMarknad.UseVisualStyleBackColor = true;
+            this.btnMarknad.Click += new System.EventHandler(this.btnMarknad_Click);
             // 
             // btnAdmin
             // 
@@ -78,6 +80,7 @@
             this.btnAdmin.TabIndex = 3;
             this.btnAdmin.Text = "Adminvy";
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // label1
             // 
