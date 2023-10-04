@@ -66,7 +66,11 @@ namespace Affärslager
 
         }
 
-
+        public void TaBortKund(Kund k)
+        {
+            unitOfWork.kunder.Remove(k);
+            unitOfWork.SaveChanges();
+        }
 
         public void TaBortBokning(Bokning b, Logi l)
         {
@@ -135,6 +139,20 @@ namespace Affärslager
             bokning.Till = till;
             unitOfWork.SaveChanges();
             //return bokning;
+        }
+
+        public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
+        {
+            kund.Personnummer = personnummer;
+            kund.Namn = namn;
+            kund.Telefonnummer = telefonnummer;
+            kund.PostNr = postNr;
+            kund.PostOrt = postOrt;
+            kund.Typ = typ;
+            kund.Adress = adress;
+            kund.Email = email;
+            kund.Maxbeloppskreditgräns = kredit;
+            unitOfWork.SaveChanges();
         }
 
         public Bokning HittaBokning(string söktBokningsNummer)

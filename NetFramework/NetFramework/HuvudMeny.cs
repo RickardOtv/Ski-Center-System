@@ -39,5 +39,14 @@ namespace NetFramework
         {
 
         }
+
+        private void btnKundregister_Click(object sender, EventArgs e)
+        {
+            Kundregister kundregister = new Kundregister(loggaInMeny, kontroller);
+            kundregister.InloggadAnvandare = txtAnvandarnamn.Text;
+            kundregister.Show();
+        }
+
+        
     }
 }

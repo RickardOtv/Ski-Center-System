@@ -30,6 +30,7 @@ namespace NetFramework
             textBox_BokningsNr.Text = bokning.BokningsID.ToString();
             startDatePicker.Value = valdBokning.Från;
             endDatePicker.Value = valdBokning.Till;
+
         }
 
 

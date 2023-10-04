@@ -74,6 +74,12 @@
     <Compile Include="BokningsTyp.Designer.cs">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kundregister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundregister.Designer.cs">
+      <DependentUpon>Kundregister.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisaBokningar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="ÄndraBokning.Designer.cs">
       <DependentUpon>ÄndraBokning.cs</DependentUpon>
     </Compile>
+    <Compile Include="ÄndraKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÄndraKund.Designer.cs">
+      <DependentUpon>ÄndraKund.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BokningNyKund.resx">
       <DependentUpon>BokningNyKund.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BokningsTyp.resx">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundregister.resx">
+      <DependentUpon>Kundregister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisaBokningar.resx">
       <DependentUpon>VisaBokningar.cs</DependentUpon>
@@ -148,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="ÄndraBokning.resx">
       <DependentUpon>ÄndraBokning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÄndraKund.resx">
+      <DependentUpon>ÄndraKund.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
