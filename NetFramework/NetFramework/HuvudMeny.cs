@@ -30,14 +30,56 @@ namespace NetFramework
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            BokningsMeny bokningsMeny = new BokningsMeny(loggaInMeny, kontroller);
-            bokningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
-            bokningsMeny.Show();
+
+
+            string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
+            if (inmatning == "Bokare" || inmatning == "Admin")
+            {
+                BokningsMeny bokningsMeny = new BokningsMeny(loggaInMeny, kontroller);
+                bokningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+                bokningsMeny.Show();
+            }
+            else
+                MessageBox.Show("Du har ej rätt behörighet.");
         }
 
         private void lblMata_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnUthyrning_Click(object sender, EventArgs e)
+        {
+            string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
+            if (inmatning == "Uthyrare" || inmatning == "Bokare" || inmatning == "Admin")
+            {
+                MessageBox.Show("Du har åtkomst när denna rutan är klar");
+            }
+            else
+                MessageBox.Show("Du har ej rätt behörighet.");
+        }
+
+        private void btnMarknad_Click(object sender, EventArgs e)
+        {
+            string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
+            if (inmatning == "Admin")
+            {
+                MessageBox.Show("Du har åtkomst när denna rutan är klar");
+            }
+            else
+                MessageBox.Show("Du har ej rätt behörighet.");
+        }
+
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
+            if (inmatning == "Admin")
+            {
+                MessageBox.Show("Du har åtkomst när denna rutan är klar");
+            }
+            else
+                MessageBox.Show("Du har ej rätt behörighet.");
         }
 
         private void btnKundregister_Click(object sender, EventArgs e)
