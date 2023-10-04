@@ -112,7 +112,7 @@ namespace NetFramework
         {
             Bokning matchadBokning;
             String söktBokningsNummer = txtFilter.Text;
-            if (IsDigitsOnly(söktBokningsNummer))
+            if (IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
             {
                 // Skapa metod av detta
                 matchadBokning = kontroller.HittaBokning(söktBokningsNummer);
