@@ -123,6 +123,7 @@
             this.btnSokPersonNr.TabIndex = 17;
             this.btnSokPersonNr.Text = "Sök";
             this.btnSokPersonNr.UseVisualStyleBackColor = true;
+            this.btnSokPersonNr.Click += new System.EventHandler(this.btnSokPersonNr_Click);
             // 
             // lblNamn
             // 
@@ -166,6 +167,7 @@
             this.btnSokNamn.TabIndex = 22;
             this.btnSokNamn.Text = "Sök";
             this.btnSokNamn.UseVisualStyleBackColor = true;
+            this.btnSokNamn.Click += new System.EventHandler(this.btnSokNamn_Click);
             // 
             // button1
             // 

@@ -96,5 +96,17 @@ namespace NetFramework
         {
             RefreshKunder();
         }
+
+        private void btnSokNamn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSokPersonNr_Click(object sender, EventArgs e)
+        {
+            
+            
+            
+        }
     }
 }
