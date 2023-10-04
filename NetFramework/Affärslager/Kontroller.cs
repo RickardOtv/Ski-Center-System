@@ -144,5 +144,10 @@ namespace Affärslager
             return matchadBokning;
         }
 
+        public string HittaBehörighet(int anstllningsNr)
+        {
+            Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
+            return anställd.Behörighet;
+        }
     }
 }
