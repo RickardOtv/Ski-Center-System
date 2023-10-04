@@ -178,9 +178,9 @@
             this.btnAvbryt.Location = new System.Drawing.Point(14, 529);
             this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(50, 21);
+            this.btnAvbryt.Size = new System.Drawing.Size(70, 21);
             this.btnAvbryt.TabIndex = 14;
-            this.btnAvbryt.Text = "Avbryt";
+            this.btnAvbryt.Text = "Tillbaka";
             this.btnAvbryt.UseVisualStyleBackColor = true;
             this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 

@@ -83,6 +83,16 @@ namespace NetFramework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap synchronization {
+            get {
+                object obj = ResourceManager.GetObject("synchronization", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053 {
             get {
                 object obj = ResourceManager.GetObject("v1_txt2img_77f610f8-523e-4179-b8c4-568ee1e75053", resourceCulture);
