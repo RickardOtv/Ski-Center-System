@@ -71,7 +71,7 @@ namespace Affärslager
         public void TaBortBokning(Bokning b, Logi l)
         {
             //Saknar att utrusning/skidskola blir available
-            l.IsAvailable = true; //Buggat för nån anledning
+            //l.IsAvailable = true; //Buggat för nån anledning
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
@@ -136,5 +136,13 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             //return bokning;
         }
+
+        public Bokning HittaBokning(string söktBokningsNummer)
+        {
+            int matadBokningsNr = Int32.Parse(söktBokningsNummer);
+            Bokning matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
+            return matchadBokning;
+        }
+
     }
 }

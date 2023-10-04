@@ -97,19 +97,41 @@ namespace NetFramework
             }
         }
 
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
+
         private void btnSökBokNr_Click(object sender, EventArgs e)
         {
-            int matadBokningsNr = Int32.Parse(txtFilter.Text);
-            var matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
-            if (matchadBokning != null)
+            Bokning matchadBokning;
+            String söktBokningsNummer = txtFilter.Text;
+            if (IsDigitsOnly(söktBokningsNummer))
             {
-                gridBokningar.DataSource = new List<Bokning> { matchadBokning };
+                // Skapa metod av detta
+                matchadBokning = kontroller.HittaBokning(söktBokningsNummer);
+                if (matchadBokning != null)
+                {
+                    gridBokningar.DataSource = new List<Bokning> { matchadBokning };
+                }
+                else
+                {
+                    MessageBox.Show("Bokning ej hittad, försök igen");
+                }
             }
             else
             {
                 MessageBox.Show("Bokning ej hittad, försök igen");
             }
         }
+
+
 
         private void btn_sökPersonNr_Click(object sender, EventArgs e)
         {
@@ -122,7 +144,7 @@ namespace NetFramework
             }
             else
             {
-                MessageBox.Show("Inga matchande bokningar hittades, försök igen");
+                MessageBox.Show("Inget matchande personnummer hittades, försök igen");
             }
         }
 
