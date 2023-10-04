@@ -40,7 +40,7 @@ namespace NetFramework
                 bokningsMeny.Show();
             }
             else
-                MessageBox.Show("Inloggning misslyckades");
+                MessageBox.Show("Du har ej rätt behörighet.");
         }
 
         private void lblMata_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace NetFramework
                 MessageBox.Show("Du har åtkomst när denna rutan är klar");
             }
             else
-                MessageBox.Show("Inloggning misslyckades");
+                MessageBox.Show("Du har ej rätt behörighet.");
         }
 
         private void btnMarknad_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace NetFramework
                 MessageBox.Show("Du har åtkomst när denna rutan är klar");
             }
             else
-                MessageBox.Show("Inloggning misslyckades");
+                MessageBox.Show("Du har ej rätt behörighet.");
         }
 
 
@@ -79,7 +79,7 @@ namespace NetFramework
                 MessageBox.Show("Du har åtkomst när denna rutan är klar");
             }
             else
-                MessageBox.Show("Inloggning misslyckades");
+                MessageBox.Show("Du har ej rätt behörighet.");
         }
     }
 }
