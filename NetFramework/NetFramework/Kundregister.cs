@@ -99,14 +99,37 @@ namespace NetFramework
 
         private void btnSokNamn_Click(object sender, EventArgs e)
         {
+            
+            string matadNamn = txtBoxNamn.Text;
+            var matchadeKunder = unitOfWork.kunder.Where(k => k.Namn == matadNamn).ToList();
 
+            if (matchadeKunder.Count > 0)
+            {
+                gridKunder.DataSource = matchadeKunder;
+            }
+            else
+            {
+                MessageBox.Show("Inget matchande personnummer hittades, försök igen");
+            }
+            
         }
 
         private void btnSokPersonNr_Click(object sender, EventArgs e)
         {
             
+            string matadPeronNr = txtBoxPersonNr.Text;
+            var matchadeKunder = unitOfWork.kunder.Where(k => k.Personnummer == matadPeronNr).ToList();
+
+            if (matchadeKunder.Count > 0)
+            {
+                gridKunder.DataSource = matchadeKunder;
+            }
+            else
+            {
+                MessageBox.Show("Inget matchande personnummer hittades, försök igen");
+            }
             
-            
+
         }
     }
 }

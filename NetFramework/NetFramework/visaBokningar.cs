@@ -152,5 +152,7 @@ namespace NetFramework
         {
             RefreshBokningar();
         }
+
+        
     }
 }
