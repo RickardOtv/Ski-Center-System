@@ -18,14 +18,14 @@ namespace Entitetslager
         public DateTime Till { get; set; }
         public Uthyrning Uthyrning { get; set; }
         public int UthyrningsID { get; set; }
-        public Logi Logi { get; set; }
+        public IList<Logi> Logi { get; set; }
         public string LogiID { get; set; }
         public Kund Kund { get; set; }
         public int KundID { get; set; }
         public Skidlektion Skidlektion { get; set; }
         public int LektionsID { get; set; }
 
-        public Bokning(DateTime från, DateTime till, Logi l, Kund k)
+        public Bokning(DateTime från, DateTime till, IList<Logi> l, Kund k)
         {
             Från = från;
             Till = till;
