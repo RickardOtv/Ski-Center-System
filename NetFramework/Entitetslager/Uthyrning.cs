@@ -16,6 +16,7 @@ namespace Entitetslager
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
         public IList<Utrustning> Utrustning { get; set; }
+        public string UtrustningsID { get; set; }
 
         [Required]
         public Bokning BokningsID { get; set; }
