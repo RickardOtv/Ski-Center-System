@@ -1,4 +1,5 @@
 ﻿using Affärslager;
+using Entitetslager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace NetFramework
     {
         private LoggaIn loggaIn;
         private Kontroller kontroller;
+        Logi valdLogi = new Logi();
         public VisaLedigLogi(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
@@ -63,8 +65,6 @@ namespace NetFramework
                 // Tabellnamn för Logidel
                 dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
                 dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
-                dataGridView1.Columns["IsAvailable"].HeaderText = "Tillgänglighet";
-
 
               
             }
@@ -82,9 +82,10 @@ namespace NetFramework
 
         private void button2_Click(object sender, EventArgs e)
         {
+            valdLogi = dataGridView1.SelectedRows[0].DataBoundItem as Logi;
             DateTime startDate = startDatePicker.Value;
             DateTime endDate = endDatePicker.Value;
-            decimal pris = kontroller.KollaPris(startDate, endDate);
+            decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
 

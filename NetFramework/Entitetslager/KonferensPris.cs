@@ -1,36 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    [Table("LogiPris")]
-    public class LogiPris
+    [Table("KonferensPris")]
+    public class KonferensPris
     {
         [Key, Column(Order = 1)]
         public string Typ { get; set; }
         [Key, Column(Order = 2)]
-        public int Vecka { get; set; }
+        public string Vecka { get; set; }
         public int VeckoPris { get; set; }
-        public int VardagsPris { get; set; }
-        public int HelgPris { get; set; }
+        public int DygnsPris { get; set; }
+        public int TimPris { get; set; }
 
-        public LogiPris(string typ, int vecka, int veckoPris, int vardagsPris, int helgPris)
+        public KonferensPris(string typ, string vecka, int veckoPris, int dygnsPris, int timPris)
         {
             Typ = typ;
             Vecka = vecka;
             VeckoPris = veckoPris;
-            VardagsPris = vardagsPris;
-            HelgPris = helgPris;
+            DygnsPris = dygnsPris;
+            TimPris = timPris;
         }
 
-        public LogiPris()
-        {
+        public KonferensPris() { }
 
-        }
     }
 }

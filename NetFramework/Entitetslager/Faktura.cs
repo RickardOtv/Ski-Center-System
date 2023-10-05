@@ -30,7 +30,7 @@ namespace Entitetslager
 
         public Faktura()
         {
-            
+
         }
     }
 }

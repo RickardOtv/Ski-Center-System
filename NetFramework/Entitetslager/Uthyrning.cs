@@ -35,7 +35,7 @@ namespace Entitetslager
 
         public Uthyrning()
         {
-            
+
         }
     }
 }

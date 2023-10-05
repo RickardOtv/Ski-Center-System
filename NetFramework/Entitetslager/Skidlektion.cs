@@ -31,7 +31,7 @@ namespace Entitetslager
 
         public Skidlektion()
         {
-            
+
         }
     }
 }

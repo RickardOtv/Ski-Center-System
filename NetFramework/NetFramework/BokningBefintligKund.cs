@@ -35,7 +35,6 @@ namespace NetFramework
             var logier = kontroller.HämtaTillgängligLogi();
             gridLogi.DataSource = logier;
             gridLogi.AutoGenerateColumns = false;
-            gridLogi.Columns["IsAvailable"].Visible = false;
             gridLogi.Columns["LogiID"].DisplayIndex = 0;
             gridLogi.Columns["Typ"].DisplayIndex = 1;
         }
@@ -100,9 +99,10 @@ namespace NetFramework
 
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
+            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
             DateTime från = dateFrån.Value;
             DateTime till = dateTill.Value;
-            decimal pris = kontroller.KollaPris(från, till);
+            decimal pris = kontroller.KollaPris(från, till, valdLogi.Typ);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
 
