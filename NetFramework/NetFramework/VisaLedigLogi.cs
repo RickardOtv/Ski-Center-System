@@ -84,6 +84,7 @@ namespace NetFramework
 
         private void button2_Click(object sender, EventArgs e)
         {
+            valdLogi = dataGridView1.SelectedRows[0].DataBoundItem as Logi;
             DateTime startDate = startDatePicker.Value;
             DateTime endDate = endDatePicker.Value;
             decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
