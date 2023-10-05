@@ -89,6 +89,8 @@ namespace Datalager
         {
             Anställd anställd1 = new Anställd(1, "Sasha","Stojanovic", "123", "Bokare" );
             anställda.Add(anställd1);
+            Kund kund1 = new Kund("200104139415", "Max", "0793269571", "Max123@gmail.com", "Maxganatan 17", "42469", "Backa", "Privat", 12000);
+            kunder.Add(kund1);
             SaveChanges();
         }
 
