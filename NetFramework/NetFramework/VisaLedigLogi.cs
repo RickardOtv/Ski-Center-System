@@ -65,8 +65,6 @@ namespace NetFramework
                 // Tabellnamn för Logidel
                 dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
                 dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
-                dataGridView1.Columns["IsAvailable"].HeaderText = "Tillgänglighet";
-
 
               
             }
