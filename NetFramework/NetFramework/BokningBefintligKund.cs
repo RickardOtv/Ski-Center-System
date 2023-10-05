@@ -35,7 +35,6 @@ namespace NetFramework
             var logier = kontroller.HämtaTillgängligLogi();
             gridLogi.DataSource = logier;
             gridLogi.AutoGenerateColumns = false;
-            gridLogi.Columns["IsAvailable"].Visible = false;
             gridLogi.Columns["LogiID"].DisplayIndex = 0;
             gridLogi.Columns["Typ"].DisplayIndex = 1;
         }
