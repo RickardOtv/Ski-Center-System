@@ -56,6 +56,8 @@ namespace NetFramework
             string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
             if (inmatning == "Admin")
             {
+               
+                
                 MessageBox.Show("Du har åtkomst när denna rutan är klar");
             }
             else
@@ -67,7 +69,11 @@ namespace NetFramework
             string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
             if (inmatning == "Uthyrare" || inmatning == "Bokare" || inmatning == "Admin")
             {
-                MessageBox.Show("Du har åtkomst när denna rutan är klar");
+                UthyrningsMeny uthyrningsMeny = new UthyrningsMeny(loggaInMeny, kontroller);
+                uthyrningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+                uthyrningsMeny.Show();
+
+                //MessageBox.Show("Du har åtkomst när denna rutan är klar");
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");
