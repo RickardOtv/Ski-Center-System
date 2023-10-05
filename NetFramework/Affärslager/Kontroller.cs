@@ -37,7 +37,7 @@ namespace Affärslager
             return false;
         }
 
-        public Bokning SkapaBokning(DateTime från, DateTime till, Logi l, Kund k)
+        public Bokning SkapaBokning(DateTime från, DateTime till, IList<Logi> l, Kund k)
         {
             if (LoggedIn == null)
             {
