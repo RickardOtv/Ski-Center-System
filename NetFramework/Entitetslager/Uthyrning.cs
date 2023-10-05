@@ -17,13 +17,14 @@ namespace Entitetslager
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
 
-        public Utrustning UtrustningsID { get; set; }
+        public Utrustning Utrustnings { get; set; }
+        public string UtrustningsID { get; set; }
 
 
         [Required]
         public Bokning BokningsID { get; set; }
 
-        public Uthyrning(int uthyrningsID, DateTime från, DateTime till, Utrustning utrustningsID, Bokning bokningsID)
+        public Uthyrning(int uthyrningsID, DateTime från, DateTime till, string utrustningsID, Bokning bokningsID)
         {
             UthyrningsID = uthyrningsID;
             Från = från;
