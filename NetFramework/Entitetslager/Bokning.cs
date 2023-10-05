@@ -19,7 +19,6 @@ namespace Entitetslager
         public Uthyrning Uthyrning { get; set; }
         public int UthyrningsID { get; set; }
         public IList<Logi> Logi { get; set; }
-        public string LogiID { get; set; }
         public Kund Kund { get; set; }
         public int KundID { get; set; }
         public Skidlektion Skidlektion { get; set; }
