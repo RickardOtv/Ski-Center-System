@@ -102,7 +102,7 @@ namespace NetFramework
         {
             DateTime från = dateFrån.Value;
             DateTime till = dateTill.Value;
-            decimal pris = kontroller.KollaPris(från, till);
+            decimal pris = kontroller.KollaPris(från, till, valdLogi.Typ);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
 

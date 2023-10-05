@@ -32,11 +32,11 @@ namespace Entitetslager
         {
             return Lösenord == given;
         }
-       // public string lösenord { get; set; }
+        // public string lösenord { get; set; }
 
         public Anställd()
         {
 
         }
-    }  
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Affärslager;
+using Entitetslager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace NetFramework
     {
         private LoggaIn loggaIn;
         private Kontroller kontroller;
+        Logi valdLogi = new Logi();
         public VisaLedigLogi(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
@@ -84,7 +86,7 @@ namespace NetFramework
         {
             DateTime startDate = startDatePicker.Value;
             DateTime endDate = endDatePicker.Value;
-            decimal pris = kontroller.KollaPris(startDate, endDate);
+            decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
         }
 

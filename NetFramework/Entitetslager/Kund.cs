@@ -35,9 +35,9 @@ namespace Entitetslager
             PostOrt = postOrt;
             Typ = typ;
             Maxbeloppskreditgräns = maxbeloppskreditgräns;
-            
+
         }
-        
+
         public Kund() { }
     }
 }
