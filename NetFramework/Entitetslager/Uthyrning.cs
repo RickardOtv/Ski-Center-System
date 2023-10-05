@@ -20,6 +20,7 @@ namespace Entitetslager
         public Utrustning Utrustnings { get; set; }
         public string UtrustningsID { get; set; }
 
+
         [Required]
         public Bokning BokningsID { get; set; }
 
