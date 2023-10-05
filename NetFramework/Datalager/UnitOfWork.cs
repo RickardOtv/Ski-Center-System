@@ -25,8 +25,10 @@ namespace Datalager
         public DbSet<Faktura> fakturor { get; set; }
         public DbSet<Logi> logier { get; set; }
         public DbSet<Kund> kunder {  get; set; }
-
         public DbSet<LogiPris> logiPris { get; set; }
+        public DbSet<UtrustningsPris> utrustningsPris { get; set; }
+        public DbSet<KonferensPris> konferensPris { get; set; }
+        public DbSet<CampPris> campPris { get; set; }
 
         #endregion
         public UnitOfWork() 

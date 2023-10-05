@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="Anställd.cs" />
     <Compile Include="Bokning.cs" />
+    <Compile Include="CampPris.cs" />
     <Compile Include="Faktura.cs" />
+    <Compile Include="KonferensPris.cs" />
     <Compile Include="Kund.cs" />
     <Compile Include="Logi.cs" />
     <Compile Include="LogiPris.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Skidlektion.cs" />
     <Compile Include="Uthyrning.cs" />
     <Compile Include="Utrustning.cs" />
+    <Compile Include="UtrustningsPris.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

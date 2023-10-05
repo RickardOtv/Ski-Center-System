@@ -44,13 +44,7 @@ namespace Affärslager
                 throw new ApplicationException("Ingen har loggat in");
             }
 
-            if (!l.IsAvailable)
-            {
-                throw new ApplicationException("Logi " + l.LogiID + " är redan reserverad av någon annan.");
-            }
-
             Bokning bokning = new Bokning(från, till, l, k);
-            l.IsAvailable = false;
             unitOfWork.bokningar.Add(bokning);
             unitOfWork.SaveChanges();
             return bokning;
@@ -93,37 +87,53 @@ namespace Affärslager
         }
         public IList<Logi> HämtaTillgängligLogi()
         {
-            List<Logi> logier = (from l in unitOfWork.logier where l.IsAvailable == true select l).ToList<Logi>();
-            return logier;
+            return unitOfWork.logier.ToList<Logi>();
         }
         public IList<Kund> HämtaKunder()
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
-        public decimal KollaPris(DateTime från, DateTime till)
+        public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
-            var cultureInfo = CultureInfo.CurrentCulture; // You can specify a specific culture if needed
+            decimal totalPrice = 0;
+            DateTime currentDate = från;
+            while (currentDate <= till)
+            {
+                // Hämta veckonummer för det aktuella datumet
+                int vecka = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(currentDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
-            // Find the relevant week and year combinations for the given date range
-            var relevantWeeksAndYears = Enumerable.Range(0, (int)(till - från).TotalDays + 1)
-                .Select(offset => new {
-                    WeekNumber = cultureInfo.Calendar.GetWeekOfYear(från.AddDays(offset), cultureInfo.DateTimeFormat.CalendarWeekRule, cultureInfo.DateTimeFormat.FirstDayOfWeek),
-                    Year = från.AddDays(offset).Year
-                })
-                .Distinct()
-                .ToList();
+                // Hämta prisinformation för den aktuella veckan och logitypen
+                var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
 
-            // Extract the week numbers from the relevantWeeksAndYears list
-            var relevantWeekNumbers = relevantWeeksAndYears.Select(ry => ry.WeekNumber).ToList();
+                if (logiPris != null)
+                {
+                    if (currentDate.DayOfWeek >= DayOfWeek.Monday && currentDate.DayOfWeek <= DayOfWeek.Thursday)
+                    {
+                        // Om det är en vardag (måndag till torsdag), använd vardagspriset
+                        totalPrice += logiPris.VardagsPris;
+                    }
 
-            // Query the LogisticsPrice table to get prices for the relevant week numbers
-            var prices = unitOfWork.logiPris
-                .Where(lp => relevantWeekNumbers.Contains(lp.Vecka))
-                .Select(lp => lp.Pris)
-                .ToList();
+                    else
+                    {
+                        // Annars är det en helgdag (fredag till söndag), använd helgpriset
+                        totalPrice += logiPris.HelgPris;
+                    }
+                }
+                else
+                {
+                    // Om prisinformation saknas för den aktuella veckan och logitypen, bryt loopen
+                    break;
+                }
 
-            // Calculate the total price based on the prices for all relevant weeks
-            decimal totalPrice = prices.Sum();
+                // Gå till nästa dag
+                currentDate = currentDate.AddDays(1);
+
+                // Om vi har passerat "till"-datumet, bryt loopen
+                if (currentDate > till)
+                {
+                    break;
+                }
+            }
 
             return totalPrice;
         }

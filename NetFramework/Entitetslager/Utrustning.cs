@@ -17,19 +17,16 @@ namespace Entitetslager
 
         public int Storlek { get; set; }
 
-        public bool isAvailable { get; set; }
-
-        public Utrustning(string utrustningsID, string typ, int storlek, bool isAvailable)
+        public Utrustning(string utrustningsID, string typ, int storlek)
         {
             UtrustningsID = utrustningsID;
             Typ = typ;
             Storlek = storlek;
-            this.isAvailable = isAvailable;
         }
 
         public Utrustning()
         {
-            
+
         }
     }
 }
