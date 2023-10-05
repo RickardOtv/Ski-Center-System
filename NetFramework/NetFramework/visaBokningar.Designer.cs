@@ -70,6 +70,7 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(286, 26);
             this.txtFilter.TabIndex = 8;
+
             // 
             // gridBokningar
             // 
