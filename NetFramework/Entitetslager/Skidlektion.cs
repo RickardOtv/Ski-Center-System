@@ -13,19 +13,15 @@ namespace Entitetslager
     {
         [Key]
         public int LektionsID { get; set; }
-        public Anställd Anställd { get; set; }
-        public int AnställningsNr { get; set; }
-        [Required]
-        public Bokning Bokning { get; set; }
-        public int BokningsID { get; set; }
+
         public string Grupp { get; set; }
-        public int Antal { get; set; }
+
 
         public Skidlektion(int lektionsID, string grupp, int antal)
         {
             LektionsID = lektionsID;
             Grupp = grupp;
-            Antal = antal;
+          
         }
 
 
