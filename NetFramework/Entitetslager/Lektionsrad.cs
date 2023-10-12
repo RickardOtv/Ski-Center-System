@@ -12,7 +12,6 @@ namespace Entitetslager
     public class Lektionsrad
     {
         [Key]
-
         public int LektionsradsID { get; set; }
 
         public Skidlektion skidlektion { get; set; }
