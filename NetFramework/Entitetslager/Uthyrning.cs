@@ -13,19 +13,21 @@ namespace Entitetslager
     {
         [Key]
         public int UthyrningsID { get; set; }
-        public DateTime Från { get; set; }
-        public DateTime Till { get; set; }
-        public IList<Utrustning> Utrustning { get; set; }
-        public string UtrustningsID { get; set; }
 
+
+
+
+        
+        public Bokning bokning { get; set; }
         [Required]
-        public Bokning BokningsID { get; set; }
+        public int BokningsID { get; set; }
 
-        public Uthyrning(DateTime från, DateTime till, Bokning bokningsID, IList<Utrustning> utrustning)
+        public IList<Uthyrningsrad> Uthyrningsrader { get; set; }
+
+
+        public Uthyrning(int bokningsID, IList<Uthyrningsrad> uthyrningsrader)
         {
-            Utrustning = utrustning;
-            Från = från;
-            Till = till;
+            Uthyrningsrader = uthyrningsrader ?? new List<Uthyrningsrad>();
             BokningsID = bokningsID;
         }
 
