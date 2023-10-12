@@ -32,7 +32,7 @@ namespace Datalager
 
         #endregion
         public UnitOfWork() 
-            : base("suht2304Lokal") 
+            : base("suht2304") 
         {
             //ResetTable("LogiPris");
            //Reset();
