@@ -16,6 +16,7 @@ namespace Entitetslager
         public int BokningsradID { get; set; }
 
         public Logi logi { get; set; }
+        [ForeignKey("Logi")]
         public int LogiID { get; set; }
 
         public Bokning bokning { get; set; }
