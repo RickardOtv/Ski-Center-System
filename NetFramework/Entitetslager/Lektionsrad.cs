@@ -11,6 +11,7 @@ namespace Entitetslager
     [Table("Lektionsrad")]
     public class Lektionsrad
     {
+        [Key]
 
         public int LektionsradsID { get; set; }
 
