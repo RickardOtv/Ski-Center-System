@@ -17,13 +17,10 @@ namespace Entitetslager
         [ForeignKey("Utrustning")]
         public string UtrustningsID { get; set; }
         public Utrustning Utrustning { get; set; }
-        
-
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
         public Uthyrning Uthyrning { get; set; }
         public int UthyrningsID { get; set; }
-        
 
         public Uthyrningsrad(string utrustningsID, DateTime från, DateTime till, int uthyrningsID)
         {
@@ -31,8 +28,6 @@ namespace Entitetslager
             Från = från;
             Till = till;
             UthyrningsID = uthyrningsID;
-
-
         }
 
         public Uthyrningsrad()

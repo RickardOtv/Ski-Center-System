@@ -74,12 +74,14 @@ namespace NetFramework
 
             if (gridBokningar.SelectedRows != null)
             {
+                /*
                 //kontroller.TaBortBokning(valdBokning, valdBokning.Logi);
                 //RefreshBokningar();
                 //MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdBokning);
                 ändraBokning.Show();
                 ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
+                */
             }
         }
 
@@ -91,7 +93,7 @@ namespace NetFramework
             {
                 kontroller.TaBortBokning(valdBokning);
                 RefreshBokningar();
-                MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
+                //MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 //this.Close();
             }
         }

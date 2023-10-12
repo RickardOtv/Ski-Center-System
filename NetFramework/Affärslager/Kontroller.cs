@@ -36,21 +36,29 @@ namespace Affärslager
                 LoggedIn = null;
             return false;
         }
-        public Bokning SkapaBokning(DateTime från, DateTime till, IList<Bokningsrad> boknignsrader, Kund k)
+        /*
+        public Bokning SkapaBokning(DateTime från, DateTime till, IList<Bokningsrad> bokningsrader, Kund k)
         {
             if (LoggedIn == null)
             {
                 throw new ApplicationException("Ingen har loggat in");
             }
-
             // Skapa bokningsrader baserat på logierna
-            var bokningsrader = boknignsrader.Select(logi => new Bokningsrad
+            if (bokningsrader != null)
             {
-                LogiID = logi.LogiID,
-                Från = från,
-                Till = till
-                
-            }).ToList();
+                var Bokningsrader = bokningsrader.Select(logi => new Bokningsrad
+                {
+                    LogiID = logi.LogiID,
+                    Från = från,
+                    Till = till
+                }).ToList();
+            }
+            else
+            {
+                // Hantera fallet när boknignsrader är null
+                throw new Exception("boknignsrader är null. Det går inte att fortsätta med den dynamiska operationen.");
+            }
+
 
             // Skapa bokningen
             Bokning bokning = new Bokning
@@ -66,7 +74,7 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return bokning;
         }
-
+        */
         public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
         {
             Kund kund = new Kund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
@@ -156,7 +164,7 @@ namespace Affärslager
         {
             return unitOfWork.bokningar.ToList<Bokning>();
         }
-
+        /*
         public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
         {
             bokning.Från = från;
@@ -164,7 +172,7 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             //return bokning;
         }
-
+        */
         public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
         {
             kund.Personnummer = personnummer;
