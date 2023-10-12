@@ -67,6 +67,7 @@ namespace NetFramework
             this.Close();
         }
 
+
         private void btnSkapaBokning_Click(object sender, EventArgs e)
         {
             från = DateTime.Parse(dateFrån.Text);
@@ -76,9 +77,9 @@ namespace NetFramework
 
             if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
             {
-                Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
+                //Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
                 RefreshLogi();
-                MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Bokningsrader} \nBokningsID: {nyBokning.BokningsID}");
+                //MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Bokningsrader} \nBokningsID: {nyBokning.BokningsID}");
                 this.Close();
             }
         }

@@ -20,7 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Bokning valdBokning;
-
+        /*
         public ÄndraBokning(LoggaIn loggaIn, Kontroller kontroller, Bokning bokning)
         {
             this.loggaIn = loggaIn;
@@ -32,7 +32,7 @@ namespace NetFramework
             endDatePicker.Value = valdBokning.Till;
 
         }
-
+        */
 
 
         public string InloggadAnvandare
@@ -51,7 +51,7 @@ namespace NetFramework
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);
-            kontroller.ÄndraBokning(startDate, endDate, valdBokning);
+            //kontroller.ÄndraBokning(startDate, endDate, valdBokning);
 
             MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokning.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
             this.Close();
