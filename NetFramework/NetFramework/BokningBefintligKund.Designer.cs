@@ -42,8 +42,13 @@
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.btnKollaPris = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
+            this.gridRader = new System.Windows.Forms.DataGridView();
+            this.btnLäggTill = new System.Windows.Forms.Button();
+            this.btnTaBort = new System.Windows.Forms.Button();
+            this.btnVäljKund = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
             this.SuspendLayout();
             // 
             // gridKunder
@@ -64,7 +69,7 @@
             // gridLogi
             // 
             this.gridLogi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLogi.Location = new System.Drawing.Point(588, 208);
+            this.gridLogi.Location = new System.Drawing.Point(464, 208);
             this.gridLogi.Margin = new System.Windows.Forms.Padding(4);
             this.gridLogi.Name = "gridLogi";
             this.gridLogi.ReadOnly = true;
@@ -72,7 +77,7 @@
             this.gridLogi.RowHeadersWidth = 72;
             this.gridLogi.RowTemplate.Height = 31;
             this.gridLogi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLogi.Size = new System.Drawing.Size(440, 248);
+            this.gridLogi.Size = new System.Drawing.Size(633, 248);
             this.gridLogi.TabIndex = 1;
             // 
             // lblKund
@@ -203,13 +208,60 @@
             this.txtFilter.Size = new System.Drawing.Size(264, 31);
             this.txtFilter.TabIndex = 4;
             // 
+            // gridRader
+            // 
+            this.gridRader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRader.Location = new System.Drawing.Point(1104, 208);
+            this.gridRader.Name = "gridRader";
+            this.gridRader.ReadOnly = true;
+            this.gridRader.RowHeadersVisible = false;
+            this.gridRader.RowHeadersWidth = 82;
+            this.gridRader.RowTemplate.Height = 33;
+            this.gridRader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridRader.Size = new System.Drawing.Size(638, 248);
+            this.gridRader.TabIndex = 16;
+            // 
+            // btnLäggTill
+            // 
+            this.btnLäggTill.Location = new System.Drawing.Point(992, 463);
+            this.btnLäggTill.Name = "btnLäggTill";
+            this.btnLäggTill.Size = new System.Drawing.Size(105, 37);
+            this.btnLäggTill.TabIndex = 17;
+            this.btnLäggTill.Text = "Lägg Till";
+            this.btnLäggTill.UseVisualStyleBackColor = true;
+            this.btnLäggTill.Click += new System.EventHandler(this.btnLäggTill_Click);
+            // 
+            // btnTaBort
+            // 
+            this.btnTaBort.Location = new System.Drawing.Point(1637, 463);
+            this.btnTaBort.Name = "btnTaBort";
+            this.btnTaBort.Size = new System.Drawing.Size(105, 37);
+            this.btnTaBort.TabIndex = 18;
+            this.btnTaBort.Text = "Ta Bort";
+            this.btnTaBort.UseVisualStyleBackColor = true;
+            this.btnTaBort.Click += new System.EventHandler(this.btnTaBort_Click);
+            // 
+            // btnVäljKund
+            // 
+            this.btnVäljKund.Location = new System.Drawing.Point(547, 997);
+            this.btnVäljKund.Name = "btnVäljKund";
+            this.btnVäljKund.Size = new System.Drawing.Size(131, 42);
+            this.btnVäljKund.TabIndex = 19;
+            this.btnVäljKund.Text = "Välj kund";
+            this.btnVäljKund.UseVisualStyleBackColor = true;
+            this.btnVäljKund.Click += new System.EventHandler(this.btnVäljKund_Click);
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1368, 1062);
+            this.ClientSize = new System.Drawing.Size(1754, 1234);
+            this.Controls.Add(this.btnVäljKund);
+            this.Controls.Add(this.btnTaBort);
+            this.Controls.Add(this.btnLäggTill);
+            this.Controls.Add(this.gridRader);
             this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnSkapaBokning);
@@ -226,10 +278,12 @@
             this.Controls.Add(this.gridKunder);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BokningBefintligKund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Befintlig Kund";
             this.Load += new System.EventHandler(this.BokningBefintligKund_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +305,9 @@
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Button btnKollaPris;
         private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.DataGridView gridRader;
+        private System.Windows.Forms.Button btnLäggTill;
+        private System.Windows.Forms.Button btnTaBort;
+        private System.Windows.Forms.Button btnVäljKund;
     }
 }
