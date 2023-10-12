@@ -7,28 +7,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entitetslager
-{
-    [Table("Utrustningsrad")]
+{   
+    [Table("Uthyrningsrad")]
     public class Uthyrningsrad
     {
         [Key]
         public int UthyrningsradID { get; set; }
 
-        public Utrustning utrustning { get; set; }
+        [ForeignKey("Utrustning")]
         public string UtrustningsID { get; set; }
+        public Utrustning Utrustning { get; set; }
+        
 
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
+        public Uthyrning Uthyrning { get; set; }
+        public int UthyrningsID { get; set; }
+        
 
-        public Bokning bokning { get; set; }
-        public int BokningsID { get; set; }
-
-        public Uthyrningsrad(string utrustningsID, DateTime från, DateTime till, int bokningsID)
+        public Uthyrningsrad(string utrustningsID, DateTime från, DateTime till, int uthyrningsID)
         {
             UtrustningsID = utrustningsID;
             Från = från;
             Till = till;
-            BokningsID = bokningsID;
+            UthyrningsID = uthyrningsID;
 
 
         }

@@ -13,15 +13,9 @@ namespace Entitetslager
     {
         [Key]
         public int UthyrningsID { get; set; }
-
-
-
-
-        [Required]
-        public Bokning bokning { get; set; }
-        
+        [ForeignKey("Bokning")]
         public int BokningsID { get; set; }
-
+        public Bokning Bokning { get; set; }
         public IList<Uthyrningsrad> Uthyrningsrader { get; set; }
 
 
