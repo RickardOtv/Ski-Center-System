@@ -17,8 +17,10 @@ namespace Entitetslager
         public int Momsats { get; set; }
         public int Rabattsats { get; set; }
         public float TotalPris { get; set; }
-        public Bokning Bokning { get; set; }
+        [ForeignKey("Bokning")]
         public int BokningsID { get; set; }
+        public Bokning Bokning { get; set; }
+        
 
         public Faktura(int fakturaID, int moms, int rabattsats, float totalpris)
         {

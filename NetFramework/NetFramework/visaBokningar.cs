@@ -42,16 +42,13 @@ namespace NetFramework
             gridBokningar.DataSource = bokningar;
 
             gridBokningar.AutoGenerateColumns = false;
-            gridBokningar.Columns["Uthyrning"].Visible = false;
-            gridBokningar.Columns["Logi"].Visible = false;
             gridBokningar.Columns["Kund"].Visible = false;
-            gridBokningar.Columns["Skidlektion"].Visible = false;
+            gridBokningar.Columns["Bokningsrader"].Visible = false;
+            gridBokningar.Columns["Lektionsrader"].Visible = false;
             gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
             gridBokningar.Columns["KundID"].DisplayIndex = 1;
-            gridBokningar.Columns["LogiID"].DisplayIndex = 2;
-            gridBokningar.Columns["UthyrningsID"].DisplayIndex = 3;
-            gridBokningar.Columns["Från"].DisplayIndex = 4;
-            gridBokningar.Columns["Till"].DisplayIndex = 5;
+            gridBokningar.Columns["Från"].DisplayIndex = 2;
+            gridBokningar.Columns["Till"].DisplayIndex = 3;
             
         }
 
@@ -89,8 +86,7 @@ namespace NetFramework
 
             if (gridBokningar.SelectedRows != null)
             {
-                valdLogi = kontroller.HittaLogi(valdBokning.LogiID);
-                kontroller.TaBortBokning(valdBokning, valdLogi);
+                kontroller.TaBortBokning(valdBokning);
                 RefreshBokningar();
                 MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 //this.Close();
@@ -153,6 +149,34 @@ namespace NetFramework
             RefreshBokningar();
         }
 
-        
+        private void gridBokningar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_visaRader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_personNr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_BokningsNr_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

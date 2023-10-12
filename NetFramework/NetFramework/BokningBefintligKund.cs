@@ -20,7 +20,7 @@ namespace NetFramework
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
         private Kund valdKund;
-        IList<Logi> valdLogi;
+        IList<Bokningsrad> valdLogi;
         DateTime från;
         DateTime till;
         public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
@@ -71,14 +71,14 @@ namespace NetFramework
         {
             från = DateTime.Parse(dateFrån.Text);
             till = DateTime.Parse(dateTill.Text);
-            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as IList<Logi>;
+            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as IList<Bokningsrad>;
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
 
             if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
             {
                 Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
                 RefreshLogi();
-                MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.LogiID} \nBokningsID: {nyBokning.BokningsID}");
+                MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Bokningsrader} \nBokningsID: {nyBokning.BokningsID}");
                 this.Close();
             }
         }

@@ -13,19 +13,15 @@ namespace Entitetslager
     {
         [Key]
         public int UthyrningsID { get; set; }
-        public DateTime Från { get; set; }
-        public DateTime Till { get; set; }
-        public IList<Utrustning> Utrustning { get; set; }
-        public string UtrustningsID { get; set; }
+        [ForeignKey("Bokning")]
+        public int BokningsID { get; set; }
+        public Bokning Bokning { get; set; }
+        public IList<Uthyrningsrad> Uthyrningsrader { get; set; }
 
-        [Required]
-        public Bokning BokningsID { get; set; }
 
-        public Uthyrning(DateTime från, DateTime till, Bokning bokningsID, IList<Utrustning> utrustning)
+        public Uthyrning(int bokningsID, IList<Uthyrningsrad> uthyrningsrader)
         {
-            Utrustning = utrustning;
-            Från = från;
-            Till = till;
+            Uthyrningsrader = uthyrningsrader ?? new List<Uthyrningsrad>();
             BokningsID = bokningsID;
         }
 

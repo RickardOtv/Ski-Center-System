@@ -43,6 +43,7 @@ namespace NetFramework
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
+       
         private void btnSpara_Click(object sender, EventArgs e)
         {
             string nyttPersonNr = txtBoxPersonNr.Text;
@@ -65,7 +66,9 @@ namespace NetFramework
             valdKund.Telefonnummer = nyTelefonNr;
             valdKund.Typ = nyTyp;
             kontroller.ÄndraKund(nyttPersonNr,nyttNamn, nyTelefonNr, nyPostNr, nyPostOrt, nyTyp, nyAdress, nyEmail, nyKreditgrans, valdKund);
+            
             MessageBox.Show("Kund uppdaterad!");
+            
             this.Close();
             
         }

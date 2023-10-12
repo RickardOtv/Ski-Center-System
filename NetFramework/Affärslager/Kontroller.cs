@@ -36,19 +36,35 @@ namespace Affärslager
                 LoggedIn = null;
             return false;
         }
-
-        public Bokning SkapaBokning(DateTime från, DateTime till, IList<Logi> l, Kund k)
+        public Bokning SkapaBokning(DateTime från, DateTime till, IList<Bokningsrad> boknignsrader, Kund k)
         {
             if (LoggedIn == null)
             {
                 throw new ApplicationException("Ingen har loggat in");
             }
 
-            Bokning bokning = new Bokning(från, till, l, k);
+            // Skapa bokningsrader baserat på logierna
+            var bokningsrader = boknignsrader.Select(logi => new Bokningsrad
+            {
+                LogiID = logi.LogiID,
+                Från = från,
+                Till = till
+                
+            }).ToList();
+
+            // Skapa bokningen
+            Bokning bokning = new Bokning
+            {
+                KundID = k.KundID,
+                Från = från,
+                Till = till,
+                Bokningsrader = bokningsrader
+              
+            };
+
             unitOfWork.bokningar.Add(bokning);
             unitOfWork.SaveChanges();
             return bokning;
-
         }
 
         public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
@@ -66,10 +82,8 @@ namespace Affärslager
             unitOfWork.SaveChanges();
         }
 
-        public void TaBortBokning(Bokning b, Logi l)
+        public void TaBortBokning(Bokning b)
         {
-            //Saknar att utrusning/skidskola blir available
-            //l.IsAvailable = true; //Buggat för nån anledning
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
