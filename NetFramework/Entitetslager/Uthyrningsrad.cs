@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entitetslager
 {
-    [Table("UtrustningsPris")]
+    [Table("Utrustningsrad")]
     public class Uthyrningsrad
     {
         [Key]

@@ -89,8 +89,7 @@ namespace NetFramework
 
             if (gridBokningar.SelectedRows != null)
             {
-                valdLogi = kontroller.HittaLogi(valdBokning.LogiID);
-                kontroller.TaBortBokning(valdBokning, valdLogi);
+                kontroller.TaBortBokning(valdBokning);
                 RefreshBokningar();
                 MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 //this.Close();

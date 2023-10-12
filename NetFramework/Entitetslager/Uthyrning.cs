@@ -17,9 +17,9 @@ namespace Entitetslager
 
 
 
-        
-        public Bokning bokning { get; set; }
         [Required]
+        public Bokning bokning { get; set; }
+        
         public int BokningsID { get; set; }
 
         public IList<Uthyrningsrad> Uthyrningsrader { get; set; }

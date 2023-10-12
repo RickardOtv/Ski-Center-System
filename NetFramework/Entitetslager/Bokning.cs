@@ -25,8 +25,6 @@ namespace Entitetslager
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
 
-        public Logi logiID { get; set; }
-
         public Bokning(int bokningsID, int kundID, int uthyrningsID, IList<Bokningsrad> bokningsrader, DateTime från, DateTime till)
         {
             Bokningsrader = bokningsrader ?? new List<Bokningsrad>();
