@@ -36,7 +36,7 @@ namespace Affärslager
                 LoggedIn = null;
             return false;
         }
-        
+        /*
         public Bokning SkapaBokning(DateTime från, DateTime till, IList<Logi> l, Kund k)
         {
             if (LoggedIn == null)
@@ -50,8 +50,8 @@ namespace Affärslager
             return bokning;
 
         }
+        */
         
-        /*
         public Bokning SkapaBokning(DateTime från, DateTime till, IList<Bokningsrad> boknignsrader, Kund k)
         {
             if (LoggedIn == null)
@@ -83,7 +83,7 @@ namespace Affärslager
             return bokning;
         }
 
-        */
+        
 
         public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
         {
