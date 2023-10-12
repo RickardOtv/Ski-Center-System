@@ -16,12 +16,11 @@ namespace Entitetslager
         [ForeignKey("Bokning")]
         public int BokningsID { get; set; }
         public Bokning Bokning { get; set; }
-        public IList<Uthyrningsrad> Uthyrningsrader { get; set; }
 
 
-        public Uthyrning(int bokningsID, IList<Uthyrningsrad> uthyrningsrader)
+        public Uthyrning(int uthyrningsID, int bokningsID)
         {
-            Uthyrningsrader = uthyrningsrader ?? new List<Uthyrningsrad>();
+            UthyrningsID = uthyrningsID;
             BokningsID = bokningsID;
         }
 
