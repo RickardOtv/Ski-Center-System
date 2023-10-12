@@ -13,15 +13,15 @@ namespace Entitetslager
     {
         [Key]
         public int LektionsradsID { get; set; }
-
-        public Skidlektion skidlektion { get; set; }
+        [ForeignKey("Skidlektion")]
         public int LektionsID { get; set; }
-
+        public Skidlektion Skidlektion { get; set; }
         public DateTime Från { get; set; }
         public DateTime Till { get; set; }
-        public Bokning bokning { get; set; }
-        [Required]
+        [ForeignKey("Bokning")]
         public int BokningsID { get; set; }
+        public Bokning Bokning { get; set; }
+        
 
         public Lektionsrad(int lektionsradsID, int lektionsID, DateTime från, DateTime till, int bokningsID)
         {
