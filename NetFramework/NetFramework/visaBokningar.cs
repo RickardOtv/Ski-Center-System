@@ -42,16 +42,13 @@ namespace NetFramework
             gridBokningar.DataSource = bokningar;
 
             gridBokningar.AutoGenerateColumns = false;
-            gridBokningar.Columns["Uthyrning"].Visible = false;
-            gridBokningar.Columns["Logi"].Visible = false;
             gridBokningar.Columns["Kund"].Visible = false;
-            gridBokningar.Columns["Skidlektion"].Visible = false;
+            gridBokningar.Columns["Bokningsrader"].Visible = false;
+            gridBokningar.Columns["Lektionsrader"].Visible = false;
             gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
             gridBokningar.Columns["KundID"].DisplayIndex = 1;
-            gridBokningar.Columns["LogiID"].DisplayIndex = 2;
-            gridBokningar.Columns["UthyrningsID"].DisplayIndex = 3;
-            gridBokningar.Columns["Från"].DisplayIndex = 4;
-            gridBokningar.Columns["Till"].DisplayIndex = 5;
+            gridBokningar.Columns["Från"].DisplayIndex = 2;
+            gridBokningar.Columns["Till"].DisplayIndex = 3;
             
         }
 
