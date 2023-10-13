@@ -81,26 +81,6 @@ namespace NetFramework
         {
             this.Close();
         }
-
-
-        private void btnSkapaBokning_Click(object sender, EventArgs e)
-        {
-            /*
-            från = DateTime.Parse(dateFrån.Text);
-            till = DateTime.Parse(dateTill.Text);
-            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as IList<Bokningsrad>;
-            valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
-
-            if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
-            {
-                //Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
-                RefreshLogi();
-                //MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Bokningsrader} \nBokningsID: {nyBokning.BokningsID}");
-                this.Close();
-            }
-            */
-        }
-
         private void btnSök_Click(object sender, EventArgs e)
         {
             string matatPersNr = txtFilter.Text;
@@ -117,13 +97,11 @@ namespace NetFramework
 
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
-            /*
-            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as IList<Logi>;
+            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
             DateTime från = dateFrån.Value;
             DateTime till = dateTill.Value;
             decimal pris = kontroller.KollaPris(från, till, valdLogi.Typ);
             MessageBox.Show($"Totalpris för valda datum:{pris}");
-            */
         }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
@@ -152,7 +130,7 @@ namespace NetFramework
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
             nyBokning = kontroller.SkapaBokning(valdKund);
-            MessageBox.Show($"Bokning har skapats med ID:{nyBokning.BokningsID} med kundID:{valdKund.KundID}");
+            MessageBox.Show($"Bokning har skapats med ID:{nyBokning.BokningsID} för kund:{valdKund.Namn}");
         }
     }
 }

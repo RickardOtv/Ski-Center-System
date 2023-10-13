@@ -38,7 +38,6 @@
             this.lblTill = new System.Windows.Forms.Label();
             this.dateFrån = new System.Windows.Forms.DateTimePicker();
             this.dateTill = new System.Windows.Forms.DateTimePicker();
-            this.btnSkapaBokning = new System.Windows.Forms.Button();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.btnKollaPris = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
@@ -46,6 +45,7 @@
             this.btnLäggTill = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
             this.btnVäljKund = new System.Windows.Forms.Button();
+            this.lblRader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
@@ -54,7 +54,7 @@
             // gridKunder
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridKunder.Location = new System.Drawing.Point(188, 652);
+            this.gridKunder.Location = new System.Drawing.Point(18, 674);
             this.gridKunder.Margin = new System.Windows.Forms.Padding(4);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
@@ -69,7 +69,7 @@
             // gridLogi
             // 
             this.gridLogi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLogi.Location = new System.Drawing.Point(464, 208);
+            this.gridLogi.Location = new System.Drawing.Point(292, 178);
             this.gridLogi.Margin = new System.Windows.Forms.Padding(4);
             this.gridLogi.Name = "gridLogi";
             this.gridLogi.ReadOnly = true;
@@ -85,7 +85,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(536, 510);
+            this.lblKund.Location = new System.Drawing.Point(474, 607);
             this.lblKund.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(250, 63);
@@ -97,7 +97,7 @@
             this.lblLogi.AutoSize = true;
             this.lblLogi.BackColor = System.Drawing.Color.Transparent;
             this.lblLogi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogi.Location = new System.Drawing.Point(446, 69);
+            this.lblLogi.Location = new System.Drawing.Point(402, 111);
             this.lblLogi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogi.Name = "lblLogi";
             this.lblLogi.Size = new System.Drawing.Size(410, 63);
@@ -109,7 +109,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 569);
+            this.label1.Location = new System.Drawing.Point(14, 591);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
@@ -118,7 +118,7 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(488, 592);
+            this.btnSök.Location = new System.Drawing.Point(318, 614);
             this.btnSök.Margin = new System.Windows.Forms.Padding(4);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(78, 38);
@@ -132,7 +132,7 @@
             this.lblFrån.AutoSize = true;
             this.lblFrån.BackColor = System.Drawing.Color.Transparent;
             this.lblFrån.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrån.Location = new System.Drawing.Point(184, 192);
+            this.lblFrån.Location = new System.Drawing.Point(12, 162);
             this.lblFrån.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFrån.Name = "lblFrån";
             this.lblFrån.Size = new System.Drawing.Size(67, 25);
@@ -144,7 +144,7 @@
             this.lblTill.AutoSize = true;
             this.lblTill.BackColor = System.Drawing.Color.Transparent;
             this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTill.Location = new System.Drawing.Point(184, 285);
+            this.lblTill.Location = new System.Drawing.Point(12, 255);
             this.lblTill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTill.Name = "lblTill";
             this.lblTill.Size = new System.Drawing.Size(51, 25);
@@ -153,7 +153,7 @@
             // 
             // dateFrån
             // 
-            this.dateFrån.Location = new System.Drawing.Point(190, 219);
+            this.dateFrån.Location = new System.Drawing.Point(18, 189);
             this.dateFrån.Margin = new System.Windows.Forms.Padding(4);
             this.dateFrån.Name = "dateFrån";
             this.dateFrån.Size = new System.Drawing.Size(264, 31);
@@ -161,26 +161,15 @@
             // 
             // dateTill
             // 
-            this.dateTill.Location = new System.Drawing.Point(188, 313);
+            this.dateTill.Location = new System.Drawing.Point(16, 283);
             this.dateTill.Margin = new System.Windows.Forms.Padding(4);
             this.dateTill.Name = "dateTill";
             this.dateTill.Size = new System.Drawing.Size(266, 31);
             this.dateTill.TabIndex = 12;
             // 
-            // btnSkapaBokning
-            // 
-            this.btnSkapaBokning.Location = new System.Drawing.Point(1104, 1010);
-            this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSkapaBokning.Name = "btnSkapaBokning";
-            this.btnSkapaBokning.Size = new System.Drawing.Size(212, 48);
-            this.btnSkapaBokning.TabIndex = 13;
-            this.btnSkapaBokning.Text = "Skapa Bokning";
-            this.btnSkapaBokning.UseVisualStyleBackColor = true;
-            this.btnSkapaBokning.Click += new System.EventHandler(this.btnSkapaBokning_Click);
-            // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(28, 1017);
+            this.btnAvbryt.Location = new System.Drawing.Point(2, 1195);
             this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(140, 40);
@@ -191,7 +180,7 @@
             // 
             // btnKollaPris
             // 
-            this.btnKollaPris.Location = new System.Drawing.Point(188, 392);
+            this.btnKollaPris.Location = new System.Drawing.Point(16, 362);
             this.btnKollaPris.Margin = new System.Windows.Forms.Padding(4);
             this.btnKollaPris.Name = "btnKollaPris";
             this.btnKollaPris.Size = new System.Drawing.Size(268, 48);
@@ -202,7 +191,7 @@
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(190, 596);
+            this.txtFilter.Location = new System.Drawing.Point(20, 618);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(264, 31);
@@ -211,7 +200,7 @@
             // gridRader
             // 
             this.gridRader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRader.Location = new System.Drawing.Point(1104, 208);
+            this.gridRader.Location = new System.Drawing.Point(932, 178);
             this.gridRader.Name = "gridRader";
             this.gridRader.ReadOnly = true;
             this.gridRader.RowHeadersVisible = false;
@@ -223,7 +212,7 @@
             // 
             // btnLäggTill
             // 
-            this.btnLäggTill.Location = new System.Drawing.Point(992, 463);
+            this.btnLäggTill.Location = new System.Drawing.Point(820, 433);
             this.btnLäggTill.Name = "btnLäggTill";
             this.btnLäggTill.Size = new System.Drawing.Size(105, 37);
             this.btnLäggTill.TabIndex = 17;
@@ -233,7 +222,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(1637, 463);
+            this.btnTaBort.Location = new System.Drawing.Point(1465, 433);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(105, 37);
             this.btnTaBort.TabIndex = 18;
@@ -243,13 +232,25 @@
             // 
             // btnVäljKund
             // 
-            this.btnVäljKund.Location = new System.Drawing.Point(547, 997);
+            this.btnVäljKund.Location = new System.Drawing.Point(377, 1019);
             this.btnVäljKund.Name = "btnVäljKund";
             this.btnVäljKund.Size = new System.Drawing.Size(131, 42);
             this.btnVäljKund.TabIndex = 19;
             this.btnVäljKund.Text = "Välj kund";
             this.btnVäljKund.UseVisualStyleBackColor = true;
             this.btnVäljKund.Click += new System.EventHandler(this.btnVäljKund_Click);
+            // 
+            // lblRader
+            // 
+            this.lblRader.AutoSize = true;
+            this.lblRader.BackColor = System.Drawing.Color.Transparent;
+            this.lblRader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRader.Location = new System.Drawing.Point(1002, 112);
+            this.lblRader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRader.Name = "lblRader";
+            this.lblRader.Size = new System.Drawing.Size(511, 63);
+            this.lblRader.TabIndex = 20;
+            this.lblRader.Text = "Dina bokningsrader:";
             // 
             // BokningBefintligKund
             // 
@@ -258,13 +259,13 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1754, 1234);
+            this.Controls.Add(this.lblRader);
             this.Controls.Add(this.btnVäljKund);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.gridRader);
             this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btnAvbryt);
-            this.Controls.Add(this.btnSkapaBokning);
             this.Controls.Add(this.dateTill);
             this.Controls.Add(this.dateFrån);
             this.Controls.Add(this.lblTill);
@@ -301,7 +302,6 @@
         private System.Windows.Forms.Label lblTill;
         private System.Windows.Forms.DateTimePicker dateFrån;
         private System.Windows.Forms.DateTimePicker dateTill;
-        private System.Windows.Forms.Button btnSkapaBokning;
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Button btnKollaPris;
         private System.Windows.Forms.TextBox txtFilter;
@@ -309,5 +309,6 @@
         private System.Windows.Forms.Button btnLäggTill;
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.Button btnVäljKund;
+        private System.Windows.Forms.Label lblRader;
     }
 }
