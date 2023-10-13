@@ -77,7 +77,6 @@
             this.label_BokningsNr.Size = new System.Drawing.Size(65, 13);
             this.label_BokningsNr.TabIndex = 9;
             this.label_BokningsNr.Text = "BokningsNr:";
-            this.label_BokningsNr.Click += new System.EventHandler(this.label_BokningsNr_Click);
             // 
             // txtFilter
             // 
@@ -86,7 +85,6 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(192, 20);
             this.txtFilter.TabIndex = 8;
-            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // gridBokningar
             // 
@@ -102,7 +100,6 @@
             this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridBokningar.Size = new System.Drawing.Size(423, 208);
             this.gridBokningar.TabIndex = 7;
-            this.gridBokningar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBokningar_CellContentClick);
             // 
             // btn_tillbaka
             // 
@@ -141,7 +138,6 @@
             this.textBox_personNr.Name = "textBox_personNr";
             this.textBox_personNr.Size = new System.Drawing.Size(192, 20);
             this.textBox_personNr.TabIndex = 14;
-            this.textBox_personNr.TextChanged += new System.EventHandler(this.textBox_personNr_TextChanged);
             // 
             // btn_sökPersonNr
             // 
@@ -164,7 +160,6 @@
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "PersonNr:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblAnstNr
             // 

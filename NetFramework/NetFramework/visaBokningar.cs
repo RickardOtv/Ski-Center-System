@@ -151,32 +151,7 @@ namespace NetFramework
             RefreshBokningar();
         }
 
-        private void gridBokningar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btn_visaRader_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_personNr_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFilter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_BokningsNr_Click(object sender, EventArgs e)
         {
 
         }
