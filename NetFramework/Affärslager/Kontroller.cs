@@ -102,9 +102,17 @@ namespace Affärslager
         {
             return unitOfWork.uthyrningsRader.Where(u => u.UthyrningsID == uthyrningsID).ToList();
         }
+        public IList<Lektionsrad> HämtaLektionsRader(int bokningsID)
+        {
+            return unitOfWork.lektionsRader.Where(b => b.BokningsID == bokningsID).ToList();
+        }
         public IList<Uthyrning> HämtaUthyrningar(int uthyrningsID)
         {
             return unitOfWork.uthyrningar.Where(u => u.UthyrningsID == uthyrningsID).ToList();
+        }
+        public IList<Skidlektion> HämtaLektioner(int lektionsID)
+        {
+            return unitOfWork.skidlektioner.Where(l => l.LektionsID == lektionsID).ToList();
         }
         public IList<Logi> HämtaTillgängligLogi()
         {

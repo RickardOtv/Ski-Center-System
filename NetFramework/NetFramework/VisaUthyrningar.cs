@@ -34,6 +34,11 @@ namespace NetFramework
             var rader = kontroller.HämtaUthyrningsRad(valdUthyrning.UthyrningsID);
             gridUthyrningsRader.DataSource = rader;
         }
+        public void RefreshLektioner()
+        {
+            var lektioner = kontroller.HämtaLektioner(valdUthyrning.BokningsID);
+            gridLektioner.DataSource = lektioner;
+        }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
@@ -43,6 +48,7 @@ namespace NetFramework
         private void btnVäljUthyrning_Click(object sender, EventArgs e)
         {
             RefreshRader();
+            RefreshLektioner();
         }
 
         private void VisaUthyrningar_Load(object sender, EventArgs e)

@@ -34,8 +34,11 @@
             this.lblRader = new System.Windows.Forms.Label();
             this.btnVäljUthyrning = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.gridLektioner = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).BeginInit();
             this.SuspendLayout();
             // 
             // gridUthyrning
@@ -71,9 +74,9 @@
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKund.Location = new System.Drawing.Point(139, 29);
             this.lblKund.Name = "lblKund";
-            this.lblKund.Size = new System.Drawing.Size(273, 46);
+            this.lblKund.Size = new System.Drawing.Size(262, 46);
             this.lblKund.TabIndex = 2;
-            this.lblKund.Text = "Välj uthyrning:";
+            this.lblKund.Text = "Välj uthyrning";
             // 
             // lblRader
             // 
@@ -82,9 +85,9 @@
             this.lblRader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRader.Location = new System.Drawing.Point(845, 29);
             this.lblRader.Name = "lblRader";
-            this.lblRader.Size = new System.Drawing.Size(551, 46);
+            this.lblRader.Size = new System.Drawing.Size(540, 46);
             this.lblRader.TabIndex = 3;
-            this.lblRader.Text = "Uthyrningens uthyrningsrader:";
+            this.lblRader.Text = "Uthyrningens uthyrningsrader";
             // 
             // btnVäljUthyrning
             // 
@@ -98,7 +101,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(8, 765);
+            this.btnTillbaka.Location = new System.Drawing.Point(8, 1183);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(109, 37);
             this.btnTillbaka.TabIndex = 5;
@@ -106,13 +109,36 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
+            // gridLektioner
+            // 
+            this.gridLektioner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLektioner.Location = new System.Drawing.Point(636, 678);
+            this.gridLektioner.Name = "gridLektioner";
+            this.gridLektioner.RowHeadersWidth = 82;
+            this.gridLektioner.RowTemplate.Height = 33;
+            this.gridLektioner.Size = new System.Drawing.Size(914, 555);
+            this.gridLektioner.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(877, 629);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(416, 46);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Uthyrningens lektioner";
+            // 
             // VisaUthyrningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1588, 804);
+            this.ClientSize = new System.Drawing.Size(1582, 1232);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gridLektioner);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnVäljUthyrning);
             this.Controls.Add(this.lblRader);
@@ -125,6 +151,7 @@
             this.Load += new System.EventHandler(this.VisaUthyrningar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +165,7 @@
         private System.Windows.Forms.Label lblRader;
         private System.Windows.Forms.Button btnVäljUthyrning;
         private System.Windows.Forms.Button btnTillbaka;
+        private System.Windows.Forms.DataGridView gridLektioner;
+        private System.Windows.Forms.Label label1;
     }
 }
