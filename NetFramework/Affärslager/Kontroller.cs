@@ -160,6 +160,15 @@ namespace Affärslager
         {
             return unitOfWork.bokningar.ToList<Bokning>();
         }
+
+        public IList<Bokningsrad> HämtaBokningsRader()
+        {
+            return unitOfWork.bokningsRader.ToList<Bokningsrad>();
+        }
+        public IList<Utrustning> HämtaUtrustning()
+        {
+            return unitOfWork.utrustningar.ToList<Utrustning>();
+        }
         /*
         public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
         {

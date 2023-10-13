@@ -45,10 +45,10 @@ namespace NetFramework
                 DateTime endDate = endDatePicker.Value;
 
                 string select = "SELECT Logi.* " +
-               "FROM Logi " +
-               "LEFT JOIN Bokning ON Logi.LogiID = Bokning.LogiID " +
-               "AND (@EndDate >= Bokning.Från AND @StartDate <= Bokning.Till) " +
-               "WHERE Bokning.Från IS NULL";
+                       "FROM Logi " +
+                       "LEFT JOIN Bokningsrad ON Logi.LogiID = Bokningsrad.LogiID " +
+                       "AND (@EndDate >= Bokningsrad.Från AND @StartDate <= Bokningsrad.Till) " +
+                       "WHERE Bokningsrad.Från IS NULL";
 
                 var c = new SqlConnection(cs);
                 var dataAdapter = new SqlDataAdapter(select, c);
