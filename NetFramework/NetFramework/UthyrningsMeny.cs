@@ -42,7 +42,9 @@ namespace NetFramework
 
         private void btnSkapaUthyrning_Click(object sender, EventArgs e)
         {
-
+            SkapaUthyrning skapaUthyrning = new SkapaUthyrning(loggaIn, kontroller);
+            skapaUthyrning.Show();
+            skapaUthyrning.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         private void btnBokaSkidlektion_Click(object sender, EventArgs e)
