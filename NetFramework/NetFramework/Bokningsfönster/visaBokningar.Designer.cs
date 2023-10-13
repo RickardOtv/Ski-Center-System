@@ -44,13 +44,14 @@
             this.btn_visaRader = new System.Windows.Forms.Button();
             this.logiGrid = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_TaBortRad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logiGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSökBokNr
             // 
-            this.btnSökBokNr.Location = new System.Drawing.Point(271, 82);
+            this.btnSökBokNr.Location = new System.Drawing.Point(224, 82);
             this.btnSökBokNr.Margin = new System.Windows.Forms.Padding(2);
             this.btnSökBokNr.Name = "btnSökBokNr";
             this.btnSökBokNr.Size = new System.Drawing.Size(57, 20);
@@ -75,7 +76,7 @@
             this.txtFilter.Location = new System.Drawing.Point(75, 83);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(192, 20);
+            this.txtFilter.Size = new System.Drawing.Size(145, 20);
             this.txtFilter.TabIndex = 8;
             // 
             // gridBokningar
@@ -90,7 +91,7 @@
             this.gridBokningar.RowHeadersWidth = 72;
             this.gridBokningar.RowTemplate.Height = 31;
             this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridBokningar.Size = new System.Drawing.Size(317, 208);
+            this.gridBokningar.Size = new System.Drawing.Size(275, 208);
             this.gridBokningar.TabIndex = 7;
             // 
             // btn_tillbaka
@@ -105,7 +106,7 @@
             // 
             // btn_ändra
             // 
-            this.btn_ändra.Location = new System.Drawing.Point(214, 367);
+            this.btn_ändra.Location = new System.Drawing.Point(840, 365);
             this.btn_ändra.Name = "btn_ändra";
             this.btn_ändra.Size = new System.Drawing.Size(86, 38);
             this.btn_ändra.TabIndex = 12;
@@ -115,7 +116,7 @@
             // 
             // btn_taBort
             // 
-            this.btn_taBort.Location = new System.Drawing.Point(117, 365);
+            this.btn_taBort.Location = new System.Drawing.Point(172, 365);
             this.btn_taBort.Name = "btn_taBort";
             this.btn_taBort.Size = new System.Drawing.Size(86, 39);
             this.btn_taBort.TabIndex = 13;
@@ -128,12 +129,12 @@
             this.textBox_personNr.Location = new System.Drawing.Point(75, 128);
             this.textBox_personNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_personNr.Name = "textBox_personNr";
-            this.textBox_personNr.Size = new System.Drawing.Size(192, 20);
+            this.textBox_personNr.Size = new System.Drawing.Size(145, 20);
             this.textBox_personNr.TabIndex = 14;
             // 
             // btn_sökPersonNr
             // 
-            this.btn_sökPersonNr.Location = new System.Drawing.Point(271, 127);
+            this.btn_sökPersonNr.Location = new System.Drawing.Point(224, 127);
             this.btn_sökPersonNr.Margin = new System.Windows.Forms.Padding(2);
             this.btn_sökPersonNr.Name = "btn_sökPersonNr";
             this.btn_sökPersonNr.Size = new System.Drawing.Size(57, 20);
@@ -174,7 +175,7 @@
             // 
             this.btn_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Refresh.Location = new System.Drawing.Point(348, 106);
+            this.btn_Refresh.Location = new System.Drawing.Point(306, 106);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(44, 41);
@@ -186,7 +187,7 @@
             // 
             // btn_visaRader
             // 
-            this.btn_visaRader.Location = new System.Drawing.Point(306, 367);
+            this.btn_visaRader.Location = new System.Drawing.Point(264, 365);
             this.btn_visaRader.Name = "btn_visaRader";
             this.btn_visaRader.Size = new System.Drawing.Size(86, 38);
             this.btn_visaRader.TabIndex = 20;
@@ -197,8 +198,7 @@
             // logiGrid
             // 
             this.logiGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.logiGrid.Enabled = false;
-            this.logiGrid.Location = new System.Drawing.Point(452, 152);
+            this.logiGrid.Location = new System.Drawing.Point(416, 152);
             this.logiGrid.Margin = new System.Windows.Forms.Padding(2);
             this.logiGrid.MultiSelect = false;
             this.logiGrid.Name = "logiGrid";
@@ -214,12 +214,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(449, 134);
+            this.label2.Location = new System.Drawing.Point(413, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 24;
             this.label2.Text = "Logi:";
+            // 
+            // btn_TaBortRad
+            // 
+            this.btn_TaBortRad.Location = new System.Drawing.Point(748, 365);
+            this.btn_TaBortRad.Name = "btn_TaBortRad";
+            this.btn_TaBortRad.Size = new System.Drawing.Size(86, 39);
+            this.btn_TaBortRad.TabIndex = 25;
+            this.btn_TaBortRad.Text = "Ta Bort";
+            this.btn_TaBortRad.UseVisualStyleBackColor = true;
+            this.btn_TaBortRad.Click += new System.EventHandler(this.btn_TaBortRad_Click);
             // 
             // VisaBokningar
             // 
@@ -227,7 +237,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 511);
+            this.ClientSize = new System.Drawing.Size(944, 511);
+            this.Controls.Add(this.btn_TaBortRad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.logiGrid);
             this.Controls.Add(this.btn_visaRader);
@@ -272,5 +283,6 @@
         private System.Windows.Forms.Button btn_visaRader;
         private System.Windows.Forms.DataGridView logiGrid;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_TaBortRad;
     }
 }

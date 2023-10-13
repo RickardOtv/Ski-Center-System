@@ -23,6 +23,7 @@ namespace NetFramework
         private Kontroller kontroller;
         private Bokning valdBokning;
         private Logi valdLogi;
+        private Bokningsrad valdRad;
 
         public VisaBokningar(LoggaIn loggaIn, Kontroller kontroller)
         {
@@ -166,6 +167,14 @@ namespace NetFramework
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             RefreshBokningar();
+        }
+
+        private void btn_TaBortRad_Click(object sender, EventArgs e)
+        {
+            valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
+            kontroller.TaBortLogi(valdRad);
+            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+            RefreshRader(valdBokning);
         }
     }
 }

@@ -226,5 +226,11 @@ namespace Affärslager
             Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
             return anställd.Behörighet;
         }
+
+        public void TaBortLogi(Bokningsrad valRad)
+        {
+            unitOfWork.bokningsRader.Remove(valRad);
+            unitOfWork.SaveChanges();
+        }
     }
 }
