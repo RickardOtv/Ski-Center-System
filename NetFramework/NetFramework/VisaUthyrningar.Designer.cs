@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridKunder = new System.Windows.Forms.DataGridView();
+            this.gridUthyrning = new System.Windows.Forms.DataGridView();
             this.gridUthyrningsRader = new System.Windows.Forms.DataGridView();
             this.lblKund = new System.Windows.Forms.Label();
             this.lblRader = new System.Windows.Forms.Label();
-            this.btnVäljKund = new System.Windows.Forms.Button();
+            this.btnVäljUthyrning = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridKunder
+            // gridUthyrning
             // 
-            this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridKunder.Location = new System.Drawing.Point(8, 78);
-            this.gridKunder.Name = "gridKunder";
-            this.gridKunder.ReadOnly = true;
-            this.gridKunder.RowHeadersVisible = false;
-            this.gridKunder.RowHeadersWidth = 82;
-            this.gridKunder.RowTemplate.Height = 33;
-            this.gridKunder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridKunder.Size = new System.Drawing.Size(540, 312);
-            this.gridKunder.TabIndex = 0;
+            this.gridUthyrning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUthyrning.Location = new System.Drawing.Point(8, 78);
+            this.gridUthyrning.Name = "gridUthyrning";
+            this.gridUthyrning.ReadOnly = true;
+            this.gridUthyrning.RowHeadersVisible = false;
+            this.gridUthyrning.RowHeadersWidth = 82;
+            this.gridUthyrning.RowTemplate.Height = 33;
+            this.gridUthyrning.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridUthyrning.Size = new System.Drawing.Size(540, 312);
+            this.gridUthyrning.TabIndex = 0;
             // 
             // gridUthyrningsRader
             // 
@@ -86,15 +86,15 @@
             this.lblRader.TabIndex = 3;
             this.lblRader.Text = "Uthyrningens uthyrningsrader:";
             // 
-            // btnVäljKund
+            // btnVäljUthyrning
             // 
-            this.btnVäljKund.Location = new System.Drawing.Point(395, 407);
-            this.btnVäljKund.Name = "btnVäljKund";
-            this.btnVäljKund.Size = new System.Drawing.Size(153, 44);
-            this.btnVäljKund.TabIndex = 4;
-            this.btnVäljKund.Text = "Välj uthyrning";
-            this.btnVäljKund.UseVisualStyleBackColor = true;
-            this.btnVäljKund.Click += new System.EventHandler(this.btnVäljKund_Click);
+            this.btnVäljUthyrning.Location = new System.Drawing.Point(395, 407);
+            this.btnVäljUthyrning.Name = "btnVäljUthyrning";
+            this.btnVäljUthyrning.Size = new System.Drawing.Size(153, 44);
+            this.btnVäljUthyrning.TabIndex = 4;
+            this.btnVäljUthyrning.Text = "Välj uthyrning";
+            this.btnVäljUthyrning.UseVisualStyleBackColor = true;
+            this.btnVäljUthyrning.Click += new System.EventHandler(this.btnVäljUthyrning_Click);
             // 
             // btnTillbaka
             // 
@@ -114,15 +114,16 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1588, 804);
             this.Controls.Add(this.btnTillbaka);
-            this.Controls.Add(this.btnVäljKund);
+            this.Controls.Add(this.btnVäljUthyrning);
             this.Controls.Add(this.lblRader);
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.gridUthyrningsRader);
-            this.Controls.Add(this.gridKunder);
+            this.Controls.Add(this.gridUthyrning);
             this.Name = "VisaUthyrningar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VisaUthyrningar";
-            ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).EndInit();
+            this.Load += new System.EventHandler(this.VisaUthyrningar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -131,11 +132,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridKunder;
+        private System.Windows.Forms.DataGridView gridUthyrning;
         private System.Windows.Forms.DataGridView gridUthyrningsRader;
         private System.Windows.Forms.Label lblKund;
         private System.Windows.Forms.Label lblRader;
-        private System.Windows.Forms.Button btnVäljKund;
+        private System.Windows.Forms.Button btnVäljUthyrning;
         private System.Windows.Forms.Button btnTillbaka;
     }
 }
