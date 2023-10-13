@@ -79,15 +79,18 @@ namespace NetFramework
       
         private void btn_ändra_Click(object sender, EventArgs e)
         {
-
-            valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
-
-            if (gridBokningar.SelectedRows != null)
+            if (logiGrid.SelectedRows.Count > 0)
             {
+                // At least one row is selected.
+                valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
                 ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdRad);
                 ändraBokning.Show();
                 ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
-                
+            }
+            else
+            {
+                // No row is selected. Show a message or handle it as needed.
+                MessageBox.Show("Please select a row to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -179,18 +182,26 @@ namespace NetFramework
 
         private void btn_TaBortRad_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (logiGrid.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
-            {
-                valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
-                valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
-                kontroller.TaBortLogi(valdRad);
-                RefreshRader(valdBokning);
+                if (result == DialogResult.Yes)
+                {
+                    valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
+                    valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+                    kontroller.TaBortLogi(valdRad);
+                    RefreshRader(valdBokning);
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
             }
-            else if (result == DialogResult.No)
+            else
             {
-                
+                // No row is selected. Show a message or handle it as needed.
+                MessageBox.Show("Please select a row to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
