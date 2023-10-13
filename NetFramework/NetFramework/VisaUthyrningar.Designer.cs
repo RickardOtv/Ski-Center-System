@@ -104,7 +104,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(8, 1183);
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 1183);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(109, 37);
             this.btnTillbaka.TabIndex = 5;
