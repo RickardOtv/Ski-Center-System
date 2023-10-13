@@ -97,15 +97,12 @@ namespace Affärslager
         public IList<Bokningsrad> HämtaRader(int bokningsID)
         {
             return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
-            /*
-            IList<Bokningsrad> rader = new List<Bokningsrad>();
-            while (unitOfWork.bokningsRader.FirstOrDefault(b => b.BokningsID == bokningsID) != null)
-            {
-                rader.Add(unitOfWork.bokningsRader.FirstOrDefault(b => b.BokningsID == bokningsID));
-            }
-            return rader;
-            */
         }
+        public IList<Lektionsrad> HämtaLektionsRader(int bokningsID)
+        {
+            return unitOfWork.lektionsRader.Where(b => b.BokningsID == bokningsID).ToList();
+        }
+
         public IList<Logi> HämtaTillgängligLogi()
         {
             return unitOfWork.logier.ToList<Logi>();

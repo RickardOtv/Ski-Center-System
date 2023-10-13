@@ -2,8 +2,10 @@
 using Datalager;
 using Entitetslager;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
@@ -42,14 +44,41 @@ namespace NetFramework
             gridBokningar.DataSource = bokningar;
 
             gridBokningar.AutoGenerateColumns = false;
-            gridBokningar.Columns["Kund"].Visible = false;
-            gridBokningar.Columns["Bokningsrader"].Visible = false;
-            gridBokningar.Columns["Lektionsrader"].Visible = false;
             gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
             gridBokningar.Columns["KundID"].DisplayIndex = 1;
-            gridBokningar.Columns["Från"].DisplayIndex = 2;
-            gridBokningar.Columns["Till"].DisplayIndex = 3;
-            
+
+        }
+        internal void RefreshRader(Bokning valdBokning)
+        {
+            //Logi
+            var rader = kontroller.HämtaRader(valdBokning.BokningsID);
+            gridBokningar.AutoGenerateColumns = false;
+            logiGrid.DataSource = rader;
+            logiGrid.AutoGenerateColumns = false;
+            logiGrid.Columns["Bokning"].Visible = false;
+            logiGrid.Columns["Logi"].Visible = false;
+            logiGrid.Columns["BokningsradID"].DisplayIndex = 0;
+            logiGrid.Columns["LogiID"].DisplayIndex = 1;
+            logiGrid.Columns["Från"].DisplayIndex = 2;
+            logiGrid.Columns["Till"].DisplayIndex = 3;
+            logiGrid.Columns["BokningsID"].DisplayIndex = 4;
+
+            //Uthyrningar
+
+            //Lektion
+            var lektionsRader = kontroller.HämtaLektionsRader(valdBokning.BokningsID);
+            LektionGrid.AutoGenerateColumns = false;
+            LektionGrid.DataSource = lektionsRader;
+            if (lektionsRader != null && lektionsRader.Count == 0)
+            {
+                
+            } else {
+                LektionGrid.Columns["LektionsradsID"].DisplayIndex = 0;
+                LektionGrid.Columns["LektionsID"].DisplayIndex = 1;
+                LektionGrid.Columns["Från"].DisplayIndex = 2;
+                LektionGrid.Columns["Till"].DisplayIndex = 3;
+                LektionGrid.Columns["BokningsID"].DisplayIndex = 4;
+            }
         }
 
 
@@ -153,7 +182,8 @@ namespace NetFramework
 
         private void btn_visaRader_Click(object sender, EventArgs e)
         {
-
+            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+            RefreshRader(valdBokning);
         }
     }
 }

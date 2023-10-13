@@ -214,7 +214,7 @@
             this.logiGrid.RowHeadersVisible = false;
             this.logiGrid.RowHeadersWidth = 72;
             this.logiGrid.RowTemplate.Height = 31;
-            this.logiGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.logiGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logiGrid.Size = new System.Drawing.Size(423, 119);
             this.logiGrid.TabIndex = 21;
             // 
