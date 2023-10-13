@@ -27,7 +27,7 @@ namespace NetFramework
         {
            valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
            var uthyrningar = kontroller.HämtaUthyrningar(valdUthyrning.UthyrningsID);
-            gridUthyrning .DataSource = uthyrningar;
+           gridUthyrning .DataSource = uthyrningar;
         }
         public void RefreshRader()
         {
@@ -42,7 +42,7 @@ namespace NetFramework
 
         private void btnVäljUthyrning_Click(object sender, EventArgs e)
         {
-
+            RefreshRader();
         }
 
         private void VisaUthyrningar_Load(object sender, EventArgs e)
