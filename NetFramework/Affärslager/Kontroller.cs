@@ -98,11 +98,22 @@ namespace Affärslager
         {
             return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
         }
+        public IList<Uthyrningsrad> HämtaUthyrningsRad(int uthyrningsID)
+        {
+            return unitOfWork.uthyrningsRader.Where(u => u.UthyrningsID == uthyrningsID).ToList();
+        }
         public IList<Lektionsrad> HämtaLektionsRader(int bokningsID)
         {
             return unitOfWork.lektionsRader.Where(b => b.BokningsID == bokningsID).ToList();
         }
-
+        public IList<Uthyrning> HämtaUthyrningar(int uthyrningsID)
+        {
+            return unitOfWork.uthyrningar.Where(u => u.UthyrningsID == uthyrningsID).ToList();
+        }
+        public IList<Skidlektion> HämtaLektioner(int lektionsID)
+        {
+            return unitOfWork.skidlektioner.Where(l => l.LektionsID == lektionsID).ToList();
+        }
         public IList<Logi> HämtaTillgängligLogi()
         {
             return unitOfWork.logier.ToList<Logi>();
@@ -197,6 +208,14 @@ namespace Affärslager
             int matadBokningsNr = Int32.Parse(söktBokningsNummer);
             Bokning matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
             return matchadBokning;
+        }
+        public Bokning HittaBokning(int kundID)
+        {
+            return unitOfWork.bokningar.FirstOrDefault(b => b.KundID == kundID);
+        }
+        public Uthyrning HittaUthyrning(int bokningsID)
+        {
+            return unitOfWork.uthyrningar.FirstOrDefault(u => u.BokningsID == bokningsID);
         }
 
         public string HittaBehörighet(int anstllningsNr)
