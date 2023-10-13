@@ -17,6 +17,9 @@ namespace NetFramework
         private Kontroller kontroller;
         private LoggaIn loggaIn;
         Uthyrning valdUthyrning;
+        Uthyrning hittadUthyrning;
+        Kund hittadKund;
+        Bokning matchadBokning;
         public VisaUthyrningar(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
@@ -27,7 +30,13 @@ namespace NetFramework
         {
            valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
            var uthyrningar = kontroller.HämtaUthyrningar(valdUthyrning.UthyrningsID);
-           gridUthyrning .DataSource = uthyrningar;
+           gridUthyrning.DataSource = uthyrningar;
+        }
+        public void RefreshUthyrningarSpecifik(int uthyrningsID)
+        {
+            valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
+            var uthyrningar = kontroller.HämtaUthyrningar(uthyrningsID);
+            gridUthyrning.DataSource = uthyrningar;
         }
         public void RefreshRader()
         {
@@ -54,6 +63,14 @@ namespace NetFramework
         private void VisaUthyrningar_Load(object sender, EventArgs e)
         {
             RefreshUthyrningar();
+        }
+
+        private void btnSök_Click(object sender, EventArgs e)
+        {
+            hittadKund = kontroller.HittaKund(txtPersNr.Text);
+            matchadBokning = kontroller.HittaBokning(hittadKund.KundID);
+            hittadUthyrning = kontroller.HittaUthyrning(matchadBokning.BokningsID);
+            RefreshUthyrningarSpecifik(hittadUthyrning.UthyrningsID);
         }
     }
 }

@@ -200,6 +200,14 @@ namespace Affärslager
             Bokning matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
             return matchadBokning;
         }
+        public Bokning HittaBokning(int kundID)
+        {
+            return unitOfWork.bokningar.FirstOrDefault(b => b.KundID == kundID);
+        }
+        public Uthyrning HittaUthyrning(int bokningsID)
+        {
+            return unitOfWork.uthyrningar.FirstOrDefault(u => u.BokningsID == bokningsID);
+        }
 
         public string HittaBehörighet(int anstllningsNr)
         {
