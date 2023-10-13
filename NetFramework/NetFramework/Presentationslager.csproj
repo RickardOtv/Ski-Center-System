@@ -142,6 +142,12 @@
     <Compile Include="UthyrningUtrustning.Designer.cs">
       <DependentUpon>UthyrningUtrustning.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisaUthyrningar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisaUthyrningar.Designer.cs">
+      <DependentUpon>VisaUthyrningar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bokningsfönster\BokningNyKund.resx">
       <DependentUpon>BokningNyKund.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UthyrningUtrustning.resx">
       <DependentUpon>UthyrningUtrustning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisaUthyrningar.resx">
+      <DependentUpon>VisaUthyrningar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

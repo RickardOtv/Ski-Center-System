@@ -28,9 +28,9 @@ namespace NetFramework
         }
         public void RefreshUthyrningar()
         {
-           valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
-           var uthyrningar = kontroller.HämtaUthyrningar(valdUthyrning.UthyrningsID);
-           gridUthyrning.DataSource = uthyrningar;
+            valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
+            var uthyrningar = kontroller.HämtaUthyrningar(valdUthyrning.UthyrningsID);
+            gridUthyrning.DataSource = uthyrningar;
         }
         public void RefreshUthyrningarSpecifik(int uthyrningsID)
         {
@@ -51,7 +51,7 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnVäljUthyrning_Click(object sender, EventArgs e)
