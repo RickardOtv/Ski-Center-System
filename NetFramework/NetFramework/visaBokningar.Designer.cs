@@ -98,7 +98,7 @@
             this.gridBokningar.RowHeadersWidth = 72;
             this.gridBokningar.RowTemplate.Height = 31;
             this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridBokningar.Size = new System.Drawing.Size(423, 208);
+            this.gridBokningar.Size = new System.Drawing.Size(317, 208);
             this.gridBokningar.TabIndex = 7;
             // 
             // btn_tillbaka
@@ -113,7 +113,7 @@
             // 
             // btn_ändra
             // 
-            this.btn_ändra.Location = new System.Drawing.Point(320, 367);
+            this.btn_ändra.Location = new System.Drawing.Point(214, 367);
             this.btn_ändra.Name = "btn_ändra";
             this.btn_ändra.Size = new System.Drawing.Size(86, 38);
             this.btn_ändra.TabIndex = 12;
@@ -123,7 +123,7 @@
             // 
             // btn_taBort
             // 
-            this.btn_taBort.Location = new System.Drawing.Point(228, 367);
+            this.btn_taBort.Location = new System.Drawing.Point(117, 365);
             this.btn_taBort.Name = "btn_taBort";
             this.btn_taBort.Size = new System.Drawing.Size(86, 39);
             this.btn_taBort.TabIndex = 13;
@@ -182,7 +182,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(454, 106);
+            this.button1.Location = new System.Drawing.Point(348, 106);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(44, 41);
@@ -194,7 +194,7 @@
             // 
             // btn_visaRader
             // 
-            this.btn_visaRader.Location = new System.Drawing.Point(412, 367);
+            this.btn_visaRader.Location = new System.Drawing.Point(306, 367);
             this.btn_visaRader.Name = "btn_visaRader";
             this.btn_visaRader.Size = new System.Drawing.Size(86, 38);
             this.btn_visaRader.TabIndex = 20;
@@ -206,7 +206,7 @@
             // 
             this.logiGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.logiGrid.Enabled = false;
-            this.logiGrid.Location = new System.Drawing.Point(563, 52);
+            this.logiGrid.Location = new System.Drawing.Point(476, 52);
             this.logiGrid.Margin = new System.Windows.Forms.Padding(2);
             this.logiGrid.MultiSelect = false;
             this.logiGrid.Name = "logiGrid";
@@ -215,13 +215,13 @@
             this.logiGrid.RowHeadersWidth = 72;
             this.logiGrid.RowTemplate.Height = 31;
             this.logiGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.logiGrid.Size = new System.Drawing.Size(423, 119);
+            this.logiGrid.Size = new System.Drawing.Size(510, 119);
             this.logiGrid.TabIndex = 21;
             // 
             // uthyrningGrid
             // 
             this.uthyrningGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uthyrningGrid.Location = new System.Drawing.Point(563, 197);
+            this.uthyrningGrid.Location = new System.Drawing.Point(476, 197);
             this.uthyrningGrid.Margin = new System.Windows.Forms.Padding(2);
             this.uthyrningGrid.MultiSelect = false;
             this.uthyrningGrid.Name = "uthyrningGrid";
@@ -230,14 +230,14 @@
             this.uthyrningGrid.RowHeadersWidth = 72;
             this.uthyrningGrid.RowTemplate.Height = 31;
             this.uthyrningGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
-            this.uthyrningGrid.Size = new System.Drawing.Size(423, 123);
+            this.uthyrningGrid.Size = new System.Drawing.Size(510, 123);
             this.uthyrningGrid.TabIndex = 22;
             // 
             // LektionGrid
             // 
             this.LektionGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LektionGrid.Enabled = false;
-            this.LektionGrid.Location = new System.Drawing.Point(563, 344);
+            this.LektionGrid.Location = new System.Drawing.Point(471, 344);
             this.LektionGrid.Margin = new System.Windows.Forms.Padding(2);
             this.LektionGrid.MultiSelect = false;
             this.LektionGrid.Name = "LektionGrid";
@@ -246,14 +246,14 @@
             this.LektionGrid.RowHeadersWidth = 72;
             this.LektionGrid.RowTemplate.Height = 31;
             this.LektionGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
-            this.LektionGrid.Size = new System.Drawing.Size(423, 123);
+            this.LektionGrid.Size = new System.Drawing.Size(515, 123);
             this.LektionGrid.TabIndex = 23;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(560, 37);
+            this.label2.Location = new System.Drawing.Point(473, 37);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
@@ -264,7 +264,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(560, 182);
+            this.label3.Location = new System.Drawing.Point(473, 182);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
@@ -275,7 +275,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(560, 329);
+            this.label4.Location = new System.Drawing.Point(473, 329);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);

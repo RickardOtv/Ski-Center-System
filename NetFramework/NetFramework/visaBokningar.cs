@@ -185,5 +185,7 @@ namespace NetFramework
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshRader(valdBokning);
         }
+
+
     }
 }
