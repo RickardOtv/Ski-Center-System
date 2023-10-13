@@ -62,23 +62,6 @@ namespace NetFramework
             logiGrid.Columns["Från"].DisplayIndex = 2;
             logiGrid.Columns["Till"].DisplayIndex = 3;
             logiGrid.Columns["BokningsID"].DisplayIndex = 4;
-
-            //Uthyrningar
-
-            //Lektion
-            var lektionsRader = kontroller.HämtaLektionsRader(valdBokning.BokningsID);
-            LektionGrid.AutoGenerateColumns = false;
-            LektionGrid.DataSource = lektionsRader;
-            if (lektionsRader != null && lektionsRader.Count == 0)
-            {
-                
-            } else {
-                LektionGrid.Columns["LektionsradsID"].DisplayIndex = 0;
-                LektionGrid.Columns["LektionsID"].DisplayIndex = 1;
-                LektionGrid.Columns["Från"].DisplayIndex = 2;
-                LektionGrid.Columns["Till"].DisplayIndex = 3;
-                LektionGrid.Columns["BokningsID"].DisplayIndex = 4;
-            }
         }
 
 
@@ -175,10 +158,7 @@ namespace NetFramework
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RefreshBokningar();
-        }
+
 
         private void btn_visaRader_Click(object sender, EventArgs e)
         {
@@ -186,6 +166,9 @@ namespace NetFramework
             RefreshRader(valdBokning);
         }
 
-
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            RefreshBokningar();
+        }
     }
 }
