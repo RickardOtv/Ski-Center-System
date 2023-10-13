@@ -36,37 +36,32 @@ namespace Affärslager
                 LoggedIn = null;
             return false;
         }
-        public Bokning SkapaBokning(DateTime från, DateTime till, IList<Bokningsrad> boknignsrader, Kund k)
+        
+        public Bokningsrad SkapaBokningsRad(DateTime från, DateTime till, Logi l, int bokningsID)
         {
-            if (LoggedIn == null)
-            {
-                throw new ApplicationException("Ingen har loggat in");
-            }
-
-            // Skapa bokningsrader baserat på logierna
-            var bokningsrader = boknignsrader.Select(logi => new Bokningsrad
-            {
-                LogiID = logi.LogiID,
-                Från = från,
-                Till = till
-                
-            }).ToList();
-
-            // Skapa bokningen
+            Bokningsrad nyRad = new Bokningsrad(l.LogiID, från, till, bokningsID);
+            unitOfWork.bokningsRader.Add(nyRad);
+            unitOfWork.SaveChanges();
+            return nyRad;
+        }
+        public void TaBortBokningsRad(Bokningsrad rad)
+        {
+            unitOfWork.bokningsRader.Remove(rad);
+            unitOfWork.SaveChanges();
+        }
+        
+        public Bokning SkapaBokning(Kund k)
+        {
             Bokning bokning = new Bokning
             {
                 KundID = k.KundID,
-                Från = från,
-                Till = till,
-                Bokningsrader = bokningsrader
-              
             };
 
             unitOfWork.bokningar.Add(bokning);
             unitOfWork.SaveChanges();
             return bokning;
         }
-
+        
         public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
         {
             Kund kund = new Kund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
@@ -98,6 +93,18 @@ namespace Affärslager
         public Logi HittaLogi(string logiID)
         {
             return unitOfWork.logier.FirstOrDefault(l => l.LogiID == logiID);
+        }
+        public IList<Bokningsrad> HämtaRader(int bokningsID)
+        {
+            return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
+            /*
+            IList<Bokningsrad> rader = new List<Bokningsrad>();
+            while (unitOfWork.bokningsRader.FirstOrDefault(b => b.BokningsID == bokningsID) != null)
+            {
+                rader.Add(unitOfWork.bokningsRader.FirstOrDefault(b => b.BokningsID == bokningsID));
+            }
+            return rader;
+            */
         }
         public IList<Logi> HämtaTillgängligLogi()
         {
@@ -156,7 +163,7 @@ namespace Affärslager
         {
             return unitOfWork.bokningar.ToList<Bokning>();
         }
-
+        /*
         public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
         {
             bokning.Från = från;
@@ -164,7 +171,7 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             //return bokning;
         }
-
+        */
         public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
         {
             kund.Personnummer = personnummer;

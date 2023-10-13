@@ -20,9 +20,11 @@ namespace NetFramework
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
         private Kund valdKund;
-        IList<Bokningsrad> valdLogi;
+        Logi valdLogi;
+        Bokningsrad valdRad;
         DateTime från;
         DateTime till;
+        Bokning nyBokning;
         public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
         {
             this.loggaInMeny = loggaInMeny;
@@ -37,6 +39,19 @@ namespace NetFramework
             gridLogi.AutoGenerateColumns = false;
             gridLogi.Columns["LogiID"].DisplayIndex = 0;
             gridLogi.Columns["Typ"].DisplayIndex = 1;
+        }
+        internal void RefreshRader()
+        {
+            var rader = kontroller.HämtaRader(nyBokning.BokningsID);
+            gridRader.DataSource = rader;
+            gridRader.AutoGenerateColumns = false;
+            gridRader.Columns["Bokning"].Visible = false;
+            gridRader.Columns["Logi"].Visible = false;
+            gridRader.Columns["BokningsradID"].DisplayIndex = 0;
+            gridRader.Columns["LogiID"].DisplayIndex = 1;
+            gridRader.Columns["Från"].DisplayIndex = 2;
+            gridRader.Columns["Till"].DisplayIndex = 3;
+            gridRader.Columns["BokningsID"].DisplayIndex = 4;
         }
 
         internal void RefreshKunder()
@@ -67,8 +82,10 @@ namespace NetFramework
             this.Close();
         }
 
+
         private void btnSkapaBokning_Click(object sender, EventArgs e)
         {
+            /*
             från = DateTime.Parse(dateFrån.Text);
             till = DateTime.Parse(dateTill.Text);
             valdLogi = gridLogi.SelectedRows[0].DataBoundItem as IList<Bokningsrad>;
@@ -76,11 +93,12 @@ namespace NetFramework
 
             if (gridLogi.SelectedRows != null && gridKunder.SelectedRows != null)
             {
-                Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
+                //Bokning nyBokning = kontroller.SkapaBokning(från, till, valdLogi, valdKund);
                 RefreshLogi();
-                MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Bokningsrader} \nBokningsID: {nyBokning.BokningsID}");
+                //MessageBox.Show($"Från: {nyBokning.Från.ToShortDateString()} \nTill: {nyBokning.Till.ToShortDateString()} \n Vald logi: {nyBokning.Bokningsrader} \nBokningsID: {nyBokning.BokningsID}");
                 this.Close();
             }
+            */
         }
 
         private void btnSök_Click(object sender, EventArgs e)
@@ -111,6 +129,30 @@ namespace NetFramework
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLäggTill_Click(object sender, EventArgs e)
+        {
+            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
+            DateTime från = dateFrån.Value;
+            DateTime till = dateTill.Value;
+            Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(från, till, valdLogi, nyBokning.BokningsID);
+            RefreshRader();
+            MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+        }
+
+        private void btnTaBort_Click(object sender, EventArgs e)
+        {
+            valdRad = gridRader.SelectedRows[0].DataBoundItem as Bokningsrad;
+            kontroller.TaBortBokningsRad(valdRad);
+            RefreshRader();
+        }
+
+        private void btnVäljKund_Click(object sender, EventArgs e)
+        {
+            valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
+            nyBokning = kontroller.SkapaBokning(valdKund);
+            MessageBox.Show($"Bokning har skapats med ID:{nyBokning.BokningsID} med kundID:{valdKund.KundID}");
         }
     }
 }
