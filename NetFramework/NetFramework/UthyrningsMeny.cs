@@ -55,9 +55,8 @@ namespace NetFramework
 
         private void btnVisaUthyrningar_Click(object sender, EventArgs e)
         {
-            //VisaUthyrningar visaUthyrningar = new VisaUthyrningar(loggaIn, kontroller);
-            //visaUthyrningar.Show();
-
+            VisaUthyrningar visaUthyrningar = new VisaUthyrningar(loggaIn, kontroller);
+            visaUthyrningar.Show();
         }
     }
 }
