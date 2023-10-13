@@ -39,11 +39,14 @@
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_BokningsNr = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Tillbaka
             // 
-            this.btn_Tillbaka.Location = new System.Drawing.Point(12, 207);
+            this.btn_Tillbaka.Location = new System.Drawing.Point(12, 228);
             this.btn_Tillbaka.Name = "btn_Tillbaka";
             this.btn_Tillbaka.Size = new System.Drawing.Size(75, 23);
             this.btn_Tillbaka.TabIndex = 0;
@@ -53,13 +56,13 @@
             // 
             // btn_Spara
             // 
-            this.btn_Spara.Location = new System.Drawing.Point(159, 207);
+            this.btn_Spara.Location = new System.Drawing.Point(153, 178);
             this.btn_Spara.Name = "btn_Spara";
             this.btn_Spara.Size = new System.Drawing.Size(75, 23);
             this.btn_Spara.TabIndex = 1;
-            this.btn_Spara.Text = "Spara";
+            this.btn_Spara.Text = "Spara Alla";
             this.btn_Spara.UseVisualStyleBackColor = true;
-            this.btn_Spara.Click += new System.EventHandler(this.btn_Spara_Click);
+            this.btn_Spara.Click += new System.EventHandler(this.btn_Spara_För_Alla);
             // 
             // label_TillDatum
             // 
@@ -74,7 +77,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(16, 109);
+            this.label6.Location = new System.Drawing.Point(16, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 7;
@@ -84,7 +87,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(16, 148);
+            this.label7.Location = new System.Drawing.Point(16, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 8;
@@ -102,7 +105,7 @@
             // 
             // startDatePicker
             // 
-            this.startDatePicker.Location = new System.Drawing.Point(79, 109);
+            this.startDatePicker.Location = new System.Drawing.Point(96, 86);
             this.startDatePicker.Name = "startDatePicker";
             this.startDatePicker.Size = new System.Drawing.Size(132, 20);
             this.startDatePicker.TabIndex = 13;
@@ -110,7 +113,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(79, 148);
+            this.endDatePicker.Location = new System.Drawing.Point(96, 112);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(132, 20);
             this.endDatePicker.TabIndex = 14;
@@ -141,12 +144,45 @@
             this.textBox_BokningsNr.Size = new System.Drawing.Size(26, 20);
             this.textBox_BokningsNr.TabIndex = 18;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(153, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Spara En";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_Spara_För_En);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(6, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Spara för bara detta Logi";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(6, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Spara för alla  Logi i bokning";
+            // 
             // ÄndraBokning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
-            this.ClientSize = new System.Drawing.Size(246, 238);
+            this.ClientSize = new System.Drawing.Size(246, 263);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_BokningsNr);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
@@ -178,5 +214,8 @@
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_BokningsNr;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -80,11 +80,11 @@ namespace NetFramework
         private void btn_ändra_Click(object sender, EventArgs e)
         {
 
-            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+            valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
 
             if (gridBokningar.SelectedRows != null)
             {
-                ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdBokning);
+                ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdRad);
                 ändraBokning.Show();
                 ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
                 
@@ -95,14 +95,20 @@ namespace NetFramework
         private void btn_taBort_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
-
-            if (gridBokningar.SelectedRows != null)
+            DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                kontroller.TaBortBokning(valdBokning);
-                RefreshBokningar();
-                //MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
-                //this.Close();
+                if (gridBokningar.SelectedRows != null)
+                {
+                    kontroller.TaBortBokning(valdBokning);
+                    RefreshBokningar();
+                }
             }
+            else if (result == DialogResult.No)
+            {
+
+            }
+
         }
 
         bool IsDigitsOnly(string str)
@@ -166,15 +172,26 @@ namespace NetFramework
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
+            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshBokningar();
+            RefreshRader(valdBokning);
         }
 
         private void btn_TaBortRad_Click(object sender, EventArgs e)
         {
-            valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
-            kontroller.TaBortLogi(valdRad);
-            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
-            RefreshRader(valdBokning);
+            DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
+                valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+                kontroller.TaBortLogi(valdRad);
+                RefreshRader(valdBokning);
+            }
+            else if (result == DialogResult.No)
+            {
+                
+            }
         }
     }
 }
