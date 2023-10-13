@@ -181,10 +181,10 @@ namespace Affärslager
             return unitOfWork.utrustningar.ToList<Utrustning>();
         }
         
-        public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
+        public void ÄndraAllaBokningsRader(DateTime från, DateTime till, Bokningsrad bokningrad)
         {
-            var rader = HämtaRader(bokning.BokningsID);
-            foreach (var r in rader)
+            var allaRader = HämtaRader(bokningrad.BokningsID);
+            foreach (var r in allaRader)
             {
                 r.Från = från;
                 r.Till = till;
@@ -225,6 +225,18 @@ namespace Affärslager
         {
             Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
             return anställd.Behörighet;
+        }
+
+        public void TaBortLogi(Bokningsrad valRad)
+        {
+            unitOfWork.bokningsRader.Remove(valRad);
+            unitOfWork.SaveChanges();
+        }
+        public void ÄndraEnBokningsRad(DateTime från, DateTime till, Bokningsrad bokningrad)
+        {
+            bokningrad.Från = från;
+            bokningrad.Till = till;
+            unitOfWork.SaveChanges();
         }
     }
 }

@@ -19,22 +19,17 @@ namespace NetFramework
         UnitOfWork unitOfWork = new UnitOfWork();
         private LoggaIn loggaIn;
         private Kontroller kontroller;
-        private Bokning valdBokning;
+        private Bokningsrad valdBokningsrad;
         
-        public ÄndraBokning(LoggaIn loggaIn, Kontroller kontroller, Bokning bokning)
+        public ÄndraBokning(LoggaIn loggaIn, Kontroller kontroller, Bokningsrad valdRad)
         {
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
             InitializeComponent();
-            valdBokning = bokning;
-            textBox_BokningsNr.Text = bokning.BokningsID.ToString();
-            var rader = kontroller.HämtaRader(bokning.BokningsID);
-            foreach (var r in rader)
-            {
-                startDatePicker.Value = r.Från;
-                endDatePicker.Value = r.Till;
-            }
-
+            valdBokningsrad = valdRad;
+            textBox_BokningsNr.Text = valdRad.BokningsID.ToString();
+            startDatePicker.Value = valdRad.Från;
+            endDatePicker.Value = valdRad.Till;
         }
         
 
@@ -51,12 +46,21 @@ namespace NetFramework
             this.Close();        
         }
 
-        private void btn_Spara_Click(object sender, EventArgs e)
+        private void btn_Spara_För_Alla(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);
-            kontroller.ÄndraBokning(startDate, endDate, valdBokning);
-            MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokning.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
+            kontroller.ÄndraAllaBokningsRader(startDate, endDate, valdBokningsrad);
+            MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokningsrad.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
+            this.Close();
+        }
+
+        private void btn_Spara_För_En(object sender, EventArgs e)
+        {
+            DateTime startDate = DateTime.Parse(startDatePicker.Text);
+            DateTime endDate = DateTime.Parse(endDatePicker.Text);
+            kontroller.ÄndraEnBokningsRad(startDate, endDate, valdBokningsrad);
+            MessageBox.Show($"Bokning Uppdaterad! \n BokningsRadID: {valdBokningsrad.BokningsradID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
             this.Close();
         }
     }

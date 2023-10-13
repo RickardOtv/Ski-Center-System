@@ -23,6 +23,7 @@ namespace NetFramework
         private Kontroller kontroller;
         private Bokning valdBokning;
         private Logi valdLogi;
+        private Bokningsrad valdRad;
 
         public VisaBokningar(LoggaIn loggaIn, Kontroller kontroller)
         {
@@ -78,15 +79,18 @@ namespace NetFramework
       
         private void btn_ändra_Click(object sender, EventArgs e)
         {
-
-            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
-
-            if (gridBokningar.SelectedRows != null)
+            if (logiGrid.SelectedRows.Count > 0)
             {
-                ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdBokning);
+                // At least one row is selected.
+                valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
+                ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdRad);
                 ändraBokning.Show();
                 ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
-                
+            }
+            else
+            {
+                // No row is selected. Show a message or handle it as needed.
+                MessageBox.Show("Please select a row to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -94,14 +98,20 @@ namespace NetFramework
         private void btn_taBort_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
-
-            if (gridBokningar.SelectedRows != null)
+            DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                kontroller.TaBortBokning(valdBokning);
-                RefreshBokningar();
-                //MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
-                //this.Close();
+                if (gridBokningar.SelectedRows != null)
+                {
+                    kontroller.TaBortBokning(valdBokning);
+                    RefreshBokningar();
+                }
             }
+            else if (result == DialogResult.No)
+            {
+
+            }
+
         }
 
         bool IsDigitsOnly(string str)
@@ -165,7 +175,34 @@ namespace NetFramework
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
+            valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshBokningar();
+            RefreshRader(valdBokning);
+        }
+
+        private void btn_TaBortRad_Click(object sender, EventArgs e)
+        {
+            if (logiGrid.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
+                    valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+                    kontroller.TaBortLogi(valdRad);
+                    RefreshRader(valdBokning);
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+            }
+            else
+            {
+                // No row is selected. Show a message or handle it as needed.
+                MessageBox.Show("Please select a row to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
