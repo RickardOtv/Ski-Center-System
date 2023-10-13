@@ -57,6 +57,7 @@ namespace NetFramework
         {
             //VisaUthyrningar visaUthyrningar = new VisaUthyrningar(loggaIn, kontroller);
             //visaUthyrningar.Show();
+
         }
     }
 }
