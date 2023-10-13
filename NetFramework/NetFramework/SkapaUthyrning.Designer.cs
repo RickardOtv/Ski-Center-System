@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.gridBokningar = new System.Windows.Forms.DataGridView();
+            this.txtBoxKundID = new System.Windows.Forms.TextBox();
+            this.txtBoxBokningsID = new System.Windows.Forms.TextBox();
             this.Personnummerlbl = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.Anställningsnummerlbl = new System.Windows.Forms.Label();
             this.Bokningsnummer = new System.Windows.Forms.Label();
-            this.PersonnummerBtn = new System.Windows.Forms.Button();
+            this.KundSokBtn = new System.Windows.Forms.Button();
             this.BokningsnummerBtn = new System.Windows.Forms.Button();
             this.VäljBtn = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridBokningar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(124, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(556, 265);
-            this.dataGridView1.TabIndex = 0;
+            this.gridBokningar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBokningar.Location = new System.Drawing.Point(124, 113);
+            this.gridBokningar.Name = "gridBokningar";
+            this.gridBokningar.Size = new System.Drawing.Size(556, 265);
+            this.gridBokningar.TabIndex = 0;
             // 
-            // textBox1
+            // txtBoxKundID
             // 
-            this.textBox1.Location = new System.Drawing.Point(218, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtBoxKundID.Location = new System.Drawing.Point(218, 61);
+            this.txtBoxKundID.Name = "txtBoxKundID";
+            this.txtBoxKundID.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxKundID.TabIndex = 1;
             // 
-            // textBox2
+            // txtBoxBokningsID
             // 
-            this.textBox2.Location = new System.Drawing.Point(218, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtBoxBokningsID.Location = new System.Drawing.Point(218, 87);
+            this.txtBoxBokningsID.Name = "txtBoxBokningsID";
+            this.txtBoxBokningsID.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxBokningsID.TabIndex = 2;
             // 
             // Personnummerlbl
             // 
@@ -70,9 +70,9 @@
             this.Personnummerlbl.BackColor = System.Drawing.Color.Transparent;
             this.Personnummerlbl.Location = new System.Drawing.Point(121, 64);
             this.Personnummerlbl.Name = "Personnummerlbl";
-            this.Personnummerlbl.Size = new System.Drawing.Size(77, 13);
+            this.Personnummerlbl.Size = new System.Drawing.Size(46, 13);
             this.Personnummerlbl.TabIndex = 3;
-            this.Personnummerlbl.Text = "Personnummer";
+            this.Personnummerlbl.Text = "KundID:";
             // 
             // txtAnvandarnamn
             // 
@@ -97,18 +97,19 @@
             this.Bokningsnummer.BackColor = System.Drawing.Color.Transparent;
             this.Bokningsnummer.Location = new System.Drawing.Point(121, 87);
             this.Bokningsnummer.Name = "Bokningsnummer";
-            this.Bokningsnummer.Size = new System.Drawing.Size(88, 13);
+            this.Bokningsnummer.Size = new System.Drawing.Size(91, 13);
             this.Bokningsnummer.TabIndex = 6;
-            this.Bokningsnummer.Text = "Bokningsnummer";
+            this.Bokningsnummer.Text = "Bokningsnummer:";
             // 
-            // PersonnummerBtn
+            // KundSokBtn
             // 
-            this.PersonnummerBtn.Location = new System.Drawing.Point(324, 60);
-            this.PersonnummerBtn.Name = "PersonnummerBtn";
-            this.PersonnummerBtn.Size = new System.Drawing.Size(75, 21);
-            this.PersonnummerBtn.TabIndex = 7;
-            this.PersonnummerBtn.Text = "Sök Personnummer";
-            this.PersonnummerBtn.UseVisualStyleBackColor = true;
+            this.KundSokBtn.Location = new System.Drawing.Point(324, 60);
+            this.KundSokBtn.Name = "KundSokBtn";
+            this.KundSokBtn.Size = new System.Drawing.Size(75, 21);
+            this.KundSokBtn.TabIndex = 7;
+            this.KundSokBtn.Text = "Sök Personnummer";
+            this.KundSokBtn.UseVisualStyleBackColor = true;
+            this.KundSokBtn.Click += new System.EventHandler(this.KundSokBtn_Click);
             // 
             // BokningsnummerBtn
             // 
@@ -118,6 +119,7 @@
             this.BokningsnummerBtn.TabIndex = 8;
             this.BokningsnummerBtn.Text = "Sök Bokningsnummer";
             this.BokningsnummerBtn.UseVisualStyleBackColor = true;
+            this.BokningsnummerBtn.Click += new System.EventHandler(this.BokningsnummerBtn_Click);
             // 
             // VäljBtn
             // 
@@ -127,6 +129,7 @@
             this.VäljBtn.TabIndex = 9;
             this.VäljBtn.Text = "Välj";
             this.VäljBtn.UseVisualStyleBackColor = true;
+            this.VäljBtn.Click += new System.EventHandler(this.VäljBtn_Click);
             // 
             // btnTillbaka
             // 
@@ -147,17 +150,17 @@
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.VäljBtn);
             this.Controls.Add(this.BokningsnummerBtn);
-            this.Controls.Add(this.PersonnummerBtn);
+            this.Controls.Add(this.KundSokBtn);
             this.Controls.Add(this.Bokningsnummer);
             this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.Personnummerlbl);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtBoxBokningsID);
+            this.Controls.Add(this.txtBoxKundID);
+            this.Controls.Add(this.gridBokningar);
             this.Name = "SkapaUthyrning";
             this.Text = "SkapaUthyrning";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,14 +168,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView gridBokningar;
+        private System.Windows.Forms.TextBox txtBoxKundID;
+        private System.Windows.Forms.TextBox txtBoxBokningsID;
         private System.Windows.Forms.Label Personnummerlbl;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label Anställningsnummerlbl;
         private System.Windows.Forms.Label Bokningsnummer;
-        private System.Windows.Forms.Button PersonnummerBtn;
+        private System.Windows.Forms.Button KundSokBtn;
         private System.Windows.Forms.Button BokningsnummerBtn;
         private System.Windows.Forms.Button VäljBtn;
         private System.Windows.Forms.Button btnTillbaka;

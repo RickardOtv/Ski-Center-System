@@ -56,28 +56,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BokningNyKund.cs">
+    <Compile Include="Bokningsfönster\BokningNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BokningNyKund.Designer.cs">
+    <Compile Include="Bokningsfönster\BokningNyKund.Designer.cs">
       <DependentUpon>BokningNyKund.cs</DependentUpon>
     </Compile>
-    <Compile Include="BokningBefintligKund.cs">
+    <Compile Include="Bokningsfönster\BokningBefintligKund.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BokningBefintligKund.Designer.cs">
+    <Compile Include="Bokningsfönster\BokningBefintligKund.Designer.cs">
       <DependentUpon>BokningBefintligKund.cs</DependentUpon>
     </Compile>
-    <Compile Include="BokningsTyp.cs">
+    <Compile Include="Bokningsfönster\BokningsTyp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BokningsTyp.Designer.cs">
+    <Compile Include="Bokningsfönster\BokningsTyp.Designer.cs">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kundregister.cs">
+    <Compile Include="Kundregister\Kundregister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kundregister.Designer.cs">
+    <Compile Include="Kundregister\Kundregister.Designer.cs">
       <DependentUpon>Kundregister.cs</DependentUpon>
     </Compile>
     <Compile Include="SkapaUthyrning.cs">
@@ -92,22 +92,22 @@
     <Compile Include="UthyrningsMeny.Designer.cs">
       <DependentUpon>UthyrningsMeny.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisaBokningar.cs">
+    <Compile Include="Bokningsfönster\VisaBokningar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VisaBokningar.Designer.cs">
+    <Compile Include="Bokningsfönster\VisaBokningar.Designer.cs">
       <DependentUpon>VisaBokningar.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisaLedigLogi.cs">
+    <Compile Include="Bokningsfönster\VisaLedigLogi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VisaLedigLogi.Designer.cs">
+    <Compile Include="Bokningsfönster\VisaLedigLogi.Designer.cs">
       <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </Compile>
-    <Compile Include="BokningsMeny.cs">
+    <Compile Include="Bokningsfönster\BokningsMeny.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BokningsMeny.Designer.cs">
+    <Compile Include="Bokningsfönster\BokningsMeny.Designer.cs">
       <DependentUpon>BokningsMeny.cs</DependentUpon>
     </Compile>
     <Compile Include="HuvudMeny.cs">
@@ -124,28 +124,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ÄndraBokning.cs">
+    <Compile Include="Bokningsfönster\ÄndraBokning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ÄndraBokning.Designer.cs">
+    <Compile Include="Bokningsfönster\ÄndraBokning.Designer.cs">
       <DependentUpon>ÄndraBokning.cs</DependentUpon>
     </Compile>
-    <Compile Include="ÄndraKund.cs">
+    <Compile Include="Kundregister\ÄndraKund.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ÄndraKund.Designer.cs">
+    <Compile Include="Kundregister\ÄndraKund.Designer.cs">
       <DependentUpon>ÄndraKund.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BokningNyKund.resx">
+    <Compile Include="UthyrningUtrustning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UthyrningUtrustning.Designer.cs">
+      <DependentUpon>UthyrningUtrustning.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bokningsfönster\BokningNyKund.resx">
       <DependentUpon>BokningNyKund.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BokningBefintligKund.resx">
+    <EmbeddedResource Include="Bokningsfönster\BokningBefintligKund.resx">
       <DependentUpon>BokningBefintligKund.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BokningsTyp.resx">
+    <EmbeddedResource Include="Bokningsfönster\BokningsTyp.resx">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kundregister.resx">
+    <EmbeddedResource Include="Kundregister\Kundregister.resx">
       <DependentUpon>Kundregister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SkapaUthyrning.resx">
@@ -154,13 +160,13 @@
     <EmbeddedResource Include="UthyrningsMeny.resx">
       <DependentUpon>UthyrningsMeny.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisaBokningar.resx">
+    <EmbeddedResource Include="Bokningsfönster\VisaBokningar.resx">
       <DependentUpon>VisaBokningar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisaLedigLogi.resx">
+    <EmbeddedResource Include="Bokningsfönster\VisaLedigLogi.resx">
       <DependentUpon>VisaLedigLogi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BokningsMeny.resx">
+    <EmbeddedResource Include="Bokningsfönster\BokningsMeny.resx">
       <DependentUpon>BokningsMeny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HuvudMeny.resx">
@@ -179,11 +185,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ÄndraBokning.resx">
+    <EmbeddedResource Include="Bokningsfönster\ÄndraBokning.resx">
       <DependentUpon>ÄndraBokning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ÄndraKund.resx">
+    <EmbeddedResource Include="Kundregister\ÄndraKund.resx">
       <DependentUpon>ÄndraKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UthyrningUtrustning.resx">
+      <DependentUpon>UthyrningUtrustning.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
