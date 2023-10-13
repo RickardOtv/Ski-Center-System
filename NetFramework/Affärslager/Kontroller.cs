@@ -180,15 +180,18 @@ namespace Affärslager
         {
             return unitOfWork.utrustningar.ToList<Utrustning>();
         }
-        /*
+        
         public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
         {
-            bokning.Från = från;
-            bokning.Till = till;
+            var rader = HämtaRader(bokning.BokningsID);
+            foreach (var r in rader)
+            {
+                r.Från = från;
+                r.Till = till;
+            }
             unitOfWork.SaveChanges();
-            //return bokning;
         }
-        */
+        
         public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
         {
             kund.Personnummer = personnummer;

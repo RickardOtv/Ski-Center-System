@@ -83,17 +83,14 @@ namespace NetFramework
 
             if (gridBokningar.SelectedRows != null)
             {
-                /*
-                //kontroller.TaBortBokning(valdBokning, valdBokning.Logi);
-                //RefreshBokningar();
-                //MessageBox.Show($"Tog Bort Bokning: {valdBokning.BokningsID} \nSom Tillhörde KundID: {valdBokning.KundID} \n Från: {valdBokning.Från.ToShortDateString()} \nTill: {valdBokning.Till.ToShortDateString()}");
                 ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdBokning);
                 ändraBokning.Show();
                 ändraBokning.InloggadAnvandare = txtAnvandarnamn.Text;
-                */
+                
             }
         }
 
+        //Ej Klar
         private void btn_taBort_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
