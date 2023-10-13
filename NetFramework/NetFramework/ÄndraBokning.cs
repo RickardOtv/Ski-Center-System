@@ -20,7 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Bokning valdBokning;
-        /*
+        
         public ÄndraBokning(LoggaIn loggaIn, Kontroller kontroller, Bokning bokning)
         {
             this.loggaIn = loggaIn;
@@ -28,11 +28,15 @@ namespace NetFramework
             InitializeComponent();
             valdBokning = bokning;
             textBox_BokningsNr.Text = bokning.BokningsID.ToString();
-            startDatePicker.Value = valdBokning.Från;
-            endDatePicker.Value = valdBokning.Till;
+            var rader = kontroller.HämtaRader(bokning.BokningsID);
+            foreach (var r in rader)
+            {
+                startDatePicker.Value = r.Från;
+                endDatePicker.Value = r.Till;
+            }
 
         }
-        */
+        
 
 
         public string InloggadAnvandare
@@ -51,8 +55,7 @@ namespace NetFramework
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);
-            //kontroller.ÄndraBokning(startDate, endDate, valdBokning);
-
+            kontroller.ÄndraBokning(startDate, endDate, valdBokning);
             MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokning.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
             this.Close();
         }
