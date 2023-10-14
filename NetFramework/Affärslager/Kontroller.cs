@@ -122,52 +122,7 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
-        /*
-        public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
-        {
-            decimal totalPrice = 0;
-            DateTime currentDate = från;
-            while (currentDate <= till)
-            {
-                // Hämta veckonummer för det aktuella datumet
-                int vecka = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(currentDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
-
-                // Hämta prisinformation för den aktuella veckan och logitypen
-                var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
-
-                if (logiPris != null)
-                {
-                    if (currentDate.DayOfWeek >= DayOfWeek.Monday && currentDate.DayOfWeek <= DayOfWeek.Thursday)
-                    {
-                        // Om det är en vardag (måndag till torsdag), använd vardagspriset
-                        totalPrice += logiPris.VardagsPris;
-                    }
-
-                    else
-                    {
-                        // Annars är det en helgdag (fredag till söndag), använd helgpriset
-                        totalPrice += logiPris.HelgPris;
-                    }
-                }
-                else
-                {
-                    // Om prisinformation saknas för den aktuella veckan och logitypen, bryt loopen
-                    break;
-                }
-
-                // Gå till nästa dag
-                currentDate = currentDate.AddDays(1);
-
-                // Om vi har passerat "till"-datumet, bryt loopen
-                if (currentDate > till)
-                {
-                    break;
-                }
-            }
-
-            return totalPrice;
-        }*/
-
+       
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
