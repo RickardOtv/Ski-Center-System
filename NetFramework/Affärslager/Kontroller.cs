@@ -122,6 +122,7 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
+        /*
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
@@ -165,7 +166,90 @@ namespace Affärslager
             }
 
             return totalPrice;
+        }*/
+
+        public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
+        {
+            decimal totalPrice = 0;
+            DateTime currentDate = från;
+            int vecka = -1; // Initialt värde för att säkerställa att vi räknar första veckan.
+
+            while (currentDate <= till)
+            {
+                // Hämta veckonummer för det aktuella datumet baserat på kalenderåret 2023
+                int currentVecka = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(currentDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+                if (vecka != currentVecka)
+                {
+                    // Om vi har gått in i en ny vecka (enligt kalenderåret 2023)
+                    vecka = currentVecka;
+
+                    // Hämta prisinformation för den aktuella veckan och logitypen
+                    var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
+
+                    if (logiPris != null)
+                    {
+                        // Kontrollera om det är en hel vecka (måndag till söndag)
+                        DateTime veckaStart = currentDate.Date;
+                        DateTime veckaSlut = currentDate.Date.AddDays(6);
+                        if (currentDate.DayOfWeek == DayOfWeek.Monday && veckaSlut <= till)
+                        {
+                            totalPrice += logiPris.VeckoPris;
+                            currentDate = veckaSlut.AddDays(1);
+                            continue;
+                        }
+                        else
+                        {
+                            // Om det inte är en hel vecka, använd vardags- och helgpris
+                            while (currentDate <= till)
+                            {
+                                if (currentDate.DayOfWeek >= DayOfWeek.Monday && currentDate.DayOfWeek <= DayOfWeek.Thursday)
+                                {
+                                    // Om det är en vardag (måndag till torsdag), använd vardagspriset
+                                    totalPrice += logiPris.VardagsPris;
+                                }
+                                else
+                                {
+                                    // Annars är det en helgdag (fredag till söndag), använd helgpriset
+                                    totalPrice += logiPris.HelgPris;
+                                }
+
+                                // Gå till nästa dag
+                                currentDate = currentDate.AddDays(1);
+
+                                if (currentDate > till)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Om prisinformation saknas för den aktuella veckan och logitypen, bryt loopen
+                        break;
+                    }
+                }
+                else
+                {
+                    // Om vi är fortfarande inom samma vecka, gå till nästa dag
+                    currentDate = currentDate.AddDays(1);
+
+                    if (currentDate > till)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return totalPrice;
         }
+
+
+
+
+
+
 
         public IList<Bokning> HämtaBokningar()
         {
