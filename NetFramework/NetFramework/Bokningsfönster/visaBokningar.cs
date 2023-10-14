@@ -47,6 +47,7 @@ namespace NetFramework
             gridBokningar.AutoGenerateColumns = false;
             gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
             gridBokningar.Columns["KundID"].DisplayIndex = 1;
+            gridBokningar.Columns["Kund"].Visible = false;
 
         }
         internal void RefreshRader(Bokning valdBokning)
