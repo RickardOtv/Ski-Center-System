@@ -91,7 +91,7 @@
             this.gridBokningar.RowHeadersWidth = 72;
             this.gridBokningar.RowTemplate.Height = 31;
             this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridBokningar.Size = new System.Drawing.Size(275, 208);
+            this.gridBokningar.Size = new System.Drawing.Size(206, 208);
             this.gridBokningar.TabIndex = 7;
             // 
             // btn_tillbaka
@@ -116,7 +116,7 @@
             // 
             // btn_taBort
             // 
-            this.btn_taBort.Location = new System.Drawing.Point(172, 365);
+            this.btn_taBort.Location = new System.Drawing.Point(91, 365);
             this.btn_taBort.Name = "btn_taBort";
             this.btn_taBort.Size = new System.Drawing.Size(86, 39);
             this.btn_taBort.TabIndex = 13;
@@ -187,7 +187,7 @@
             // 
             // btn_visaRader
             // 
-            this.btn_visaRader.Location = new System.Drawing.Point(264, 365);
+            this.btn_visaRader.Location = new System.Drawing.Point(195, 365);
             this.btn_visaRader.Name = "btn_visaRader";
             this.btn_visaRader.Size = new System.Drawing.Size(86, 38);
             this.btn_visaRader.TabIndex = 20;
