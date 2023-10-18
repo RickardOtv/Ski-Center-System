@@ -19,17 +19,22 @@ namespace NetFramework
         private Kontroller kontroller;
         private LoggaIn loggaIn;
         private Bokningsrad bokningar;
-        private Utrustning utrustning;
+        private Utrustning valdUtrustning;
+        private Uthyrningsrad valdRad;
         private Bokning valdBokning;
-        public UthyrningUtrustning(LoggaIn loggain, Kontroller kontroller, Bokning valdBokning)
+        DateTime från;
+        DateTime till;
+        Uthyrning nyUthyrning;
+        public UthyrningUtrustning(LoggaIn loggain, Kontroller kontroller, Bokning valdBokning, Uthyrning nyUthyrning)
         {
             InitializeComponent();
             this.loggaIn = loggain;
             this.kontroller = kontroller;
             this.valdBokning = valdBokning;
+            this.nyUthyrning = nyUthyrning;
             RefreshUtrustning();
-            
         }
+
         public string InloggadAnvandare
         {
             get { return txtAnvandarnamn.Text; }
@@ -46,12 +51,38 @@ namespace NetFramework
             gridUtrustning.Columns["Storlek"].DisplayIndex = 2;
         }
 
+        internal void RefreshRader()
+        {
+            var rader = kontroller.HämtaRader(nyUthyrning.UthyrningsID);
+            gridRader.DataSource = rader;
+            gridRader.AutoGenerateColumns = false;
+            gridRader.Columns["Uthyrning"].Visible = false;
+            gridRader.Columns["Utrustning"].Visible = false;
+            gridRader.Columns["UthyrningsradID"].DisplayIndex = 0;
+            gridRader.Columns["UtrustningsID"].DisplayIndex = 1;
+            gridRader.Columns["Från"].DisplayIndex = 2;
+            gridRader.Columns["Till"].DisplayIndex = 3;
+            gridRader.Columns["UthyrningsID"].DisplayIndex = 4;
+        }
+
         public void UthyrningUtrustning_Load(object sender, EventArgs e)
         {
-       
+            cmbTyp.SelectedIndexChanged += cmbTyp_SelectedIndexChanged;
+
             RefreshUtrustning();
             txtBoxValdKund.Text = $"Vald Bokning: {valdBokning.BokningsID.ToString()}";
 
+        }
+
+
+        private void btnLäggTill_Click(object sender, EventArgs e)
+        {
+            valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
+            DateTime från = dateFrån.Value;
+            DateTime till = dateTill.Value;
+            Uthyrningsrad nyUthyrningsRad = kontroller.SkapaUthyrningsRad(från, till, valdUtrustning, nyUthyrning.UthyrningsID);
+            RefreshRader();
+            MessageBox.Show($"Ny Uthyrningsrad har skapats med Utrustning:{valdUtrustning.UtrustningsID}\nUthyrningsID:{nyUthyrning.UthyrningsID}\nUthyrningsradID som genererats: {nyUthyrning.UthyrningsID}");
         }
 
         #region filtrering typ/storlek
@@ -84,15 +115,16 @@ namespace NetFramework
         private void FiltreraData()
         {
             var valdTyp = (string)cmbTyp.SelectedItem;
-            var valdStorlek = (string)cmbStorlek.SelectedItem; // Om du också vill filtrera på storlek
+            int? valdStorlek = cmbStorlek.SelectedItem as int?; // Använd 'as' för att försöka göra en säker typomvandling
 
             var filtreradData = kontroller.HämtaUtrustning()
                 .Where(u => (valdTyp == null || u.Typ == valdTyp) &&
-                            (valdStorlek == null || (u.Storlek) == int.Parse(valdStorlek)))
+                            (!valdStorlek.HasValue || u.Storlek == valdStorlek.Value))
                 .ToList();
 
             gridUtrustning.DataSource = filtreradData;
         }
+
 
 
         #endregion
@@ -111,5 +143,7 @@ namespace NetFramework
         {
 
         }
+
+        
     }
 }
