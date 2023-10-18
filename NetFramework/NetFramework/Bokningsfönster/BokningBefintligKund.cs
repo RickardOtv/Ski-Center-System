@@ -86,6 +86,7 @@ namespace NetFramework
                 if (result == DialogResult.Yes)
                 {
                     kontroller.TaBortBokning(nyBokning);
+                    this.Close();
                 }
                 else if (result == DialogResult.No)
                 {
