@@ -16,7 +16,16 @@ namespace Affärslager
     {
 
         private UnitOfWork unitOfWork;
-        public Kontroller() { }
+        private List<Utrustning> allUtrustning = new List<Utrustning>();
+        public Kontroller() 
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                allUtrustning = unitOfWork.utrustningar.ToList();
+            }
+
+
+        }
         public Anställd LoggedIn
         {
             get; private set;
@@ -62,6 +71,27 @@ namespace Affärslager
             return bokning;
         }
         
+        public Uthyrning SkapaUthyrning(Bokning b)
+        {
+            Uthyrning uthyrning = new Uthyrning
+            {
+                BokningsID = b.BokningsID,
+            };
+            return uthyrning;
+        }
+        public Uthyrningsrad SkapaUthyrningsRad(DateTime från, DateTime till, Utrustning u, int uthyrningsID)
+        {
+            Uthyrningsrad nyUthyrningsRad = new Uthyrningsrad(u.UtrustningsID, från, till, uthyrningsID);
+            unitOfWork.uthyrningsRader.Add(nyUthyrningsRad);
+            unitOfWork.SaveChanges();
+            return nyUthyrningsRad;
+        }
+        public void TaBortUthyrningsRad(Uthyrningsrad uRad)
+        {
+            unitOfWork.uthyrningsRader.Remove(uRad);
+            unitOfWork.SaveChanges();
+        }
+
         public Kund SkapaNyKund(string personnummer, string namn, string telefonnummer, string email, string adress, string postNr, string postOrt, string typ, int maxbeloppskreditgräns)
         {
             Kund kund = new Kund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
@@ -298,6 +328,42 @@ namespace Affärslager
             Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
             return anställd.Behörighet;
         }
+
+        public List<int> HamtaStorlekarForTyp(string typ)
+        {
+            if (typ == null) throw new ArgumentNullException(nameof(typ));
+
+            // Kontrollera om allUtrustning är null eller tom
+            if (allUtrustning == null || !allUtrustning.Any())
+            {
+                throw new InvalidOperationException("allUtrustning är null eller tom.");
+            }
+
+            // Försök att identifiera var problemet ligger
+            var nonNullUtrustning = allUtrustning.Where(u => u != null && u.Typ != null && u.Storlek != null).ToList();
+
+            // Om nonNullUtrustning är tom, kasta ett undantag
+            if (!nonNullUtrustning.Any())
+            {
+                throw new InvalidOperationException("Ingen utrustning med icke-null Typ och Storlek.");
+            }
+
+            var storlekar = nonNullUtrustning
+                .Where(u => u.Typ == typ)
+                .Select(u => u.Storlek)
+                .Distinct()
+                .ToList();
+
+            // Om storlekar är tom, kasta ett undantag
+            if (!storlekar.Any())
+            {
+                throw new InvalidOperationException($"Ingen utrustning av typ {typ} hittades.");
+            }
+
+            return storlekar;
+        }
+
+
 
         public void TaBortLogi(Bokningsrad valRad)
         {
