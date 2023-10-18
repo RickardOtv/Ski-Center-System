@@ -32,6 +32,7 @@ namespace Datalager
         public DbSet<Bokningsrad> bokningsRader {  get; set; }
         public DbSet<Uthyrningsrad> uthyrningsRader { get; set; }
         public DbSet<Lektionsrad> lektionsRader { get; set; }
+        public DbSet<GruppLektionsPris> gruppLektionsPris { get; set; }
 
         #endregion
         public UnitOfWork() 
