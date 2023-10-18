@@ -96,6 +96,9 @@ namespace NetFramework
             }
         }
 
-        
+        private void Anställningsnummerlbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

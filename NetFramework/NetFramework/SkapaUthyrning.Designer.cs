@@ -45,67 +45,77 @@
             // gridBokningar
             // 
             this.gridBokningar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBokningar.Location = new System.Drawing.Point(124, 113);
+            this.gridBokningar.Location = new System.Drawing.Point(248, 217);
+            this.gridBokningar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gridBokningar.Name = "gridBokningar";
-            this.gridBokningar.Size = new System.Drawing.Size(556, 265);
+            this.gridBokningar.RowHeadersWidth = 82;
+            this.gridBokningar.Size = new System.Drawing.Size(1112, 510);
             this.gridBokningar.TabIndex = 0;
             // 
             // txtBoxKundID
             // 
-            this.txtBoxKundID.Location = new System.Drawing.Point(218, 61);
+            this.txtBoxKundID.Location = new System.Drawing.Point(436, 117);
+            this.txtBoxKundID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBoxKundID.Name = "txtBoxKundID";
-            this.txtBoxKundID.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxKundID.Size = new System.Drawing.Size(196, 31);
             this.txtBoxKundID.TabIndex = 1;
             // 
             // txtBoxBokningsID
             // 
-            this.txtBoxBokningsID.Location = new System.Drawing.Point(218, 87);
+            this.txtBoxBokningsID.Location = new System.Drawing.Point(436, 167);
+            this.txtBoxBokningsID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBoxBokningsID.Name = "txtBoxBokningsID";
-            this.txtBoxBokningsID.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxBokningsID.Size = new System.Drawing.Size(196, 31);
             this.txtBoxBokningsID.TabIndex = 2;
             // 
             // Personnummerlbl
             // 
             this.Personnummerlbl.AutoSize = true;
             this.Personnummerlbl.BackColor = System.Drawing.Color.Transparent;
-            this.Personnummerlbl.Location = new System.Drawing.Point(121, 64);
+            this.Personnummerlbl.Location = new System.Drawing.Point(242, 123);
+            this.Personnummerlbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Personnummerlbl.Name = "Personnummerlbl";
-            this.Personnummerlbl.Size = new System.Drawing.Size(46, 13);
+            this.Personnummerlbl.Size = new System.Drawing.Size(88, 25);
             this.Personnummerlbl.TabIndex = 3;
             this.Personnummerlbl.Text = "KundID:";
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(118, 4);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(236, 8);
+            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(19, 20);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(34, 31);
             this.txtAnvandarnamn.TabIndex = 4;
             // 
             // Anställningsnummerlbl
             // 
             this.Anställningsnummerlbl.AutoSize = true;
             this.Anställningsnummerlbl.BackColor = System.Drawing.Color.Transparent;
-            this.Anställningsnummerlbl.Location = new System.Drawing.Point(12, 7);
+            this.Anställningsnummerlbl.Location = new System.Drawing.Point(24, 13);
+            this.Anställningsnummerlbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Anställningsnummerlbl.Name = "Anställningsnummerlbl";
-            this.Anställningsnummerlbl.Size = new System.Drawing.Size(100, 13);
+            this.Anställningsnummerlbl.Size = new System.Drawing.Size(206, 25);
             this.Anställningsnummerlbl.TabIndex = 5;
             this.Anställningsnummerlbl.Text = "Anställningsnummer";
+            this.Anställningsnummerlbl.Click += new System.EventHandler(this.Anställningsnummerlbl_Click);
             // 
             // Bokningsnummer
             // 
             this.Bokningsnummer.AutoSize = true;
             this.Bokningsnummer.BackColor = System.Drawing.Color.Transparent;
-            this.Bokningsnummer.Location = new System.Drawing.Point(121, 87);
+            this.Bokningsnummer.Location = new System.Drawing.Point(242, 167);
+            this.Bokningsnummer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Bokningsnummer.Name = "Bokningsnummer";
-            this.Bokningsnummer.Size = new System.Drawing.Size(91, 13);
+            this.Bokningsnummer.Size = new System.Drawing.Size(184, 25);
             this.Bokningsnummer.TabIndex = 6;
             this.Bokningsnummer.Text = "Bokningsnummer:";
             // 
             // KundSokBtn
             // 
-            this.KundSokBtn.Location = new System.Drawing.Point(324, 60);
+            this.KundSokBtn.Location = new System.Drawing.Point(648, 115);
+            this.KundSokBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.KundSokBtn.Name = "KundSokBtn";
-            this.KundSokBtn.Size = new System.Drawing.Size(75, 21);
+            this.KundSokBtn.Size = new System.Drawing.Size(150, 40);
             this.KundSokBtn.TabIndex = 7;
             this.KundSokBtn.Text = "Sök Personnummer";
             this.KundSokBtn.UseVisualStyleBackColor = true;
@@ -113,9 +123,10 @@
             // 
             // BokningsnummerBtn
             // 
-            this.BokningsnummerBtn.Location = new System.Drawing.Point(324, 85);
+            this.BokningsnummerBtn.Location = new System.Drawing.Point(648, 163);
+            this.BokningsnummerBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BokningsnummerBtn.Name = "BokningsnummerBtn";
-            this.BokningsnummerBtn.Size = new System.Drawing.Size(75, 23);
+            this.BokningsnummerBtn.Size = new System.Drawing.Size(150, 44);
             this.BokningsnummerBtn.TabIndex = 8;
             this.BokningsnummerBtn.Text = "Sök Bokningsnummer";
             this.BokningsnummerBtn.UseVisualStyleBackColor = true;
@@ -123,9 +134,10 @@
             // 
             // VäljBtn
             // 
-            this.VäljBtn.Location = new System.Drawing.Point(605, 384);
+            this.VäljBtn.Location = new System.Drawing.Point(1210, 738);
+            this.VäljBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.VäljBtn.Name = "VäljBtn";
-            this.VäljBtn.Size = new System.Drawing.Size(75, 23);
+            this.VäljBtn.Size = new System.Drawing.Size(150, 44);
             this.VäljBtn.TabIndex = 9;
             this.VäljBtn.Text = "Välj";
             this.VäljBtn.UseVisualStyleBackColor = true;
@@ -133,9 +145,10 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(29, 415);
+            this.btnTillbaka.Location = new System.Drawing.Point(58, 798);
+            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
+            this.btnTillbaka.Size = new System.Drawing.Size(150, 44);
             this.btnTillbaka.TabIndex = 10;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -143,10 +156,10 @@
             // 
             // SkapaUthyrning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
-            this.ClientSize = new System.Drawing.Size(766, 450);
+            this.ClientSize = new System.Drawing.Size(1532, 865);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.VäljBtn);
             this.Controls.Add(this.BokningsnummerBtn);
@@ -158,6 +171,7 @@
             this.Controls.Add(this.txtBoxBokningsID);
             this.Controls.Add(this.txtBoxKundID);
             this.Controls.Add(this.gridBokningar);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "SkapaUthyrning";
             this.Text = "SkapaUthyrning";
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();
