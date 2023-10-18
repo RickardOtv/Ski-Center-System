@@ -223,6 +223,7 @@ namespace NetFramework
             valdRad = gridRader.SelectedRows[0].DataBoundItem as Bokningsrad;
             kontroller.TaBortBokningsRad(valdRad);
             RefreshRader();
+            RefreshLogi();
         }
 
         private void btnVäljKund_Click(object sender, EventArgs e)
