@@ -122,7 +122,7 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
-       
+
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
@@ -138,9 +138,41 @@ namespace Affärslager
                 {
                     // Om vi har gått in i en ny vecka (enligt kalenderåret 2023)
                     vecka = currentVecka;
+                    if (logiTyp == "Camping")
+                    {
+                        var campPris = unitOfWork.campPris.FirstOrDefault(cp => cp.Vecka == vecka && cp.Typ == logiTyp);
 
-                    // Hämta prisinformation för den aktuella veckan och logitypen
-                    var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
+                        if (campPris != null)
+                        {
+                            DateTime veckaStart = currentDate.Date;
+                            DateTime veckaSlut = currentDate.Date.AddDays(6);
+                            if (currentDate.DayOfWeek == DayOfWeek.Monday && veckaSlut <= till)
+                            {
+                                totalPrice += campPris.VeckoPris;
+                                currentDate = veckaSlut.AddDays(1);
+                                continue;
+                            }
+                            else
+                            {
+                                while (currentDate <= till)
+                                {
+                                    totalPrice += campPris.DygnsPris;
+                                    currentDate = currentDate.AddDays(1);
+
+                                    if (currentDate > till)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                        // Hämta prisinformation för den aktuella veckan och logitypen
+                        var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
 
                     if (logiPris != null)
                     {
@@ -199,6 +231,7 @@ namespace Affärslager
 
             return totalPrice;
         }
+
 
 
 
