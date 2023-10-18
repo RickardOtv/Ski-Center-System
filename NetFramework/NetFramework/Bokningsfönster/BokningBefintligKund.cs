@@ -79,7 +79,22 @@ namespace NetFramework
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(nyBokning != null)
+            {
+                
+                DialogResult result = MessageBox.Show("Om du går tillbaka så avbryter du bokningen", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    kontroller.TaBortBokning(nyBokning);
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+            } else
+            {
+                this.Close();
+            }
         }
         private void btnSök_Click(object sender, EventArgs e)
         {
@@ -131,6 +146,11 @@ namespace NetFramework
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
             nyBokning = kontroller.SkapaBokning(valdKund);
             MessageBox.Show($"Bokning har skapats med ID:{nyBokning.BokningsID} för kund:{valdKund.Namn}");
+        }
+
+        private void btnKlar_Click(object sender, EventArgs e)
+        {
+                this.Close();
         }
     }
 }
