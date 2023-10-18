@@ -9,9 +9,11 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace NetFramework
 {
@@ -241,6 +243,49 @@ namespace NetFramework
         private void btn_sökLogi_Click(object sender, EventArgs e)
         {
             RefreshLogi();
+        }
+        private void btnLogiInfo_Click(object sender, EventArgs e)
+        {
+            if (gridLogi.SelectedRows.Count > 0)
+            {
+                // Hämta den markerade logien från listan av lediga logier
+                var selectedRow = gridLogi.SelectedRows[0];
+                var rowIndex = selectedRow.Index;
+                if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                {
+                    var valdLogi = ledigaLogier[rowIndex];
+                    switch (valdLogi.Typ)
+                    {
+                        case "LGH.1":
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\nEnrumslägenhet \nKök \nFyra bäddar \n50m² \n(50 st totalt)");
+                            break;
+                        case "LGH.2":
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\nTvårumslägenhet \nKök \nSex bäddar \n70m² (35 st totalt)");
+                            break;
+                        case "Camping":
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\nFinns ingen specifik information!");
+                            break;
+                        case "Konferens stor":
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\n50-personslokaler \n(tre st totalt)");
+                            break;
+                        case "Konferens liten":
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\n20-personslokaler \n(fem st totalt)");
+                            break;
+                        default:
+                            Console.WriteLine("Finns ingen specifik information!");
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Felaktig logi vald.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen logi vald.");
+            }
+
         }
     }
 }
