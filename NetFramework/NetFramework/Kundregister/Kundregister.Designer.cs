@@ -76,7 +76,7 @@
             // btnTaBort
             // 
             this.btnTaBort.Location = new System.Drawing.Point(641, 362);
-            this.btnTaBort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaBort.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(63, 25);
             this.btnTaBort.TabIndex = 11;
@@ -87,7 +87,7 @@
             // btnAndra
             // 
             this.btnAndra.Location = new System.Drawing.Point(563, 362);
-            this.btnAndra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAndra.Margin = new System.Windows.Forms.Padding(2);
             this.btnAndra.Name = "btnAndra";
             this.btnAndra.Size = new System.Drawing.Size(63, 25);
             this.btnAndra.TabIndex = 12;
@@ -98,7 +98,7 @@
             // btnTillbaka
             // 
             this.btnTillbaka.Location = new System.Drawing.Point(12, 414);
-            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(63, 25);
             this.btnTillbaka.TabIndex = 13;
@@ -110,7 +110,7 @@
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKunder.Location = new System.Drawing.Point(88, 131);
-            this.gridKunder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridKunder.Margin = new System.Windows.Forms.Padding(2);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
             this.gridKunder.ReadOnly = true;
@@ -123,7 +123,7 @@
             // btnSokPersonNr
             // 
             this.btnSokPersonNr.Location = new System.Drawing.Point(262, 99);
-            this.btnSokPersonNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSokPersonNr.Margin = new System.Windows.Forms.Padding(2);
             this.btnSokPersonNr.Name = "btnSokPersonNr";
             this.btnSokPersonNr.Size = new System.Drawing.Size(61, 27);
             this.btnSokPersonNr.TabIndex = 17;
@@ -141,22 +141,25 @@
             this.lblNamn.Size = new System.Drawing.Size(38, 13);
             this.lblNamn.TabIndex = 18;
             this.lblNamn.Text = "Namn:";
+            this.lblNamn.Click += new System.EventHandler(this.lblNamn_Click);
             // 
             // txtBoxNamn
             // 
             this.txtBoxNamn.Location = new System.Drawing.Point(88, 63);
-            this.txtBoxNamn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxNamn.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxNamn.Name = "txtBoxNamn";
             this.txtBoxNamn.Size = new System.Drawing.Size(171, 20);
             this.txtBoxNamn.TabIndex = 19;
+ 
             // 
             // txtBoxPersonNr
             // 
             this.txtBoxPersonNr.Location = new System.Drawing.Point(88, 104);
-            this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(171, 20);
             this.txtBoxPersonNr.TabIndex = 20;
+            this.txtBoxPersonNr.TextChanged += new System.EventHandler(this.txtBoxPersonNr_TextChanged);
             // 
             // lblPersonNr
             // 
@@ -168,11 +171,12 @@
             this.lblPersonNr.Size = new System.Drawing.Size(80, 13);
             this.lblPersonNr.TabIndex = 21;
             this.lblPersonNr.Text = "Personnummer:";
+            this.lblPersonNr.Click += new System.EventHandler(this.lblPersonNr_Click);
             // 
             // btnSokNamn
             // 
             this.btnSokNamn.Location = new System.Drawing.Point(262, 58);
-            this.btnSokNamn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSokNamn.Margin = new System.Windows.Forms.Padding(2);
             this.btnSokNamn.Name = "btnSokNamn";
             this.btnSokNamn.Size = new System.Drawing.Size(61, 27);
             this.btnSokNamn.TabIndex = 22;
@@ -215,7 +219,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Kundregister";
             this.Text = "Kundregister";
             this.Load += new System.EventHandler(this.Kundregister_Load);

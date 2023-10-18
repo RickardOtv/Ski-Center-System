@@ -61,15 +61,15 @@ namespace NetFramework
                 nyUthyrning = kontroller.SkapaUthyrning(valdBokning);
                 MessageBox.Show($"Uthyrning har skapats med ID:{nyUthyrning.UthyrningsID} med bokningsID:{valdBokning.BokningsID}");
                 // Skapa nästa fönster och skicka med den valda bokningen
-                
+                UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller, valdBokning, nyUthyrning);
+                uthyrningUtrustning.InloggadAnvandare = txtAnvandarnamn.Text;
+                uthyrningUtrustning.Show();
             }
             else
             {
                 MessageBox.Show("Vänligen välj en bokning först.");
             }
-            UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller, valdBokning, nyUthyrning);
-            uthyrningUtrustning.InloggadAnvandare = txtAnvandarnamn.Text;
-            uthyrningUtrustning.Show();
+            
         }
 
 

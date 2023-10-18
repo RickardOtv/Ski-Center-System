@@ -26,12 +26,14 @@ namespace NetFramework
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
         }
+        /*
         public void RefreshUthyrningar()
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
             var uthyrningar = kontroller.HämtaUthyrningar(valdUthyrning.UthyrningsID);
             gridUthyrning.DataSource = uthyrningar;
         }
+        */
         public void RefreshUthyrningarSpecifik(int uthyrningsID)
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
@@ -62,7 +64,7 @@ namespace NetFramework
 
         private void VisaUthyrningar_Load(object sender, EventArgs e)
         {
-            RefreshUthyrningar();
+           // RefreshUthyrningar();
         }
 
         private void btnSök_Click(object sender, EventArgs e)

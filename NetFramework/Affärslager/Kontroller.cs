@@ -77,6 +77,9 @@ namespace Affärslager
             {
                 BokningsID = b.BokningsID,
             };
+
+            unitOfWork.uthyrningar.Add(uthyrning);
+            unitOfWork.SaveChanges();
             return uthyrning;
         }
         public Uthyrningsrad SkapaUthyrningsRad(DateTime från, DateTime till, Utrustning u, int uthyrningsID)
@@ -100,13 +103,23 @@ namespace Affärslager
             return kund;
 
         }
-
+        public Anställd SkapaNyAnställd(string förnamn, string efternamn, string lösenord, string behörighet)
+        {
+            Anställd anställd = new Anställd(förnamn, efternamn, lösenord, behörighet);
+            unitOfWork.anställda.Add(anställd);
+            unitOfWork.SaveChanges();
+            return anställd;
+        }
         public void TaBortKund(Kund k)
         {
             unitOfWork.kunder.Remove(k);
             unitOfWork.SaveChanges();
         }
-
+        public void TaBortAnställd(Anställd a)
+        {
+            unitOfWork.anställda.Remove(a);
+            unitOfWork.SaveChanges();
+        }
         public void TaBortBokning(Bokning b)
         {
             unitOfWork.bokningar.Remove(b);
@@ -119,6 +132,10 @@ namespace Affärslager
         public Kund HittaKund(string personNummer)
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == personNummer);
+        }
+        public Anställd HittaAnställd(int anställningsNr)
+        {
+            return unitOfWork.anställda.FirstOrDefault(a => a.AnställningsNr == anställningsNr);
         }
         public Logi HittaLogi(string logiID)
         {
@@ -152,7 +169,10 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
-
+        public IList<Anställd> HämtaAnställda()
+        {
+            return unitOfWork.anställda.ToList<Anställd>();
+        }
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
@@ -283,6 +303,7 @@ namespace Affärslager
             return unitOfWork.utrustningar.ToList<Utrustning>();
         }
         
+
         public void ÄndraAllaBokningsRader(DateTime från, DateTime till, Bokningsrad bokningrad)
         {
             var allaRader = HämtaRader(bokningrad.BokningsID);
@@ -291,6 +312,15 @@ namespace Affärslager
                 r.Från = från;
                 r.Till = till;
             }
+            unitOfWork.SaveChanges();
+        }
+
+        public void ÄndraAnställd(string förnamn, string efternamn, string lösenord, string behörighet, Anställd anställd)
+        {
+            anställd.Förnamn = förnamn;
+            anställd.Efternamn = efternamn;
+            anställd.Lösenord = lösenord;
+            anställd.Behörighet = behörighet;
             unitOfWork.SaveChanges();
         }
         

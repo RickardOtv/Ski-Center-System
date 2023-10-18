@@ -56,6 +56,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminMeny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMeny.Designer.cs">
+      <DependentUpon>AdminMeny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AnställdaRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AnställdaRegister.Designer.cs">
+      <DependentUpon>AnställdaRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bokningsfönster\BokningNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
     </Compile>
     <Compile Include="Kundregister\Kundregister.Designer.cs">
       <DependentUpon>Kundregister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SkapaAnställd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SkapaAnställd.Designer.cs">
+      <DependentUpon>SkapaAnställd.cs</DependentUpon>
     </Compile>
     <Compile Include="SkapaUthyrning.cs">
       <SubType>Form</SubType>
@@ -148,6 +166,18 @@
     <Compile Include="VisaUthyrningar.Designer.cs">
       <DependentUpon>VisaUthyrningar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ÄndraAnställd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ÄndraAnställd.Designer.cs">
+      <DependentUpon>ÄndraAnställd.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\AdminMeny.resx">
+      <DependentUpon>AdminMeny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AnställdaRegister.resx">
+      <DependentUpon>AnställdaRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bokningsfönster\BokningNyKund.resx">
       <DependentUpon>BokningNyKund.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kundregister\Kundregister.resx">
       <DependentUpon>Kundregister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SkapaAnställd.resx">
+      <DependentUpon>SkapaAnställd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SkapaUthyrning.resx">
       <DependentUpon>SkapaUthyrning.cs</DependentUpon>
@@ -202,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisaUthyrningar.resx">
       <DependentUpon>VisaUthyrningar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ÄndraAnställd.resx">
+      <DependentUpon>ÄndraAnställd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

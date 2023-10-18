@@ -47,6 +47,7 @@
             this.gridBokningar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridBokningar.Location = new System.Drawing.Point(124, 113);
             this.gridBokningar.Name = "gridBokningar";
+            this.gridBokningar.ReadOnly = true;
             this.gridBokningar.RowHeadersVisible = false;
             this.gridBokningar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridBokningar.Size = new System.Drawing.Size(556, 265);

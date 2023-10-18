@@ -20,9 +20,9 @@ namespace Entitetslager
         public string Behörighet { get; set; }
 
 
-        public Anställd(int anställningsNr, string förnamn, string efternamn, string lösenord, string behörighet)
+        public Anställd(string förnamn, string efternamn, string lösenord, string behörighet)
         {
-            AnställningsNr = anställningsNr;
+           // AnställningsNr = anställningsNr;
             Förnamn = förnamn;
             Efternamn = efternamn;
             Lösenord = lösenord;
