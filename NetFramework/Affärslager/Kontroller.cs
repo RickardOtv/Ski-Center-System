@@ -221,8 +221,41 @@ namespace Affärslager
                             break;
                         }
                     }
-                        // Hämta prisinformation för den aktuella veckan och logitypen
-                        var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
+                    else if (logiTyp == "Konferens liten" || logiTyp == "Konferens stor")
+                    {
+                        var konferensPris = unitOfWork.konferensPris.FirstOrDefault(kp => kp.Vecka == vecka && kp.Typ == logiTyp);
+
+                        if (konferensPris != null)
+                        {
+                            DateTime veckaStart = currentDate.Date;
+                            DateTime veckaSlut = currentDate.Date.AddDays(6);
+                            if (currentDate.DayOfWeek == DayOfWeek.Monday && veckaSlut <= till)
+                            {
+                                totalPrice += konferensPris.VeckoPris;
+                                currentDate = veckaSlut.AddDays(1);
+                                continue;
+                            }
+                            else
+                            {
+                                while (currentDate <= till)
+                                {
+                                    totalPrice += konferensPris.DygnsPris; // Exempel: du kan ändra detta för att använda TimPris vid behov.
+                                    currentDate = currentDate.AddDays(1);
+
+                                    if (currentDate > till)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    // Hämta prisinformation för den aktuella veckan och logitypen
+                    var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
 
                     if (logiPris != null)
                     {
