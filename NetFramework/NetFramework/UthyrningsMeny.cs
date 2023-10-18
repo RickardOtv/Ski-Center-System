@@ -35,10 +35,6 @@ namespace NetFramework
             Close();
         }
 
-        private void btnVisaUthyrningSkidskola_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSkapaUthyrning_Click(object sender, EventArgs e)
         {
@@ -55,6 +51,12 @@ namespace NetFramework
         private void btnÅterlämning_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVisaUthyrningar_Click(object sender, EventArgs e)
+        {
+            VisaUthyrningar visaUthyrningar = new VisaUthyrningar(loggaIn, kontroller);
+            visaUthyrningar.Show();
         }
     }
 }

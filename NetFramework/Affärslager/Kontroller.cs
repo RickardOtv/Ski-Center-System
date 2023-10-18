@@ -99,11 +99,22 @@ namespace Affärslager
         {
             return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
         }
+        public IList<Uthyrningsrad> HämtaUthyrningsRad(int uthyrningsID)
+        {
+            return unitOfWork.uthyrningsRader.Where(u => u.UthyrningsID == uthyrningsID).ToList();
+        }
         public IList<Lektionsrad> HämtaLektionsRader(int bokningsID)
         {
             return unitOfWork.lektionsRader.Where(b => b.BokningsID == bokningsID).ToList();
         }
-
+        public IList<Uthyrning> HämtaUthyrningar(int uthyrningsID)
+        {
+            return unitOfWork.uthyrningar.Where(u => u.UthyrningsID == uthyrningsID).ToList();
+        }
+        public IList<Skidlektion> HämtaLektioner(int lektionsID)
+        {
+            return unitOfWork.skidlektioner.Where(l => l.LektionsID == lektionsID).ToList();
+        }
         public IList<Logi> HämtaTillgängligLogi()
         {
             return unitOfWork.logier.ToList<Logi>();
@@ -112,50 +123,89 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
+       
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
             DateTime currentDate = från;
+            int vecka = -1; // Initialt värde för att säkerställa att vi räknar första veckan.
+
             while (currentDate <= till)
             {
-                // Hämta veckonummer för det aktuella datumet
-                int vecka = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(currentDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+                // Hämta veckonummer för det aktuella datumet baserat på kalenderåret 2023
+                int currentVecka = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(currentDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
-                // Hämta prisinformation för den aktuella veckan och logitypen
-                var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
-
-                if (logiPris != null)
+                if (vecka != currentVecka)
                 {
-                    if (currentDate.DayOfWeek >= DayOfWeek.Monday && currentDate.DayOfWeek <= DayOfWeek.Thursday)
-                    {
-                        // Om det är en vardag (måndag till torsdag), använd vardagspriset
-                        totalPrice += logiPris.VardagsPris;
-                    }
+                    // Om vi har gått in i en ny vecka (enligt kalenderåret 2023)
+                    vecka = currentVecka;
 
+                    // Hämta prisinformation för den aktuella veckan och logitypen
+                    var logiPris = unitOfWork.logiPris.FirstOrDefault(lp => lp.Vecka == vecka && lp.Typ == logiTyp);
+
+                    if (logiPris != null)
+                    {
+                        // Kontrollera om det är en hel vecka (måndag till söndag)
+                        DateTime veckaStart = currentDate.Date;
+                        DateTime veckaSlut = currentDate.Date.AddDays(6);
+                        if (currentDate.DayOfWeek == DayOfWeek.Monday && veckaSlut <= till)
+                        {
+                            totalPrice += logiPris.VeckoPris;
+                            currentDate = veckaSlut.AddDays(1);
+                            continue;
+                        }
+                        else
+                        {
+                            // Om det inte är en hel vecka, använd vardags- och helgpris
+                            while (currentDate <= till)
+                            {
+                                if (currentDate.DayOfWeek >= DayOfWeek.Monday && currentDate.DayOfWeek <= DayOfWeek.Thursday)
+                                {
+                                    // Om det är en vardag (måndag till torsdag), använd vardagspriset
+                                    totalPrice += logiPris.VardagsPris;
+                                }
+                                else
+                                {
+                                    // Annars är det en helgdag (fredag till söndag), använd helgpriset
+                                    totalPrice += logiPris.HelgPris;
+                                }
+
+                                // Gå till nästa dag
+                                currentDate = currentDate.AddDays(1);
+
+                                if (currentDate > till)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
                     else
                     {
-                        // Annars är det en helgdag (fredag till söndag), använd helgpriset
-                        totalPrice += logiPris.HelgPris;
+                        // Om prisinformation saknas för den aktuella veckan och logitypen, bryt loopen
+                        break;
                     }
                 }
                 else
                 {
-                    // Om prisinformation saknas för den aktuella veckan och logitypen, bryt loopen
-                    break;
-                }
+                    // Om vi är fortfarande inom samma vecka, gå till nästa dag
+                    currentDate = currentDate.AddDays(1);
 
-                // Gå till nästa dag
-                currentDate = currentDate.AddDays(1);
-
-                // Om vi har passerat "till"-datumet, bryt loopen
-                if (currentDate > till)
-                {
-                    break;
+                    if (currentDate > till)
+                    {
+                        break;
+                    }
                 }
             }
 
             return totalPrice;
         }
+
+
+
+
+
+
 
         public IList<Bokning> HämtaBokningar()
         {
@@ -170,15 +220,18 @@ namespace Affärslager
         {
             return unitOfWork.utrustningar.ToList<Utrustning>();
         }
-        /*
-        public void ÄndraBokning(DateTime från, DateTime till, Bokning bokning)
+        
+        public void ÄndraAllaBokningsRader(DateTime från, DateTime till, Bokningsrad bokningrad)
         {
-            bokning.Från = från;
-            bokning.Till = till;
+            var allaRader = HämtaRader(bokningrad.BokningsID);
+            foreach (var r in allaRader)
+            {
+                r.Från = från;
+                r.Till = till;
+            }
             unitOfWork.SaveChanges();
-            //return bokning;
         }
-        */
+        
         public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
         {
             kund.Personnummer = personnummer;
@@ -198,6 +251,14 @@ namespace Affärslager
             int matadBokningsNr = Int32.Parse(söktBokningsNummer);
             Bokning matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
             return matchadBokning;
+        }
+        public Bokning HittaBokning(int kundID)
+        {
+            return unitOfWork.bokningar.FirstOrDefault(b => b.KundID == kundID);
+        }
+        public Uthyrning HittaUthyrning(int bokningsID)
+        {
+            return unitOfWork.uthyrningar.FirstOrDefault(u => u.BokningsID == bokningsID);
         }
 
         public string HittaBehörighet(int anstllningsNr)
@@ -241,5 +302,17 @@ namespace Affärslager
         }
 
 
+
+        public void TaBortLogi(Bokningsrad valRad)
+        {
+            unitOfWork.bokningsRader.Remove(valRad);
+            unitOfWork.SaveChanges();
+        }
+        public void ÄndraEnBokningsRad(DateTime från, DateTime till, Bokningsrad bokningrad)
+        {
+            bokningrad.Från = från;
+            bokningrad.Till = till;
+            unitOfWork.SaveChanges();
+        }
     }
 }
