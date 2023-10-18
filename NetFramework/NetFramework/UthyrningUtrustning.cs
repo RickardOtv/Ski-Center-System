@@ -20,13 +20,15 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Bokningsrad bokningar;
         private Utrustning utrustning;
-        public UthyrningUtrustning(LoggaIn loggain, Kontroller kontroller)
+        private Bokning valdBokning;
+        public UthyrningUtrustning(LoggaIn loggain, Kontroller kontroller, Bokning valdBokning)
         {
             InitializeComponent();
             this.loggaIn = loggain;
             this.kontroller = kontroller;
+            this.valdBokning = valdBokning;
             RefreshUtrustning();
-
+            
         }
         public string InloggadAnvandare
         {
@@ -46,12 +48,68 @@ namespace NetFramework
 
         public void UthyrningUtrustning_Load(object sender, EventArgs e)
         {
+       
             RefreshUtrustning();
+            txtBoxValdKund.Text = $"Vald Bokning: {valdBokning.BokningsID.ToString()}";
+
         }
+
+        #region filtrering typ/storlek
+
+        private void cmbTyp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UppdateraStorlekar();
+            FiltreraData();
+        }
+        private void UppdateraStorlekar()
+        {
+            var valdTyp = (string)cmbTyp.SelectedItem;
+
+            cmbStorlek.Items.Clear();
+
+            if (valdTyp != null)
+            {
+                var tillgangligaStorlekar = kontroller.HamtaStorlekarForTyp(valdTyp);
+                foreach (var storlek in tillgangligaStorlekar)
+                {
+                    cmbStorlek.Items.Add(storlek);
+                }
+            }
+        }
+        private void cmbStorlek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltreraData();
+        }
+
+        private void FiltreraData()
+        {
+            var valdTyp = (string)cmbTyp.SelectedItem;
+            var valdStorlek = (string)cmbStorlek.SelectedItem; // Om du också vill filtrera på storlek
+
+            var filtreradData = kontroller.HämtaUtrustning()
+                .Where(u => (valdTyp == null || u.Typ == valdTyp) &&
+                            (valdStorlek == null || (u.Storlek) == int.Parse(valdStorlek)))
+                .ToList();
+
+            gridUtrustning.DataSource = filtreradData;
+        }
+
+
+        #endregion
+
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        
+
+        
+
+        private void txtBoxValdKund_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Affärslager
     {
 
         private UnitOfWork unitOfWork;
+        private List<Utrustning> allUtrustning;
         public Kontroller() { }
         public Anställd LoggedIn
         {
@@ -204,5 +205,41 @@ namespace Affärslager
             Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
             return anställd.Behörighet;
         }
+
+        public List<int> HamtaStorlekarForTyp(string typ)
+        {
+            if (typ == null) throw new ArgumentNullException(nameof(typ));
+
+            // Kontrollera om allUtrustning är null eller tom
+            if (allUtrustning == null || !allUtrustning.Any())
+            {
+                throw new InvalidOperationException("allUtrustning är null eller tom.");
+            }
+
+            // Försök att identifiera var problemet ligger
+            var nonNullUtrustning = allUtrustning.Where(u => u != null && u.Typ != null && u.Storlek != null).ToList();
+
+            // Om nonNullUtrustning är tom, kasta ett undantag
+            if (!nonNullUtrustning.Any())
+            {
+                throw new InvalidOperationException("Ingen utrustning med icke-null Typ och Storlek.");
+            }
+
+            var storlekar = nonNullUtrustning
+                .Where(u => u.Typ == typ)
+                .Select(u => u.Storlek)
+                .Distinct()
+                .ToList();
+
+            // Om storlekar är tom, kasta ett undantag
+            if (!storlekar.Any())
+            {
+                throw new InvalidOperationException($"Ingen utrustning av typ {typ} hittades.");
+            }
+
+            return storlekar;
+        }
+
+
     }
 }

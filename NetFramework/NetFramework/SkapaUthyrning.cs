@@ -20,6 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Bokningsrad bokningar;
         private LoggaIn loggaInMeny;
+        private Bokning valdBokning;
         public SkapaUthyrning(LoggaIn loggain, Kontroller kontroller)
         {
             InitializeComponent();
@@ -51,9 +52,21 @@ namespace NetFramework
 
         private void VäljBtn_Click(object sender, EventArgs e)
         {
-            UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller);
-            uthyrningUtrustning.InloggadAnvandare = txtAnvandarnamn.Text;
-            uthyrningUtrustning.Show();
+
+            if (gridBokningar.SelectedRows.Count > 0)
+            {
+                // Hämta den valda bokningen
+                Bokning valdBokning = (Bokning)gridBokningar.SelectedRows[0].DataBoundItem;
+
+                // Skapa nästa fönster och skicka med den valda bokningen
+                UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller, valdBokning);
+                uthyrningUtrustning.InloggadAnvandare = txtAnvandarnamn.Text;
+                uthyrningUtrustning.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vänligen välj en bokning först.");
+            }
         }
 
 
