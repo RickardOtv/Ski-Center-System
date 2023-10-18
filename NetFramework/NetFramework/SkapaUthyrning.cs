@@ -18,8 +18,10 @@ namespace NetFramework
         UnitOfWork unitOfWork = new UnitOfWork();
         private Kontroller kontroller;
         private LoggaIn loggaIn;
-        private Bokningsrad bokningar;
+        private Bokning valdBokning;
+        private Uthyrning nyUthyrning;
         private LoggaIn loggaInMeny;
+        
         public SkapaUthyrning(LoggaIn loggain, Kontroller kontroller)
         {
             InitializeComponent();
@@ -51,7 +53,21 @@ namespace NetFramework
 
         private void VäljBtn_Click(object sender, EventArgs e)
         {
-            UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller);
+
+            if (gridBokningar.SelectedRows.Count > 0)
+            {
+                // Hämta den valda bokningen
+                valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
+                nyUthyrning = kontroller.SkapaUthyrning(valdBokning);
+                MessageBox.Show($"Uthyrning har skapats med ID:{nyUthyrning.UthyrningsID} med bokningsID:{valdBokning.BokningsID}");
+                // Skapa nästa fönster och skicka med den valda bokningen
+                
+            }
+            else
+            {
+                MessageBox.Show("Vänligen välj en bokning först.");
+            }
+            UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller, valdBokning, nyUthyrning);
             uthyrningUtrustning.InloggadAnvandare = txtAnvandarnamn.Text;
             uthyrningUtrustning.Show();
         }

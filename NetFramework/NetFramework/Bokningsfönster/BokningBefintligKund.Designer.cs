@@ -39,7 +39,7 @@
             this.dateFrån = new System.Windows.Forms.DateTimePicker();
             this.dateTill = new System.Windows.Forms.DateTimePicker();
             this.btnAvbryt = new System.Windows.Forms.Button();
-            this.btnKollaPris = new System.Windows.Forms.Button();
+            this.btn_sök = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.gridRader = new System.Windows.Forms.DataGridView();
             this.btnLäggTill = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.btnVäljKund = new System.Windows.Forms.Button();
             this.lblRader = new System.Windows.Forms.Label();
             this.btn_Vidare = new System.Windows.Forms.Button();
+            this.btnKollaPris = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
@@ -179,16 +180,16 @@
             this.btnAvbryt.UseVisualStyleBackColor = true;
             this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
-            // btnKollaPris
+            // btn_sök
             // 
-            this.btnKollaPris.Location = new System.Drawing.Point(17, 418);
-            this.btnKollaPris.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKollaPris.Name = "btnKollaPris";
-            this.btnKollaPris.Size = new System.Drawing.Size(134, 25);
-            this.btnKollaPris.TabIndex = 15;
-            this.btnKollaPris.Text = "Kolla Pris";
-            this.btnKollaPris.UseVisualStyleBackColor = true;
-            this.btnKollaPris.Click += new System.EventHandler(this.btnKollaPris_Click);
+            this.btn_sök.Location = new System.Drawing.Point(17, 418);
+            this.btn_sök.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_sök.Name = "btn_sök";
+            this.btn_sök.Size = new System.Drawing.Size(134, 25);
+            this.btn_sök.TabIndex = 15;
+            this.btn_sök.Text = "Sök";
+            this.btn_sök.UseVisualStyleBackColor = true;
+            this.btn_sök.Click += new System.EventHandler(this.btn_sökLogi_Click);
             // 
             // txtFilter
             // 
@@ -268,6 +269,17 @@
             this.btn_Vidare.UseVisualStyleBackColor = true;
             this.btn_Vidare.Click += new System.EventHandler(this.btnKlar_Click);
             // 
+            // btnKollaPris
+            // 
+            this.btnKollaPris.Location = new System.Drawing.Point(323, 456);
+            this.btnKollaPris.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKollaPris.Name = "btnKollaPris";
+            this.btnKollaPris.Size = new System.Drawing.Size(65, 28);
+            this.btnKollaPris.TabIndex = 22;
+            this.btnKollaPris.Text = "Kolla Pris";
+            this.btnKollaPris.UseVisualStyleBackColor = true;
+            this.btnKollaPris.Click += new System.EventHandler(this.btnKollaPris_Click);
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,13 +287,14 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 567);
+            this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btn_Vidare);
             this.Controls.Add(this.lblRader);
             this.Controls.Add(this.btnVäljKund);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.gridRader);
-            this.Controls.Add(this.btnKollaPris);
+            this.Controls.Add(this.btn_sök);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.dateTill);
             this.Controls.Add(this.dateFrån);
@@ -320,7 +333,7 @@
         private System.Windows.Forms.DateTimePicker dateFrån;
         private System.Windows.Forms.DateTimePicker dateTill;
         private System.Windows.Forms.Button btnAvbryt;
-        private System.Windows.Forms.Button btnKollaPris;
+        private System.Windows.Forms.Button btn_sök;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.DataGridView gridRader;
         private System.Windows.Forms.Button btnLäggTill;
@@ -328,5 +341,6 @@
         private System.Windows.Forms.Button btnVäljKund;
         private System.Windows.Forms.Label lblRader;
         private System.Windows.Forms.Button btn_Vidare;
+        private System.Windows.Forms.Button btnKollaPris;
     }
 }

@@ -31,21 +31,22 @@
             this.Anställningsnummerlbl = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.gridUtrustning = new System.Windows.Forms.DataGridView();
-            this.gridValdUtrustning = new System.Windows.Forms.DataGridView();
-            this.btnSok = new System.Windows.Forms.Button();
+            this.gridRader = new System.Windows.Forms.DataGridView();
             this.btnLäggTill = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
             this.btnSkapa = new System.Windows.Forms.Button();
-            this.txtBoxTill = new System.Windows.Forms.TextBox();
-            this.txtBoxTyp = new System.Windows.Forms.TextBox();
-            this.txtBoxFrån = new System.Windows.Forms.TextBox();
             this.txtBoxValdKund = new System.Windows.Forms.TextBox();
-            this.txtBoxStorlek = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbTyp = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbStorlek = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateFrån = new System.Windows.Forms.DateTimePicker();
+            this.dateTill = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gridUtrustning)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridValdUtrustning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
             this.SuspendLayout();
             // 
             // Anställningsnummerlbl
@@ -70,25 +71,24 @@
             this.gridUtrustning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridUtrustning.Location = new System.Drawing.Point(30, 206);
             this.gridUtrustning.Name = "gridUtrustning";
+            this.gridUtrustning.ReadOnly = true;
+            this.gridUtrustning.RowHeadersVisible = false;
+            this.gridUtrustning.RowHeadersWidth = 62;
+            this.gridUtrustning.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridUtrustning.Size = new System.Drawing.Size(349, 153);
             this.gridUtrustning.TabIndex = 8;
             // 
-            // gridValdUtrustning
+            // gridRader
             // 
-            this.gridValdUtrustning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridValdUtrustning.Location = new System.Drawing.Point(415, 206);
-            this.gridValdUtrustning.Name = "gridValdUtrustning";
-            this.gridValdUtrustning.Size = new System.Drawing.Size(349, 153);
-            this.gridValdUtrustning.TabIndex = 9;
-            // 
-            // btnSok
-            // 
-            this.btnSok.Location = new System.Drawing.Point(304, 151);
-            this.btnSok.Name = "btnSok";
-            this.btnSok.Size = new System.Drawing.Size(75, 23);
-            this.btnSok.TabIndex = 10;
-            this.btnSok.Text = "Sök";
-            this.btnSok.UseVisualStyleBackColor = true;
+            this.gridRader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRader.Location = new System.Drawing.Point(415, 206);
+            this.gridRader.Name = "gridRader";
+            this.gridRader.ReadOnly = true;
+            this.gridRader.RowHeadersVisible = false;
+            this.gridRader.RowHeadersWidth = 62;
+            this.gridRader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridRader.Size = new System.Drawing.Size(349, 153);
+            this.gridRader.TabIndex = 9;
             // 
             // btnLäggTill
             // 
@@ -98,6 +98,7 @@
             this.btnLäggTill.TabIndex = 11;
             this.btnLäggTill.Text = "Lägg till";
             this.btnLäggTill.UseVisualStyleBackColor = true;
+            this.btnLäggTill.Click += new System.EventHandler(this.btnLäggTill_Click);
             // 
             // btnTillbaka
             // 
@@ -127,45 +128,14 @@
             this.btnSkapa.Text = "Skapa";
             this.btnSkapa.UseVisualStyleBackColor = true;
             // 
-            // txtBoxTill
-            // 
-            this.txtBoxTill.Location = new System.Drawing.Point(130, 154);
-            this.txtBoxTill.Name = "txtBoxTill";
-            this.txtBoxTill.Size = new System.Drawing.Size(83, 20);
-            this.txtBoxTill.TabIndex = 15;
-            this.txtBoxTill.Text = "Till:";
-            // 
-            // txtBoxTyp
-            // 
-            this.txtBoxTyp.Location = new System.Drawing.Point(30, 180);
-            this.txtBoxTyp.Name = "txtBoxTyp";
-            this.txtBoxTyp.Size = new System.Drawing.Size(183, 20);
-            this.txtBoxTyp.TabIndex = 16;
-            this.txtBoxTyp.Text = "Typ:";
-            // 
-            // txtBoxFrån
-            // 
-            this.txtBoxFrån.Location = new System.Drawing.Point(30, 154);
-            this.txtBoxFrån.Name = "txtBoxFrån";
-            this.txtBoxFrån.Size = new System.Drawing.Size(83, 20);
-            this.txtBoxFrån.TabIndex = 17;
-            this.txtBoxFrån.Text = "Från:";
-            // 
             // txtBoxValdKund
             // 
             this.txtBoxValdKund.Location = new System.Drawing.Point(30, 119);
             this.txtBoxValdKund.Name = "txtBoxValdKund";
             this.txtBoxValdKund.Size = new System.Drawing.Size(120, 20);
             this.txtBoxValdKund.TabIndex = 18;
-            this.txtBoxValdKund.Text = "Vald Kund:";
-            // 
-            // txtBoxStorlek
-            // 
-            this.txtBoxStorlek.Location = new System.Drawing.Point(239, 180);
-            this.txtBoxStorlek.Name = "txtBoxStorlek";
-            this.txtBoxStorlek.Size = new System.Drawing.Size(140, 20);
-            this.txtBoxStorlek.TabIndex = 19;
-            this.txtBoxStorlek.Text = "Storlek:";
+            this.txtBoxValdKund.Text = "Vald kund:";
+            this.txtBoxValdKund.TextChanged += new System.EventHandler(this.txtBoxValdKund_TextChanged);
             // 
             // textBox6
             // 
@@ -187,6 +157,77 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Lägg till utrustning";
             // 
+            // cmbTyp
+            // 
+            this.cmbTyp.FormattingEnabled = true;
+            this.cmbTyp.Items.AddRange(new object[] {
+            "Alpintskida",
+            "Längdskida",
+            "Snowboard",
+            "SkoterLynx",
+            "SkoterViking",
+            "Alpintpjäxa",
+            "Längdpjäxa",
+            "Snowboardskor"});
+            this.cmbTyp.Location = new System.Drawing.Point(30, 180);
+            this.cmbTyp.Name = "cmbTyp";
+            this.cmbTyp.Size = new System.Drawing.Size(149, 21);
+            this.cmbTyp.TabIndex = 42;
+            this.cmbTyp.Text = "Typ:";
+            this.cmbTyp.SelectedIndexChanged += new System.EventHandler(this.cmbTyp_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(205, 101);
+            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 41;
+            // 
+            // cmbStorlek
+            // 
+            this.cmbStorlek.FormattingEnabled = true;
+            this.cmbStorlek.Items.AddRange(new object[] {
+            "160",
+            "170",
+            "180",
+            "190",
+            "200"});
+            this.cmbStorlek.Location = new System.Drawing.Point(185, 180);
+            this.cmbStorlek.Name = "cmbStorlek";
+            this.cmbStorlek.Size = new System.Drawing.Size(149, 21);
+            this.cmbStorlek.TabIndex = 44;
+            this.cmbStorlek.Text = "Storlek:";
+            this.cmbStorlek.SelectedIndexChanged += new System.EventHandler(this.cmbStorlek_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(373, 104);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 43;
+            // 
+            // dateFrån
+            // 
+            this.dateFrån.Location = new System.Drawing.Point(30, 154);
+            this.dateFrån.Name = "dateFrån";
+            this.dateFrån.Size = new System.Drawing.Size(149, 20);
+            this.dateFrån.TabIndex = 45;
+            // 
+            // dateTill
+            // 
+            this.dateTill.Location = new System.Drawing.Point(185, 154);
+            this.dateTill.Name = "dateTill";
+            this.dateTill.Size = new System.Drawing.Size(149, 20);
+            this.dateTill.TabIndex = 46;
+            // 
             // UthyrningUtrustning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,26 +235,28 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTill);
+            this.Controls.Add(this.dateFrån);
+            this.Controls.Add(this.cmbStorlek);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbTyp);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.txtBoxStorlek);
             this.Controls.Add(this.txtBoxValdKund);
-            this.Controls.Add(this.txtBoxFrån);
-            this.Controls.Add(this.txtBoxTyp);
-            this.Controls.Add(this.txtBoxTill);
             this.Controls.Add(this.btnSkapa);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnLäggTill);
-            this.Controls.Add(this.btnSok);
-            this.Controls.Add(this.gridValdUtrustning);
+            this.Controls.Add(this.gridRader);
             this.Controls.Add(this.gridUtrustning);
             this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Name = "UthyrningUtrustning";
             this.Text = "UthyrningUtrustning";
+            this.Load += new System.EventHandler(this.UthyrningUtrustning_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridUtrustning)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridValdUtrustning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,18 +267,19 @@
         private System.Windows.Forms.Label Anställningsnummerlbl;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.DataGridView gridUtrustning;
-        private System.Windows.Forms.DataGridView gridValdUtrustning;
-        private System.Windows.Forms.Button btnSok;
+        private System.Windows.Forms.DataGridView gridRader;
         private System.Windows.Forms.Button btnLäggTill;
         private System.Windows.Forms.Button btnTillbaka;
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.Button btnSkapa;
-        private System.Windows.Forms.TextBox txtBoxTill;
-        private System.Windows.Forms.TextBox txtBoxTyp;
-        private System.Windows.Forms.TextBox txtBoxFrån;
         private System.Windows.Forms.TextBox txtBoxValdKund;
-        private System.Windows.Forms.TextBox txtBoxStorlek;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbTyp;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbStorlek;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateFrån;
+        private System.Windows.Forms.DateTimePicker dateTill;
     }
 }
