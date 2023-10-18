@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace NetFramework
         DateTime från;
         DateTime till;
         Bokning nyBokning;
+        private List<Logi> ledigaLogier;
+
         public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
         {
             this.loggaInMeny = loggaInMeny;
@@ -73,7 +76,7 @@ namespace NetFramework
 
         private void BokningBefintligKund_Load(object sender, EventArgs e)
         {
-            RefreshLogi();
+            //RefreshLogi();
             RefreshKunder();
         }
 
@@ -113,11 +116,30 @@ namespace NetFramework
 
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
-            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
-            DateTime från = dateFrån.Value;
-            DateTime till = dateTill.Value;
-            decimal pris = kontroller.KollaPris(från, till, valdLogi.Typ);
-            MessageBox.Show($"Totalpris för valda datum:{pris}");
+            if (gridLogi.SelectedRows.Count > 0)
+            {
+                // Hämta den markerade logien från listan av lediga logier
+                var selectedRow = gridLogi.SelectedRows[0];
+                var rowIndex = selectedRow.Index;
+                if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                {
+                    var valdLogi = ledigaLogier[rowIndex];
+
+                    DateTime startDate = dateFrån.Value;
+                    DateTime endDate = dateTill.Value;
+                    decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
+                    MessageBox.Show($"Totalpris för valda datum: {pris}");
+                }
+                else
+                {
+                    MessageBox.Show("Felaktig logi vald.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen logi vald.");
+            }
+
         }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
@@ -127,12 +149,31 @@ namespace NetFramework
 
         private void btnLäggTill_Click(object sender, EventArgs e)
         {
-            valdLogi = gridLogi.SelectedRows[0].DataBoundItem as Logi;
-            DateTime från = dateFrån.Value;
-            DateTime till = dateTill.Value;
-            Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(från, till, valdLogi, nyBokning.BokningsID);
-            RefreshRader();
-            MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+            if (gridLogi.SelectedRows.Count > 0)
+            {
+                // Hämta den markerade logien från listan av lediga logier
+                var selectedRow = gridLogi.SelectedRows[0];
+                var rowIndex = selectedRow.Index;
+                if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                {
+                    var valdLogi = ledigaLogier[rowIndex];
+                    DateTime startDate = DateTime.Parse(dateFrån.Text);
+                    DateTime endDate = DateTime.Parse(dateTill.Text);
+                    Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
+                    MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+                    RefreshRader();
+                    //Hämta Uppdaterade LOGIN, tack :) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                }
+                else
+                {
+                    MessageBox.Show("Felaktig logi vald.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen logi vald.");
+            }
+            
         }
 
         private void btnTaBort_Click(object sender, EventArgs e)
@@ -152,6 +193,56 @@ namespace NetFramework
         private void btnKlar_Click(object sender, EventArgs e)
         {
                 this.Close();
+        }
+
+        private void btn_sökLogi_Click(object sender, EventArgs e)
+        {
+            string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection conn = new SqlConnection(cs);
+
+            try
+            {
+                conn.Open();
+
+                DateTime startDate = dateFrån.Value;
+                DateTime endDate = dateTill.Value;
+
+                string select = "SELECT Logi.* " +
+                       "FROM Logi " +
+                       "LEFT JOIN Bokningsrad ON Logi.LogiID = Bokningsrad.LogiID " +
+                       "AND (@EndDate >= Bokningsrad.Från AND @StartDate <= Bokningsrad.Till) " +
+                       "WHERE Bokningsrad.Från IS NULL";
+
+                var c = new SqlConnection(cs);
+                var dataAdapter = new SqlDataAdapter(select, c);
+
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
+
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                gridLogi.ReadOnly = true;
+
+                // Spara de lediga logierna i listan ledigaLogier
+                ledigaLogier = ds.Tables[0].AsEnumerable().Select(row =>
+                    new Logi
+                    {
+                        LogiID = row.Field<string>("LogiID"),
+                        Typ = row.Field<string>("Typ")
+                        // Fyll i med andra fält som behövs
+                    }).ToList();
+
+                gridLogi.DataSource = ds.Tables[0];
+
+                // Tabellnamn för Logidel
+                gridLogi.Columns["LogiID"].HeaderText = "LogiID för boende";
+                gridLogi.Columns["Typ"].HeaderText = "Typ av boende";
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+            }
         }
     }
 }
