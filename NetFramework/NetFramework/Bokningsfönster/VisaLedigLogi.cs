@@ -19,6 +19,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         Logi valdLogi = new Logi();
+        private List<Logi> ledigaLogier; // En lista för att lagra de lediga logierna
         public VisaLedigLogi(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
+       
         private void button1_Click_1(object sender, EventArgs e)
         {
             string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -60,34 +62,67 @@ namespace NetFramework
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 dataGridView1.ReadOnly = true;
+
+                // Spara de lediga logierna i listan ledigaLogier
+                ledigaLogier = ds.Tables[0].AsEnumerable().Select(row =>
+                    new Logi
+                    {
+                        LogiID = row.Field<string>("LogiID"),
+                        Typ = row.Field<string>("Typ")
+                        // Fyll i med andra fält som behövs
+                    }).ToList();
+
                 dataGridView1.DataSource = ds.Tables[0];
 
                 // Tabellnamn för Logidel
                 dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
                 dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
-
-              
             }
             catch (Exception ex)
             {
-                
                 conn.Close();
             }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
-            valdLogi = dataGridView1.SelectedRows[0].DataBoundItem as Logi;
-            DateTime startDate = startDatePicker.Value;
-            DateTime endDate = endDatePicker.Value;
-            decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
-            MessageBox.Show($"Totalpris för valda datum:{pris}");
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Hämta den markerade logien från listan av lediga logier
+                var selectedRow = dataGridView1.SelectedRows[0];
+                var rowIndex = selectedRow.Index;
+                if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                {
+                    var valdLogi = ledigaLogier[rowIndex];
+
+                    DateTime startDate = startDatePicker.Value;
+                    DateTime endDate = endDatePicker.Value;
+                    decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
+                    MessageBox.Show($"Totalpris för valda datum: {pris}");
+                }
+                else
+                {
+                    MessageBox.Show("Felaktig logi vald.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen logi vald.");
+            }
         }
+
+
+
+
+
+
 
         private void TillbakaKnapp_Click(object sender, EventArgs e)
         {
