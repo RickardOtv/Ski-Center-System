@@ -37,11 +37,52 @@ namespace NetFramework
         
         internal void RefreshLogi()
         {
-            var logier = kontroller.HämtaTillgängligLogi();
-            gridLogi.DataSource = logier;
-            gridLogi.AutoGenerateColumns = false;
-            gridLogi.Columns["LogiID"].DisplayIndex = 0;
-            gridLogi.Columns["Typ"].DisplayIndex = 1;
+            string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection conn = new SqlConnection(cs);
+
+            try
+            {
+                conn.Open();
+
+                DateTime startDate = dateFrån.Value;
+                DateTime endDate = dateTill.Value;
+
+                string select = "SELECT Logi.* " +
+                       "FROM Logi " +
+                       "LEFT JOIN Bokningsrad ON Logi.LogiID = Bokningsrad.LogiID " +
+                       "AND (@EndDate >= Bokningsrad.Från AND @StartDate <= Bokningsrad.Till) " +
+                       "WHERE Bokningsrad.Från IS NULL";
+
+                var c = new SqlConnection(cs);
+                var dataAdapter = new SqlDataAdapter(select, c);
+
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
+
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                gridLogi.ReadOnly = true;
+
+                // Spara de lediga logierna i listan ledigaLogier
+                ledigaLogier = ds.Tables[0].AsEnumerable().Select(row =>
+                    new Logi
+                    {
+                        LogiID = row.Field<string>("LogiID"),
+                        Typ = row.Field<string>("Typ")
+                        // Fyll i med andra fält som behövs
+                    }).ToList();
+
+                gridLogi.DataSource = ds.Tables[0];
+
+                // Tabellnamn för Logidel
+                gridLogi.Columns["LogiID"].HeaderText = "LogiID för boende";
+                gridLogi.Columns["Typ"].HeaderText = "Typ av boende";
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+            }
         }
         internal void RefreshRader()
         {
@@ -163,6 +204,7 @@ namespace NetFramework
                     MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
                     RefreshRader();
                     //Hämta Uppdaterade LOGIN, tack :) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    RefreshLogi();
                 }
                 else
                 {
@@ -197,52 +239,7 @@ namespace NetFramework
 
         private void btn_sökLogi_Click(object sender, EventArgs e)
         {
-            string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            SqlConnection conn = new SqlConnection(cs);
-
-            try
-            {
-                conn.Open();
-
-                DateTime startDate = dateFrån.Value;
-                DateTime endDate = dateTill.Value;
-
-                string select = "SELECT Logi.* " +
-                       "FROM Logi " +
-                       "LEFT JOIN Bokningsrad ON Logi.LogiID = Bokningsrad.LogiID " +
-                       "AND (@EndDate >= Bokningsrad.Från AND @StartDate <= Bokningsrad.Till) " +
-                       "WHERE Bokningsrad.Från IS NULL";
-
-                var c = new SqlConnection(cs);
-                var dataAdapter = new SqlDataAdapter(select, c);
-
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
-
-                var commandBuilder = new SqlCommandBuilder(dataAdapter);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                gridLogi.ReadOnly = true;
-
-                // Spara de lediga logierna i listan ledigaLogier
-                ledigaLogier = ds.Tables[0].AsEnumerable().Select(row =>
-                    new Logi
-                    {
-                        LogiID = row.Field<string>("LogiID"),
-                        Typ = row.Field<string>("Typ")
-                        // Fyll i med andra fält som behövs
-                    }).ToList();
-
-                gridLogi.DataSource = ds.Tables[0];
-
-                // Tabellnamn för Logidel
-                gridLogi.Columns["LogiID"].HeaderText = "LogiID för boende";
-                gridLogi.Columns["Typ"].HeaderText = "Typ av boende";
-            }
-            catch (Exception ex)
-            {
-                conn.Close();
-            }
+            RefreshLogi();
         }
     }
 }
