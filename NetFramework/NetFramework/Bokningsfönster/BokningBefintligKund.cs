@@ -266,10 +266,10 @@ namespace NetFramework
                             MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\nFinns ingen specifik information!");
                             break;
                         case "Konferens stor":
-                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\n50-personslokaler \n(tre st totalt)");
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\nAvsedd för max 50 personer \n(Tre st totalt)");
                             break;
                         case "Konferens liten":
-                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\n20-personslokaler \n(fem st totalt)");
+                            MessageBox.Show($"Du har valt: {valdLogi.LogiID} \n\nAvsedd för max 20 personer \n(Fem st totalt)");
                             break;
                         default:
                             Console.WriteLine("Finns ingen specifik information!");
