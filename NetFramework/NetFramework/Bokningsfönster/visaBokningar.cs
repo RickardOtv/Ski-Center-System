@@ -115,22 +115,13 @@ namespace NetFramework
 
         }
 
-        bool IsDigitsOnly(string str)
-        {
-            foreach (char c in str)
-            {
-                if (c < '0' || c > '9')
-                    return false;
-            }
 
-            return true;
-        }
 
         private void btnSökBokNr_Click(object sender, EventArgs e)
         {
             Bokning matchadBokning;
             String söktBokningsNummer = txtFilter.Text;
-            if (IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
+            if (kontroller.IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
             {
                 // Skapa metod av detta
                 matchadBokning = kontroller.HittaBokning(söktBokningsNummer);

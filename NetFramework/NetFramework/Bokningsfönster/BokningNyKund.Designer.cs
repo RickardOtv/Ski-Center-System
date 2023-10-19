@@ -85,7 +85,7 @@
             // txtBoxEmail
             // 
             this.txtBoxEmail.Location = new System.Drawing.Point(107, 159);
-            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(131, 20);
             this.txtBoxEmail.TabIndex = 6;
@@ -96,7 +96,7 @@
             // txtBoxAdress
             // 
             this.txtBoxAdress.Location = new System.Drawing.Point(255, 159);
-            this.txtBoxAdress.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxAdress.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxAdress.Name = "txtBoxAdress";
             this.txtBoxAdress.Size = new System.Drawing.Size(131, 20);
             this.txtBoxAdress.TabIndex = 7;
@@ -107,7 +107,7 @@
             // txtBoxTelefonNr
             // 
             this.txtBoxTelefonNr.Location = new System.Drawing.Point(255, 132);
-            this.txtBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxTelefonNr.Name = "txtBoxTelefonNr";
             this.txtBoxTelefonNr.Size = new System.Drawing.Size(131, 20);
             this.txtBoxTelefonNr.TabIndex = 8;
@@ -118,7 +118,7 @@
             // txtboxNamn
             // 
             this.txtboxNamn.Location = new System.Drawing.Point(107, 132);
-            this.txtboxNamn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtboxNamn.Margin = new System.Windows.Forms.Padding(1);
             this.txtboxNamn.Name = "txtboxNamn";
             this.txtboxNamn.Size = new System.Drawing.Size(131, 20);
             this.txtboxNamn.TabIndex = 9;
@@ -129,7 +129,7 @@
             // txtBoxPersonNr
             // 
             this.txtBoxPersonNr.Location = new System.Drawing.Point(107, 92);
-            this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(279, 20);
             this.txtBoxPersonNr.TabIndex = 10;
@@ -140,7 +140,7 @@
             // txtBoxPostNr
             // 
             this.txtBoxPostNr.Location = new System.Drawing.Point(107, 185);
-            this.txtBoxPostNr.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxPostNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPostNr.Name = "txtBoxPostNr";
             this.txtBoxPostNr.Size = new System.Drawing.Size(131, 20);
             this.txtBoxPostNr.TabIndex = 11;
@@ -151,7 +151,7 @@
             // txtBoxOrt
             // 
             this.txtBoxOrt.Location = new System.Drawing.Point(255, 185);
-            this.txtBoxOrt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxOrt.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxOrt.Name = "txtBoxOrt";
             this.txtBoxOrt.Size = new System.Drawing.Size(131, 20);
             this.txtBoxOrt.TabIndex = 12;
@@ -162,7 +162,7 @@
             // txtBoxKredit
             // 
             this.txtBoxKredit.Location = new System.Drawing.Point(255, 216);
-            this.txtBoxKredit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBoxKredit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxKredit.Name = "txtBoxKredit";
             this.txtBoxKredit.Size = new System.Drawing.Size(131, 20);
             this.txtBoxKredit.TabIndex = 14;
@@ -297,7 +297,7 @@
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.btnGaVidare);
             this.Controls.Add(this.btnTillbaka);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "BokningNyKund";
             this.Text = "Ny Kund";
             this.ResumeLayout(false);
