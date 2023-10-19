@@ -139,7 +139,24 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (nyUthyrning != null)
+            {
+
+                DialogResult result = MessageBox.Show("Om du går tillbaka så avbryter du Uthyrningen", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    kontroller.TaBortUthyrning(nyUthyrning);
+                    this.Close();
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         

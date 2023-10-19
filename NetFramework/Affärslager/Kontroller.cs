@@ -125,6 +125,11 @@ namespace Affärslager
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
+        public void TaBortUthyrning(Uthyrning u)
+        {
+            unitOfWork.uthyrningar.Remove(u);
+            unitOfWork.SaveChanges();
+        }
         public Kund HittaKund(int kundID)
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.KundID == kundID);
@@ -168,6 +173,10 @@ namespace Affärslager
         public IList<Kund> HämtaKunder()
         {
             return unitOfWork.kunder.ToList<Kund>();
+        }
+        public IList<Uthyrning> HämtaAllaUthyrningar()
+        {
+            return unitOfWork.uthyrningar.ToList<Uthyrning>();
         }
         public IList<Anställd> HämtaAnställda()
         {
