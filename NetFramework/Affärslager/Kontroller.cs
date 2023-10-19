@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datalager;
 using Entitetslager;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 
 namespace Affärslager
@@ -173,12 +174,51 @@ namespace Affärslager
         {
             return unitOfWork.anställda.ToList<Anställd>();
         }
-        /*
+        
         public decimal KollaUthyrningsPris(DateTime från, DateTime till, string uthyrningsTyp)
         {
+            // Check for the number of days
+            int totalDays = (int)(till - från).TotalDays + 1; // Including both from and to dates
+
+            if (totalDays > 5)
+            {
+                throw new ArgumentException("Spannet får inte vara längre än fem dagar.");
+            }
+
+            // Fetch equipment price based on type
+            var pris = unitOfWork.utrustningsPris.FirstOrDefault(ep => ep.Typ == uthyrningsTyp);
+
+            if ((uthyrningsTyp == "SkoterLynx" || uthyrningsTyp == "SkoterViking") && (totalDays == 2 || totalDays == 4))
+            {
+                throw new ArgumentException("Skoter kan inte hyras i två eller fyra dagar. Vänligen välj en, tre eller fem dagar.");
+            }
+
+            decimal totalPrice = 0;
+
+            // Calculate the total price based on the number of days
+            switch (totalDays)
+            {
+                case 1:
+                    totalPrice = pris.EnDagsPris;
+                    break;
+                case 2:
+                    totalPrice = pris.TvåDagsPris;
+                    break;
+                case 3:
+                    totalPrice = pris.TreDagsPris;
+                    break;
+                case 4:
+                    totalPrice = pris.FyrDagsPris;
+                    break;
+                case 5:
+                    totalPrice = pris.FemDagsPris;
+                    break;
+            }
+
+            return totalPrice;
 
         }
-        */
+        
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
@@ -320,14 +360,6 @@ namespace Affärslager
 
             return totalPrice;
         }
-
-
-
-
-
-
-
-
         public IList<Bokning> HämtaBokningar()
         {
             return unitOfWork.bokningar.ToList<Bokning>();

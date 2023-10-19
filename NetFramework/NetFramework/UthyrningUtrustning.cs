@@ -20,6 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Bokningsrad bokningar;
         private Utrustning valdUtrustning;
+        private IList<Utrustning> tillgängligUtrustning;
         private Uthyrningsrad valdRad;
         private Bokning valdBokning;
         DateTime från;
@@ -46,7 +47,7 @@ namespace NetFramework
             var allUtrustning = kontroller.HämtaUtrustning();
             var uthyrdaUtrustningar = kontroller.HämtaUthyrningsRad(nyUthyrning.UthyrningsID).Select(u => u.UtrustningsID).ToList();
 
-            var tillgängligUtrustning = allUtrustning.Where(u => !uthyrdaUtrustningar.Contains(u.UtrustningsID)).ToList();
+            tillgängligUtrustning = allUtrustning.Where(u => !uthyrdaUtrustningar.Contains(u.UtrustningsID)).ToList();
 
             gridUtrustning.DataSource = tillgängligUtrustning;
             gridUtrustning.AutoGenerateColumns = false;
@@ -155,5 +156,34 @@ namespace NetFramework
         {
 
         }
+
+        private void btnKollaPris_Click(object sender, EventArgs e)
+        {
+            DateTime från = DateTime.Parse(dateFrån.Text);
+            DateTime till = DateTime.Parse(dateTill.Text);
+            valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
+            if (gridUtrustning.SelectedRows.Count > 0)
+            {
+                var valdRad = gridUtrustning.SelectedRows[0];
+                var rowIndex = valdRad.Index;
+                if (rowIndex >= 0 && rowIndex < tillgängligUtrustning.Count)
+                {
+
+                    DateTime startDate = dateFrån.Value;
+                    DateTime endDate = dateTill.Value;
+                    decimal pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
+                    MessageBox.Show($"Totalpris för valda datum: {pris}");
+                }
+                else
+                {
+                    MessageBox.Show("Felaktig utrustning vald.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen logi vald.");
+            }
+        }
+        
     }
 }

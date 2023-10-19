@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateFrån = new System.Windows.Forms.DateTimePicker();
             this.dateTill = new System.Windows.Forms.DateTimePicker();
+            this.btnKollaPris = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridUtrustning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             // txtAnvandarnamn
             // 
             this.txtAnvandarnamn.Location = new System.Drawing.Point(236, 12);
-            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(6);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.Size = new System.Drawing.Size(34, 31);
             this.txtAnvandarnamn.TabIndex = 6;
@@ -72,7 +73,7 @@
             // 
             this.gridUtrustning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridUtrustning.Location = new System.Drawing.Point(60, 396);
-            this.gridUtrustning.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridUtrustning.Margin = new System.Windows.Forms.Padding(6);
             this.gridUtrustning.Name = "gridUtrustning";
             this.gridUtrustning.ReadOnly = true;
             this.gridUtrustning.RowHeadersVisible = false;
@@ -85,7 +86,7 @@
             // 
             this.gridRader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRader.Location = new System.Drawing.Point(830, 396);
-            this.gridRader.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridRader.Margin = new System.Windows.Forms.Padding(6);
             this.gridRader.Name = "gridRader";
             this.gridRader.ReadOnly = true;
             this.gridRader.RowHeadersVisible = false;
@@ -97,7 +98,7 @@
             // btnLäggTill
             // 
             this.btnLäggTill.Location = new System.Drawing.Point(608, 702);
-            this.btnLäggTill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLäggTill.Margin = new System.Windows.Forms.Padding(6);
             this.btnLäggTill.Name = "btnLäggTill";
             this.btnLäggTill.Size = new System.Drawing.Size(150, 44);
             this.btnLäggTill.TabIndex = 11;
@@ -108,7 +109,7 @@
             // btnTillbaka
             // 
             this.btnTillbaka.Location = new System.Drawing.Point(24, 798);
-            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(6);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(150, 44);
             this.btnTillbaka.TabIndex = 12;
@@ -119,7 +120,7 @@
             // btnTaBort
             // 
             this.btnTaBort.Location = new System.Drawing.Point(1284, 702);
-            this.btnTaBort.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnTaBort.Margin = new System.Windows.Forms.Padding(6);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(150, 44);
             this.btnTaBort.TabIndex = 13;
@@ -129,7 +130,7 @@
             // btnKlar
             // 
             this.btnKlar.Location = new System.Drawing.Point(1426, 798);
-            this.btnKlar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnKlar.Margin = new System.Windows.Forms.Padding(6);
             this.btnKlar.Name = "btnKlar";
             this.btnKlar.Size = new System.Drawing.Size(150, 44);
             this.btnKlar.TabIndex = 14;
@@ -140,7 +141,7 @@
             // txtBoxValdKund
             // 
             this.txtBoxValdKund.Location = new System.Drawing.Point(60, 229);
-            this.txtBoxValdKund.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBoxValdKund.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoxValdKund.Name = "txtBoxValdKund";
             this.txtBoxValdKund.Size = new System.Drawing.Size(236, 31);
             this.txtBoxValdKund.TabIndex = 18;
@@ -150,7 +151,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(830, 363);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(6);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(196, 31);
             this.textBox6.TabIndex = 20;
@@ -181,7 +182,7 @@
             "Längdpjäxa",
             "Snowboardskor"});
             this.cmbTyp.Location = new System.Drawing.Point(60, 346);
-            this.cmbTyp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbTyp.Margin = new System.Windows.Forms.Padding(6);
             this.cmbTyp.Name = "cmbTyp";
             this.cmbTyp.Size = new System.Drawing.Size(294, 33);
             this.cmbTyp.TabIndex = 42;
@@ -209,7 +210,7 @@
             "190",
             "200"});
             this.cmbStorlek.Location = new System.Drawing.Point(370, 346);
-            this.cmbStorlek.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbStorlek.Margin = new System.Windows.Forms.Padding(6);
             this.cmbStorlek.Name = "cmbStorlek";
             this.cmbStorlek.Size = new System.Drawing.Size(294, 33);
             this.cmbStorlek.TabIndex = 44;
@@ -230,7 +231,7 @@
             // dateFrån
             // 
             this.dateFrån.Location = new System.Drawing.Point(60, 296);
-            this.dateFrån.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateFrån.Margin = new System.Windows.Forms.Padding(6);
             this.dateFrån.Name = "dateFrån";
             this.dateFrån.Size = new System.Drawing.Size(294, 31);
             this.dateFrån.TabIndex = 45;
@@ -238,10 +239,20 @@
             // dateTill
             // 
             this.dateTill.Location = new System.Drawing.Point(370, 296);
-            this.dateTill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTill.Margin = new System.Windows.Forms.Padding(6);
             this.dateTill.Name = "dateTill";
             this.dateTill.Size = new System.Drawing.Size(294, 31);
             this.dateTill.TabIndex = 46;
+            // 
+            // btnKollaPris
+            // 
+            this.btnKollaPris.Location = new System.Drawing.Point(470, 702);
+            this.btnKollaPris.Name = "btnKollaPris";
+            this.btnKollaPris.Size = new System.Drawing.Size(129, 49);
+            this.btnKollaPris.TabIndex = 47;
+            this.btnKollaPris.Text = "Kolla Pris";
+            this.btnKollaPris.UseVisualStyleBackColor = true;
+            this.btnKollaPris.Click += new System.EventHandler(this.btnKollaPris_Click);
             // 
             // UthyrningUtrustning
             // 
@@ -250,6 +261,7 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.dateTill);
             this.Controls.Add(this.dateFrån);
             this.Controls.Add(this.cmbStorlek);
@@ -267,7 +279,7 @@
             this.Controls.Add(this.gridUtrustning);
             this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UthyrningUtrustning";
             this.Text = "UthyrningUtrustning";
             this.Load += new System.EventHandler(this.UthyrningUtrustning_Load);
@@ -297,5 +309,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateFrån;
         private System.Windows.Forms.DateTimePicker dateTill;
+        private System.Windows.Forms.Button btnKollaPris;
     }
 }
