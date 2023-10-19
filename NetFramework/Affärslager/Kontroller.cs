@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datalager;
 using Entitetslager;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 
 namespace Affärslager
@@ -160,6 +161,11 @@ namespace Affärslager
         {
             return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
         }
+        public string HämtaUthyrningsTyp(string utrustningsID)
+        {
+            var typ = unitOfWork.utrustningar.FirstOrDefault(u => u.UtrustningsID == utrustningsID)?.Typ;
+            return typ;
+        }
         public IList<Uthyrningsrad> HämtaUthyrningsRad(int uthyrningsID)
         {
             return unitOfWork.uthyrningsRader.Where(u => u.UthyrningsID == uthyrningsID).ToList();
@@ -192,6 +198,34 @@ namespace Affärslager
         {
             return unitOfWork.anställda.ToList<Anställd>();
         }
+        
+        public decimal KollaUthyrningsPris(DateTime från, DateTime till, string uthyrningsTyp)
+        {
+            int totalDays = (int)(till - från).TotalDays + 1;
+            var pris = unitOfWork.utrustningsPris.FirstOrDefault(ep => ep.Typ == uthyrningsTyp);
+            decimal totalPrice = 0;
+
+            switch (totalDays)
+            {
+                case 1:
+                    totalPrice = pris.EnDagsPris;
+                    break;
+                case 2:
+                    totalPrice = pris.TvåDagsPris;
+                    break;
+                case 3:
+                    totalPrice = pris.TreDagsPris;
+                    break;
+                case 4:
+                    totalPrice = pris.FyrDagsPris;
+                    break;
+                case 5:
+                    totalPrice = pris.FemDagsPris;
+                    break;
+            }
+            return totalPrice;
+        }
+        
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
@@ -333,14 +367,6 @@ namespace Affärslager
 
             return totalPrice;
         }
-
-
-
-
-
-
-
-
         public IList<Bokning> HämtaBokningar()
         {
             return unitOfWork.bokningar.ToList<Bokning>();
