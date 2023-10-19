@@ -172,6 +172,12 @@
     <Compile Include="Admin\ÄndraAnställd.Designer.cs">
       <DependentUpon>ÄndraAnställd.cs</DependentUpon>
     </Compile>
+    <Compile Include="ÅterlämningUthyrning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÅterlämningUthyrning.Designer.cs">
+      <DependentUpon>ÅterlämningUthyrning.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\AdminMeny.resx">
       <DependentUpon>AdminMeny.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ÄndraAnställd.resx">
       <DependentUpon>ÄndraAnställd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÅterlämningUthyrning.resx">
+      <DependentUpon>ÅterlämningUthyrning.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -50,7 +50,9 @@ namespace NetFramework
 
         private void btnÅterlämning_Click(object sender, EventArgs e)
         {
-
+            ÅterlämningUthyrning återlämningUthyrning = new ÅterlämningUthyrning(loggaIn, kontroller);
+            återlämningUthyrning.Show();
+            
         }
 
         private void btnVisaUthyrningar_Click(object sender, EventArgs e)
