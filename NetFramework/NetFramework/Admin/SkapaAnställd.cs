@@ -32,17 +32,25 @@ namespace NetFramework
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
+            if ((txtBoxFörnamn.Text == "Förnamn:") | (txtBoxEfternamn.Text == "Efternamn:") | (txtBoxLösenord.Text == "Lösenord:") | string.IsNullOrEmpty((string)cmbBehörighet.SelectedItem))
+            {
+                MessageBox.Show("Fyll i alla rader tack!");
+            }
+            else
+            {
+
+                string förnamn = txtBoxFörnamn.Text;
+                string efternamn = txtBoxEfternamn.Text;
+                string lösenord = txtBoxLösenord.Text;
+                string behörighet = cmbBehörighet.Text;
+
+
+
+                Anställd nyAnställd = kontroller.SkapaNyAnställd(förnamn, efternamn, lösenord, behörighet);
+                MessageBox.Show($"Ny Anställd skapad!\n Namn: {nyAnställd.Förnamn} {nyAnställd.Efternamn}\n AnställningsNr: {nyAnställd.AnställningsNr}\n Behörighet: {nyAnställd.Behörighet}");
+                this.Close();
+            }
             
-            string förnamn = txtBoxFörnamn.Text;
-            string efternamn = txtBoxEfternamn.Text;
-            string lösenord = txtBoxLösenord.Text;
-            string behörighet = cmbBehörighet.Text;
-           
-
-
-            Anställd nyAnställd = kontroller.SkapaNyAnställd(förnamn, efternamn, lösenord, behörighet);
-            MessageBox.Show($"Ny Anställd skapad!\n Namn: {nyAnställd.Förnamn} {nyAnställd.Efternamn}\n AnställningsNr: {nyAnställd.AnställningsNr}\n Behörighet: {nyAnställd.Behörighet}");
-            this.Close();
         }
 
         private void txtBoxFörnamn_Enter(object sender, EventArgs e)

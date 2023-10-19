@@ -76,23 +76,26 @@ namespace NetFramework
         }
         private void btnSökAnställningsNr_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBoxAnställningsNr.Text))
+            if (kontroller.IsDigitsOnly(txtBoxAnställningsNr.Text) && !string.IsNullOrEmpty(txtBoxAnställningsNr.Text))
             {
                 RefreshAnställda();
-                return;
-            }
+                int matadAnställningsNr = int.Parse(txtBoxAnställningsNr.Text);
+                var matchadeAnställda = unitOfWork.anställda.Where(a => a.AnställningsNr == matadAnställningsNr).ToList();
 
-            int matadAnställningsNr = int.Parse(txtBoxAnställningsNr.Text);
-            var matchadeAnställda = unitOfWork.anställda.Where(a => a.AnställningsNr == matadAnställningsNr).ToList();
-
-            if (matchadeAnställda.Count > 0)
-            {
-                gridAnställda.DataSource = matchadeAnställda;
-            }
-            else
+                if (matchadeAnställda.Count > 0)
+                {
+                    gridAnställda.DataSource = matchadeAnställda;
+                }
+                else
+                {
+                    MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
+                }
+            } else
             {
                 MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
             }
+
+            
         }
         private void ÄndraAnställd_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -109,8 +112,7 @@ namespace NetFramework
             this.Close();
         }
 
-       
 
-        
+
     }
 }
