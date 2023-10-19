@@ -17,6 +17,8 @@ namespace NetFramework
     {
         private Kontroller kontroller;
         private LoggaIn loggaIn;
+        private int resault;
+        private int distance;
 
         public BokningNyKund(LoggaIn loggaIn, Kontroller kontroller)
         {
@@ -32,24 +34,32 @@ namespace NetFramework
       */
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
-            string personnummer = txtBoxPersonNr.Text;
-            string namn = txtboxNamn.Text;
-            string telefonnummer = txtBoxTelefonNr.Text;
-            string email = txtBoxEmail.Text;
-            string adress = txtBoxAdress.Text;
-            string postNr = txtBoxPostNr.Text;
-            string postOrt = txtBoxOrt.Text;
-            string typ = cmbTyp.SelectedItem.ToString();
-            int maxbeloppskreditgräns = int.Parse(txtBoxKredit.Text);
-
             
-            Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
-            MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
-            BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
-            this.Close();
-            befintligKund.Show();
+            if ((txtBoxPersonNr.Text == "Personnummer:") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:") |   string.IsNullOrEmpty((string)cmbTyp.SelectedItem) | (txtBoxKredit.Text == "Kreditgräns:") | !int.TryParse(txtBoxKredit.Text, out distance))  {
+                MessageBox.Show("Fyll i alla rader tack!");
+            } else
+                {
+
+                    string personnummer = txtBoxPersonNr.Text;
+                    string namn = txtboxNamn.Text;
+                    string telefonnummer = txtBoxTelefonNr.Text;
+                    string email = txtBoxEmail.Text;
+                    string adress = txtBoxAdress.Text;
+                    string postNr = txtBoxPostNr.Text;
+                    string postOrt = txtBoxOrt.Text;
+                    string typ = cmbTyp.SelectedItem.ToString();
+                    int maxbeloppskreditgräns = int.Parse(txtBoxKredit.Text);
+
+
+                    Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
+                    MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
+                    BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
+                    this.Close();
+                    befintligKund.Show();
+                
+                }
         }
-        
+
 
 
         private void btnTillbaka_Click(object sender, EventArgs e)
