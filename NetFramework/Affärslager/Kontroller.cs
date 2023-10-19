@@ -173,6 +173,12 @@ namespace Affärslager
         {
             return unitOfWork.anställda.ToList<Anställd>();
         }
+        /*
+        public decimal KollaUthyrningsPris(DateTime från, DateTime till, string uthyrningsTyp)
+        {
+
+        }
+        */
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
