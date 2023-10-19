@@ -82,6 +82,16 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return uthyrning;
         }
+
+        
+        public Faktura SkapaFaktura(int fakturaID, int moms, int rabattsats, float totalpris)
+        {
+            Faktura nyFaktura = new Faktura(fakturaID, moms, rabattsats, totalpris);
+            unitOfWork.fakturor.Add(nyFaktura); 
+            unitOfWork.SaveChanges();
+            return nyFaktura;
+        }
+
         public Uthyrningsrad SkapaUthyrningsRad(DateTime från, DateTime till, Utrustning u, int uthyrningsID)
         {
             Uthyrningsrad nyUthyrningsRad = new Uthyrningsrad(u.UtrustningsID, från, till, uthyrningsID);
@@ -123,6 +133,11 @@ namespace Affärslager
         public void TaBortBokning(Bokning b)
         {
             unitOfWork.bokningar.Remove(b);
+            unitOfWork.SaveChanges();
+        }
+        public void TaBortUthyrning(Uthyrning u)
+        {
+            unitOfWork.uthyrningar.Remove(u);
             unitOfWork.SaveChanges();
         }
         public Kund HittaKund(int kundID)
@@ -168,6 +183,10 @@ namespace Affärslager
         public IList<Kund> HämtaKunder()
         {
             return unitOfWork.kunder.ToList<Kund>();
+        }
+        public IList<Uthyrning> HämtaAllaUthyrningar()
+        {
+            return unitOfWork.uthyrningar.ToList<Uthyrning>();
         }
         public IList<Anställd> HämtaAnställda()
         {
