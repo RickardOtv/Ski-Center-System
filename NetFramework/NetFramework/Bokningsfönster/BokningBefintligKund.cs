@@ -192,32 +192,37 @@ namespace NetFramework
 
         private void btnLäggTill_Click(object sender, EventArgs e)
         {
-            if (gridLogi.SelectedRows.Count > 0)
+            if(valdKund != null)
             {
-                // Hämta den markerade logien från listan av lediga logier
-                var selectedRow = gridLogi.SelectedRows[0];
-                var rowIndex = selectedRow.Index;
-                if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                if (gridLogi.SelectedRows.Count > 0)
                 {
-                    var valdLogi = ledigaLogier[rowIndex];
-                    DateTime startDate = DateTime.Parse(dateFrån.Text);
-                    DateTime endDate = DateTime.Parse(dateTill.Text);
-                    Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
-                    MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
-                    RefreshRader();
-                    //Hämta Uppdaterade LOGIN, tack :) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    RefreshLogi();
+                    // Hämta den markerade logien från listan av lediga logier
+                    var selectedRow = gridLogi.SelectedRows[0];
+                    var rowIndex = selectedRow.Index;
+                    if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                    {
+                        var valdLogi = ledigaLogier[rowIndex];
+                        DateTime startDate = DateTime.Parse(dateFrån.Text);
+                        DateTime endDate = DateTime.Parse(dateTill.Text);
+                        Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
+                        MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+                        RefreshRader();
+                        RefreshLogi();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Felaktig logi vald.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Felaktig logi vald.");
+                    MessageBox.Show("Ingen logi vald.");
                 }
-            }
-            else
+
+            }  else
             {
-                MessageBox.Show("Ingen logi vald.");
-            }
-            
+                MessageBox.Show("Välj först kund. ");
+            } 
         }
 
         private void btnTaBort_Click(object sender, EventArgs e)
