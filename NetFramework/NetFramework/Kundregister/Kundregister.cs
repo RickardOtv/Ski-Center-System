@@ -148,5 +148,10 @@ namespace NetFramework
         {
 
         }
+
+        private void txtBoxNamn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Datalager;
 using Entitetslager;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 
 namespace Affärslager
@@ -83,6 +84,16 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return uthyrning;
         }
+
+        
+        public Faktura SkapaFaktura(int fakturaID, int moms, int rabattsats, float totalpris)
+        {
+            Faktura nyFaktura = new Faktura(fakturaID, moms, rabattsats, totalpris);
+            unitOfWork.fakturor.Add(nyFaktura); 
+            unitOfWork.SaveChanges();
+            return nyFaktura;
+        }
+
         public Uthyrningsrad SkapaUthyrningsRad(DateTime från, DateTime till, Utrustning u, int uthyrningsID)
         {
             Uthyrningsrad nyUthyrningsRad = new Uthyrningsrad(u.UtrustningsID, från, till, uthyrningsID);
@@ -126,6 +137,11 @@ namespace Affärslager
             unitOfWork.bokningar.Remove(b);
             unitOfWork.SaveChanges();
         }
+        public void TaBortUthyrning(Uthyrning u)
+        {
+            unitOfWork.uthyrningar.Remove(u);
+            unitOfWork.SaveChanges();
+        }
         public Kund HittaKund(int kundID)
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.KundID == kundID);
@@ -145,6 +161,11 @@ namespace Affärslager
         public IList<Bokningsrad> HämtaRader(int bokningsID)
         {
             return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
+        }
+        public string HämtaUthyrningsTyp(string utrustningsID)
+        {
+            var typ = unitOfWork.utrustningar.FirstOrDefault(u => u.UtrustningsID == utrustningsID)?.Typ;
+            return typ;
         }
         public IList<Uthyrningsrad> HämtaUthyrningsRad(int uthyrningsID)
         {
@@ -170,10 +191,42 @@ namespace Affärslager
         {
             return unitOfWork.kunder.ToList<Kund>();
         }
+        public IList<Uthyrning> HämtaAllaUthyrningar()
+        {
+            return unitOfWork.uthyrningar.ToList<Uthyrning>();
+        }
         public IList<Anställd> HämtaAnställda()
         {
             return unitOfWork.anställda.ToList<Anställd>();
         }
+        
+        public decimal KollaUthyrningsPris(DateTime från, DateTime till, string uthyrningsTyp)
+        {
+            int totalDays = (int)(till - från).TotalDays + 1;
+            var pris = unitOfWork.utrustningsPris.FirstOrDefault(ep => ep.Typ == uthyrningsTyp);
+            decimal totalPrice = 0;
+
+            switch (totalDays)
+            {
+                case 1:
+                    totalPrice = pris.EnDagsPris;
+                    break;
+                case 2:
+                    totalPrice = pris.TvåDagsPris;
+                    break;
+                case 3:
+                    totalPrice = pris.TreDagsPris;
+                    break;
+                case 4:
+                    totalPrice = pris.FyrDagsPris;
+                    break;
+                case 5:
+                    totalPrice = pris.FemDagsPris;
+                    break;
+            }
+            return totalPrice;
+        }
+        
         public decimal KollaPris(DateTime från, DateTime till, string logiTyp)
         {
             decimal totalPrice = 0;
@@ -315,14 +368,6 @@ namespace Affärslager
 
             return totalPrice;
         }
-
-
-
-
-
-
-
-
         public IList<Bokning> HämtaBokningar()
         {
             return unitOfWork.bokningar.ToList<Bokning>();

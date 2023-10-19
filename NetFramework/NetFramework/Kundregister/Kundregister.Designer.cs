@@ -150,7 +150,7 @@
             this.txtBoxNamn.Name = "txtBoxNamn";
             this.txtBoxNamn.Size = new System.Drawing.Size(171, 20);
             this.txtBoxNamn.TabIndex = 19;
- 
+            this.txtBoxNamn.TextChanged += new System.EventHandler(this.txtBoxNamn_TextChanged);
             // 
             // txtBoxPersonNr
             // 
