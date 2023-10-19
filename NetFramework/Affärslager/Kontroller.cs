@@ -184,19 +184,21 @@ namespace Affärslager
         {
             // Check for the number of days
             int totalDays = (int)(till - från).TotalDays + 1; // Including both from and to dates
-
+            /*
             if (totalDays > 5)
             {
                 throw new ArgumentException("Spannet får inte vara längre än fem dagar.");
             }
+            */
 
             // Fetch equipment price based on type
             var pris = unitOfWork.utrustningsPris.FirstOrDefault(ep => ep.Typ == uthyrningsTyp);
-
+            /*
             if ((uthyrningsTyp == "SkoterLynx" || uthyrningsTyp == "SkoterViking") && (totalDays == 2 || totalDays == 4))
             {
                 throw new ArgumentException("Skoter kan inte hyras i två eller fyra dagar. Vänligen välj en, tre eller fem dagar.");
             }
+            */
 
             decimal totalPrice = 0;
 

@@ -152,32 +152,28 @@ namespace NetFramework
 
         private void btnKlar_Click(object sender, EventArgs e)
         {
-            /*
-            DateTime från = DateTime.Parse(dateFrån.Text);
-            DateTime till = DateTime.Parse(dateTill.Text);
-
             decimal totalpris = 0;
             foreach (DataGridViewRow row in gridRader.Rows)
             {
                 if (row.DataBoundItem != null && row.DataBoundItem is Uthyrningsrad rad)
                 {
+                    DateTime från = rad.Från;
+                    DateTime till = rad.Till; // Assuming you have 'Till' property in your Uthyrningsrad
                     string typ = kontroller.HämtaUthyrningsTyp(rad.UtrustningsID);
-                    totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
-                }
-            }
-            MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
-            //this.Close();
-            */
+                    int totalDays = (int)(till - från).TotalDays + 1; // Including both from and to dates
 
-            decimal totalpris = 0;
-            foreach (DataGridViewRow row in gridRader.Rows)
-            {
-                if (row.DataBoundItem != null && row.DataBoundItem is Uthyrningsrad rad)
-                {
-                    DateTime från = rad.Från; // Antag att DateFrån är en egenskap som innehåller startdatumet för varje rad
-                    DateTime till = rad.Till; // Antag att DateTill är en egenskap som innehåller slutdatumet för varje rad
-                    string typ = kontroller.HämtaUthyrningsTyp(rad.UtrustningsID);
-                    totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
+                    if (totalDays > 5)
+                    {
+                        MessageBox.Show("Spannet får inte vara längre än fem dagar.");
+                    }
+                    else if ((typ == "SkoterLynx" || typ == "SkoterViking") && (totalDays == 2 || totalDays == 4))
+                    {
+                        MessageBox.Show("Skoter kan inte hyras i två eller fyra dagar. Vänligen välj en, tre eller fem dagar.");
+                    }
+                    else
+                    {
+                        totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
+                    }
                 }
             }
             MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
