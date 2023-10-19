@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace NetFramework
@@ -34,30 +35,65 @@ namespace NetFramework
       */
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
-            
-            if ((txtBoxPersonNr.Text == "Personnummer:") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:") |   string.IsNullOrEmpty((string)cmbTyp.SelectedItem) | (txtBoxKredit.Text == "Kreditgräns:") | !int.TryParse(txtBoxKredit.Text, out distance))  {
+
+            if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:") | string.IsNullOrEmpty((string)cmbTyp.SelectedItem) | (txtBoxKredit.Text == "Kreditgräns:") | !int.TryParse(txtBoxKredit.Text, out distance)) {
                 MessageBox.Show("Fyll i alla rader tack!");
-            } else
-                {
+            } else if (!kontroller.IsValidEmail(txtBoxEmail.Text))
+            {
+                MessageBox.Show("Ange en giltig e-postadress.", "Ogiltig Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxEmail.Focus();
+                return;
+            } else if (!kontroller.IsValidSwedishSSN(txtBoxPersonNr.Text))
+            {
+                MessageBox.Show("Ange ett giltigt PersonNr", "Ogiltig PersonNr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxPersonNr.Focus();
+            }
+            else if (!kontroller.IsValidName(txtboxNamn.Text))
+            {
+                MessageBox.Show("Ange ett giltigt Namn", "Ogiltig Namn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtboxNamn.Focus();
+            }
+            else if (!kontroller.IsValidAddress(txtBoxAdress.Text))
+            {
+                MessageBox.Show("Ange en giltig adress", "Ogiltig Adress", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxAdress.Focus();
+            }
+            else if (!kontroller.IsValidPhoneNumber(txtBoxTelefonNr.Text))
+            {
+                MessageBox.Show("Ange ett giltigt TelefonNr", "Ogiltigt TelefonNr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxTelefonNr.Focus();
+            }
+            else if (!kontroller.IsValidAddress(txtBoxOrt.Text))
+            {
+                MessageBox.Show("Ange ett giltigt Postort", "Ogiltigt Postort", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxOrt.Focus();
+            }
+            else if (!kontroller.IsValidPostalCode(txtBoxPostNr.Text))
+            {
+                MessageBox.Show("Ange ett giltigt Postnr", "Ogiltigt Postnr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxPostNr.Focus();
+            }
+            else 
+            {
 
-                    string personnummer = txtBoxPersonNr.Text;
-                    string namn = txtboxNamn.Text;
-                    string telefonnummer = txtBoxTelefonNr.Text;
-                    string email = txtBoxEmail.Text;
-                    string adress = txtBoxAdress.Text;
-                    string postNr = txtBoxPostNr.Text;
-                    string postOrt = txtBoxOrt.Text;
-                    string typ = cmbTyp.SelectedItem.ToString();
-                    int maxbeloppskreditgräns = int.Parse(txtBoxKredit.Text);
+                string personnummer = txtBoxPersonNr.Text;
+                string namn = txtboxNamn.Text;
+                string telefonnummer = txtBoxTelefonNr.Text;
+                string email = txtBoxEmail.Text;
+                string adress = txtBoxAdress.Text;
+                string postNr = txtBoxPostNr.Text;
+                string postOrt = txtBoxOrt.Text;
+                string typ = cmbTyp.SelectedItem.ToString();
+                int maxbeloppskreditgräns = int.Parse(txtBoxKredit.Text);
 
 
-                    Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
-                    MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
-                    BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
-                    this.Close();
-                    befintligKund.Show();
-                
-                }
+                Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, typ, maxbeloppskreditgräns);
+                MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
+                BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
+                this.Close();
+                befintligKund.Show();
+
+            }
         }
 
 

@@ -133,7 +133,7 @@
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(279, 20);
             this.txtBoxPersonNr.TabIndex = 10;
-            this.txtBoxPersonNr.Text = "Personnummer:";
+            this.txtBoxPersonNr.Text = "Personnummer: (YYYYMMDDXXXX)";
             this.txtBoxPersonNr.Enter += new System.EventHandler(this.txtboxPersonNr_Enter);
             this.txtBoxPersonNr.Leave += new System.EventHandler(this.txtboxPersonNr_Leave);
             // 

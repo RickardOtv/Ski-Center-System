@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Datalager;
 using Entitetslager;
@@ -450,5 +451,108 @@ namespace Affärslager
 
             return true;
         }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                // Define a regular expression for a simple email validation.
+                string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                return Regex.IsMatch(email, pattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsValidSwedishSSN(string ssn)
+        {
+            try
+            {
+                // Basic format check
+                string pattern = @"^(\d{4})(0[1-9]|1[0-2])(0[1-9]|1\d|2\d|3[01])\d{4}$";
+                if (!Regex.IsMatch(ssn, pattern))
+                {
+                    return false;
+                }
+
+                // Extract year, month, and day
+                int year = int.Parse(ssn.Substring(0, 4));
+                int month = int.Parse(ssn.Substring(4, 2));
+                int day = int.Parse(ssn.Substring(6, 2));
+
+                // Check if date is valid
+                DateTime birthDate;
+                if (!DateTime.TryParse($"{year}-{month}-{day}", out birthDate))
+                {
+                    return false;
+                }
+
+                // Additional checks on the individual number (e.g., checksum) can be added here if needed
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsValidName(string name)
+        {
+            try
+            {
+                // Regular expression pattern for name validation
+                string pattern = @"^[a-zA-Z-' ]{1,50}$";
+                return Regex.IsMatch(name, pattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsValidAddress(string address)
+        {
+            try
+            {
+                // Regular expression pattern for address validation
+                string pattern = @"^[a-zA-Z\s]+ \d+$";
+                return Regex.IsMatch(address, pattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool IsValidPhoneNumber(string phoneNumber)
+        {
+            try
+            {
+                // Regular expression pattern for phone number validation
+                string pattern = @"^\+?(\d[\d-. ]+)?\d$";
+                return Regex.IsMatch(phoneNumber, pattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsValidPostalCode(string postalCode)
+        {
+            try
+            {
+                // Regular expression pattern for postal code validation
+                string pattern = @"^[a-zA-Z\d\s\-]+$";
+                return Regex.IsMatch(postalCode, pattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
