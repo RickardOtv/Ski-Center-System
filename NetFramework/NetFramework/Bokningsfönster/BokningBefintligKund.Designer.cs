@@ -48,6 +48,7 @@
             this.lblRader = new System.Windows.Forms.Label();
             this.btn_Vidare = new System.Windows.Forms.Button();
             this.btnKollaPris = new System.Windows.Forms.Button();
+            this.btn_kollaLogiInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
@@ -280,6 +281,17 @@
             this.btnKollaPris.UseVisualStyleBackColor = true;
             this.btnKollaPris.Click += new System.EventHandler(this.btnKollaPris_Click);
             // 
+            // btn_kollaLogiInfo
+            // 
+            this.btn_kollaLogiInfo.Location = new System.Drawing.Point(254, 455);
+            this.btn_kollaLogiInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_kollaLogiInfo.Name = "btn_kollaLogiInfo";
+            this.btn_kollaLogiInfo.Size = new System.Drawing.Size(65, 28);
+            this.btn_kollaLogiInfo.TabIndex = 23;
+            this.btn_kollaLogiInfo.Text = "Kolla Info";
+            this.btn_kollaLogiInfo.UseVisualStyleBackColor = true;
+            this.btn_kollaLogiInfo.Click += new System.EventHandler(this.btnLogiInfo_Click);
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +299,7 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 567);
+            this.Controls.Add(this.btn_kollaLogiInfo);
             this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btn_Vidare);
             this.Controls.Add(this.lblRader);
@@ -342,5 +355,6 @@
         private System.Windows.Forms.Label lblRader;
         private System.Windows.Forms.Button btn_Vidare;
         private System.Windows.Forms.Button btnKollaPris;
+        private System.Windows.Forms.Button btn_kollaLogiInfo;
     }
 }

@@ -131,7 +131,22 @@ namespace NetFramework
             
 
         }
-        
-        
+
+        private void lblPersonNr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxPersonNr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void lblNamn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

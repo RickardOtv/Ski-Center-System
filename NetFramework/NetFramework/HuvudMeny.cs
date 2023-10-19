@@ -56,9 +56,11 @@ namespace NetFramework
             string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
             if (inmatning == "Admin")
             {
-               
+                AdminMeny adminMeny = new AdminMeny(loggaInMeny, kontroller);
+                adminMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+                adminMeny.Show();
                 
-                MessageBox.Show("Du har åtkomst när denna rutan är klar");
+                
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");
@@ -90,6 +92,13 @@ namespace NetFramework
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");
+        }
+
+        private void btnLoggaUt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoggaIn loggaIn = new LoggaIn();
+            loggaIn.Show();
         }
     }
 }
