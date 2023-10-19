@@ -180,7 +180,10 @@
             "SkoterViking",
             "Alpintpjäxa",
             "Längdpjäxa",
-            "Snowboardskor"});
+            "Snowboardskor",
+            "Alpintpaket",
+            "Längdpaket",
+            "Snowboardpaket"});
             this.cmbTyp.Location = new System.Drawing.Point(60, 346);
             this.cmbTyp.Margin = new System.Windows.Forms.Padding(6);
             this.cmbTyp.Name = "cmbTyp";

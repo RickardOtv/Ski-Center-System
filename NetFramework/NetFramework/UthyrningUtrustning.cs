@@ -149,6 +149,7 @@ namespace NetFramework
         {
 
         }
+        
         private void btnKlar_Click(object sender, EventArgs e)
         {
             decimal totalpris = 0;
