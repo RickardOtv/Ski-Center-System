@@ -82,6 +82,16 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return uthyrning;
         }
+
+        
+        public Faktura SkapaFaktura(int fakturaID, int moms, int rabattsats, float totalpris)
+        {
+            Faktura nyFaktura = new Faktura(fakturaID, moms, rabattsats, totalpris);
+            unitOfWork.fakturor.Add(nyFaktura); 
+            unitOfWork.SaveChanges();
+            return nyFaktura;
+        }
+
         public Uthyrningsrad SkapaUthyrningsRad(DateTime från, DateTime till, Utrustning u, int uthyrningsID)
         {
             Uthyrningsrad nyUthyrningsRad = new Uthyrningsrad(u.UtrustningsID, från, till, uthyrningsID);
