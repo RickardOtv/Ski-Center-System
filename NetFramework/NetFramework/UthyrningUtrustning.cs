@@ -41,7 +41,6 @@ namespace NetFramework
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
-
         internal void RefreshUtrustning()
         {
             var allUtrustning = kontroller.HämtaUtrustning();
@@ -55,7 +54,6 @@ namespace NetFramework
             gridUtrustning.Columns["Typ"].DisplayIndex = 1;
             gridUtrustning.Columns["Storlek"].DisplayIndex = 2;
         }
-
         internal void RefreshRader()
         {
             var rader = kontroller.HämtaUthyrningsRad(nyUthyrning.UthyrningsID);
@@ -69,7 +67,6 @@ namespace NetFramework
             gridRader.Columns["Till"].DisplayIndex = 3;
             gridRader.Columns["UthyrningsID"].DisplayIndex = 4;
         }
-
         public void UthyrningUtrustning_Load(object sender, EventArgs e)
         {
             cmbTyp.SelectedIndexChanged += cmbTyp_SelectedIndexChanged;
@@ -78,17 +75,26 @@ namespace NetFramework
             txtBoxValdKund.Text = $"Vald Bokning: {valdBokning.BokningsID.ToString()}";
 
         }
-
-
         private void btnLäggTill_Click(object sender, EventArgs e)
         {
             valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
             DateTime från = DateTime.Parse(dateFrån.Text);
             DateTime till = DateTime.Parse(dateTill.Text);
-           
-            Uthyrningsrad nyUthyrningsRad = kontroller.SkapaUthyrningsRad(från, till, valdUtrustning, nyUthyrning.UthyrningsID);
-            RefreshRader();
-            RefreshUtrustning();
+            int totalDays = (int)(till - från).TotalDays + 1;
+            if (totalDays > 5)
+            {
+                MessageBox.Show("Spannet får inte vara längre än fem dagar.");
+            }
+            else if ((valdUtrustning.Typ == "SkoterLynx" || valdUtrustning.Typ == "SkoterViking") && (totalDays == 2 || totalDays == 4))
+            {
+                MessageBox.Show("Skoter kan inte hyras i två eller fyra dagar. Vänligen välj en, tre eller fem dagar.");
+            }
+            else
+            {
+                Uthyrningsrad nyUthyrningsRad = kontroller.SkapaUthyrningsRad(från, till, valdUtrustning, nyUthyrning.UthyrningsID);
+                RefreshRader();
+                RefreshUtrustning();
+            }
         }
 
         #region filtrering typ/storlek
@@ -135,21 +141,14 @@ namespace NetFramework
 
         #endregion
 
-
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        
-
-        
-
         private void txtBoxValdKund_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void btnKlar_Click(object sender, EventArgs e)
         {
             decimal totalpris = 0;
@@ -177,9 +176,8 @@ namespace NetFramework
                 }
             }
             MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
-            //this.Close();
+            this.Close();
         }
-
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
             DateTime från = DateTime.Parse(dateFrån.Text);
@@ -207,6 +205,5 @@ namespace NetFramework
                 MessageBox.Show("Ingen logi vald.");
             }
         }
-        
     }
 }
