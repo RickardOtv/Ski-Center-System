@@ -89,8 +89,6 @@ namespace NetFramework
             Uthyrningsrad nyUthyrningsRad = kontroller.SkapaUthyrningsRad(från, till, valdUtrustning, nyUthyrning.UthyrningsID);
             RefreshRader();
             RefreshUtrustning();
-            
-            //   MessageBox.Show($"Ny Uthyrningsrad har skapats med Utrustning:{valdUtrustning.UtrustningsID}\nUthyrningsID:{nyUthyrning.UthyrningsID}\nUthyrningsradID som genererats: {nyUthyrning.UthyrningsID}");
         }
 
         #region filtrering typ/storlek
@@ -154,7 +152,36 @@ namespace NetFramework
 
         private void btnKlar_Click(object sender, EventArgs e)
         {
+            /*
+            DateTime från = DateTime.Parse(dateFrån.Text);
+            DateTime till = DateTime.Parse(dateTill.Text);
 
+            decimal totalpris = 0;
+            foreach (DataGridViewRow row in gridRader.Rows)
+            {
+                if (row.DataBoundItem != null && row.DataBoundItem is Uthyrningsrad rad)
+                {
+                    string typ = kontroller.HämtaUthyrningsTyp(rad.UtrustningsID);
+                    totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
+                }
+            }
+            MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
+            //this.Close();
+            */
+
+            decimal totalpris = 0;
+            foreach (DataGridViewRow row in gridRader.Rows)
+            {
+                if (row.DataBoundItem != null && row.DataBoundItem is Uthyrningsrad rad)
+                {
+                    DateTime från = rad.Från; // Antag att DateFrån är en egenskap som innehåller startdatumet för varje rad
+                    DateTime till = rad.Till; // Antag att DateTill är en egenskap som innehåller slutdatumet för varje rad
+                    string typ = kontroller.HämtaUthyrningsTyp(rad.UtrustningsID);
+                    totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
+                }
+            }
+            MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
+            //this.Close();
         }
 
         private void btnKollaPris_Click(object sender, EventArgs e)

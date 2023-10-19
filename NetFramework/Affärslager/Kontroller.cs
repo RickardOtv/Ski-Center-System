@@ -146,6 +146,11 @@ namespace Affärslager
         {
             return unitOfWork.bokningsRader.Where(b => b.BokningsID == bokningsID).ToList();
         }
+        public string HämtaUthyrningsTyp(string utrustningsID)
+        {
+            var typ = unitOfWork.utrustningar.FirstOrDefault(u => u.UtrustningsID == utrustningsID)?.Typ;
+            return typ;
+        }
         public IList<Uthyrningsrad> HämtaUthyrningsRad(int uthyrningsID)
         {
             return unitOfWork.uthyrningsRader.Where(u => u.UthyrningsID == uthyrningsID).ToList();
