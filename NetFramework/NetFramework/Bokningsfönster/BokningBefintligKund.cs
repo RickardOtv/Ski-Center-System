@@ -98,6 +98,13 @@ namespace NetFramework
             gridRader.Columns["Från"].DisplayIndex = 2;
             gridRader.Columns["Till"].DisplayIndex = 3;
             gridRader.Columns["BokningsID"].DisplayIndex = 4;
+
+            for (int i = 0; i < gridRader.Rows.Count; i++)
+            {
+                DataGridViewRow row = gridRader.Rows[i];
+                Bokningsrad bokningsrad = rader[i]; // Assuming rader is a List<Bokningsrad>
+                row.Tag = bokningsrad;
+            }
         }
 
         internal void RefreshKunder()
@@ -300,5 +307,27 @@ namespace NetFramework
             }
 
         }
+
+        private void btnTotalSumma_Click(object sender, EventArgs e)
+        {
+            decimal totalSumma = 0;
+
+            foreach (DataGridViewRow row in gridRader.Rows)
+            {
+                if (row.Tag is Bokningsrad bokningsrad)
+                {
+                    // Call your method on the Bokningsrad object
+                    Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+
+
+                    //Något gör så att det blir en extra dag, därför tar jag bort den här
+                    DateTime newDate = bokningsrad.Till.AddDays(-1);
+                    decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
+                    totalSumma += pris;
+                }
+            }
+            MessageBox.Show($"Totalpris för bokning är: {totalSumma.ToString("C")}");
+        }
+
     }
 }

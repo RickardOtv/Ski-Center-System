@@ -49,6 +49,7 @@
             this.btn_Vidare = new System.Windows.Forms.Button();
             this.btnKollaPris = new System.Windows.Forms.Button();
             this.btn_kollaLogiInfo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
@@ -292,6 +293,17 @@
             this.btn_kollaLogiInfo.UseVisualStyleBackColor = true;
             this.btn_kollaLogiInfo.Click += new System.EventHandler(this.btnLogiInfo_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(622, 456);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 28);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Kolla Pris För Alla";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnTotalSumma_Click);
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +311,7 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 567);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_kollaLogiInfo);
             this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btn_Vidare);
@@ -356,5 +369,6 @@
         private System.Windows.Forms.Button btn_Vidare;
         private System.Windows.Forms.Button btnKollaPris;
         private System.Windows.Forms.Button btn_kollaLogiInfo;
+        private System.Windows.Forms.Button button1;
     }
 }
