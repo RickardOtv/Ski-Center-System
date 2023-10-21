@@ -326,7 +326,7 @@ namespace NetFramework
                     totalSumma += pris;
                 }
             }
-            MessageBox.Show($"Totalpris för bokning är: {totalSumma.ToString("C")}");
+            MessageBox.Show($"Totalpris för bokning är: {totalSumma}");
         }
 
     }
