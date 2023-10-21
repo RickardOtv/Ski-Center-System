@@ -98,6 +98,12 @@
     <Compile Include="Admin\SkapaAnställd.Designer.cs">
       <DependentUpon>SkapaAnställd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kundregister\ÄndraFöretagsKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundregister\ÄndraFöretagsKund.Designer.cs">
+      <DependentUpon>ÄndraFöretagsKund.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marknadsfönster\MarknadsMeny.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\SkapaAnställd.resx">
       <DependentUpon>SkapaAnställd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundregister\ÄndraFöretagsKund.resx">
+      <DependentUpon>ÄndraFöretagsKund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marknadsfönster\MarknadsMeny.resx">
       <DependentUpon>MarknadsMeny.cs</DependentUpon>

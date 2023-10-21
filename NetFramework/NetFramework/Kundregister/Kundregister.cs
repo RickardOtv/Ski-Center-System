@@ -74,13 +74,26 @@ namespace NetFramework
         private void btnAndra_Click(object sender, EventArgs e)
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
-            if(gridKunder.SelectedRows != null)
-            {
-               
-                ÄndraKund ändraKund = new ÄndraKund(loggaIn, kontroller, valdKund);
-                ändraKund.Show();
-                ändraKund.InloggadAnvandare = txtAnvandarnamn.Text;
+            string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
 
+            if (gridKunder.SelectedRows != null)
+            {
+                if(valdKund.Typ == "Företag")
+                {
+                    if (inmatning == "Admin" || inmatning == "Marknad")
+                    {
+                        ÄndraFöretagsKund ändraFöretagsKund = new ÄndraFöretagsKund(loggaIn, kontroller, valdKund);
+                        ändraFöretagsKund.Show();
+                        ändraFöretagsKund.InloggadAnvandare = txtAnvandarnamn.Text;
+                    }
+                    else
+                        MessageBox.Show("Du har ej rätt behörighet.");
+                } else
+                {
+                    ÄndraKund ändraKund = new ÄndraKund(loggaIn, kontroller, valdKund);
+                    ändraKund.Show();
+                    ändraKund.InloggadAnvandare = txtAnvandarnamn.Text;
+                }
             }
            
         }
