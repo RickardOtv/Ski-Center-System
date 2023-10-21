@@ -43,9 +43,11 @@ namespace NetFramework
         private void btnMarknad_Click(object sender, EventArgs e)
         {
             string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
-            if (inmatning == "Admin")
+            if (inmatning == "Admin" || inmatning == "Marknad")
             {
-                MessageBox.Show("Du har åtkomst när denna rutan är klar");
+                MarknadsMeny marknadsMeny = new MarknadsMeny(loggaInMeny, kontroller);
+                marknadsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+                marknadsMeny.Show();
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");

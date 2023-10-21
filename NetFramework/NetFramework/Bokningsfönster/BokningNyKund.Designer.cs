@@ -38,7 +38,6 @@
             this.txtBoxPersonNr = new System.Windows.Forms.TextBox();
             this.txtBoxPostNr = new System.Windows.Forms.TextBox();
             this.txtBoxOrt = new System.Windows.Forms.TextBox();
-            this.txtBoxKredit = new System.Windows.Forms.TextBox();
             this.lblLösenord = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbTyp = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnTillbaka
@@ -159,17 +157,6 @@
             this.txtBoxOrt.Enter += new System.EventHandler(this.txtBoxOrt_Enter);
             this.txtBoxOrt.Leave += new System.EventHandler(this.txtBoxOrt_Leave);
             // 
-            // txtBoxKredit
-            // 
-            this.txtBoxKredit.Location = new System.Drawing.Point(255, 216);
-            this.txtBoxKredit.Margin = new System.Windows.Forms.Padding(1);
-            this.txtBoxKredit.Name = "txtBoxKredit";
-            this.txtBoxKredit.Size = new System.Drawing.Size(131, 20);
-            this.txtBoxKredit.TabIndex = 14;
-            this.txtBoxKredit.Text = "Kreditgräns:";
-            this.txtBoxKredit.Enter += new System.EventHandler(this.txtBoxKredit_Enter);
-            this.txtBoxKredit.Leave += new System.EventHandler(this.txtBoxKredit_Leave);
-            // 
             // lblLösenord
             // 
             this.lblLösenord.AutoSize = true;
@@ -258,18 +245,6 @@
             this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 22;
             // 
-            // cmbTyp
-            // 
-            this.cmbTyp.FormattingEnabled = true;
-            this.cmbTyp.Items.AddRange(new object[] {
-            "Privat",
-            "Företag"});
-            this.cmbTyp.Location = new System.Drawing.Point(107, 215);
-            this.cmbTyp.Name = "cmbTyp";
-            this.cmbTyp.Size = new System.Drawing.Size(131, 21);
-            this.cmbTyp.TabIndex = 23;
-            this.cmbTyp.Text = "Typ:";
-            // 
             // BokningNyKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,7 +252,6 @@
             this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(495, 297);
-            this.Controls.Add(this.cmbTyp);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -286,7 +260,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLösenord);
-            this.Controls.Add(this.txtBoxKredit);
             this.Controls.Add(this.txtBoxOrt);
             this.Controls.Add(this.txtBoxPostNr);
             this.Controls.Add(this.txtBoxPersonNr);
@@ -317,7 +290,6 @@
         private System.Windows.Forms.TextBox txtBoxPersonNr;
         private System.Windows.Forms.TextBox txtBoxPostNr;
         private System.Windows.Forms.TextBox txtBoxOrt;
-        private System.Windows.Forms.TextBox txtBoxKredit;
         private System.Windows.Forms.Label lblLösenord;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -326,6 +298,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbTyp;
     }
 }
