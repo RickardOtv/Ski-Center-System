@@ -50,6 +50,13 @@
             this.txtBoxTelefonNr = new System.Windows.Forms.TextBox();
             this.txtBoxAdress = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtAnvandarnamn
@@ -82,7 +89,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(11, 292);
+            this.btnTillbaka.Location = new System.Drawing.Point(11, 328);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(71, 25);
@@ -93,7 +100,7 @@
             // 
             // btnSpara
             // 
-            this.btnSpara.Location = new System.Drawing.Point(456, 292);
+            this.btnSpara.Location = new System.Drawing.Point(456, 328);
             this.btnSpara.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(71, 25);
@@ -210,7 +217,7 @@
             // 
             // txtBoxOrt
             // 
-            this.txtBoxOrt.Location = new System.Drawing.Point(281, 226);
+            this.txtBoxOrt.Location = new System.Drawing.Point(281, 279);
             this.txtBoxOrt.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxOrt.Name = "txtBoxOrt";
             this.txtBoxOrt.Size = new System.Drawing.Size(131, 20);
@@ -219,7 +226,7 @@
             // 
             // txtBoxPostNr
             // 
-            this.txtBoxPostNr.Location = new System.Drawing.Point(133, 226);
+            this.txtBoxPostNr.Location = new System.Drawing.Point(133, 279);
             this.txtBoxPostNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPostNr.Name = "txtBoxPostNr";
             this.txtBoxPostNr.Size = new System.Drawing.Size(131, 20);
@@ -228,7 +235,7 @@
             // 
             // txtBoxPersonNr
             // 
-            this.txtBoxPersonNr.Location = new System.Drawing.Point(133, 133);
+            this.txtBoxPersonNr.Location = new System.Drawing.Point(133, 147);
             this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(279, 20);
@@ -237,7 +244,7 @@
             // 
             // txtboxNamn
             // 
-            this.txtboxNamn.Location = new System.Drawing.Point(133, 173);
+            this.txtboxNamn.Location = new System.Drawing.Point(133, 193);
             this.txtboxNamn.Margin = new System.Windows.Forms.Padding(1);
             this.txtboxNamn.Name = "txtboxNamn";
             this.txtboxNamn.Size = new System.Drawing.Size(131, 20);
@@ -246,7 +253,7 @@
             // 
             // txtBoxTelefonNr
             // 
-            this.txtBoxTelefonNr.Location = new System.Drawing.Point(281, 173);
+            this.txtBoxTelefonNr.Location = new System.Drawing.Point(281, 193);
             this.txtBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxTelefonNr.Name = "txtBoxTelefonNr";
             this.txtBoxTelefonNr.Size = new System.Drawing.Size(131, 20);
@@ -255,7 +262,7 @@
             // 
             // txtBoxAdress
             // 
-            this.txtBoxAdress.Location = new System.Drawing.Point(281, 200);
+            this.txtBoxAdress.Location = new System.Drawing.Point(281, 237);
             this.txtBoxAdress.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxAdress.Name = "txtBoxAdress";
             this.txtBoxAdress.Size = new System.Drawing.Size(131, 20);
@@ -264,20 +271,97 @@
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(133, 200);
+            this.txtBoxEmail.Location = new System.Drawing.Point(133, 237);
             this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(131, 20);
             this.txtBoxEmail.TabIndex = 24;
             this.txtBoxEmail.Text = "Email:";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(130, 133);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 13);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Personnummer:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(130, 179);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Namn:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(130, 223);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Email:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(130, 265);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Postnummer:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Location = new System.Drawing.Point(278, 179);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 13);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Telefonnummer:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Location = new System.Drawing.Point(278, 223);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.TabIndex = 45;
+            this.label15.Text = "Adress:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Location = new System.Drawing.Point(279, 265);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(43, 13);
+            this.label16.TabIndex = 46;
+            this.label16.Text = "Postort:";
+            // 
             // ÄndraKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.Azure;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(538, 328);
+            this.ClientSize = new System.Drawing.Size(538, 364);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -332,5 +416,12 @@
         private System.Windows.Forms.TextBox txtBoxTelefonNr;
         private System.Windows.Forms.TextBox txtBoxAdress;
         private System.Windows.Forms.TextBox txtBoxEmail;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
