@@ -20,6 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private int resault;
         private int distance;
+        PrivatKundMaxbelopp globalData = PrivatKundMaxbelopp.Instance;
 
         public BokningNyKund(LoggaIn loggaIn, Kontroller kontroller)
         {
@@ -85,7 +86,7 @@ namespace NetFramework
                 string postOrt = txtBoxOrt.Text;
 
 
-                Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, "Privat", 12000);
+                Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, "Privat", globalData.GlobalVariable);
                 MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
                 BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
                 this.Close();

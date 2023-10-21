@@ -122,6 +122,7 @@
     <Compile Include="Marknadsfönster\ÄndraMaxbelopp.Designer.cs">
       <DependentUpon>ÄndraMaxbelopp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrivatKundMaxbelopp.cs" />
     <Compile Include="SkapaUthyrning.cs">
       <SubType>Form</SubType>
     </Compile>
