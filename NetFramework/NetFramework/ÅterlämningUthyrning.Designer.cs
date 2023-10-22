@@ -43,7 +43,8 @@
             this.GridÅterlämning.Location = new System.Drawing.Point(79, 77);
             this.GridÅterlämning.Name = "GridÅterlämning";
             this.GridÅterlämning.Size = new System.Drawing.Size(616, 315);
-            this.GridÅterlämning.TabIndex = 0;            // 
+            this.GridÅterlämning.TabIndex = 0;
+            // 
             // SökBtn
             // 
             this.SökBtn.Location = new System.Drawing.Point(323, 46);
@@ -95,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(768, 450);
             this.Controls.Add(this.UthyrningsIDlbl);
             this.Controls.Add(this.Tillbaka);
