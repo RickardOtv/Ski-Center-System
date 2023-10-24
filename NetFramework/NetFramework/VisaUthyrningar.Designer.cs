@@ -41,6 +41,7 @@
             this.btnTaBort = new System.Windows.Forms.Button();
             this.Anställningsnummerlbl = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
+            this.btnTillbaka = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).BeginInit();
@@ -194,6 +195,16 @@
             this.txtAnvandarnamn.Size = new System.Drawing.Size(19, 20);
             this.txtAnvandarnamn.TabIndex = 11;
             // 
+            // btnTillbaka
+            // 
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 773);
+            this.btnTillbaka.Name = "btnTillbaka";
+            this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
+            this.btnTillbaka.TabIndex = 13;
+            this.btnTillbaka.Text = "Tillbaka";
+            this.btnTillbaka.UseVisualStyleBackColor = true;
+            this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
+            // 
             // VisaUthyrningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +212,7 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btnTaBort);
@@ -242,5 +254,6 @@
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.Label Anställningsnummerlbl;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
+        private System.Windows.Forms.Button btnTillbaka;
     }
 }
