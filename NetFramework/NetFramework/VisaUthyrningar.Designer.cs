@@ -49,7 +49,7 @@
             // gridUthyrning
             // 
             this.gridUthyrning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUthyrning.Location = new System.Drawing.Point(12, 115);
+            this.gridUthyrning.Location = new System.Drawing.Point(212, 233);
             this.gridUthyrning.Margin = new System.Windows.Forms.Padding(2);
             this.gridUthyrning.Name = "gridUthyrning";
             this.gridUthyrning.ReadOnly = true;
@@ -64,7 +64,7 @@
             // gridUthyrningsRader
             // 
             this.gridUthyrningsRader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUthyrningsRader.Location = new System.Drawing.Point(324, 57);
+            this.gridUthyrningsRader.Location = new System.Drawing.Point(524, 175);
             this.gridUthyrningsRader.Margin = new System.Windows.Forms.Padding(2);
             this.gridUthyrningsRader.Name = "gridUthyrningsRader";
             this.gridUthyrningsRader.ReadOnly = true;
@@ -78,7 +78,7 @@
             // gridLektioner
             // 
             this.gridLektioner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLektioner.Location = new System.Drawing.Point(324, 356);
+            this.gridLektioner.Location = new System.Drawing.Point(524, 474);
             this.gridLektioner.Margin = new System.Windows.Forms.Padding(2);
             this.gridLektioner.Name = "gridLektioner";
             this.gridLektioner.RowHeadersWidth = 82;
@@ -91,7 +91,7 @@
             this.lblUthyrning.AutoSize = true;
             this.lblUthyrning.BackColor = System.Drawing.Color.Transparent;
             this.lblUthyrning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUthyrning.Location = new System.Drawing.Point(58, 44);
+            this.lblUthyrning.Location = new System.Drawing.Point(258, 162);
             this.lblUthyrning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUthyrning.Name = "lblUthyrning";
             this.lblUthyrning.Size = new System.Drawing.Size(130, 25);
@@ -103,7 +103,7 @@
             // 
             this.lblPersNr.AutoSize = true;
             this.lblPersNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersNr.Location = new System.Drawing.Point(50, 76);
+            this.lblPersNr.Location = new System.Drawing.Point(250, 194);
             this.lblPersNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersNr.Name = "lblPersNr";
             this.lblPersNr.Size = new System.Drawing.Size(71, 13);
@@ -113,7 +113,7 @@
             // 
             // txtBoxUthyrningsID
             // 
-            this.txtBoxUthyrningsID.Location = new System.Drawing.Point(53, 91);
+            this.txtBoxUthyrningsID.Location = new System.Drawing.Point(253, 209);
             this.txtBoxUthyrningsID.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxUthyrningsID.Name = "txtBoxUthyrningsID";
             this.txtBoxUthyrningsID.Size = new System.Drawing.Size(75, 20);
@@ -122,7 +122,7 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(132, 91);
+            this.btnSök.Location = new System.Drawing.Point(332, 209);
             this.btnSök.Margin = new System.Windows.Forms.Padding(2);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(49, 20);
@@ -133,7 +133,7 @@
             // 
             // btnVäljUthyrning
             // 
-            this.btnVäljUthyrning.Location = new System.Drawing.Point(146, 295);
+            this.btnVäljUthyrning.Location = new System.Drawing.Point(346, 413);
             this.btnVäljUthyrning.Margin = new System.Windows.Forms.Padding(2);
             this.btnVäljUthyrning.Name = "btnVäljUthyrning";
             this.btnVäljUthyrning.Size = new System.Drawing.Size(98, 22);
@@ -147,7 +147,7 @@
             this.lblRader.AutoSize = true;
             this.lblRader.BackColor = System.Drawing.Color.Transparent;
             this.lblRader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRader.Location = new System.Drawing.Point(508, 30);
+            this.lblRader.Location = new System.Drawing.Point(708, 148);
             this.lblRader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRader.Name = "lblRader";
             this.lblRader.Size = new System.Drawing.Size(150, 25);
@@ -159,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(508, 329);
+            this.label2.Location = new System.Drawing.Point(708, 447);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
@@ -168,7 +168,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(36, 295);
+            this.btnTaBort.Location = new System.Drawing.Point(236, 413);
             this.btnTaBort.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(98, 22);
@@ -200,7 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(833, 552);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btnTaBort);

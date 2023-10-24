@@ -45,7 +45,7 @@
             // gridBokningar
             // 
             this.gridBokningar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBokningar.Location = new System.Drawing.Point(124, 113);
+            this.gridBokningar.Location = new System.Drawing.Point(368, 280);
             this.gridBokningar.Name = "gridBokningar";
             this.gridBokningar.ReadOnly = true;
             this.gridBokningar.RowHeadersVisible = false;
@@ -55,14 +55,14 @@
             // 
             // txtBoxKundID
             // 
-            this.txtBoxKundID.Location = new System.Drawing.Point(218, 61);
+            this.txtBoxKundID.Location = new System.Drawing.Point(462, 228);
             this.txtBoxKundID.Name = "txtBoxKundID";
             this.txtBoxKundID.Size = new System.Drawing.Size(100, 20);
             this.txtBoxKundID.TabIndex = 1;
             // 
             // txtBoxBokningsID
             // 
-            this.txtBoxBokningsID.Location = new System.Drawing.Point(218, 87);
+            this.txtBoxBokningsID.Location = new System.Drawing.Point(462, 254);
             this.txtBoxBokningsID.Name = "txtBoxBokningsID";
             this.txtBoxBokningsID.Size = new System.Drawing.Size(100, 20);
             this.txtBoxBokningsID.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.Personnummerlbl.AutoSize = true;
             this.Personnummerlbl.BackColor = System.Drawing.Color.Transparent;
-            this.Personnummerlbl.Location = new System.Drawing.Point(121, 64);
+            this.Personnummerlbl.Location = new System.Drawing.Point(365, 231);
             this.Personnummerlbl.Name = "Personnummerlbl";
             this.Personnummerlbl.Size = new System.Drawing.Size(46, 13);
             this.Personnummerlbl.TabIndex = 3;
@@ -98,7 +98,7 @@
             // 
             this.Bokningsnummer.AutoSize = true;
             this.Bokningsnummer.BackColor = System.Drawing.Color.Transparent;
-            this.Bokningsnummer.Location = new System.Drawing.Point(121, 87);
+            this.Bokningsnummer.Location = new System.Drawing.Point(365, 254);
             this.Bokningsnummer.Name = "Bokningsnummer";
             this.Bokningsnummer.Size = new System.Drawing.Size(91, 13);
             this.Bokningsnummer.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             // KundSokBtn
             // 
-            this.KundSokBtn.Location = new System.Drawing.Point(324, 60);
+            this.KundSokBtn.Location = new System.Drawing.Point(568, 227);
             this.KundSokBtn.Name = "KundSokBtn";
             this.KundSokBtn.Size = new System.Drawing.Size(75, 21);
             this.KundSokBtn.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             // BokningsnummerBtn
             // 
-            this.BokningsnummerBtn.Location = new System.Drawing.Point(324, 85);
+            this.BokningsnummerBtn.Location = new System.Drawing.Point(568, 252);
             this.BokningsnummerBtn.Name = "BokningsnummerBtn";
             this.BokningsnummerBtn.Size = new System.Drawing.Size(75, 23);
             this.BokningsnummerBtn.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             // VäljBtn
             // 
-            this.VäljBtn.Location = new System.Drawing.Point(605, 384);
+            this.VäljBtn.Location = new System.Drawing.Point(849, 551);
             this.VäljBtn.Name = "VäljBtn";
             this.VäljBtn.Size = new System.Drawing.Size(75, 23);
             this.VäljBtn.TabIndex = 9;
@@ -136,7 +136,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(29, 415);
+            this.btnTillbaka.Location = new System.Drawing.Point(273, 582);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 10;
@@ -149,7 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(766, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.VäljBtn);
             this.Controls.Add(this.BokningsnummerBtn);

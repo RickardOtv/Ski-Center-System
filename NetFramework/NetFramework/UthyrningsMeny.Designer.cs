@@ -50,7 +50,7 @@
             // 
             // btnVisaUthyrningar
             // 
-            this.btnVisaUthyrningar.Location = new System.Drawing.Point(169, 146);
+            this.btnVisaUthyrningar.Location = new System.Drawing.Point(462, 274);
             this.btnVisaUthyrningar.Name = "btnVisaUthyrningar";
             this.btnVisaUthyrningar.Size = new System.Drawing.Size(330, 52);
             this.btnVisaUthyrningar.TabIndex = 11;
@@ -60,7 +60,7 @@
             // 
             // btnSkapaUthyrning
             // 
-            this.btnSkapaUthyrning.Location = new System.Drawing.Point(169, 229);
+            this.btnSkapaUthyrning.Location = new System.Drawing.Point(462, 357);
             this.btnSkapaUthyrning.Name = "btnSkapaUthyrning";
             this.btnSkapaUthyrning.Size = new System.Drawing.Size(330, 58);
             this.btnSkapaUthyrning.TabIndex = 12;
@@ -70,7 +70,7 @@
             // 
             // btnBokaSkidlektion
             // 
-            this.btnBokaSkidlektion.Location = new System.Drawing.Point(169, 323);
+            this.btnBokaSkidlektion.Location = new System.Drawing.Point(462, 451);
             this.btnBokaSkidlektion.Name = "btnBokaSkidlektion";
             this.btnBokaSkidlektion.Size = new System.Drawing.Size(330, 54);
             this.btnBokaSkidlektion.TabIndex = 13;
@@ -80,7 +80,7 @@
             // 
             // btnÅterlämning
             // 
-            this.btnÅterlämning.Location = new System.Drawing.Point(169, 410);
+            this.btnÅterlämning.Location = new System.Drawing.Point(462, 538);
             this.btnÅterlämning.Name = "btnÅterlämning";
             this.btnÅterlämning.Size = new System.Drawing.Size(330, 48);
             this.btnÅterlämning.TabIndex = 14;
@@ -90,7 +90,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(12, 478);
+            this.btnTillbaka.Location = new System.Drawing.Point(305, 606);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 16;
@@ -103,7 +103,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(249, 53);
+            this.label3.Location = new System.Drawing.Point(542, 181);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 39);
@@ -123,7 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(689, 523);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTillbaka);
