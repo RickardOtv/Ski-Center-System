@@ -92,8 +92,16 @@ namespace NetFramework
 
                     Uthyrning valdUthyrning = kontroller.HittaUthyrningFrånRad(valdRad.UthyrningsID);
                     Faktura valdFaktura = kontroller.HittaFaktura(valdUthyrning.BokningsID);
-                    //Funkar ej, då vi inte sparar priset för uthyrningen nånstans, kanske kolla alla rader på uthyrning och addera pris?
-                    valdFaktura.TotalPris = valdFaktura.TotalPris + (float)totalpris;
+
+                    //Gå igenom alla rader och summera total för uthyrningen
+
+
+                    // Hämta uthyrnngsrad pris,,,,,, FUNKAR EJJ!!!!!!
+                    decimal pris = kontroller.KollaUthyrningsPris(valdRad.Från, valdRad.Till, valdRad.Utrustning.Typ);
+
+                    //Lägger till priset för det man återlämnar, dvs en uthyrning åt taget
+                    valdFaktura.TotalPris = valdFaktura.TotalPris + (float)pris;
+                    MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \n Har nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsradID}\n Från {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (result == DialogResult.No)
                 {
