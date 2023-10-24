@@ -101,6 +101,7 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Name = "AdminMeny";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMeny";
             this.ResumeLayout(false);
             this.PerformLayout();

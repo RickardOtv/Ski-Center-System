@@ -195,6 +195,7 @@
             this.Controls.Add(this.btn_Spara);
             this.Controls.Add(this.btn_Tillbaka);
             this.Name = "ÄndraBokning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraBokning";
             this.ResumeLayout(false);
             this.PerformLayout();

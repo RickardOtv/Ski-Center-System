@@ -138,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTillbaka);
             this.Name = "ÄndraMaxbelopp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraMaxbelopp";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -162,6 +162,7 @@
             this.Controls.Add(this.txtBoxKundID);
             this.Controls.Add(this.gridBokningar);
             this.Name = "SkapaUthyrning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SkapaUthyrning";
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();
             this.ResumeLayout(false);

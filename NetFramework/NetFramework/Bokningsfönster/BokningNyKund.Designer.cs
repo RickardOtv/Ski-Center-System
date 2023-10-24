@@ -272,6 +272,7 @@
             this.Controls.Add(this.btnTillbaka);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "BokningNyKund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ny Kund";
             this.ResumeLayout(false);
             this.PerformLayout();

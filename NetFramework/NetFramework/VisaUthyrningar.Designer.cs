@@ -216,6 +216,7 @@
             this.Controls.Add(this.gridUthyrning);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VisaUthyrningar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VisaUthyrningar";
             this.Load += new System.EventHandler(this.VisaUthyrningar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).EndInit();

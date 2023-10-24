@@ -200,6 +200,7 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.label1);
             this.Name = "SkapaFöretagskund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SkapaFöretagskund";
             this.ResumeLayout(false);
             this.PerformLayout();

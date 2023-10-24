@@ -105,6 +105,7 @@
             this.Controls.Add(this.SökBtn);
             this.Controls.Add(this.GridÅterlämning);
             this.Name = "ÅterlämningUthyrning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÅterlämningUthyrning";
             ((System.ComponentModel.ISupportInitialize)(this.GridÅterlämning)).EndInit();
             this.ResumeLayout(false);

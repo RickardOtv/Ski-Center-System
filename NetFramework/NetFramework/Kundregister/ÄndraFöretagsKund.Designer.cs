@@ -303,6 +303,7 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Name = "ÄndraFöretagsKund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraFöretagsKund";
             this.ResumeLayout(false);
             this.PerformLayout();

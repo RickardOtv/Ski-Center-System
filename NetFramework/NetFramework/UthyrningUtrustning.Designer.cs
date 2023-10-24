@@ -270,6 +270,7 @@
             this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Name = "UthyrningUtrustning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UthyrningUtrustning";
             this.Load += new System.EventHandler(this.UthyrningUtrustning_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridUtrustning)).EndInit();

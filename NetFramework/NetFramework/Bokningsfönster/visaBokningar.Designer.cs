@@ -256,6 +256,7 @@
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.gridBokningar);
             this.Name = "VisaBokningar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "visaBokningar";
             this.Load += new System.EventHandler(this.VisaBokningar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();

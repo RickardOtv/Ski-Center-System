@@ -221,6 +221,7 @@
             this.Controls.Add(this.lblAnstNr);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Kundregister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kundregister";
             this.Load += new System.EventHandler(this.Kundregister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).EndInit();

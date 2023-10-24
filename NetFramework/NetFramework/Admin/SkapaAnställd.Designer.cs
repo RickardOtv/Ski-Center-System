@@ -180,6 +180,7 @@
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.label1);
             this.Name = "SkapaAnställd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SkapaAnställd";
             this.ResumeLayout(false);
             this.PerformLayout();

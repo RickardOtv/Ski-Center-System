@@ -160,6 +160,7 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Name = "AnställdaRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnställdaRegister";
             this.Load += new System.EventHandler(this.AnställdaRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAnställda)).EndInit();
