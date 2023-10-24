@@ -28,12 +28,11 @@ namespace NetFramework
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
         }
-      /*  public string InloggadAnvandare
-        {
-            get { return txtAnvandarnamn.Text; }
-            set { txtAnvandarnamn.Text = value; }
-        }
-      */
+        /// <summary>
+        /// Metoden btnGaVidare_Click hanterar händelsen när användaren klickar på en knapp för att fortsätta. Den validerar användarens inmatade uppgifter inklusive personnummer, namn, telefonnummer, e-postadress, adress, postnummer och postort. Om något av de obligatoriska fälten är tomt eller om någon inmatning inte följer det förväntade formatet, visas ett varningsmeddelande för användaren som specificerar vilket fält som behöver korrigeras. Om alla inmatningar är giltiga skapas en ny kund med de angivna uppgifterna, och en bekräftelse visas innan formuläret stängs och nästa fönster öppnas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
 

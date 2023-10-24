@@ -77,7 +77,11 @@ namespace NetFramework
             this.Close();
         }
 
-      
+        /// <summary>
+        /// Metoden btn_ändra_Click hanterar händelsen när användaren klickar på en knapp för att ändra en bokning. Den kontrollerar om någon rad är markerad i griden för bokningsrader. Om minst en rad är markerad öppnas fönstret för att ändra bokningen med informationen om den valda raden. Om ingen rad är markerad visas ett meddelande som uppmanar användaren att välja en rad för att redigera.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ändra_Click(object sender, EventArgs e)
         {
             if (logiGrid.SelectedRows.Count > 0)
@@ -116,14 +120,17 @@ namespace NetFramework
         }
 
 
-
+        /// <summary>
+        /// Metoden btnSökBokNr_Click hanterar händelsen när användaren klickar på en knapp för att söka efter en bokning med hjälp av bokningsnummer. Den kontrollerar om det inmatade bokningsnumret enbart innehåller siffror och inte är tomt. Om detta är fallet används det inmatade bokningsnumret för att söka efter en matchande bokning i systemet. Om en matchande bokning hittas visas den i griden för bokningar. Om ingen matchning hittas visas ett meddelande som uppmanar användaren att försöka igen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSökBokNr_Click(object sender, EventArgs e)
         {
             Bokning matchadBokning;
             String söktBokningsNummer = txtFilter.Text;
             if (kontroller.IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
             {
-                // Skapa metod av detta
                 matchadBokning = kontroller.HittaBokning(söktBokningsNummer);
                 if (matchadBokning != null)
                 {
@@ -141,7 +148,11 @@ namespace NetFramework
         }
 
 
-
+        /// <summary>
+        /// Metoden btn_sökPersonNr_Click hanterar händelsen när användaren klickar på en knapp för att söka efter bokningar baserat på personnummer. Den tar in det inmatade personnumret och använder det för att söka efter matchande bokningar i databasen. Om det finns matchande bokningar visas de i griden för bokningar. Om inga matchningar hittas visas ett meddelande som uppmanar användaren att försöka igen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_sökPersonNr_Click(object sender, EventArgs e)
         {
             string matadPersonNr = textBox_personNr.Text;
@@ -171,7 +182,11 @@ namespace NetFramework
             RefreshBokningar();
             RefreshRader(valdBokning);
         }
-
+        /// <summary>
+        /// Metoden btn_TaBortRad_Click hanterar händelsen när användaren klickar på en knapp för att ta bort en bokningsrad. Den kontrollerar om någon rad är markerad i griden för bokningsrader. Om minst en rad är markerad visas en bekräftelsedialogruta för att säkerställa att användaren vill ta bort den valda raden. Om användaren bekräftar borttagningen tas den valda bokningsraden bort från systemet och rutorna för bokningsrader uppdateras. Om ingen rad är markerad visas ett meddelande som uppmanar användaren att välja en rad för att ta bort.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_TaBortRad_Click(object sender, EventArgs e)
         {
             if (logiGrid.SelectedRows.Count > 0)

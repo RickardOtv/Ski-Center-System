@@ -33,7 +33,11 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-       
+        /// <summary>
+        /// Metoden button1_Click_1 öppnar en anslutning till en databas och utför en SQL-fråga för att hämta tillgängliga boenden inom ett specificerat tidsintervall. Den använder två DateTime-objekt för att representera start- och slutdatumet för sökningen. En SQL-fråga används för att hämta de tillgängliga boendena från databasen baserat på det specificerade tidsintervallet. Resultatet av frågan används sedan för att fylla en DataGridView-kontroll med information om tillgängliga boenden. Om det uppstår något undantag under processen stängs anslutningen till databasen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -90,7 +94,11 @@ namespace NetFramework
 
         }
 
-
+        /// <summary>
+        /// Metoden button2_Click kontrollerar om det finns markerade rader i en DataGridView-kontroll. Om en rad är markerad hämtas informationen om den specifika raden och dess motsvarande pris baserat på valda datum. Denna information visas sedan i en dialogruta. Om ingen rad är markerad eller om den valda raden är ogiltig, visas lämpliga meddelanden.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
