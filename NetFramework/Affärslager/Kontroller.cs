@@ -360,6 +360,16 @@ namespace Affärslager
             return storlekar;
         }
 
+        public Faktura HittaFaktura(int söktBokningsNummer)
+        {
+            Faktura matchadFaktura = unitOfWork.fakturor.FirstOrDefault(b => b.BokningsID == söktBokningsNummer);
+            return matchadFaktura;
+        }
+
+        public Uthyrning HittaUthyrningFrånRad(int uthyrningsID)
+        {
+            return unitOfWork.uthyrningar.FirstOrDefault(u => u.UthyrningsID == uthyrningsID);
+        }
 
         #endregion
         #region Ändra metoder

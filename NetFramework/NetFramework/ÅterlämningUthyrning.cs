@@ -89,6 +89,11 @@ namespace NetFramework
                     valdRad = GridÅterlämning.SelectedRows[0].DataBoundItem as Uthyrningsrad;
                     kontroller.TaBortUthyrningsRad(valdRad);
                     HittaRättUthyrningsID();
+
+                    Uthyrning valdUthyrning = kontroller.HittaUthyrningFrånRad(valdRad.UthyrningsID);
+                    Faktura valdFaktura = kontroller.HittaFaktura(valdUthyrning.BokningsID);
+                    //Funkar ej, då vi inte sparar priset för uthyrningen nånstans, kanske kolla alla rader på uthyrning och addera pris?
+                    valdFaktura.TotalPris = valdFaktura.TotalPris + (float)totalpris;
                 }
                 else if (result == DialogResult.No)
                 {
