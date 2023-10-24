@@ -52,13 +52,7 @@ namespace Affärslager
                 LoggedIn = null;
             return false;
         }
-        public Faktura SkapaFaktura(int fakturaID, int moms, int rabattsats, float totalpris)
-        {
-            Faktura nyFaktura = new Faktura(fakturaID, moms, rabattsats, totalpris);
-            unitOfWork.fakturor.Add(nyFaktura); 
-            unitOfWork.SaveChanges();
-            return nyFaktura;
-        }
+
         
         #region Skapa metoder
         /// <summary>
@@ -93,14 +87,7 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return uthyrning;
         }
-        /// <summary>
-        /// Metoden "SkapaUthyrningsRad" skapar en ny uthyrningsrad kopplad till en given utrustning och uthyrning i databasen. Uthyrningsraden läggs till i databasen och ändringarna sparas. Den nyskapade uthyrningsraden returneras.
-        /// </summary>
-        /// <param name="från"></param>
-        /// <param name="till"></param>
-        /// <param name="u"></param>
-        /// <param name="uthyrningsID"></param>
-        /// <returns></returns>
+
 
         
         public Faktura SkapaFaktura(int bokningsID, int moms, int rabattsats, float totalpris)
@@ -111,6 +98,14 @@ namespace Affärslager
             return nyFaktura;
         }
 
+        /// <summary>
+        /// Metoden "SkapaUthyrningsRad" skapar en ny uthyrningsrad kopplad till en given utrustning och uthyrning i databasen. Uthyrningsraden läggs till i databasen och ändringarna sparas. Den nyskapade uthyrningsraden returneras.
+        /// </summary>
+        /// <param name="från"></param>
+        /// <param name="till"></param>
+        /// <param name="u"></param>
+        /// <param name="uthyrningsID"></param>
+        /// <returns></returns>
         public Uthyrningsrad SkapaUthyrningsRad(DateTime från, DateTime till, Utrustning u, int uthyrningsID)
         {
             Uthyrningsrad nyUthyrningsRad = new Uthyrningsrad(u.UtrustningsID, från, till, uthyrningsID);
