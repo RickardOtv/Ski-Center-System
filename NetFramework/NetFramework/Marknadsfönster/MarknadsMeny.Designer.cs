@@ -39,7 +39,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(12, 415);
+            this.btnTillbaka.Location = new System.Drawing.Point(231, 567);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 17;
@@ -70,7 +70,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(294, 60);
+            this.label3.Location = new System.Drawing.Point(513, 212);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(258, 39);
@@ -79,7 +79,7 @@
             // 
             // btnVisaStatistik
             // 
-            this.btnVisaStatistik.Location = new System.Drawing.Point(259, 141);
+            this.btnVisaStatistik.Location = new System.Drawing.Point(478, 293);
             this.btnVisaStatistik.Name = "btnVisaStatistik";
             this.btnVisaStatistik.Size = new System.Drawing.Size(330, 52);
             this.btnVisaStatistik.TabIndex = 21;
@@ -89,7 +89,7 @@
             // 
             // btnRegFöretagsKund
             // 
-            this.btnRegFöretagsKund.Location = new System.Drawing.Point(259, 232);
+            this.btnRegFöretagsKund.Location = new System.Drawing.Point(478, 384);
             this.btnRegFöretagsKund.Name = "btnRegFöretagsKund";
             this.btnRegFöretagsKund.Size = new System.Drawing.Size(330, 58);
             this.btnRegFöretagsKund.TabIndex = 22;
@@ -99,7 +99,7 @@
             // 
             // btnÄndraMaxbelopp
             // 
-            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(259, 331);
+            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(478, 483);
             this.btnÄndraMaxbelopp.Name = "btnÄndraMaxbelopp";
             this.btnÄndraMaxbelopp.Size = new System.Drawing.Size(330, 54);
             this.btnÄndraMaxbelopp.TabIndex = 23;
@@ -111,8 +111,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btnÄndraMaxbelopp);
             this.Controls.Add(this.btnRegFöretagsKund);
             this.Controls.Add(this.btnVisaStatistik);

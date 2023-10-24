@@ -39,7 +39,7 @@
             // 
             // btnSkapaBokning
             // 
-            this.btnSkapaBokning.Location = new System.Drawing.Point(124, 121);
+            this.btnSkapaBokning.Location = new System.Drawing.Point(468, 287);
             this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
             this.btnSkapaBokning.Size = new System.Drawing.Size(314, 44);
@@ -50,7 +50,7 @@
             // 
             // btnLediga
             // 
-            this.btnLediga.Location = new System.Drawing.Point(124, 204);
+            this.btnLediga.Location = new System.Drawing.Point(468, 370);
             this.btnLediga.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLediga.Name = "btnLediga";
             this.btnLediga.Size = new System.Drawing.Size(314, 44);
@@ -61,7 +61,7 @@
             // 
             // btnVisaBokningar
             // 
-            this.btnVisaBokningar.Location = new System.Drawing.Point(124, 289);
+            this.btnVisaBokningar.Location = new System.Drawing.Point(468, 455);
             this.btnVisaBokningar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnVisaBokningar.Name = "btnVisaBokningar";
             this.btnVisaBokningar.Size = new System.Drawing.Size(314, 44);
@@ -72,7 +72,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(8, 352);
+            this.btnTillbaka.Location = new System.Drawing.Point(352, 518);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(58, 22);
@@ -105,7 +105,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(209, 52);
+            this.label1.Location = new System.Drawing.Point(553, 218);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 39);
@@ -118,7 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(574, 386);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);

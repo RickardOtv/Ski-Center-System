@@ -62,7 +62,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(15, 290);
+            this.btnTillbaka.Location = new System.Drawing.Point(349, 478);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 20;
@@ -75,7 +75,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(122, 66);
+            this.lblKund.Location = new System.Drawing.Point(456, 254);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(314, 31);
@@ -84,7 +84,7 @@
             // 
             // txtBoxPersonNr
             // 
-            this.txtBoxPersonNr.Location = new System.Drawing.Point(138, 119);
+            this.txtBoxPersonNr.Location = new System.Drawing.Point(472, 307);
             this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(279, 20);
@@ -95,7 +95,7 @@
             // 
             // txtBoxKredit
             // 
-            this.txtBoxKredit.Location = new System.Drawing.Point(286, 237);
+            this.txtBoxKredit.Location = new System.Drawing.Point(620, 425);
             this.txtBoxKredit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxKredit.Name = "txtBoxKredit";
             this.txtBoxKredit.Size = new System.Drawing.Size(131, 20);
@@ -106,7 +106,7 @@
             // 
             // txtBoxOrt
             // 
-            this.txtBoxOrt.Location = new System.Drawing.Point(286, 206);
+            this.txtBoxOrt.Location = new System.Drawing.Point(620, 394);
             this.txtBoxOrt.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxOrt.Name = "txtBoxOrt";
             this.txtBoxOrt.Size = new System.Drawing.Size(131, 20);
@@ -117,7 +117,7 @@
             // 
             // txtBoxPostNr
             // 
-            this.txtBoxPostNr.Location = new System.Drawing.Point(138, 206);
+            this.txtBoxPostNr.Location = new System.Drawing.Point(472, 394);
             this.txtBoxPostNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPostNr.Name = "txtBoxPostNr";
             this.txtBoxPostNr.Size = new System.Drawing.Size(131, 20);
@@ -128,7 +128,7 @@
             // 
             // txtboxNamn
             // 
-            this.txtboxNamn.Location = new System.Drawing.Point(138, 153);
+            this.txtboxNamn.Location = new System.Drawing.Point(472, 341);
             this.txtboxNamn.Margin = new System.Windows.Forms.Padding(1);
             this.txtboxNamn.Name = "txtboxNamn";
             this.txtboxNamn.Size = new System.Drawing.Size(131, 20);
@@ -139,7 +139,7 @@
             // 
             // txtBoxTelefonNr
             // 
-            this.txtBoxTelefonNr.Location = new System.Drawing.Point(286, 153);
+            this.txtBoxTelefonNr.Location = new System.Drawing.Point(620, 341);
             this.txtBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxTelefonNr.Name = "txtBoxTelefonNr";
             this.txtBoxTelefonNr.Size = new System.Drawing.Size(131, 20);
@@ -150,7 +150,7 @@
             // 
             // txtBoxAdress
             // 
-            this.txtBoxAdress.Location = new System.Drawing.Point(286, 180);
+            this.txtBoxAdress.Location = new System.Drawing.Point(620, 368);
             this.txtBoxAdress.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxAdress.Name = "txtBoxAdress";
             this.txtBoxAdress.Size = new System.Drawing.Size(131, 20);
@@ -161,7 +161,7 @@
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(138, 180);
+            this.txtBoxEmail.Location = new System.Drawing.Point(472, 368);
             this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(131, 20);
@@ -172,7 +172,7 @@
             // 
             // btnGaVidare
             // 
-            this.btnGaVidare.Location = new System.Drawing.Point(396, 290);
+            this.btnGaVidare.Location = new System.Drawing.Point(730, 478);
             this.btnGaVidare.Name = "btnGaVidare";
             this.btnGaVidare.Size = new System.Drawing.Size(103, 19);
             this.btnGaVidare.TabIndex = 24;
@@ -184,8 +184,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(518, 334);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtBoxKredit);
             this.Controls.Add(this.txtBoxOrt);
             this.Controls.Add(this.txtBoxPostNr);

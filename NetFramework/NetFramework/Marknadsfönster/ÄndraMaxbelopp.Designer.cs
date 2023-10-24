@@ -41,7 +41,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(35, 244);
+            this.btnTillbaka.Location = new System.Drawing.Point(401, 488);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 17;
@@ -68,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(350, 244);
+            this.button1.Location = new System.Drawing.Point(716, 488);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
@@ -78,7 +78,7 @@
             // 
             // textBox_GammalMaxbelopp
             // 
-            this.textBox_GammalMaxbelopp.Location = new System.Drawing.Point(140, 126);
+            this.textBox_GammalMaxbelopp.Location = new System.Drawing.Point(506, 370);
             this.textBox_GammalMaxbelopp.Name = "textBox_GammalMaxbelopp";
             this.textBox_GammalMaxbelopp.Size = new System.Drawing.Size(184, 20);
             this.textBox_GammalMaxbelopp.TabIndex = 21;
@@ -88,7 +88,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(63, 54);
+            this.lblKund.Location = new System.Drawing.Point(429, 298);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(340, 31);
@@ -97,7 +97,7 @@
             // 
             // textBox_nyttMaxbelopp
             // 
-            this.textBox_nyttMaxbelopp.Location = new System.Drawing.Point(140, 172);
+            this.textBox_nyttMaxbelopp.Location = new System.Drawing.Point(506, 416);
             this.textBox_nyttMaxbelopp.Name = "textBox_nyttMaxbelopp";
             this.textBox_nyttMaxbelopp.Size = new System.Drawing.Size(184, 20);
             this.textBox_nyttMaxbelopp.TabIndex = 23;
@@ -106,7 +106,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(137, 110);
+            this.label2.Location = new System.Drawing.Point(503, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 13);
             this.label2.TabIndex = 24;
@@ -116,7 +116,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(137, 156);
+            this.label3.Location = new System.Drawing.Point(503, 400);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 25;
@@ -126,8 +126,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(456, 294);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_nyttMaxbelopp);

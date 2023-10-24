@@ -81,7 +81,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(132, 80);
+            this.label1.Location = new System.Drawing.Point(476, 277);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 39);
             this.label1.TabIndex = 12;
@@ -89,7 +89,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(11, 328);
+            this.btnTillbaka.Location = new System.Drawing.Point(355, 525);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(71, 25);
@@ -100,7 +100,7 @@
             // 
             // btnSpara
             // 
-            this.btnSpara.Location = new System.Drawing.Point(456, 328);
+            this.btnSpara.Location = new System.Drawing.Point(800, 525);
             this.btnSpara.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(71, 25);
@@ -111,7 +111,7 @@
             // 
             // txtBoxKundID
             // 
-            this.txtBoxKundID.Location = new System.Drawing.Point(106, 47);
+            this.txtBoxKundID.Location = new System.Drawing.Point(450, 244);
             this.txtBoxKundID.Multiline = true;
             this.txtBoxKundID.Name = "txtBoxKundID";
             this.txtBoxKundID.Size = new System.Drawing.Size(26, 20);
@@ -121,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(60, 49);
+            this.label2.Location = new System.Drawing.Point(404, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 19;
@@ -132,7 +132,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(263, 123);
+            this.label7.Location = new System.Drawing.Point(607, 320);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 13);
@@ -143,7 +143,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(130, 176);
+            this.label6.Location = new System.Drawing.Point(474, 373);
             this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 13);
@@ -154,7 +154,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(130, 207);
+            this.label5.Location = new System.Drawing.Point(474, 404);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 13);
@@ -165,7 +165,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(279, 207);
+            this.label4.Location = new System.Drawing.Point(623, 404);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
@@ -176,7 +176,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(279, 176);
+            this.label3.Location = new System.Drawing.Point(623, 373);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
@@ -187,7 +187,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(279, 150);
+            this.label8.Location = new System.Drawing.Point(623, 347);
             this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
@@ -198,7 +198,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(130, 150);
+            this.label9.Location = new System.Drawing.Point(474, 347);
             this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 13);
@@ -209,7 +209,7 @@
             this.lblLösenord.AutoSize = true;
             this.lblLösenord.BackColor = System.Drawing.Color.Transparent;
             this.lblLösenord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblLösenord.Location = new System.Drawing.Point(130, 123);
+            this.lblLösenord.Location = new System.Drawing.Point(474, 320);
             this.lblLösenord.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblLösenord.Name = "lblLösenord";
             this.lblLösenord.Size = new System.Drawing.Size(0, 13);
@@ -217,7 +217,7 @@
             // 
             // txtBoxOrt
             // 
-            this.txtBoxOrt.Location = new System.Drawing.Point(281, 279);
+            this.txtBoxOrt.Location = new System.Drawing.Point(625, 476);
             this.txtBoxOrt.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxOrt.Name = "txtBoxOrt";
             this.txtBoxOrt.Size = new System.Drawing.Size(131, 20);
@@ -226,7 +226,7 @@
             // 
             // txtBoxPostNr
             // 
-            this.txtBoxPostNr.Location = new System.Drawing.Point(133, 279);
+            this.txtBoxPostNr.Location = new System.Drawing.Point(477, 476);
             this.txtBoxPostNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPostNr.Name = "txtBoxPostNr";
             this.txtBoxPostNr.Size = new System.Drawing.Size(131, 20);
@@ -235,7 +235,7 @@
             // 
             // txtBoxPersonNr
             // 
-            this.txtBoxPersonNr.Location = new System.Drawing.Point(133, 147);
+            this.txtBoxPersonNr.Location = new System.Drawing.Point(477, 344);
             this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(279, 20);
@@ -244,7 +244,7 @@
             // 
             // txtboxNamn
             // 
-            this.txtboxNamn.Location = new System.Drawing.Point(133, 193);
+            this.txtboxNamn.Location = new System.Drawing.Point(477, 390);
             this.txtboxNamn.Margin = new System.Windows.Forms.Padding(1);
             this.txtboxNamn.Name = "txtboxNamn";
             this.txtboxNamn.Size = new System.Drawing.Size(131, 20);
@@ -253,7 +253,7 @@
             // 
             // txtBoxTelefonNr
             // 
-            this.txtBoxTelefonNr.Location = new System.Drawing.Point(281, 193);
+            this.txtBoxTelefonNr.Location = new System.Drawing.Point(625, 390);
             this.txtBoxTelefonNr.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxTelefonNr.Name = "txtBoxTelefonNr";
             this.txtBoxTelefonNr.Size = new System.Drawing.Size(131, 20);
@@ -262,7 +262,7 @@
             // 
             // txtBoxAdress
             // 
-            this.txtBoxAdress.Location = new System.Drawing.Point(281, 237);
+            this.txtBoxAdress.Location = new System.Drawing.Point(625, 434);
             this.txtBoxAdress.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxAdress.Name = "txtBoxAdress";
             this.txtBoxAdress.Size = new System.Drawing.Size(131, 20);
@@ -271,7 +271,7 @@
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(133, 237);
+            this.txtBoxEmail.Location = new System.Drawing.Point(477, 434);
             this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(131, 20);
@@ -282,7 +282,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(130, 133);
+            this.label10.Location = new System.Drawing.Point(474, 330);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 13);
             this.label10.TabIndex = 40;
@@ -292,7 +292,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(130, 179);
+            this.label11.Location = new System.Drawing.Point(474, 376);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 13);
             this.label11.TabIndex = 41;
@@ -302,7 +302,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(130, 223);
+            this.label12.Location = new System.Drawing.Point(474, 420);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 42;
@@ -312,7 +312,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(130, 265);
+            this.label13.Location = new System.Drawing.Point(474, 462);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 13);
             this.label13.TabIndex = 43;
@@ -322,7 +322,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(278, 179);
+            this.label14.Location = new System.Drawing.Point(622, 376);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 13);
             this.label14.TabIndex = 44;
@@ -332,7 +332,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Location = new System.Drawing.Point(278, 223);
+            this.label15.Location = new System.Drawing.Point(622, 420);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(42, 13);
             this.label15.TabIndex = 45;
@@ -342,7 +342,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Location = new System.Drawing.Point(279, 265);
+            this.label16.Location = new System.Drawing.Point(623, 462);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 46;
@@ -352,9 +352,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(538, 364);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
