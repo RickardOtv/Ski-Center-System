@@ -633,8 +633,8 @@ namespace Affärslager
         {
             try
             {
-                // Define a regular expression for a simple email validation.
-                string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                // Define a regular expression for email validation with support for Swedish characters Å, Ä, and Ö
+                string pattern = @"^[a-zA-Z0-9._%+-åäöÅÄÖ]+@[a-zA-Z0-9.-]+\.[a-zA-ZåäöÅÄÖ]{2,}$";
                 return Regex.IsMatch(email, pattern);
             }
             catch
@@ -642,6 +642,7 @@ namespace Affärslager
                 return false;
             }
         }
+
         /// <summary>
         /// Denna metod, "IsValidSwedishSSN", försöker validera en sträng som en giltig svensk personnummer (personnummer) genom att använda ett reguljärt uttryck för att kontrollera det grundläggande formatet. Metoden extraherar sedan året, månaden och dagen från personnumret och försöker skapa en giltig födelsedatum med dessa värden. Om detta lyckas och personnumret passerar eventuella ytterligare kontroller, returnerar metoden sant; annars returneras falskt. Ifall det uppstår några undantag under processen returnerar metoden också falskt.
         /// </summary>
@@ -684,8 +685,8 @@ namespace Affärslager
         {
             try
             {
-                // Regular expression pattern for name validation
-                string pattern = @"^[a-zA-Z-' ]{1,50}$";
+                // Regular expression pattern for name validation with Swedish characters
+                string pattern = @"^[a-zA-ZåäöÅÄÖ\s'-]+$";
                 return Regex.IsMatch(name, pattern);
             }
             catch
@@ -698,8 +699,8 @@ namespace Affärslager
         {
             try
             {
-                // Regular expression pattern for address validation
-                string pattern = @"^[a-zA-Z\s]+ \d+$";
+                // Regular expression pattern for address validation with Swedish characters and special characters
+                string pattern = @"^[a-zA-ZåäöÅÄÖ\s'-,]+ \d+$";
                 return Regex.IsMatch(address, pattern);
             }
             catch
@@ -707,6 +708,7 @@ namespace Affärslager
                 return false;
             }
         }
+
         public bool IsValidPhoneNumber(string phoneNumber)
         {
             try
@@ -725,7 +727,7 @@ namespace Affärslager
         {
             try
             {
-                // Regular expression pattern for postal code validation
+                // Regular expression pattern for postal code validation with Swedish postal code format
                 string pattern = @"^[a-zA-Z\d\s\-]+$";
                 return Regex.IsMatch(postalCode, pattern);
             }
@@ -734,6 +736,7 @@ namespace Affärslager
                 return false;
             }
         }
+
         #endregion
     }
 }
