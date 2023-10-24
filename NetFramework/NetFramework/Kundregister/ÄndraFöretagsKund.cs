@@ -47,7 +47,11 @@ namespace NetFramework
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Denna metod btnSpara_Click sparar ändringar som gjorts i informationen för en kund. Den hämtar de nya värdena från textfälten för personnummer, namn, adress, e-post, postort, kreditgräns, postnummer och telefonnummer. Sedan uppdateras kundens information med de nya värdena genom att anropa metoden ÄndraKund i kontroller med de uppdaterade värdena. Efter att ändringarna har sparats visas en bekräftelsemeddelande och fönstret stängs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSpara_Click(object sender, EventArgs e)
         {
             string nyttPersonNr = txtBoxPersonNr.Text;

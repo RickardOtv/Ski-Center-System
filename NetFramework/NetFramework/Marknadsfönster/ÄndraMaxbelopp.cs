@@ -37,7 +37,11 @@ namespace NetFramework.Marknadsfönster
         {
             Close();
         }
-
+        /// <summary>
+        /// Denna metod btnSpara_Click försöker först parsa innehållet i textBox_nyttMaxbelopp till en integer-variabel nyttMaxbelopp. Om parsingen är framgångsrik eller om textrutan är tom, tilldelas värdet av nyttMaxbelopp till det globala variabeln GlobalVariable. Om parsingen misslyckas och textrutan inte är tom visas ett felmeddelande. Efter att ha uppdaterat det globala värdet stängs fönstret.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSpara_Click(object sender, EventArgs e)
         {
             // Access and modify the global variable

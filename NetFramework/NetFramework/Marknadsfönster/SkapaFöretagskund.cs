@@ -34,7 +34,11 @@ namespace NetFramework.Marknadsfönster
         {
             Close();
         }
-
+        /// <summary>
+        /// Denna metod btnGaVidare_Click kontrollerar att alla nödvändiga fält är ifyllda och att informationen i fälten är giltig. Om något fält är tomt eller innehåller ogiltig information visas ett meddelande om fel och fokus flyttas till det relevanta fältet. Om alla inmatade värden är giltiga och alla fält är ifyllda skapas en ny kund genom att anropa SkapaNyKund-metoden i kontroller. Efter att kunden har skapats visas en bekräftelsemeddelande och fönstret stängs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
             if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:") | (txtBoxKredit.Text == "Kreditgräns:") | !int.TryParse(txtBoxKredit.Text, out distance))
