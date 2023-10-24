@@ -52,30 +52,15 @@ namespace Affärslager
                 LoggedIn = null;
             return false;
         }
-        /// <summary>
-        /// Metoden "SkapaBokningsRad" skapar och lägger till en bokningsrad i databasen med angivna parametrar för start- och slutdatum, logi och boknings-ID. Efter att ha lagt till bokningsraden sparas ändringarna i databasen och den nya bokningsraden returneras.
-        /// </summary>
-        /// <param name="från"></param>
-        /// <param name="till"></param>
-        /// <param name="l"></param>
-        /// <param name="bokningsID"></param>
-        /// <returns></returns>
-        public Bokningsrad SkapaBokningsRad(DateTime från, DateTime till, Logi l, int bokningsID)
+        public Faktura SkapaFaktura(int fakturaID, int moms, int rabattsats, float totalpris)
         {
-            Bokningsrad nyRad = new Bokningsrad(l.LogiID, från, till, bokningsID);
-            unitOfWork.bokningsRader.Add(nyRad);
+            Faktura nyFaktura = new Faktura(fakturaID, moms, rabattsats, totalpris);
+            unitOfWork.fakturor.Add(nyFaktura); 
             unitOfWork.SaveChanges();
-            return nyRad;
+            return nyFaktura;
         }
-        /// <summary>
-        /// Metoden "TaBortBokningsRad" tar bort en specifik bokningsrad från databasen med hjälp av den angivna bokningsraden som parameter. Efter borttagningen sparas ändringarna i databasen.
-        /// </summary>
-        /// <param name="rad"></param>
-        public void TaBortBokningsRad(Bokningsrad rad)
-        {
-            unitOfWork.bokningsRader.Remove(rad);
-            unitOfWork.SaveChanges();
-        }
+        
+        #region Skapa metoder
         /// <summary>
         /// Metoden "SkapaBokning" skapar en ny bokning kopplad till en given kund i databasen. Bokningen läggs till i databasen och ändringarna sparas. Den nyskapade bokningen returneras.
         /// </summary>
@@ -108,15 +93,6 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return uthyrning;
         }
-
-        
-        public Faktura SkapaFaktura(int fakturaID, int moms, int rabattsats, float totalpris)
-        {
-            Faktura nyFaktura = new Faktura(fakturaID, moms, rabattsats, totalpris);
-            unitOfWork.fakturor.Add(nyFaktura); 
-            unitOfWork.SaveChanges();
-            return nyFaktura;
-        }
         /// <summary>
         /// Metoden "SkapaUthyrningsRad" skapar en ny uthyrningsrad kopplad till en given utrustning och uthyrning i databasen. Uthyrningsraden läggs till i databasen och ändringarna sparas. Den nyskapade uthyrningsraden returneras.
         /// </summary>
@@ -133,13 +109,19 @@ namespace Affärslager
             return nyUthyrningsRad;
         }
         /// <summary>
-        /// Metoden "TaBortUthyrningsRad" tar bort en given uthyrningsrad från databasen genom att använda den tillhörande UnitOfWork. Ändringarna sparas i databasen efter borttagningen.
+        /// Metoden "SkapaBokningsRad" skapar och lägger till en bokningsrad i databasen med angivna parametrar för start- och slutdatum, logi och boknings-ID. Efter att ha lagt till bokningsraden sparas ändringarna i databasen och den nya bokningsraden returneras.
         /// </summary>
-        /// <param name="uRad"></param>
-        public void TaBortUthyrningsRad(Uthyrningsrad uRad)
+        /// <param name="från"></param>
+        /// <param name="till"></param>
+        /// <param name="l"></param>
+        /// <param name="bokningsID"></param>
+        /// <returns></returns>
+        public Bokningsrad SkapaBokningsRad(DateTime från, DateTime till, Logi l, int bokningsID)
         {
-            unitOfWork.uthyrningsRader.Remove(uRad);
+            Bokningsrad nyRad = new Bokningsrad(l.LogiID, från, till, bokningsID);
+            unitOfWork.bokningsRader.Add(nyRad);
             unitOfWork.SaveChanges();
+            return nyRad;
         }
         /// <summary>
         /// Metoden "SkapaNyKund" skapar en ny kund med de angivna attributen och lägger till kunden i databasen genom att använda den associerade UnitOfWork. Efter att ändringarna har sparats returneras den nyskapade kunden.
@@ -177,6 +159,7 @@ namespace Affärslager
             unitOfWork.SaveChanges();
             return anställd;
         }
+        #endregion
         #region Ta-bort metoder
         /// <summary>
         /// Tar bort kunden och sparar ner det i databasen
@@ -214,6 +197,31 @@ namespace Affärslager
             unitOfWork.uthyrningar.Remove(u);
             unitOfWork.SaveChanges();
         }
+        /// <summary>
+        /// Metoden "TaBortBokningsRad" tar bort en specifik bokningsrad från databasen med hjälp av den angivna bokningsraden som parameter. Efter borttagningen sparas ändringarna i databasen.
+        /// </summary>
+        /// <param name="rad"></param>
+        public void TaBortBokningsRad(Bokningsrad rad)
+        {
+            unitOfWork.bokningsRader.Remove(rad);
+            unitOfWork.SaveChanges();
+        }
+        /// <summary>
+        /// Metoden "TaBortUthyrningsRad" tar bort en given uthyrningsrad från databasen genom att använda den tillhörande UnitOfWork. Ändringarna sparas i databasen efter borttagningen.
+        /// </summary>
+        /// <param name="uRad"></param>
+        public void TaBortUthyrningsRad(Uthyrningsrad uRad)
+        {
+            unitOfWork.uthyrningsRader.Remove(uRad);
+            unitOfWork.SaveChanges();
+        }
+        public void TaBortLogi(Bokningsrad valRad)
+        {
+            unitOfWork.bokningsRader.Remove(valRad);
+            unitOfWork.SaveChanges();
+        }
+
+
         #endregion
         #region Hitta/hämta-metoder
         public Kund HittaKund(int kundID)
@@ -273,6 +281,149 @@ namespace Affärslager
         {
             return unitOfWork.anställda.ToList<Anställd>();
         }
+        public IList<Bokning> HämtaBokningar()
+        {
+            return unitOfWork.bokningar.ToList<Bokning>();
+        }
+
+        public IList<Bokningsrad> HämtaBokningsRader()
+        {
+            return unitOfWork.bokningsRader.ToList<Bokningsrad>();
+        }
+        public IList<Utrustning> HämtaUtrustning()
+        {
+            return unitOfWork.utrustningar.ToList<Utrustning>();
+        }
+        public Bokning HittaBokning(string söktBokningsNummer)
+        {
+            int matadBokningsNr = Int32.Parse(söktBokningsNummer);
+            Bokning matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
+            return matchadBokning;
+        }
+        public Bokning HittaBokning(int kundID)
+        {
+            return unitOfWork.bokningar.FirstOrDefault(b => b.KundID == kundID);
+        }
+        public Uthyrning HittaUthyrning(int bokningsID)
+        {
+            return unitOfWork.uthyrningar.FirstOrDefault(u => u.BokningsID == bokningsID);
+        }
+
+        public string HittaBehörighet(int anstllningsNr)
+        {
+            Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
+            return anställd.Behörighet;
+        }
+        /// <summary>
+        /// Denna metod, "HamtaStorlekarForTyp", hämtar storlekar för en specifik typ av utrustning. Metoden kontrollerar om parametern för typ är null och om listan med all utrustning är antingen null eller tom. Den identifierar sedan utrustning med en icke-null typ och storlek. Metoden returnerar en lista med unika storlekar för den angivna typen av utrustning och kastar undantag om några problem uppstår under processen.
+        /// </summary>
+        /// <param name="typ"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
+        public List<int> HamtaStorlekarForTyp(string typ)
+        {
+            if (typ == null) throw new ArgumentNullException(nameof(typ));
+
+            // Kontrollera om allUtrustning är null eller tom
+            if (allUtrustning == null || !allUtrustning.Any())
+            {
+                throw new InvalidOperationException("allUtrustning är null eller tom.");
+            }
+
+            // Försök att identifiera var problemet ligger
+            var nonNullUtrustning = allUtrustning.Where(u => u != null && u.Typ != null && u.Storlek != null).ToList();
+
+            // Om nonNullUtrustning är tom, kasta ett undantag
+            if (!nonNullUtrustning.Any())
+            {
+                throw new InvalidOperationException("Ingen utrustning med icke-null Typ och Storlek.");
+            }
+
+            var storlekar = nonNullUtrustning
+                .Where(u => u.Typ == typ)
+                .Select(u => u.Storlek)
+                .Distinct()
+                .ToList();
+
+            // Om storlekar är tom, kasta ett undantag
+            if (!storlekar.Any())
+            {
+                throw new InvalidOperationException($"Ingen utrustning av typ {typ} hittades.");
+            }
+
+            return storlekar;
+        }
+
+
+        #endregion
+        #region Ändra metoder
+        /// <summary>
+        /// Denna metod, "ÄndraAllaBokningsRader", uppdaterar alla bokningsrader associerade med en specifik bokning. Den tar in start- och slutdatum för bokningsraderna samt bokningsraden som ska ändras och uppdaterar varje bokningsrads datum. Efter att ha uppdaterat alla rader sparas ändringarna till databasen.
+        /// </summary>
+        /// <param name="från"></param>
+        /// <param name="till"></param>
+        /// <param name="bokningrad"></param>
+        public void ÄndraAllaBokningsRader(DateTime från, DateTime till, Bokningsrad bokningrad)
+        {
+            var allaRader = HämtaRader(bokningrad.BokningsID);
+            foreach (var r in allaRader)
+            {
+                r.Från = från;
+                r.Till = till;
+            }
+            unitOfWork.SaveChanges();
+        }
+        /// <summary>
+        /// Denna metod, "ÄndraAnställd", uppdaterar en befintlig anställd med de angivna parametrarna för förnamn, efternamn, lösenord och behörighet. Metoden tilldelar de nya värdena till den angivna anställd-objektet och sparar ändringarna till databasen genom att anropa "SaveChanges" från UnitOfWork.
+        /// </summary>
+        /// <param name="förnamn"></param>
+        /// <param name="efternamn"></param>
+        /// <param name="lösenord"></param>
+        /// <param name="behörighet"></param>
+        /// <param name="anställd"></param>
+        public void ÄndraAnställd(string förnamn, string efternamn, string lösenord, string behörighet, Anställd anställd)
+        {
+            anställd.Förnamn = förnamn;
+            anställd.Efternamn = efternamn;
+            anställd.Lösenord = lösenord;
+            anställd.Behörighet = behörighet;
+            unitOfWork.SaveChanges();
+        }
+        /// <summary>
+        /// Denna metod, "ÄndraKund", uppdaterar en befintlig kund med de angivna parametrarna för personnummer, namn, telefonnummer, postnummer, postort, typ, adress, e-post och maxbeloppskreditgräns. Metoden tilldelar de nya värdena till den angivna kund-objektet och sparar ändringarna till databasen genom att anropa "SaveChanges" från UnitOfWork.
+        /// </summary>
+        /// <param name="personnummer"></param>
+        /// <param name="namn"></param>
+        /// <param name="telefonnummer"></param>
+        /// <param name="postNr"></param>
+        /// <param name="postOrt"></param>
+        /// <param name="typ"></param>
+        /// <param name="adress"></param>
+        /// <param name="email"></param>
+        /// <param name="kredit"></param>
+        /// <param name="kund"></param>
+        public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
+        {
+            kund.Personnummer = personnummer;
+            kund.Namn = namn;
+            kund.Telefonnummer = telefonnummer;
+            kund.PostNr = postNr;
+            kund.PostOrt = postOrt;
+            kund.Typ = typ;
+            kund.Adress = adress;
+            kund.Email = email;
+            kund.Maxbeloppskreditgräns = kredit;
+            unitOfWork.SaveChanges();
+        }
+        public void ÄndraEnBokningsRad(DateTime från, DateTime till, Bokningsrad bokningrad)
+        {
+            bokningrad.Från = från;
+            bokningrad.Till = till;
+            unitOfWork.SaveChanges();
+        }
+
+
         #endregion
         /// <summary>
         /// Metoden "KollaUthyrningsPris" beräknar och returnerar priset för en uthyrning baserat på antalet dagar och typ av uthyrning. Den hämtar priser från databasen via UnitOfWork och använder en switch-sats för att välja priset baserat på antalet dagar. Ett decimalvärde som representerar det totala priset returneras till slut.
@@ -455,154 +606,9 @@ namespace Affärslager
 
             return totalPrice;
         }
-        public IList<Bokning> HämtaBokningar()
-        {
-            return unitOfWork.bokningar.ToList<Bokning>();
-        }
-
-        public IList<Bokningsrad> HämtaBokningsRader()
-        {
-            return unitOfWork.bokningsRader.ToList<Bokningsrad>();
-        }
-        public IList<Utrustning> HämtaUtrustning()
-        {
-            return unitOfWork.utrustningar.ToList<Utrustning>();
-        }
-
-        /// <summary>
-        /// Denna metod, "ÄndraAllaBokningsRader", uppdaterar alla bokningsrader associerade med en specifik bokning. Den tar in start- och slutdatum för bokningsraderna samt bokningsraden som ska ändras och uppdaterar varje bokningsrads datum. Efter att ha uppdaterat alla rader sparas ändringarna till databasen.
-        /// </summary>
-        /// <param name="från"></param>
-        /// <param name="till"></param>
-        /// <param name="bokningrad"></param>
-        public void ÄndraAllaBokningsRader(DateTime från, DateTime till, Bokningsrad bokningrad)
-        {
-            var allaRader = HämtaRader(bokningrad.BokningsID);
-            foreach (var r in allaRader)
-            {
-                r.Från = från;
-                r.Till = till;
-            }
-            unitOfWork.SaveChanges();
-        }
-        /// <summary>
-        /// Denna metod, "ÄndraAnställd", uppdaterar en befintlig anställd med de angivna parametrarna för förnamn, efternamn, lösenord och behörighet. Metoden tilldelar de nya värdena till den angivna anställd-objektet och sparar ändringarna till databasen genom att anropa "SaveChanges" från UnitOfWork.
-        /// </summary>
-        /// <param name="förnamn"></param>
-        /// <param name="efternamn"></param>
-        /// <param name="lösenord"></param>
-        /// <param name="behörighet"></param>
-        /// <param name="anställd"></param>
-        public void ÄndraAnställd(string förnamn, string efternamn, string lösenord, string behörighet, Anställd anställd)
-        {
-            anställd.Förnamn = förnamn;
-            anställd.Efternamn = efternamn;
-            anställd.Lösenord = lösenord;
-            anställd.Behörighet = behörighet;
-            unitOfWork.SaveChanges();
-        }
-        /// <summary>
-        /// Denna metod, "ÄndraKund", uppdaterar en befintlig kund med de angivna parametrarna för personnummer, namn, telefonnummer, postnummer, postort, typ, adress, e-post och maxbeloppskreditgräns. Metoden tilldelar de nya värdena till den angivna kund-objektet och sparar ändringarna till databasen genom att anropa "SaveChanges" från UnitOfWork.
-        /// </summary>
-        /// <param name="personnummer"></param>
-        /// <param name="namn"></param>
-        /// <param name="telefonnummer"></param>
-        /// <param name="postNr"></param>
-        /// <param name="postOrt"></param>
-        /// <param name="typ"></param>
-        /// <param name="adress"></param>
-        /// <param name="email"></param>
-        /// <param name="kredit"></param>
-        /// <param name="kund"></param>
-        public void ÄndraKund(string personnummer, string namn, string telefonnummer, string postNr, string postOrt, string typ, string adress, string email, int kredit, Kund kund)
-        {
-            kund.Personnummer = personnummer;
-            kund.Namn = namn;
-            kund.Telefonnummer = telefonnummer;
-            kund.PostNr = postNr;
-            kund.PostOrt = postOrt;
-            kund.Typ = typ;
-            kund.Adress = adress;
-            kund.Email = email;
-            kund.Maxbeloppskreditgräns = kredit;
-            unitOfWork.SaveChanges();
-        }
-
-        public Bokning HittaBokning(string söktBokningsNummer)
-        {
-            int matadBokningsNr = Int32.Parse(söktBokningsNummer);
-            Bokning matchadBokning = unitOfWork.bokningar.FirstOrDefault(b => b.BokningsID == matadBokningsNr);
-            return matchadBokning;
-        }
-        public Bokning HittaBokning(int kundID)
-        {
-            return unitOfWork.bokningar.FirstOrDefault(b => b.KundID == kundID);
-        }
-        public Uthyrning HittaUthyrning(int bokningsID)
-        {
-            return unitOfWork.uthyrningar.FirstOrDefault(u => u.BokningsID == bokningsID);
-        }
-
-        public string HittaBehörighet(int anstllningsNr)
-        {
-            Anställd anställd = unitOfWork.anställda.FirstOrDefault(k => k.AnställningsNr == anstllningsNr);
-            return anställd.Behörighet;
-        }
-        /// <summary>
-        /// Denna metod, "HamtaStorlekarForTyp", hämtar storlekar för en specifik typ av utrustning. Metoden kontrollerar om parametern för typ är null och om listan med all utrustning är antingen null eller tom. Den identifierar sedan utrustning med en icke-null typ och storlek. Metoden returnerar en lista med unika storlekar för den angivna typen av utrustning och kastar undantag om några problem uppstår under processen.
-        /// </summary>
-        /// <param name="typ"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="InvalidOperationException"></exception>
-        public List<int> HamtaStorlekarForTyp(string typ)
-        {
-            if (typ == null) throw new ArgumentNullException(nameof(typ));
-
-            // Kontrollera om allUtrustning är null eller tom
-            if (allUtrustning == null || !allUtrustning.Any())
-            {
-                throw new InvalidOperationException("allUtrustning är null eller tom.");
-            }
-
-            // Försök att identifiera var problemet ligger
-            var nonNullUtrustning = allUtrustning.Where(u => u != null && u.Typ != null && u.Storlek != null).ToList();
-
-            // Om nonNullUtrustning är tom, kasta ett undantag
-            if (!nonNullUtrustning.Any())
-            {
-                throw new InvalidOperationException("Ingen utrustning med icke-null Typ och Storlek.");
-            }
-
-            var storlekar = nonNullUtrustning
-                .Where(u => u.Typ == typ)
-                .Select(u => u.Storlek)
-                .Distinct()
-                .ToList();
-
-            // Om storlekar är tom, kasta ett undantag
-            if (!storlekar.Any())
-            {
-                throw new InvalidOperationException($"Ingen utrustning av typ {typ} hittades.");
-            }
-
-            return storlekar;
-        }
-
-
-
-        public void TaBortLogi(Bokningsrad valRad)
-        {
-            unitOfWork.bokningsRader.Remove(valRad);
-            unitOfWork.SaveChanges();
-        }
-        public void ÄndraEnBokningsRad(DateTime från, DateTime till, Bokningsrad bokningrad)
-        {
-            bokningrad.Från = från;
-            bokningrad.Till = till;
-            unitOfWork.SaveChanges();
-        }
-
+        
+        
+        #region Format-validering
         public bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
@@ -723,6 +729,6 @@ namespace Affärslager
                 return false;
             }
         }
-
+        #endregion
     }
 }
