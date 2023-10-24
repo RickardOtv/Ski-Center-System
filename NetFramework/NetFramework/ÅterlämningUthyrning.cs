@@ -87,21 +87,18 @@ namespace NetFramework
                 if (result == DialogResult.Yes)
                 {
                     valdRad = GridÅterlämning.SelectedRows[0].DataBoundItem as Uthyrningsrad;
-                    kontroller.TaBortUthyrningsRad(valdRad);
-                    HittaRättUthyrningsID();
-
+                    
+                    //Hämtar rätt info för återlämning
                     Uthyrning valdUthyrning = kontroller.HittaUthyrningFrånRad(valdRad.UthyrningsID);
                     Faktura valdFaktura = kontroller.HittaFaktura(valdUthyrning.BokningsID);
-
-                    //Gå igenom alla rader och summera total för uthyrningen
-
-
-                    // Hämta uthyrnngsrad pris,,,,,, FUNKAR EJJ!!!!!!
-                    decimal pris = kontroller.KollaUthyrningsPris(valdRad.Från, valdRad.Till, valdRad.Utrustning.Typ);
-
-                    //Lägger till priset för det man återlämnar, dvs en uthyrning åt taget
+                    string typ = kontroller.HämtaUthyrningsTyp(valdRad.UtrustningsID);
+                    decimal pris = kontroller.KollaUthyrningsPris(valdRad.Från, valdRad.Till, typ);
                     valdFaktura.TotalPris = valdFaktura.TotalPris + (float)pris;
-                    MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \n Har nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsradID}\n Från {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    //Visar klar faktura osv
+                    MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \nHar nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsID}\n RadID: {valdRad.UthyrningsradID}\nFrån {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    kontroller.TaBortUthyrningsRad(valdRad);
+                    HittaRättUthyrningsID();
                 }
                 else if (result == DialogResult.No)
                 {

@@ -42,6 +42,9 @@
             this.GridÅterlämning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridÅterlämning.Location = new System.Drawing.Point(320, 219);
             this.GridÅterlämning.Name = "GridÅterlämning";
+            this.GridÅterlämning.ReadOnly = true;
+            this.GridÅterlämning.RowHeadersVisible = false;
+            this.GridÅterlämning.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridÅterlämning.Size = new System.Drawing.Size(616, 315);
             this.GridÅterlämning.TabIndex = 0;
             // 
@@ -57,7 +60,7 @@
             // 
             // ÅterlämnaBtn
             // 
-            this.ÅterlämnaBtn.Location = new System.Drawing.Point(860, 557);
+            this.ÅterlämnaBtn.Location = new System.Drawing.Point(926, 557);
             this.ÅterlämnaBtn.Name = "ÅterlämnaBtn";
             this.ÅterlämnaBtn.Size = new System.Drawing.Size(75, 23);
             this.ÅterlämnaBtn.TabIndex = 2;

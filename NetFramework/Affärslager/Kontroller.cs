@@ -368,7 +368,14 @@ namespace Affärslager
 
         public Uthyrning HittaUthyrningFrånRad(int uthyrningsID)
         {
-            return unitOfWork.uthyrningar.FirstOrDefault(u => u.UthyrningsID == uthyrningsID);
+            Uthyrning uthyrning = unitOfWork.uthyrningar.FirstOrDefault(u => u.UthyrningsID == uthyrningsID);
+            return uthyrning;
+        }
+
+        public Utrustning HämtaSpecifikUtrusning(string utrustningsID)
+        {
+            Utrustning utrustning = unitOfWork.utrustningar.FirstOrDefault(u => u.UtrustningsID == utrustningsID);
+            return utrustning;
         }
 
         #endregion
