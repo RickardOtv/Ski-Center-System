@@ -40,5 +40,10 @@ namespace NetFramework
             skapaAnställd.InloggadAnvandare = txtAnvandarnamn.Text;
             skapaAnställd.Show();
         }
+
+        private void btnTillbaka_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

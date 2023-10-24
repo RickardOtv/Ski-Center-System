@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnHanteraAnställd = new System.Windows.Forms.Button();
             this.btnSkapaAnställd = new System.Windows.Forms.Button();
+            this.btnTillbaka = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAnvandarnamn
@@ -88,6 +89,16 @@
             this.btnSkapaAnställd.UseVisualStyleBackColor = true;
             this.btnSkapaAnställd.Click += new System.EventHandler(this.btnSkapaAnställd_Click);
             // 
+            // btnTillbaka
+            // 
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 771);
+            this.btnTillbaka.Name = "btnTillbaka";
+            this.btnTillbaka.Size = new System.Drawing.Size(63, 25);
+            this.btnTillbaka.TabIndex = 15;
+            this.btnTillbaka.Text = "Tillbaka";
+            this.btnTillbaka.UseVisualStyleBackColor = true;
+            this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
+            // 
             // AdminMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +106,7 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnSkapaAnställd);
             this.Controls.Add(this.btnHanteraAnställd);
             this.Controls.Add(this.label1);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHanteraAnställd;
         private System.Windows.Forms.Button btnSkapaAnställd;
+        private System.Windows.Forms.Button btnTillbaka;
     }
 }
