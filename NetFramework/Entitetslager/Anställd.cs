@@ -22,7 +22,6 @@ namespace Entitetslager
 
         public Anställd(string förnamn, string efternamn, string lösenord, string behörighet)
         {
-           // AnställningsNr = anställningsNr;
             Förnamn = förnamn;
             Efternamn = efternamn;
             Lösenord = lösenord;
@@ -32,7 +31,6 @@ namespace Entitetslager
         {
             return Lösenord == given;
         }
-        // public string lösenord { get; set; }
 
         public Anställd()
         {

@@ -21,7 +21,11 @@ namespace NetFramework
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Metoden utför inloggning med angivet anställningsnummer och lösenord, kontrollerar giltigheten och öppnar en ny huvudmeny om inloggningen lyckas, annars visar den ett meddelande om misslyckad inloggning.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLoggaIn_Click(object sender, EventArgs e)
         {
             int angivetAnstNr = int.Parse(txtAnstNr.Text);

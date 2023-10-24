@@ -54,7 +54,9 @@ namespace NetFramework
             GridÅterlämning.Columns["Till"].DisplayIndex = 3;
             GridÅterlämning.Columns["UthyrningsID"].DisplayIndex = 4;
         }
-
+        /// <summary>
+        /// Metoden HittaRättUthyrningsID kontrollerar om det angivna ID:t är en giltig heltalsvärde och uppdaterar uthyrningsraderna med det angivna ID:et om det är giltigt. Om det angivna ID:t inte är ett giltigt heltal, visas ett felmeddelande som uppmanar användaren att ange siffror.
+        /// </summary>
         private void HittaRättUthyrningsID()
         {
             if (int.TryParse(TextBoxUthyrningsID.Text, out int angivetID))
@@ -71,7 +73,11 @@ namespace NetFramework
         {
             HittaRättUthyrningsID();
         }
-
+        /// <summary>
+        /// Metoden hanterar händelsen när användaren klickar på en knapp för att återlämna en vara. Den kontrollerar om en rad är markerad i griden och frågar användaren om de är säkra på att de vill återlämna varan. Om användaren bekräftar återlämningen tas den valda raden bort och uthyrningsraderna uppdateras med det aktuella uthyrnings-ID:t. Om ingen rad är vald visas en varning för att välja en rad.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ÅterlämnaBtn_Click(object sender, EventArgs e)
         {
             if (GridÅterlämning.SelectedRows.Count > 0)
