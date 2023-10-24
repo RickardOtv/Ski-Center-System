@@ -227,13 +227,19 @@ namespace NetFramework
                     var rowIndex = selectedRow.Index;
                     if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
                     {
-                        var valdLogi = ledigaLogier[rowIndex];
-                        DateTime startDate = DateTime.Parse(dateFrån.Text);
-                        DateTime endDate = DateTime.Parse(dateTill.Text);
-                        Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
-                        MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
-                        RefreshRader();
-                        RefreshLogi();
+                        if(dateFrån.Text != dateTill.Text)
+                        {
+                            var valdLogi = ledigaLogier[rowIndex];
+                            DateTime startDate = DateTime.Parse(dateFrån.Text);
+                            DateTime endDate = DateTime.Parse(dateTill.Text);
+                            Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
+                            MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+                            RefreshRader();
+                            RefreshLogi();
+                        } else
+                        {
+                            MessageBox.Show("Kan inte ha samma Från och Till datum.");
+                        }
                     }
                     else
                     {
@@ -276,7 +282,49 @@ namespace NetFramework
 
         private void btnKlar_Click(object sender, EventArgs e)
         {
-                this.Close();
+            if (nyBokning != null)
+            {
+                if (gridRader.SelectedRows.Count > 0)
+                {
+                    decimal totalSumma = 0;
+                    int momsSatts = 0;
+                    int rabattsatts = 0;
+                    DateTime minDatum = new DateTime(3008, 1, 1); 
+                    DateTime maxDatum = new DateTime(2008, 1, 1);
+
+                    foreach (DataGridViewRow row in gridRader.Rows)
+                    {
+                        if (row.Tag is Bokningsrad bokningsrad)
+                        {
+                            // Call your method on the Bokningsrad object
+                            Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+
+                            //Något gör så att det blir en extra dag, därför tar jag bort den här
+                            DateTime newTillDate = bokningsrad.Till.AddDays(-1);
+                            decimal pris = kontroller.KollaPris(bokningsrad.Från, newTillDate, ettLogi.Typ);
+                            totalSumma += pris;
+                            if(minDatum > bokningsrad.Från)
+                            {
+                                minDatum = bokningsrad.Från;
+                            }
+                            if (maxDatum < bokningsrad.Till) 
+                            {
+                                maxDatum = bokningsrad.Till;
+                            }
+                        }
+                    }
+
+                    Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
+                    MessageBox.Show($"Faktura skapad för BokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()} \nTotalPris: {nyFaktura.TotalPris}kr \n\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show($"Välj först ett Logi, tack!");
+                }
+            } else
+            {
+                MessageBox.Show($"Välj först en Kund, tack!");
+            }
         }
 
         private void btn_sökLogi_Click(object sender, EventArgs e)
