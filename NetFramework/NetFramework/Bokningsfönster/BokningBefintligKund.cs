@@ -257,7 +257,38 @@ namespace NetFramework
 
         private void btnKlar_Click(object sender, EventArgs e)
         {
-                this.Close();
+            if (nyBokning != null)
+            {
+                if (gridRader.SelectedRows.Count > 0)
+                {
+                    decimal totalSumma = 0;
+                    int momsSatts = 0;
+                    int rabattsatts = 0;
+
+                    foreach (DataGridViewRow row in gridRader.Rows)
+                    {
+                        if (row.Tag is Bokningsrad bokningsrad)
+                        {
+                            // Call your method on the Bokningsrad object
+                            Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+
+                            //Något gör så att det blir en extra dag, därför tar jag bort den här
+                            DateTime newDate = bokningsrad.Till.AddDays(-1);
+                            decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
+                            totalSumma += pris;
+                        }
+                    }
+                    Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
+                    MessageBox.Show($"BokningsID: {nyBokning.BokningsID} \nFrån feeem \nTill: fjeem \nPris: {nyFaktura.TotalPris}kr \n\nFaktura skapad \nID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show($"Välj först ett Logi, tack!");
+                }
+            } else
+            {
+                MessageBox.Show($"Välj först en Kund, tack!");
+            }
         }
 
         private void btn_sökLogi_Click(object sender, EventArgs e)

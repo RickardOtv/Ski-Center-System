@@ -22,9 +22,9 @@ namespace Entitetslager
         public Bokning Bokning { get; set; }
         
 
-        public Faktura(int fakturaID, int moms, int rabattsats, float totalpris)
+        public Faktura(int bokningsID, int moms, int rabattsats, float totalpris)
         {
-            FakturaID = fakturaID;
+            BokningsID = bokningsID;
             Momsats = moms;
             Rabattsats = rabattsats;
             TotalPris = totalpris;
