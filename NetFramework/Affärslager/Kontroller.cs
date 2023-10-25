@@ -243,6 +243,7 @@ namespace Affärslager
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == personNummer);
         }
+
         public Anställd HittaAnställd(int anställningsNr)
         {
             return unitOfWork.anställda.FirstOrDefault(a => a.AnställningsNr == anställningsNr);

@@ -182,6 +182,10 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnKlar_Click(object sender, EventArgs e)
         {
+            float slutPrisInkMoms;
+            int moms;
+            float rabattPris;
+            float momsPris;
             decimal totalpris = 0;
             foreach (DataGridViewRow row in gridRader.Rows)
             {
@@ -206,7 +210,15 @@ namespace NetFramework
                     }
                 }
             }
-            MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
+            Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
+            rabattPris = (float)totalpris - ((float)totalpris * ((float)valdFaktura.Rabattsats / 100));
+            float slutRabattPris = (float)totalpris - rabattPris;
+            //Lägger till moms
+            momsPris = rabattPris - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
+            float slutMomsPris = rabattPris - momsPris;
+
+            MessageBox.Show($"Original Pris: {totalpris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
+            //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
             this.Close();
         }
         /// <summary>
@@ -216,6 +228,10 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
+            float slutPrisInkMoms;
+            int moms;
+            float rabattPris;
+            float momsPris;
             DateTime från = DateTime.Parse(dateFrån.Text);
             DateTime till = DateTime.Parse(dateTill.Text);
             valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
@@ -228,8 +244,17 @@ namespace NetFramework
 
                     DateTime startDate = dateFrån.Value;
                     DateTime endDate = dateTill.Value;
+                    Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
                     decimal pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
-                    MessageBox.Show($"Totalpris för valda datum: {pris}");
+
+
+                    rabattPris = (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
+                    float slutRabattPris = (float)pris - rabattPris;
+                    //Lägger till moms
+                    momsPris = rabattPris - ((float)pris * ((float)valdFaktura.Momsats / 100));
+                    float slutMomsPris = rabattPris - momsPris;
+
+                    MessageBox.Show($"Original Pris: {pris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
                 }
                 else
                 {

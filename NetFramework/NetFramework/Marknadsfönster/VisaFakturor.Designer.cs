@@ -170,7 +170,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 596);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btn_totalPris);
             this.Controls.Add(this.btn_ÄndraMoms);
             this.Controls.Add(this.txtAnvandarnamn);
@@ -184,6 +185,7 @@
             this.Controls.Add(this.gridFakturor);
             this.Controls.Add(this.lblAnstNr);
             this.Name = "VisaFakturor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VisaFakturor";
             this.Load += new System.EventHandler(this.FakturaRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridFakturor)).EndInit();

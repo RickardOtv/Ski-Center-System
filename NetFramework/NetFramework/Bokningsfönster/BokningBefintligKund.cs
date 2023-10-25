@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -187,6 +188,8 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
+            int moms;
+            float slutPrisInkMoms;
             if (gridLogi.SelectedRows.Count > 0)
             {
                 // Hämta den markerade logien från listan av lediga logier
@@ -199,7 +202,14 @@ namespace NetFramework
                     DateTime startDate = dateFrån.Value;
                     DateTime endDate = dateTill.Value;
                     decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
-                    MessageBox.Show($"Totalpris för valda datum: {pris}");
+                    if(valdKund.Typ == "Företag"){
+                        moms = 12; 
+                    } else
+                    {
+                        moms = 0;
+                    }
+                    slutPrisInkMoms = (float)pris - ((float)pris * ((float)moms / 100));
+                    MessageBox.Show($"Original Pris: {pris}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
                 }
                 else
                 {
@@ -210,7 +220,6 @@ namespace NetFramework
             {
                 MessageBox.Show("Ingen logi vald.");
             }
-
         }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
@@ -295,6 +304,7 @@ namespace NetFramework
                     decimal totalSumma = 0;
                     int momsSatts = 0;
                     int rabattsatts = 0;
+                    float slutPrisInkMoms;
                     DateTime minDatum = new DateTime(3008, 1, 1); 
                     DateTime maxDatum = new DateTime(2008, 1, 1);
 
@@ -325,7 +335,8 @@ namespace NetFramework
                         momsSatts = 12;
                     }
                     Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
-                    MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%\nTotalPris: {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    slutPrisInkMoms = (float)nyFaktura.TotalPris - ((float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100));
+                    MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%\nTotalPris: {slutPrisInkMoms}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 } else
                 {
@@ -397,6 +408,8 @@ namespace NetFramework
         private void btnTotalSumma_Click(object sender, EventArgs e)
         {
             decimal totalSumma = 0;
+            float slutPrisInkMoms;
+            int moms;
 
             foreach (DataGridViewRow row in gridRader.Rows)
             {
@@ -412,7 +425,16 @@ namespace NetFramework
                     totalSumma += pris;
                 }
             }
-            MessageBox.Show($"Totalpris för bokning är: {totalSumma}");
+            if (valdKund.Typ == "Företag")
+            {
+                moms = 12;
+            }
+            else
+            {
+                moms = 0;
+            }
+            slutPrisInkMoms = (float)totalSumma - ((float)totalSumma * ((float)moms / 100));
+            MessageBox.Show($"Original Pris: {totalSumma}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
         }
 
     }

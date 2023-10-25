@@ -125,7 +125,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 647);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_NyMoms);
@@ -136,6 +137,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTillbaka);
             this.Name = "ÄndraFakturaMoms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraFakturaMoms";
             this.ResumeLayout(false);
             this.PerformLayout();
