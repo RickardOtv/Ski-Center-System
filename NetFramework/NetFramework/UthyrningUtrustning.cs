@@ -219,6 +219,7 @@ namespace NetFramework
 
             MessageBox.Show($"Original Pris: {totalpris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
             //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
+            kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
             this.Close();
         }
         /// <summary>

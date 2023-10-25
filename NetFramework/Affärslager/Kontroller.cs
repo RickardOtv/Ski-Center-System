@@ -469,6 +469,12 @@ namespace Affärslager
             unitOfWork.SaveChanges();
         }
 
+        public void ÄndraFakturaTotalPris(Faktura valdFaktura, float nyttPris)
+        {
+            valdFaktura.TotalPris = valdFaktura.TotalPris + nyttPris;
+            unitOfWork.SaveChanges();
+        }
+
 
         #endregion
         /// <summary>
