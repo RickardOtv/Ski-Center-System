@@ -72,7 +72,7 @@ namespace NetFramework.Marknadsfönster
         {
             valdFaktura = gridFakturor.SelectedRows[0].DataBoundItem as Faktura;
 
-            DialogResult result = MessageBox.Show("Är du säker att du vill ta bort kund?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Är du säker att du vill ta bort faktura?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 if (gridFakturor.SelectedRows != null)
