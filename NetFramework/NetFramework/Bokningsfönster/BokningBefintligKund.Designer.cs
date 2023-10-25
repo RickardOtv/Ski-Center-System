@@ -50,6 +50,8 @@
             this.btnKollaPris = new System.Windows.Forms.Button();
             this.btn_kollaLogiInfo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblAnstNr = new System.Windows.Forms.Label();
+            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
@@ -304,6 +306,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnTotalSumma_Click);
             // 
+            // lblAnstNr
+            // 
+            this.lblAnstNr.AutoSize = true;
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnstNr.Name = "lblAnstNr";
+            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
+            this.lblAnstNr.TabIndex = 25;
+            this.lblAnstNr.Text = "Anställningsnummer:";
+            // 
+            // txtAnvandarnamn
+            // 
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(113, 6);
+            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
+            this.txtAnvandarnamn.TabIndex = 26;
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +332,8 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.txtAnvandarnamn);
+            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_kollaLogiInfo);
             this.Controls.Add(this.btnKollaPris);
@@ -370,5 +393,7 @@
         private System.Windows.Forms.Button btnKollaPris;
         private System.Windows.Forms.Button btn_kollaLogiInfo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblAnstNr;
+        private System.Windows.Forms.TextBox txtAnvandarnamn;
     }
 }

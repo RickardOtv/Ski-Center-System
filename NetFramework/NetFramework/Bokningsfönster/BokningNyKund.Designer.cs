@@ -46,6 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblAnstNr = new System.Windows.Forms.Label();
+            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnTillbaka
@@ -245,6 +247,25 @@
             this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 22;
             // 
+            // lblAnstNr
+            // 
+            this.lblAnstNr.AutoSize = true;
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnstNr.Name = "lblAnstNr";
+            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
+            this.lblAnstNr.TabIndex = 23;
+            this.lblAnstNr.Text = "Anställningsnummer:";
+            // 
+            // txtAnvandarnamn
+            // 
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(114, 9);
+            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
+            this.txtAnvandarnamn.TabIndex = 27;
+            // 
             // BokningNyKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +273,8 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.txtAnvandarnamn);
+            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -299,5 +322,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblAnstNr;
+        private System.Windows.Forms.TextBox txtAnvandarnamn;
     }
 }

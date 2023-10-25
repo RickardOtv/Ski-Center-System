@@ -111,6 +111,7 @@
             this.txtAnvandarnamn.Location = new System.Drawing.Point(110, 5);
             this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
             this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 7;
             // 

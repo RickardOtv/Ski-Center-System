@@ -32,6 +32,8 @@
             this.btnNyKund = new System.Windows.Forms.Button();
             this.lblTyp = new System.Windows.Forms.Label();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.lblAnstNr = new System.Windows.Forms.Label();
+            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnBefintlig
@@ -78,6 +80,25 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
+            // lblAnstNr
+            // 
+            this.lblAnstNr.AutoSize = true;
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnstNr.Name = "lblAnstNr";
+            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
+            this.lblAnstNr.TabIndex = 9;
+            this.lblAnstNr.Text = "Anställningsnummer:";
+            // 
+            // txtAnvandarnamn
+            // 
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 6);
+            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
+            this.txtAnvandarnamn.TabIndex = 27;
+            // 
             // BokningsTyp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,6 +106,8 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.txtAnvandarnamn);
+            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.lblTyp);
             this.Controls.Add(this.btnNyKund);
@@ -104,5 +127,7 @@
         private System.Windows.Forms.Button btnNyKund;
         private System.Windows.Forms.Label lblTyp;
         private System.Windows.Forms.Button btnTillbaka;
+        private System.Windows.Forms.Label lblAnstNr;
+        private System.Windows.Forms.TextBox txtAnvandarnamn;
     }
 }

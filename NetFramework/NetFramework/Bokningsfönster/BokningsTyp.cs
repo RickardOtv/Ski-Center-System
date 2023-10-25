@@ -21,19 +21,26 @@ namespace NetFramework
             this.kontroller = kontroller;
             InitializeComponent();
         }
+        public string InloggadAnvandare
+        {
+            get { return txtAnvandarnamn.Text; }
+            set { txtAnvandarnamn.Text = value; }
+        }
 
         private void btnBefintlig_Click(object sender, EventArgs e)
         {
             BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
-            this.Close();
             befintligKund.Show();
+            befintligKund.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btnNyKund_Click(object sender, EventArgs e)
         {
             BokningNyKund nyKund = new BokningNyKund(loggaIn, kontroller);
-            this.Close();
             nyKund.Show();
+            nyKund.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)

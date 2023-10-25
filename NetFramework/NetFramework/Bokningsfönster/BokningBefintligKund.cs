@@ -32,9 +32,15 @@ namespace NetFramework
 
         public BokningBefintligKund(LoggaIn loggaInMeny, Kontroller kontroller)
         {
+            InitializeComponent();
             this.loggaInMeny = loggaInMeny;
             this.kontroller = kontroller;
-            InitializeComponent();
+        }
+
+        public string InloggadAnvandare
+        {
+            get { return txtAnvandarnamn.Text; }
+            set { txtAnvandarnamn.Text = value; }
         }
         /// <summary>
         /// Metoden RefreshLogi ansluter till en databas och hämtar lediga logier baserat på de specificerade datumen. Den använder en LEFT JOIN-fråga för att hitta lediga logier som inte är bokade under den angivna tidsperioden. Den fyller sedan en datagrid med den resulterande datan och anger rubriker för kolumnerna. Om det uppstår ett undantag stängs anslutningen till databasen.

@@ -44,6 +44,7 @@ namespace NetFramework
         {
             BokningsTyp bokningsTyp = new BokningsTyp(loggaIn, kontroller);
             bokningsTyp.Show();
+            bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         private void btnVisaBokningar_Click(object sender, EventArgs e)

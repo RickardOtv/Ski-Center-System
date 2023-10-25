@@ -25,6 +25,12 @@ namespace NetFramework
             this.kontroller = kontroller;
         }
 
+        public string InloggadAnvandare
+        {
+            get { return txtAnvandarnamn.Text; }
+            set { txtAnvandarnamn.Text = value; }
+        }
+
         private void Tillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -96,7 +102,7 @@ namespace NetFramework
                     valdFaktura.TotalPris = valdFaktura.TotalPris + (float)pris;
                     
                     //Visar klar faktura osv
-                    MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \nHar nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsID}\n RadID: {valdRad.UthyrningsradID}\nFrån {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \nHar nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsID}\nRadID: {valdRad.UthyrningsradID}\nFrån {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     kontroller.TaBortUthyrningsRad(valdRad);
                     HittaRättUthyrningsID();
                 }

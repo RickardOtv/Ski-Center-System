@@ -60,7 +60,8 @@ namespace NetFramework
         {
             ÅterlämningUthyrning återlämningUthyrning = new ÅterlämningUthyrning(loggaIn, kontroller);
             återlämningUthyrning.Show();
-            
+            återlämningUthyrning.InloggadAnvandare = txtAnvandarnamn.Text;
+
         }
         /// <summary>
         /// Skapar en ny instans av ett fönster för Visa Uthyrningar

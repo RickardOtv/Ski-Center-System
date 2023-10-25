@@ -34,6 +34,8 @@
             this.TextBoxUthyrningsID = new System.Windows.Forms.TextBox();
             this.Tillbaka = new System.Windows.Forms.Button();
             this.UthyrningsIDlbl = new System.Windows.Forms.Label();
+            this.Anställningsnummerlbl = new System.Windows.Forms.Label();
+            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridÅterlämning)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,12 +97,32 @@
             this.UthyrningsIDlbl.TabIndex = 5;
             this.UthyrningsIDlbl.Text = "Ange UthyrningsID:";
             // 
+            // Anställningsnummerlbl
+            // 
+            this.Anställningsnummerlbl.AutoSize = true;
+            this.Anställningsnummerlbl.BackColor = System.Drawing.Color.Transparent;
+            this.Anställningsnummerlbl.Location = new System.Drawing.Point(12, 9);
+            this.Anställningsnummerlbl.Name = "Anställningsnummerlbl";
+            this.Anställningsnummerlbl.Size = new System.Drawing.Size(100, 13);
+            this.Anställningsnummerlbl.TabIndex = 14;
+            this.Anställningsnummerlbl.Text = "Anställningsnummer";
+            // 
+            // txtAnvandarnamn
+            // 
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(118, 6);
+            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(19, 20);
+            this.txtAnvandarnamn.TabIndex = 13;
+            // 
             // ÅterlämningUthyrning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.Anställningsnummerlbl);
+            this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.UthyrningsIDlbl);
             this.Controls.Add(this.Tillbaka);
             this.Controls.Add(this.TextBoxUthyrningsID);
@@ -124,5 +146,7 @@
         private System.Windows.Forms.TextBox TextBoxUthyrningsID;
         private System.Windows.Forms.Button Tillbaka;
         private System.Windows.Forms.Label UthyrningsIDlbl;
+        private System.Windows.Forms.Label Anställningsnummerlbl;
+        private System.Windows.Forms.TextBox txtAnvandarnamn;
     }
 }

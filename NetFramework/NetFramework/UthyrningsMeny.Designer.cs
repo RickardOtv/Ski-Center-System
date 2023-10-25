@@ -114,6 +114,7 @@
             // 
             this.txtAnvandarnamn.Location = new System.Drawing.Point(98, 2);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
             this.txtAnvandarnamn.Size = new System.Drawing.Size(18, 20);
             this.txtAnvandarnamn.TabIndex = 18;
             // 
