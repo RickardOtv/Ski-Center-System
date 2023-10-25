@@ -277,7 +277,7 @@ namespace NetFramework
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
             nyBokning = kontroller.SkapaBokning(valdKund);
-            MessageBox.Show($"Bokning har skapats med ID:{nyBokning.BokningsID} för kund:{valdKund.Namn}");
+            MessageBox.Show($"Vald kund:{valdKund.Namn}");
         }
 
         private void btnKlar_Click(object sender, EventArgs e)
@@ -315,7 +315,7 @@ namespace NetFramework
                     }
 
                     Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
-                    MessageBox.Show($"Faktura skapad för BokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()} \nTotalPris: {nyFaktura.TotalPris}kr \n\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%\nTotalPris: {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 } else
                 {
