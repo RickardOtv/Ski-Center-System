@@ -107,12 +107,12 @@ namespace NetFramework.Marknadsfönster
                 }
                 else
                 {
-                    MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
+                    MessageBox.Show("Inget matchande bokningsnummer hittades, försök igen");
                 }
             }
             else
             {
-                MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
+                MessageBox.Show("Inget matchande bokningsnummer hittades, försök igen");
             }
         }
 
