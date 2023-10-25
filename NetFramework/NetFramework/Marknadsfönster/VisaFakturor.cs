@@ -80,7 +80,7 @@ namespace NetFramework.Marknadsfönster
                     //valdFaktura = kontroller.HittaFaktura(valdFaktura.FakturaID);
                     kontroller.TaBortFaktura(valdFaktura);
                     RefreshFakturor();
-                    MessageBox.Show($"Tog Bort Anställd: {valdFaktura.FakturaID} \nTillhörande BokningsID: {valdFaktura.BokningsID}");
+                    MessageBox.Show($"Tog Bort Faktura: {valdFaktura.FakturaID} \nTillhörande BokningsID: {valdFaktura.BokningsID}");
                 }
                 else
                 {
