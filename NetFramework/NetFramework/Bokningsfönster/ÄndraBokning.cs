@@ -45,7 +45,11 @@ namespace NetFramework
         {
             this.Close();        
         }
-
+        /// <summary>
+        /// Metoden btn_Spara_För_Alla extraherar start- och slutdatum från respektive datumväljare och använder dessa datum tillsammans med en specifik bokningsrad för att uppdatera alla bokningsrader. Efter uppdatering visas en dialogruta som bekräftar den uppdaterade bokningen tillsammans med dess uppdaterade detaljer, inklusive det nya priset om det har justerats. Slutligen stängs det nuvarande fönstret.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Spara_För_Alla(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
@@ -54,7 +58,11 @@ namespace NetFramework
             MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokningsrad.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
             this.Close();
         }
-
+        /// <summary>
+        /// Metoden btn_Spara_För_En extraherar start- och slutdatum från respektive datumväljare och använder dessa datum tillsammans med en specifik bokningsrad för att uppdatera en enskild bokningsrad. Efter uppdatering visas en dialogruta som bekräftar den uppdaterade bokningen tillsammans med dess uppdaterade detaljer, inklusive det nya priset om det har justerats. Slutligen stängs det nuvarande fönstret.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Spara_För_En(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);

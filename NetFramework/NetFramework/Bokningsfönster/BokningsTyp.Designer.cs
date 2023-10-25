@@ -36,10 +36,10 @@
             // 
             // btnBefintlig
             // 
-            this.btnBefintlig.Location = new System.Drawing.Point(314, 173);
-            this.btnBefintlig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBefintlig.Location = new System.Drawing.Point(568, 308);
+            this.btnBefintlig.Margin = new System.Windows.Forms.Padding(2);
             this.btnBefintlig.Name = "btnBefintlig";
-            this.btnBefintlig.Size = new System.Drawing.Size(182, 65);
+            this.btnBefintlig.Size = new System.Drawing.Size(91, 34);
             this.btnBefintlig.TabIndex = 0;
             this.btnBefintlig.Text = "Befintlig kund";
             this.btnBefintlig.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@
             // 
             // btnNyKund
             // 
-            this.btnNyKund.Location = new System.Drawing.Point(314, 260);
-            this.btnNyKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNyKund.Location = new System.Drawing.Point(568, 353);
+            this.btnNyKund.Margin = new System.Windows.Forms.Padding(2);
             this.btnNyKund.Name = "btnNyKund";
-            this.btnNyKund.Size = new System.Drawing.Size(182, 62);
+            this.btnNyKund.Size = new System.Drawing.Size(91, 32);
             this.btnNyKund.TabIndex = 1;
             this.btnNyKund.Text = "Ny Kund";
             this.btnNyKund.UseVisualStyleBackColor = true;
@@ -61,19 +61,18 @@
             this.lblTyp.AutoSize = true;
             this.lblTyp.BackColor = System.Drawing.Color.Transparent;
             this.lblTyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTyp.Location = new System.Drawing.Point(228, 96);
-            this.lblTyp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTyp.Location = new System.Drawing.Point(525, 268);
+            this.lblTyp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTyp.Name = "lblTyp";
-            this.lblTyp.Size = new System.Drawing.Size(422, 63);
+            this.lblTyp.Size = new System.Drawing.Size(213, 31);
             this.lblTyp.TabIndex = 2;
             this.lblTyp.Text = "Välj typ av kund:";
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(24, 390);
-            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnTillbaka.Location = new System.Drawing.Point(423, 421);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(172, 56);
+            this.btnTillbaka.Size = new System.Drawing.Size(86, 29);
             this.btnTillbaka.TabIndex = 3;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -81,16 +80,16 @@
             // 
             // BokningsTyp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(872, 469);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.lblTyp);
             this.Controls.Add(this.btnNyKund);
             this.Controls.Add(this.btnBefintlig);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BokningsTyp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BokningsTyp";

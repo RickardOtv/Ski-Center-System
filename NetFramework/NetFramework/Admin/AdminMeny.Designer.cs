@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnHanteraAnställd = new System.Windows.Forms.Button();
             this.btnSkapaAnställd = new System.Windows.Forms.Button();
+            this.btnTillbaka = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAnvandarnamn
@@ -59,7 +60,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(284, 32);
+            this.label1.Location = new System.Drawing.Point(529, 285);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 39);
@@ -68,7 +69,7 @@
             // 
             // btnHanteraAnställd
             // 
-            this.btnHanteraAnställd.Location = new System.Drawing.Point(204, 142);
+            this.btnHanteraAnställd.Location = new System.Drawing.Point(449, 395);
             this.btnHanteraAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHanteraAnställd.Name = "btnHanteraAnställd";
             this.btnHanteraAnställd.Size = new System.Drawing.Size(364, 34);
@@ -79,7 +80,7 @@
             // 
             // btnSkapaAnställd
             // 
-            this.btnSkapaAnställd.Location = new System.Drawing.Point(204, 214);
+            this.btnSkapaAnställd.Location = new System.Drawing.Point(449, 467);
             this.btnSkapaAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSkapaAnställd.Name = "btnSkapaAnställd";
             this.btnSkapaAnställd.Size = new System.Drawing.Size(364, 34);
@@ -88,18 +89,31 @@
             this.btnSkapaAnställd.UseVisualStyleBackColor = true;
             this.btnSkapaAnställd.Click += new System.EventHandler(this.btnSkapaAnställd_Click);
             // 
+            // btnTillbaka
+            // 
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 771);
+            this.btnTillbaka.Name = "btnTillbaka";
+            this.btnTillbaka.Size = new System.Drawing.Size(63, 25);
+            this.btnTillbaka.TabIndex = 15;
+            this.btnTillbaka.Text = "Tillbaka";
+            this.btnTillbaka.UseVisualStyleBackColor = true;
+            this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
+            // 
             // AdminMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnSkapaAnställd);
             this.Controls.Add(this.btnHanteraAnställd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Name = "AdminMeny";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMeny";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,5 +127,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHanteraAnställd;
         private System.Windows.Forms.Button btnSkapaAnställd;
+        private System.Windows.Forms.Button btnTillbaka;
     }
 }

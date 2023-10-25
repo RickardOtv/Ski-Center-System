@@ -65,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 9);
+            this.label1.Location = new System.Drawing.Point(480, 182);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 39);
@@ -75,7 +75,7 @@
             // gridAnställda
             // 
             this.gridAnställda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAnställda.Location = new System.Drawing.Point(90, 146);
+            this.gridAnställda.Location = new System.Drawing.Point(341, 319);
             this.gridAnställda.Name = "gridAnställda";
             this.gridAnställda.RowHeadersVisible = false;
             this.gridAnställda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -84,7 +84,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(16, 389);
+            this.btnTillbaka.Location = new System.Drawing.Point(267, 562);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(63, 25);
             this.btnTillbaka.TabIndex = 14;
@@ -94,7 +94,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(621, 360);
+            this.btnTaBort.Location = new System.Drawing.Point(872, 533);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(63, 25);
             this.btnTaBort.TabIndex = 16;
@@ -104,7 +104,7 @@
             // 
             // btnÄndra
             // 
-            this.btnÄndra.Location = new System.Drawing.Point(542, 360);
+            this.btnÄndra.Location = new System.Drawing.Point(793, 533);
             this.btnÄndra.Name = "btnÄndra";
             this.btnÄndra.Size = new System.Drawing.Size(63, 25);
             this.btnÄndra.TabIndex = 17;
@@ -116,7 +116,7 @@
             // 
             this.lblPersonNr.AutoSize = true;
             this.lblPersonNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersonNr.Location = new System.Drawing.Point(87, 104);
+            this.lblPersonNr.Location = new System.Drawing.Point(338, 277);
             this.lblPersonNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonNr.Name = "lblPersonNr";
             this.lblPersonNr.Size = new System.Drawing.Size(103, 13);
@@ -125,7 +125,7 @@
             // 
             // txtBoxAnställningsNr
             // 
-            this.txtBoxAnställningsNr.Location = new System.Drawing.Point(90, 119);
+            this.txtBoxAnställningsNr.Location = new System.Drawing.Point(341, 292);
             this.txtBoxAnställningsNr.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxAnställningsNr.Name = "txtBoxAnställningsNr";
             this.txtBoxAnställningsNr.Size = new System.Drawing.Size(171, 20);
@@ -133,7 +133,7 @@
             // 
             // btnSökAnställningsNr
             // 
-            this.btnSökAnställningsNr.Location = new System.Drawing.Point(264, 114);
+            this.btnSökAnställningsNr.Location = new System.Drawing.Point(515, 287);
             this.btnSökAnställningsNr.Margin = new System.Windows.Forms.Padding(2);
             this.btnSökAnställningsNr.Name = "btnSökAnställningsNr";
             this.btnSökAnställningsNr.Size = new System.Drawing.Size(61, 27);
@@ -146,9 +146,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(729, 426);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.lblPersonNr);
             this.Controls.Add(this.txtBoxAnställningsNr);
             this.Controls.Add(this.btnSökAnställningsNr);
@@ -160,6 +160,7 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Name = "AnställdaRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnställdaRegister";
             this.Load += new System.EventHandler(this.AnställdaRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAnställda)).EndInit();

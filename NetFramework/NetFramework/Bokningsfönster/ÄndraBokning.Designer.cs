@@ -46,7 +46,7 @@
             // 
             // btn_Tillbaka
             // 
-            this.btn_Tillbaka.Location = new System.Drawing.Point(12, 228);
+            this.btn_Tillbaka.Location = new System.Drawing.Point(531, 460);
             this.btn_Tillbaka.Name = "btn_Tillbaka";
             this.btn_Tillbaka.Size = new System.Drawing.Size(75, 23);
             this.btn_Tillbaka.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // btn_Spara
             // 
-            this.btn_Spara.Location = new System.Drawing.Point(153, 178);
+            this.btn_Spara.Location = new System.Drawing.Point(672, 410);
             this.btn_Spara.Name = "btn_Spara";
             this.btn_Spara.Size = new System.Drawing.Size(75, 23);
             this.btn_Spara.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.label_TillDatum.AutoSize = true;
             this.label_TillDatum.BackColor = System.Drawing.Color.White;
-            this.label_TillDatum.Location = new System.Drawing.Point(103, 109);
+            this.label_TillDatum.Location = new System.Drawing.Point(622, 341);
             this.label_TillDatum.Name = "label_TillDatum";
             this.label_TillDatum.Size = new System.Drawing.Size(0, 13);
             this.label_TillDatum.TabIndex = 6;
@@ -77,7 +77,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(16, 86);
+            this.label6.Location = new System.Drawing.Point(535, 318);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 7;
@@ -87,7 +87,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(16, 109);
+            this.label7.Location = new System.Drawing.Point(535, 341);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 8;
@@ -105,7 +105,7 @@
             // 
             // startDatePicker
             // 
-            this.startDatePicker.Location = new System.Drawing.Point(96, 86);
+            this.startDatePicker.Location = new System.Drawing.Point(615, 318);
             this.startDatePicker.Name = "startDatePicker";
             this.startDatePicker.Size = new System.Drawing.Size(132, 20);
             this.startDatePicker.TabIndex = 13;
@@ -113,7 +113,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(96, 112);
+            this.endDatePicker.Location = new System.Drawing.Point(615, 344);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(132, 20);
             this.endDatePicker.TabIndex = 14;
@@ -130,7 +130,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(10, 39);
+            this.label1.Location = new System.Drawing.Point(529, 271);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 17;
@@ -138,7 +138,7 @@
             // 
             // textBox_BokningsNr
             // 
-            this.textBox_BokningsNr.Location = new System.Drawing.Point(110, 36);
+            this.textBox_BokningsNr.Location = new System.Drawing.Point(629, 268);
             this.textBox_BokningsNr.Multiline = true;
             this.textBox_BokningsNr.Name = "textBox_BokningsNr";
             this.textBox_BokningsNr.Size = new System.Drawing.Size(26, 20);
@@ -146,7 +146,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(153, 149);
+            this.button1.Location = new System.Drawing.Point(672, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
@@ -158,7 +158,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(6, 154);
+            this.label2.Location = new System.Drawing.Point(525, 386);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 13);
             this.label2.TabIndex = 20;
@@ -168,7 +168,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(6, 183);
+            this.label3.Location = new System.Drawing.Point(525, 415);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 13);
             this.label3.TabIndex = 21;
@@ -178,8 +178,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
-            this.ClientSize = new System.Drawing.Size(246, 263);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -195,6 +195,7 @@
             this.Controls.Add(this.btn_Spara);
             this.Controls.Add(this.btn_Tillbaka);
             this.Name = "ÄndraBokning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraBokning";
             this.ResumeLayout(false);
             this.PerformLayout();

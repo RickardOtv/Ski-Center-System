@@ -13,15 +13,14 @@ using System.Windows.Forms;
 
 namespace NetFramework
 {
-    public partial class ÄndraKund : Form
+    public partial class ÄndraFöretagsKund : Form
     {
         UnitOfWork unitOfWork = new UnitOfWork();
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Kund valdKund;
-        PrivatKundMaxbelopp globalData = PrivatKundMaxbelopp.Instance;
 
-        public ÄndraKund(LoggaIn loggaIn, Kontroller kontroller, Kund kund)
+        public ÄndraFöretagsKund(LoggaIn loggaIn, Kontroller kontroller, Kund kund)
         {
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
@@ -33,6 +32,7 @@ namespace NetFramework
             txtBoxAdress.Text = kund.Adress.ToString();
             txtBoxEmail.Text = kund.Email.ToString();
             txtBoxOrt.Text = kund.PostOrt.ToString();
+            txtBoxKredit.Text = kund.Maxbeloppskreditgräns.ToString();
             txtBoxPostNr.Text = kund.PostNr.ToString();
             txtBoxTelefonNr.Text = kund.Telefonnummer.ToString();
         }
@@ -42,8 +42,13 @@ namespace NetFramework
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
+
+        private void btnTillbaka_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         /// <summary>
-        /// Denna metod btnSpara_Click sparar ändringar som gjorts i informationen för en kund. Den hämtar de nya värdena från textfälten för personnummer, namn, adress, e-post, postort, postnummer och telefonnummer. Sedan uppdateras kundens information med de nya värdena genom att anropa metoden ÄndraKund i kontroller med de uppdaterade värdena. Efter att ändringarna har sparats visas en bekräftelsemeddelande och fönstret stängs.
+        /// Denna metod btnSpara_Click sparar ändringar som gjorts i informationen för en kund. Den hämtar de nya värdena från textfälten för personnummer, namn, adress, e-post, postort, kreditgräns, postnummer och telefonnummer. Sedan uppdateras kundens information med de nya värdena genom att anropa metoden ÄndraKund i kontroller med de uppdaterade värdena. Efter att ändringarna har sparats visas en bekräftelsemeddelande och fönstret stängs.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -54,6 +59,7 @@ namespace NetFramework
             string nyAdress = txtBoxAdress.Text;
             string nyEmail = txtBoxEmail.Text;
             string nyPostOrt = txtBoxOrt.Text;
+            int nyKreditgrans = int.Parse(txtBoxKredit.Text);
             string nyPostNr = txtBoxPostNr.Text;
             string nyTelefonNr = txtBoxTelefonNr.Text;
 
@@ -62,21 +68,14 @@ namespace NetFramework
             valdKund.Adress = nyAdress;
             valdKund.Email = nyEmail;
             valdKund.PostOrt = nyPostOrt;
+            valdKund.Maxbeloppskreditgräns = nyKreditgrans;
             valdKund.PostNr = nyPostNr;
             valdKund.Telefonnummer = nyTelefonNr;
-            kontroller.ÄndraKund(nyttPersonNr,nyttNamn, nyTelefonNr, nyPostNr, nyPostOrt, "Privat", nyAdress, nyEmail, globalData.GlobalVariable, valdKund);
-            
+            kontroller.ÄndraKund(nyttPersonNr, nyttNamn, nyTelefonNr, nyPostNr, nyPostOrt, "Företag", nyAdress, nyEmail, nyKreditgrans, valdKund);
+
             MessageBox.Show("Kund uppdaterad!");
-            
-            this.Close();
-            
-        }
 
-        private void btnTillbaka_Click(object sender, EventArgs e)
-        {
             this.Close();
         }
-
-        
     }
 }

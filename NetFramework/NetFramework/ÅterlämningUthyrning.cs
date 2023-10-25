@@ -54,7 +54,9 @@ namespace NetFramework
             GridÅterlämning.Columns["Till"].DisplayIndex = 3;
             GridÅterlämning.Columns["UthyrningsID"].DisplayIndex = 4;
         }
-
+        /// <summary>
+        /// Metoden HittaRättUthyrningsID kontrollerar om det angivna ID:t är en giltig heltalsvärde och uppdaterar uthyrningsraderna med det angivna ID:et om det är giltigt. Om det angivna ID:t inte är ett giltigt heltal, visas ett felmeddelande som uppmanar användaren att ange siffror.
+        /// </summary>
         private void HittaRättUthyrningsID()
         {
             if (int.TryParse(TextBoxUthyrningsID.Text, out int angivetID))
@@ -71,7 +73,11 @@ namespace NetFramework
         {
             HittaRättUthyrningsID();
         }
-
+        /// <summary>
+        /// Metoden hanterar händelsen när användaren klickar på en knapp för att återlämna en vara. Den kontrollerar om en rad är markerad i griden och frågar användaren om de är säkra på att de vill återlämna varan. Om användaren bekräftar återlämningen tas den valda raden bort och uthyrningsraderna uppdateras med det aktuella uthyrnings-ID:t. Om ingen rad är vald visas en varning för att välja en rad.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ÅterlämnaBtn_Click(object sender, EventArgs e)
         {
             if (GridÅterlämning.SelectedRows.Count > 0)
@@ -81,6 +87,16 @@ namespace NetFramework
                 if (result == DialogResult.Yes)
                 {
                     valdRad = GridÅterlämning.SelectedRows[0].DataBoundItem as Uthyrningsrad;
+                    
+                    //Hämtar rätt info för återlämning
+                    Uthyrning valdUthyrning = kontroller.HittaUthyrningFrånRad(valdRad.UthyrningsID);
+                    Faktura valdFaktura = kontroller.HittaFaktura(valdUthyrning.BokningsID);
+                    string typ = kontroller.HämtaUthyrningsTyp(valdRad.UtrustningsID);
+                    decimal pris = kontroller.KollaUthyrningsPris(valdRad.Från, valdRad.Till, typ);
+                    valdFaktura.TotalPris = valdFaktura.TotalPris + (float)pris;
+                    
+                    //Visar klar faktura osv
+                    MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \nHar nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsID}\n RadID: {valdRad.UthyrningsradID}\nFrån {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     kontroller.TaBortUthyrningsRad(valdRad);
                     HittaRättUthyrningsID();
                 }

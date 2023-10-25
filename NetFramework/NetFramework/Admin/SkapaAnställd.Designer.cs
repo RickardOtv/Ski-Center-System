@@ -46,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(241, 88);
+            this.label1.Location = new System.Drawing.Point(493, 285);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 39);
             this.label1.TabIndex = 60;
@@ -54,7 +54,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(200, 271);
+            this.btnTillbaka.Location = new System.Drawing.Point(452, 468);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(71, 25);
@@ -65,7 +65,7 @@
             // 
             // btnSpara
             // 
-            this.btnSpara.Location = new System.Drawing.Point(459, 271);
+            this.btnSpara.Location = new System.Drawing.Point(711, 468);
             this.btnSpara.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(71, 25);
@@ -82,7 +82,7 @@
             "Uthyrare",
             "Admin",
             "Marknad"});
-            this.cmbBehörighet.Location = new System.Drawing.Point(384, 211);
+            this.cmbBehörighet.Location = new System.Drawing.Point(636, 408);
             this.cmbBehörighet.Name = "cmbBehörighet";
             this.cmbBehörighet.Size = new System.Drawing.Size(199, 21);
             this.cmbBehörighet.TabIndex = 68;
@@ -93,7 +93,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(381, 211);
+            this.label4.Location = new System.Drawing.Point(633, 408);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
@@ -104,7 +104,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(381, 180);
+            this.label3.Location = new System.Drawing.Point(633, 377);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
@@ -112,7 +112,7 @@
             // 
             // txtBoxLösenord
             // 
-            this.txtBoxLösenord.Location = new System.Drawing.Point(161, 211);
+            this.txtBoxLösenord.Location = new System.Drawing.Point(413, 408);
             this.txtBoxLösenord.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxLösenord.Name = "txtBoxLösenord";
             this.txtBoxLösenord.Size = new System.Drawing.Size(199, 20);
@@ -123,7 +123,7 @@
             // 
             // txtBoxEfternamn
             // 
-            this.txtBoxEfternamn.Location = new System.Drawing.Point(384, 177);
+            this.txtBoxEfternamn.Location = new System.Drawing.Point(636, 374);
             this.txtBoxEfternamn.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxEfternamn.Name = "txtBoxEfternamn";
             this.txtBoxEfternamn.Size = new System.Drawing.Size(199, 20);
@@ -134,7 +134,7 @@
             // 
             // txtBoxFörnamn
             // 
-            this.txtBoxFörnamn.Location = new System.Drawing.Point(161, 178);
+            this.txtBoxFörnamn.Location = new System.Drawing.Point(413, 375);
             this.txtBoxFörnamn.Margin = new System.Windows.Forms.Padding(1);
             this.txtBoxFörnamn.Name = "txtBoxFörnamn";
             this.txtBoxFörnamn.Size = new System.Drawing.Size(199, 20);
@@ -165,9 +165,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.cmbBehörighet);
@@ -180,6 +180,7 @@
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.label1);
             this.Name = "SkapaAnställd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SkapaAnställd";
             this.ResumeLayout(false);
             this.PerformLayout();

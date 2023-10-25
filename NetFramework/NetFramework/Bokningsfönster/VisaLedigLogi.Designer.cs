@@ -44,7 +44,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(117, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(371, 233);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -57,7 +57,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(117, 311);
+            this.button1.Location = new System.Drawing.Point(371, 468);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 35);
             this.button1.TabIndex = 3;
@@ -67,14 +67,14 @@
             // 
             // startDatePicker
             // 
-            this.startDatePicker.Location = new System.Drawing.Point(117, 53);
+            this.startDatePicker.Location = new System.Drawing.Point(371, 210);
             this.startDatePicker.Name = "startDatePicker";
             this.startDatePicker.Size = new System.Drawing.Size(200, 20);
             this.startDatePicker.TabIndex = 6;
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(467, 53);
+            this.endDatePicker.Location = new System.Drawing.Point(721, 210);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(200, 20);
             this.endDatePicker.TabIndex = 7;
@@ -98,7 +98,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(117, 353);
+            this.button2.Location = new System.Drawing.Point(371, 510);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 37);
             this.button2.TabIndex = 13;
@@ -108,7 +108,7 @@
             // 
             // TillbakaKnapp
             // 
-            this.TillbakaKnapp.Location = new System.Drawing.Point(13, 410);
+            this.TillbakaKnapp.Location = new System.Drawing.Point(267, 567);
             this.TillbakaKnapp.Name = "TillbakaKnapp";
             this.TillbakaKnapp.Size = new System.Drawing.Size(99, 28);
             this.TillbakaKnapp.TabIndex = 14;
@@ -121,7 +121,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(156, 35);
+            this.label1.Location = new System.Drawing.Point(410, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 14);
             this.label1.TabIndex = 15;
@@ -132,7 +132,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(530, 37);
+            this.label2.Location = new System.Drawing.Point(784, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 14);
             this.label2.TabIndex = 16;
@@ -142,9 +142,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TillbakaKnapp);
@@ -156,6 +156,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Name = "VisaLedigLogi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lediga logialternativ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

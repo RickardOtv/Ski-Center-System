@@ -67,7 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, 6);
+            this.label1.Location = new System.Drawing.Point(510, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 39);
             this.label1.TabIndex = 10;
@@ -75,7 +75,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(641, 362);
+            this.btnTaBort.Location = new System.Drawing.Point(860, 539);
             this.btnTaBort.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(63, 25);
@@ -86,7 +86,7 @@
             // 
             // btnAndra
             // 
-            this.btnAndra.Location = new System.Drawing.Point(563, 362);
+            this.btnAndra.Location = new System.Drawing.Point(782, 539);
             this.btnAndra.Margin = new System.Windows.Forms.Padding(2);
             this.btnAndra.Name = "btnAndra";
             this.btnAndra.Size = new System.Drawing.Size(63, 25);
@@ -97,7 +97,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(12, 414);
+            this.btnTillbaka.Location = new System.Drawing.Point(231, 591);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(63, 25);
@@ -109,7 +109,7 @@
             // gridKunder
             // 
             this.gridKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridKunder.Location = new System.Drawing.Point(88, 131);
+            this.gridKunder.Location = new System.Drawing.Point(307, 308);
             this.gridKunder.Margin = new System.Windows.Forms.Padding(2);
             this.gridKunder.MultiSelect = false;
             this.gridKunder.Name = "gridKunder";
@@ -122,7 +122,7 @@
             // 
             // btnSokPersonNr
             // 
-            this.btnSokPersonNr.Location = new System.Drawing.Point(262, 99);
+            this.btnSokPersonNr.Location = new System.Drawing.Point(481, 276);
             this.btnSokPersonNr.Margin = new System.Windows.Forms.Padding(2);
             this.btnSokPersonNr.Name = "btnSokPersonNr";
             this.btnSokPersonNr.Size = new System.Drawing.Size(61, 27);
@@ -135,7 +135,7 @@
             // 
             this.lblNamn.AutoSize = true;
             this.lblNamn.BackColor = System.Drawing.Color.Transparent;
-            this.lblNamn.Location = new System.Drawing.Point(85, 48);
+            this.lblNamn.Location = new System.Drawing.Point(304, 225);
             this.lblNamn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNamn.Name = "lblNamn";
             this.lblNamn.Size = new System.Drawing.Size(38, 13);
@@ -145,7 +145,7 @@
             // 
             // txtBoxNamn
             // 
-            this.txtBoxNamn.Location = new System.Drawing.Point(88, 63);
+            this.txtBoxNamn.Location = new System.Drawing.Point(307, 240);
             this.txtBoxNamn.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxNamn.Name = "txtBoxNamn";
             this.txtBoxNamn.Size = new System.Drawing.Size(171, 20);
@@ -154,7 +154,7 @@
             // 
             // txtBoxPersonNr
             // 
-            this.txtBoxPersonNr.Location = new System.Drawing.Point(88, 104);
+            this.txtBoxPersonNr.Location = new System.Drawing.Point(307, 281);
             this.txtBoxPersonNr.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(171, 20);
@@ -165,7 +165,7 @@
             // 
             this.lblPersonNr.AutoSize = true;
             this.lblPersonNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersonNr.Location = new System.Drawing.Point(85, 89);
+            this.lblPersonNr.Location = new System.Drawing.Point(304, 266);
             this.lblPersonNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonNr.Name = "lblPersonNr";
             this.lblPersonNr.Size = new System.Drawing.Size(80, 13);
@@ -175,7 +175,7 @@
             // 
             // btnSokNamn
             // 
-            this.btnSokNamn.Location = new System.Drawing.Point(262, 58);
+            this.btnSokNamn.Location = new System.Drawing.Point(481, 235);
             this.btnSokNamn.Margin = new System.Windows.Forms.Padding(2);
             this.btnSokNamn.Name = "btnSokNamn";
             this.btnSokNamn.Size = new System.Drawing.Size(61, 27);
@@ -188,7 +188,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(660, 88);
+            this.button1.Location = new System.Drawing.Point(879, 265);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(44, 41);
@@ -202,9 +202,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetFramework.Properties.Resources.v1_txt2img_77f610f8_523e_4179_b8c4_568ee1e75053;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(723, 447);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSokNamn);
             this.Controls.Add(this.lblPersonNr);
@@ -221,6 +221,7 @@
             this.Controls.Add(this.lblAnstNr);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Kundregister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kundregister";
             this.Load += new System.EventHandler(this.Kundregister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).EndInit();

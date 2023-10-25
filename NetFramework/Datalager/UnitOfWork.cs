@@ -38,7 +38,6 @@ namespace Datalager
         public UnitOfWork() 
             : base("suht2304") 
         {
-            //ResetTable("LogiPris");
            //Reset();
            //Seed();
         }
@@ -97,7 +96,7 @@ namespace Datalager
             kunder.Add(kund1);
             SaveChanges();
         }
-
+        #region Metoder för hantering av databas
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -157,5 +156,6 @@ namespace Datalager
         {
             return base.GetHashCode();
         }
+        #endregion
     }
 }

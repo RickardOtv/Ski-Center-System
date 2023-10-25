@@ -75,6 +75,11 @@ namespace NetFramework
             txtBoxValdKund.Text = $"Vald Bokning: {valdBokning.BokningsID.ToString()}";
 
         }
+        /// <summary>
+        /// Metoden hanterar händelsen när användaren klickar på en knapp och lägger till en ny uthyrningsrad i systemet. Den väljer utrustningen baserat på den markerade raden i griden och de angivna datumgränserna. Den beräknar antalet dagar och kontrollerar villkoren för giltighet för att lägga till en uthyrningsrad. Om villkoren är uppfyllda skapas en ny uthyrningsrad och rutorna uppdateras.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLäggTill_Click(object sender, EventArgs e)
         {
             valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
@@ -140,7 +145,11 @@ namespace NetFramework
 
 
         #endregion
-
+        /// <summary>
+        /// Metoden hanterar händelsen när användaren klickar på en knapp för att gå tillbaka. Om en ny uthyrning har påbörjats, uppmanas användaren att bekräfta avbrytandet av uthyrningen. Om användaren bekräftar avbrytandet tas uthyrningen bort och fönstret stängs. Om användaren väljer att inte avbryta eller om ingen uthyrning pågår, stängs fönstret utan att några ändringar görs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             if (nyUthyrning != null)
@@ -166,7 +175,11 @@ namespace NetFramework
         {
 
         }
-        
+        /// <summary>
+        /// Metoden beräknar det totala priset för hela uthyrningen genom att iterera över varje rad i griden och sammanställa priset för varje uthyrningsrad baserat på uthyrningens typ och perioden den täcker. Den hanterar även vissa begränsningar för antalet dagar för vissa typer av uthyrningar och visar totalpriset för hela uthyrningen innan fönstret stängs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnKlar_Click(object sender, EventArgs e)
         {
             decimal totalpris = 0;
@@ -196,6 +209,11 @@ namespace NetFramework
             MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
             this.Close();
         }
+        /// <summary>
+        /// Metoden kontrollerar priset för uthyrningen baserat på de angivna datumen och den valda utrustningen. Den hanterar felaktiga val av utrustning eller om ingen utrustning har valts och visar det beräknade priset för uthyrningen innan den stängs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
             DateTime från = DateTime.Parse(dateFrån.Text);

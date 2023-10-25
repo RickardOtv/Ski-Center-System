@@ -81,17 +81,19 @@ namespace NetFramework
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
             var rader = kontroller.HämtaUthyrningsRad(valdUthyrning.UthyrningsID);
-
             gridUthyrningsRader.DataSource = rader;
             RefreshRader();
-           // RefreshLektioner();
         }
 
         private void VisaUthyrningar_Load(object sender, EventArgs e)
         {
             RefreshUthyrningar();
         }
-
+        /// <summary>
+        /// Metoden hanterar händelsen när användaren klickar på en knapp och söker efter matchande uthyrnings-ID i en databas. Om ett matchande uthyrnings-ID hittas, uppdateras griden med de matchande uthyrningarna, annars visas ett meddelande som uppmanar användaren att försöka igen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSök_Click(object sender, EventArgs e)
         {
             int matadUthyrningsID = int.Parse(txtBoxUthyrningsID.Text);
@@ -107,7 +109,11 @@ namespace NetFramework
             }
 
         }
-
+        /// <summary>
+        /// Metoden hanterar händelsen när användaren klickar på en knapp för att ta bort en uthyrning. Den markerar den valda uthyrningen och frågar användaren om de är säkra på att de vill ta bort den. Om användaren bekräftar borttagningen tas uthyrningen bort och griden uppdateras, annars görs ingen åtgärd.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTaBort_Click(object sender, EventArgs e)
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
@@ -125,8 +131,6 @@ namespace NetFramework
 
             }
         }
-
-        
 
         private void txtBoxUthyrningsID_TextChanged(object sender, EventArgs e)
         {

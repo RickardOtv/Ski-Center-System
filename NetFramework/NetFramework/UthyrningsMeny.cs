@@ -35,7 +35,11 @@ namespace NetFramework
             Close();
         }
 
-
+        /// <summary>
+        /// Skapar en ny instans av ett SkapaUthyrning-fönster
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSkapaUthyrning_Click(object sender, EventArgs e)
         {
             SkapaUthyrning skapaUthyrning = new SkapaUthyrning(loggaIn, kontroller);
@@ -47,14 +51,22 @@ namespace NetFramework
         {
 
         }
-
+        /// <summary>
+        /// Skapar en ny instans av ett fönster för Återlämning av uthyrning
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnÅterlämning_Click(object sender, EventArgs e)
         {
             ÅterlämningUthyrning återlämningUthyrning = new ÅterlämningUthyrning(loggaIn, kontroller);
             återlämningUthyrning.Show();
             
         }
-
+        /// <summary>
+        /// Skapar en ny instans av ett fönster för Visa Uthyrningar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVisaUthyrningar_Click(object sender, EventArgs e)
         {
             VisaUthyrningar visaUthyrningar = new VisaUthyrningar(loggaIn, kontroller);
