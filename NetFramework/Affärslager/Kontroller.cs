@@ -775,13 +775,17 @@ namespace Affärslager
             try
             {
                 // Regular expression pattern for postal code validation with Swedish postal code format
-                string pattern = @"^[a-zA-Z\d\s\-]+$";
+                string pattern = @"^\d{5}$";
                 return Regex.IsMatch(postalCode, pattern);
             }
             catch
             {
                 return false;
             }
+        }
+        public bool IsValidIntegerForPrecent(int value)
+        {
+            return (value >= 0 && value <= 100);
         }
 
         #endregion

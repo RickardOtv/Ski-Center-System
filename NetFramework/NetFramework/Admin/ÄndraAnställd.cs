@@ -41,22 +41,39 @@ namespace NetFramework
         }
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            string nyttFörnamn = txtBoxFörnamn.Text;
-            string nyttEfternamn = txtBoxEfternamn.Text;
-            string nyttLösenord = txtBoxLösenord.Text;
-            string nyBehörighet = cmbBehörighet.Text;
-         
+            if (!kontroller.IsValidName(txtBoxFörnamn.Text) || string.IsNullOrWhiteSpace(txtBoxFörnamn.Text))
+            {
+                MessageBox.Show("Ange ett giltigt Förnamn", "Ogiltig Förnamn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxFörnamn.Focus();
+            }
+            else if (!kontroller.IsValidName(txtBoxEfternamn.Text) || string.IsNullOrWhiteSpace(txtBoxEfternamn.Text))
+            {
+                MessageBox.Show("Ange en giltig Efternamn", "Ogiltig Efternamn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxEfternamn.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(txtBoxLösenord.Text))
+            {
+                MessageBox.Show("Ange en giltig Lösenord", "Ogiltig Lösenord", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxLösenord.Focus();
+            }
+            else
+            {
+                string nyttFörnamn = txtBoxFörnamn.Text;
+                string nyttEfternamn = txtBoxEfternamn.Text;
+                string nyttLösenord = txtBoxLösenord.Text;
+                string nyBehörighet = cmbBehörighet.Text;
 
-            valdAnställd.Förnamn = nyttFörnamn;
-            valdAnställd.Efternamn = nyttEfternamn;
-            valdAnställd.Lösenord = nyttLösenord;
-            valdAnställd.Behörighet = nyBehörighet;
-            
-            kontroller.ÄndraAnställd(nyttFörnamn, nyttEfternamn, nyttLösenord, nyBehörighet, valdAnställd);
+                valdAnställd.Förnamn = nyttFörnamn;
+                valdAnställd.Efternamn = nyttEfternamn;
+                valdAnställd.Lösenord = nyttLösenord;
+                valdAnställd.Behörighet = nyBehörighet;
 
-            MessageBox.Show("Anställd uppdaterad!");
+                kontroller.ÄndraAnställd(nyttFörnamn, nyttEfternamn, nyttLösenord, nyBehörighet, valdAnställd);
 
-            this.Close();
+                MessageBox.Show("Anställd uppdaterad!");
+
+                this.Close();
+            }
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)

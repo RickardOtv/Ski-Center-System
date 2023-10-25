@@ -42,12 +42,19 @@ namespace NetFramework.Marknadsfönster
         {
             if (int.TryParse(textBox_NyMoms.Text, out nyMoms) /*|| string.IsNullOrEmpty(textBox_NyRabatt.Text)*/)
             {
-                kontroller.ÄndraFakturaMoms(valdFaktura, nyMoms);
-                Close();
+                if (kontroller.IsValidIntegerForPrecent(nyMoms))
+                {
+                    kontroller.ÄndraFakturaMoms(valdFaktura, nyMoms);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Det nya värdet måste vara mellan 0 till 100, tack!");
+                }
             }
             else
             {
-                MessageBox.Show("Matta in nya värden först, tack!");
+                MessageBox.Show("Matta in det nya värdet först, tack!");
             }
         }
     }

@@ -78,6 +78,7 @@
             this.gridAnställda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAnställda.Location = new System.Drawing.Point(341, 319);
             this.gridAnställda.Name = "gridAnställda";
+            this.gridAnställda.ReadOnly = true;
             this.gridAnställda.RowHeadersVisible = false;
             this.gridAnställda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridAnställda.Size = new System.Drawing.Size(594, 208);

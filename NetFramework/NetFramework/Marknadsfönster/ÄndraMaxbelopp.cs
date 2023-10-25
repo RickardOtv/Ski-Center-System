@@ -47,8 +47,14 @@ namespace NetFramework.Marknadsfönster
             // Access and modify the global variable
             if(int.TryParse(textBox_nyttMaxbelopp.Text, out nyttMaxbelopp) || string.IsNullOrEmpty(textBox_nyttMaxbelopp.Text))
             {
-                globalData.GlobalVariable = nyttMaxbelopp;
-                Close();
+                if(nyttMaxbelopp >= 0)
+                {
+                    globalData.GlobalVariable = nyttMaxbelopp;
+                    Close();
+                }else
+                {
+                    MessageBox.Show("Maxbelopp får inte vara ett negativt värde, tack!");
+                }
             } else
             {
                 MessageBox.Show("Matta in ett nytt maxbelopp först, tack!");

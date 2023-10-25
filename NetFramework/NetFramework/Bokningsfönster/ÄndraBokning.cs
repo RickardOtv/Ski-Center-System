@@ -54,9 +54,23 @@ namespace NetFramework
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);
-            kontroller.ÄndraAllaBokningsRader(startDate, endDate, valdBokningsrad);
-            MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokningsrad.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
-            this.Close();
+
+            if (startDatePicker.Text == endDatePicker.Text)
+            {
+                MessageBox.Show($"Från datum och Till datum får inte vara samma");
+            }
+            else if (startDate > endDate)
+            {
+
+                MessageBox.Show($"Från Datum måste vara tidigare än Till Datum");
+
+            }
+            else
+            {
+                kontroller.ÄndraAllaBokningsRader(startDate, endDate, valdBokningsrad);
+                MessageBox.Show($"Bokning Uppdaterad! \n BokningsID: {valdBokningsrad.BokningsID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}");
+                this.Close();
+            }
         }
         /// <summary>
         /// Metoden btn_Spara_För_En extraherar start- och slutdatum från respektive datumväljare och använder dessa datum tillsammans med en specifik bokningsrad för att uppdatera en enskild bokningsrad. Efter uppdatering visas en dialogruta som bekräftar den uppdaterade bokningen tillsammans med dess uppdaterade detaljer, inklusive det nya priset om det har justerats. Slutligen stängs det nuvarande fönstret.
@@ -67,9 +81,23 @@ namespace NetFramework
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);
-            kontroller.ÄndraEnBokningsRad(startDate, endDate, valdBokningsrad);
-            MessageBox.Show($"Bokning Uppdaterad! \n BokningsRadID: {valdBokningsrad.BokningsradID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}\n Nytt Pris: Inte Fixad");
-            this.Close();
+
+            if (startDatePicker.Text == endDatePicker.Text)
+            {
+                MessageBox.Show($"Från datum och Till datum får inte vara samma");
+            }
+            else if (startDate > endDate)
+            {
+
+                MessageBox.Show($"Från Datum måste vara tidigare än Till Datum");
+
+            }
+            else
+            {
+                kontroller.ÄndraEnBokningsRad(startDate, endDate, valdBokningsrad);
+                MessageBox.Show($"Bokning Uppdaterad! \n BokningsRadID: {valdBokningsrad.BokningsradID}\n Nytt Från Datum: {startDate.ToString("yyyy-MM-dd")}\n Nytt Till Datum: {endDate.ToString("yyyy-MM-dd")}");
+                this.Close();
+            }
         }
     }
 }

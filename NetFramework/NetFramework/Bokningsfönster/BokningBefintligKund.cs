@@ -244,13 +244,20 @@ namespace NetFramework
                     {
                         if(dateFrån.Text != dateTill.Text)
                         {
-                            var valdLogi = ledigaLogier[rowIndex];
-                            DateTime startDate = DateTime.Parse(dateFrån.Text);
-                            DateTime endDate = DateTime.Parse(dateTill.Text);
-                            Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
-                            MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
-                            RefreshRader();
-                            RefreshLogi();
+                            if(DateTime.Parse(dateFrån.Text) < DateTime.Parse(dateTill.Text))
+                            {
+                                var valdLogi = ledigaLogier[rowIndex];
+                                DateTime startDate = DateTime.Parse(dateFrån.Text);
+                                DateTime endDate = DateTime.Parse(dateTill.Text);
+                                Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
+                                MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+                                RefreshRader();
+                                RefreshLogi();
+                            } else
+                            {
+                                MessageBox.Show("Från datum måste vara större än Till datum.");
+                            }
+
                         } else
                         {
                             MessageBox.Show("Kan inte ha samma Från och Till datum.");
@@ -299,50 +306,52 @@ namespace NetFramework
         {
             if (nyBokning != null)
             {
-                if (gridRader.SelectedRows.Count > 0)
+            if (gridRader.SelectedRows.Count > 0)
+            {
+                decimal totalSumma = 0;
+                int momsSatts = 0;
+                int rabattsatts = 0;
+                float slutPrisInkMoms;
+                DateTime minDatum = new DateTime(3008, 1, 1);
+                DateTime maxDatum = new DateTime(2008, 1, 1);
+
+                foreach (DataGridViewRow row in gridRader.Rows)
                 {
-                    decimal totalSumma = 0;
-                    int momsSatts = 0;
-                    int rabattsatts = 0;
-                    float slutPrisInkMoms;
-                    DateTime minDatum = new DateTime(3008, 1, 1); 
-                    DateTime maxDatum = new DateTime(2008, 1, 1);
-
-                    foreach (DataGridViewRow row in gridRader.Rows)
+                    if (row.Tag is Bokningsrad bokningsrad)
                     {
-                        if (row.Tag is Bokningsrad bokningsrad)
-                        {
-                            // Call your method on the Bokningsrad object
-                            Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+                        // Call your method on the Bokningsrad object
+                        Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
 
-                            //Något gör så att det blir en extra dag, därför tar jag bort den här
-                            DateTime newTillDate = bokningsrad.Till.AddDays(-1);
-                            decimal pris = kontroller.KollaPris(bokningsrad.Från, newTillDate, ettLogi.Typ);
-                            totalSumma += pris;
+                        //Något gör så att det blir en extra dag, därför tar jag bort den här
+                        DateTime newTillDate = bokningsrad.Till.AddDays(-1);
+                        decimal pris = kontroller.KollaPris(bokningsrad.Från, newTillDate, ettLogi.Typ);
+                        totalSumma += pris;
                             if(minDatum > bokningsrad.Från)
-                            {
-                                minDatum = bokningsrad.Från;
-                            }
-                            if (maxDatum < bokningsrad.Till) 
-                            {
-                                maxDatum = bokningsrad.Till;
-                            }
+                        {
+                            minDatum = bokningsrad.Från;
+                        }
+                        if (maxDatum < bokningsrad.Till)
+                        {
+                            maxDatum = bokningsrad.Till;
                         }
                     }
-                    
-                    if(valdKund.Typ == "Företag")
-                    {
-                        momsSatts = 12;
-                    }
-                    Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
-                    slutPrisInkMoms = (float)nyFaktura.TotalPris - ((float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100));
-                    MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%\nTotalPris: {slutPrisInkMoms}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                } else
-                {
-                    MessageBox.Show($"Välj först ett Logi, tack!");
                 }
-            } else
+
+                if (valdKund.Typ == "Företag")
+                {
+                    momsSatts = 12;
+                }
+                Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
+                slutPrisInkMoms = (float)nyFaktura.TotalPris - ((float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100));
+                MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%\nTotalPris: {slutPrisInkMoms}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show($"Välj först ett Logi, tack!");
+            }
+            }
+            else
             {
                 MessageBox.Show($"Välj först en Kund, tack!");
             }
@@ -410,31 +419,38 @@ namespace NetFramework
             decimal totalSumma = 0;
             float slutPrisInkMoms;
             int moms;
-
-            foreach (DataGridViewRow row in gridRader.Rows)
-            {
-                if (row.Tag is Bokningsrad bokningsrad)
+            
+                if (gridRader.SelectedRows.Count > 0)
                 {
-                    // Call your method on the Bokningsrad object
-                    Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+                    foreach (DataGridViewRow row in gridRader.Rows)
+                    {
+                        if (row.Tag is Bokningsrad bokningsrad)
+                        {
+                            // Call your method on the Bokningsrad object
+                            Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
 
 
-                    //Något gör så att det blir en extra dag, därför tar jag bort den här
-                    DateTime newDate = bokningsrad.Till.AddDays(-1);
-                    decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
-                    totalSumma += pris;
-                }
-            }
-            if (valdKund.Typ == "Företag")
+                            //Något gör så att det blir en extra dag, därför tar jag bort den här
+                            DateTime newDate = bokningsrad.Till.AddDays(-1);
+                            decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
+                            totalSumma += pris;
+                        }
+                    }
+                    if (valdKund.Typ == "Företag")
+                    {
+                        moms = 12;
+                    }
+                    else
+                    {
+                        moms = 0;
+                    }
+                    slutPrisInkMoms = (float)totalSumma - ((float)totalSumma * ((float)moms / 100));
+                    MessageBox.Show($"Original Pris: {totalSumma}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
+                } else
             {
-                moms = 12;
+                MessageBox.Show("Ingen logi vald.");
             }
-            else
-            {
-                moms = 0;
-            }
-            slutPrisInkMoms = (float)totalSumma - ((float)totalSumma * ((float)moms / 100));
-            MessageBox.Show($"Original Pris: {totalSumma}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
+            
         }
 
     }

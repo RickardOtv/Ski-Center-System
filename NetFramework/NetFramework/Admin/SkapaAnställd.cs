@@ -36,15 +36,22 @@ namespace NetFramework
             {
                 MessageBox.Show("Fyll i alla rader tack!");
             }
+            else if (!kontroller.IsValidName(txtBoxFörnamn.Text))
+            {
+                MessageBox.Show("Ange ett giltigt Förnamn", "Ogiltig Förnamn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxFörnamn.Focus();
+            }
+            else if (!kontroller.IsValidName(txtBoxEfternamn.Text))
+            {
+                MessageBox.Show("Ange en giltig Efternamn", "Ogiltig Efternamn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxEfternamn.Focus();
+            }
             else
             {
-
                 string förnamn = txtBoxFörnamn.Text;
                 string efternamn = txtBoxEfternamn.Text;
                 string lösenord = txtBoxLösenord.Text;
                 string behörighet = cmbBehörighet.Text;
-
-
 
                 Anställd nyAnställd = kontroller.SkapaNyAnställd(förnamn, efternamn, lösenord, behörighet);
                 MessageBox.Show($"Ny Anställd skapad!\n Namn: {nyAnställd.Förnamn} {nyAnställd.Efternamn}\n AnställningsNr: {nyAnställd.AnställningsNr}\n Behörighet: {nyAnställd.Behörighet}");
