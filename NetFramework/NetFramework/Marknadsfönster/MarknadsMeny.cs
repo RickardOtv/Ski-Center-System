@@ -54,5 +54,12 @@ namespace NetFramework
             ändraMaxbelopp.Show();
             ändraMaxbelopp.InloggadAnvandare = txtAnvandarnamn.Text;
         }
+
+        private void btn_visaFaktura_Click(object sender, EventArgs e)
+        {
+            VisaFakturor visaFakturor = new VisaFakturor(loggaIn, kontroller);
+            visaFakturor.Show();
+            visaFakturor.InloggadAnvandare = txtAnvandarnamn.Text;
+        }
     }
 }

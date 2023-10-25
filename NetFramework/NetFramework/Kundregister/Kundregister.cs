@@ -65,14 +65,26 @@ namespace NetFramework
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
 
-            if (gridKunder.SelectedRows != null)
+            DialogResult result = MessageBox.Show("Är du säker att du vill ta bort kund?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                valdKund = kontroller.HittaKund(valdKund.KundID);
-                kontroller.TaBortKund(valdKund);
-                RefreshKunder();
-                MessageBox.Show($"Tog Bort Kund: {valdKund.KundID} \nMed personnummer: {valdKund.Personnummer} \n Namn: {valdKund.Namn}");
-            
+                if (gridKunder.SelectedRows != null)
+                {
+                    valdKund = kontroller.HittaKund(valdKund.KundID);
+                    kontroller.TaBortKund(valdKund);
+                    RefreshKunder();
+                    MessageBox.Show($"Tog Bort Kund: {valdKund.KundID} \nMed personnummer: {valdKund.Personnummer} \n Namn: {valdKund.Namn}");
+
+                } else
+                {
+                    MessageBox.Show("Välj först en kund, tack!", "Confirmation");
+                }
             }
+            else if (result == DialogResult.No)
+            {
+
+            }
+
         }
         /// <summary>
         /// Denna metod btnAndra_Click hanterar händelsen när användaren klickar på knappen "Ändra". Den börjar med att hämta den valda kunden från den valda raden i kundrutfältet och sedan kontrollera behörigheten för inloggad användare. Beroende på kundtyp och behörighet öppnas antingen formuläret för att ändra företagskund eller privatkund. Dialogrutan "Du har ej rätt behörighet" visas om användaren inte har tillräckliga behörigheter för att ändra företagskunden. Efter att ha öppnat formuläret för ändring av kund, visas det med information om inloggad användare.

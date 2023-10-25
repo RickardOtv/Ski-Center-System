@@ -226,6 +226,12 @@ namespace Affärslager
             unitOfWork.SaveChanges();
         }
 
+        public void TaBortFaktura(Faktura valdFaktura)
+        {
+            unitOfWork.fakturor.Remove(valdFaktura);
+            unitOfWork.SaveChanges();
+        }
+
 
         #endregion
         #region Hitta/hämta-metoder
@@ -298,6 +304,10 @@ namespace Affärslager
         public IList<Utrustning> HämtaUtrustning()
         {
             return unitOfWork.utrustningar.ToList<Utrustning>();
+        }
+        public IList<Faktura> HämtaFakturor()
+        {
+            return unitOfWork.fakturor.ToList<Faktura>();
         }
         public Bokning HittaBokning(string söktBokningsNummer)
         {
@@ -442,6 +452,19 @@ namespace Affärslager
         {
             bokningrad.Från = från;
             bokningrad.Till = till;
+            unitOfWork.SaveChanges();
+        }
+
+        public void ÄndraFakturaRabatt(Faktura valdFaktura, int nyRabatt)
+        {
+            valdFaktura.Rabattsats = nyRabatt;
+            valdFaktura.TotalPris = valdFaktura.TotalPris - (valdFaktura.TotalPris * (nyRabatt / 100));
+            unitOfWork.SaveChanges();
+        }
+        public void ÄndraFakturaMoms(Faktura valdFaktura, int nyMoms)
+        {
+            valdFaktura.Momsats = nyMoms;
+            valdFaktura.TotalPris= valdFaktura.TotalPris - (valdFaktura.TotalPris * (nyMoms / 100));
             unitOfWork.SaveChanges();
         }
 

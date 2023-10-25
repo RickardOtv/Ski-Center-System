@@ -35,6 +35,7 @@
             this.btnVisaStatistik = new System.Windows.Forms.Button();
             this.btnRegFöretagsKund = new System.Windows.Forms.Button();
             this.btnÄndraMaxbelopp = new System.Windows.Forms.Button();
+            this.btn_visaFaktura = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTillbaka
@@ -70,7 +71,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(513, 212);
+            this.label3.Location = new System.Drawing.Point(522, 113);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(258, 39);
@@ -79,7 +80,7 @@
             // 
             // btnVisaStatistik
             // 
-            this.btnVisaStatistik.Location = new System.Drawing.Point(478, 293);
+            this.btnVisaStatistik.Location = new System.Drawing.Point(478, 192);
             this.btnVisaStatistik.Name = "btnVisaStatistik";
             this.btnVisaStatistik.Size = new System.Drawing.Size(330, 52);
             this.btnVisaStatistik.TabIndex = 21;
@@ -89,7 +90,7 @@
             // 
             // btnRegFöretagsKund
             // 
-            this.btnRegFöretagsKund.Location = new System.Drawing.Point(478, 384);
+            this.btnRegFöretagsKund.Location = new System.Drawing.Point(478, 283);
             this.btnRegFöretagsKund.Name = "btnRegFöretagsKund";
             this.btnRegFöretagsKund.Size = new System.Drawing.Size(330, 58);
             this.btnRegFöretagsKund.TabIndex = 22;
@@ -99,7 +100,7 @@
             // 
             // btnÄndraMaxbelopp
             // 
-            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(478, 483);
+            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(478, 382);
             this.btnÄndraMaxbelopp.Name = "btnÄndraMaxbelopp";
             this.btnÄndraMaxbelopp.Size = new System.Drawing.Size(330, 54);
             this.btnÄndraMaxbelopp.TabIndex = 23;
@@ -107,12 +108,23 @@
             this.btnÄndraMaxbelopp.UseVisualStyleBackColor = true;
             this.btnÄndraMaxbelopp.Click += new System.EventHandler(this.btnÄndraMaxbelopp_Click);
             // 
+            // btn_visaFaktura
+            // 
+            this.btn_visaFaktura.Location = new System.Drawing.Point(478, 470);
+            this.btn_visaFaktura.Name = "btn_visaFaktura";
+            this.btn_visaFaktura.Size = new System.Drawing.Size(330, 54);
+            this.btn_visaFaktura.TabIndex = 24;
+            this.btn_visaFaktura.Text = "Visa Fakturor";
+            this.btn_visaFaktura.UseVisualStyleBackColor = true;
+            this.btn_visaFaktura.Click += new System.EventHandler(this.btn_visaFaktura_Click);
+            // 
             // MarknadsMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.Controls.Add(this.btn_visaFaktura);
             this.Controls.Add(this.btnÄndraMaxbelopp);
             this.Controls.Add(this.btnRegFöretagsKund);
             this.Controls.Add(this.btnVisaStatistik);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button btnVisaStatistik;
         private System.Windows.Forms.Button btnRegFöretagsKund;
         private System.Windows.Forms.Button btnÄndraMaxbelopp;
+        private System.Windows.Forms.Button btn_visaFaktura;
     }
 }

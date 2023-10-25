@@ -116,11 +116,29 @@
     <Compile Include="Marknadsfönster\SkapaFöretagskund.Designer.cs">
       <DependentUpon>SkapaFöretagskund.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marknadsfönster\VisaFakturor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marknadsfönster\VisaFakturor.Designer.cs">
+      <DependentUpon>VisaFakturor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marknadsfönster\VisaStatistik.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Marknadsfönster\VisaStatistik.Designer.cs">
       <DependentUpon>VisaStatistik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marknadsfönster\ÄndraFakturaMoms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marknadsfönster\ÄndraFakturaMoms.Designer.cs">
+      <DependentUpon>ÄndraFakturaMoms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marknadsfönster\ÄndraFakturaRabatt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marknadsfönster\ÄndraFakturaRabatt.Designer.cs">
+      <DependentUpon>ÄndraFakturaRabatt.cs</DependentUpon>
     </Compile>
     <Compile Include="Marknadsfönster\ÄndraMaxbelopp.cs">
       <SubType>Form</SubType>
@@ -239,8 +257,17 @@
     <EmbeddedResource Include="Marknadsfönster\SkapaFöretagskund.resx">
       <DependentUpon>SkapaFöretagskund.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Marknadsfönster\VisaFakturor.resx">
+      <DependentUpon>VisaFakturor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Marknadsfönster\VisaStatistik.resx">
       <DependentUpon>VisaStatistik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marknadsfönster\ÄndraFakturaMoms.resx">
+      <DependentUpon>ÄndraFakturaMoms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marknadsfönster\ÄndraFakturaRabatt.resx">
+      <DependentUpon>ÄndraFakturaRabatt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marknadsfönster\ÄndraMaxbelopp.resx">
       <DependentUpon>ÄndraMaxbelopp.cs</DependentUpon>
