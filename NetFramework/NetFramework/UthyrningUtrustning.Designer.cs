@@ -120,6 +120,7 @@
             this.btnTaBort.TabIndex = 13;
             this.btnTaBort.Text = "Ta Bort";
             this.btnTaBort.UseVisualStyleBackColor = true;
+            this.btnTaBort.Click += new System.EventHandler(this.btnTaBort_Click);
             // 
             // btnKlar
             // 

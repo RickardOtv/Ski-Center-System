@@ -267,5 +267,32 @@ namespace NetFramework
                 MessageBox.Show("Ingen logi vald.");
             }
         }
+
+        private void btnTaBort_Click(object sender, EventArgs e)
+        {
+            // Kontrollera om det finns minst en rad vald
+            if (gridRader.SelectedRows.Count > 0)
+            {
+                // Få den valda radens data
+                Uthyrningsrad valdRad = gridRader.SelectedRows[0].DataBoundItem as Uthyrningsrad;
+
+                // Anropa en funktion för att ta bort den valda raden (implementera den separat)
+                TaBortUthyrningsRad(valdRad);
+
+                // Uppdatera datagridview efter borttagning
+                RefreshRader();
+                RefreshUtrustning();
+            }
+            else
+            {
+                MessageBox.Show("Ingen rad är vald att ta bort.");
+            }
+        }
+
+        private void TaBortUthyrningsRad(Uthyrningsrad radAttTaBort)
+        {
+            // Implementera ditt borttagningslogik här. Till exempel:
+            kontroller.TaBortUthyrningsRad(radAttTaBort);
+        }
     }
 }
