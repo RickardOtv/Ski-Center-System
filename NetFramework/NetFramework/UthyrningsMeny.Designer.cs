@@ -36,6 +36,8 @@
             this.btnTillbaka = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,7 +92,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(305, 606);
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 773);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 16;
@@ -103,7 +105,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(542, 181);
+            this.label3.Location = new System.Drawing.Point(542, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 39);
@@ -118,6 +120,20 @@
             this.txtAnvandarnamn.Size = new System.Drawing.Size(18, 20);
             this.txtAnvandarnamn.TabIndex = 18;
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.label3);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 19;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // UthyrningsMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,16 +142,18 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnÅterlämning);
             this.Controls.Add(this.btnBokaSkidlektion);
             this.Controls.Add(this.btnSkapaUthyrning);
             this.Controls.Add(this.btnVisaUthyrningar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UthyrningsMeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UthyrningsMeny";
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +169,6 @@
         private System.Windows.Forms.Button btnTillbaka;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
+        private GradientPanel gradientPanel1;
     }
 }

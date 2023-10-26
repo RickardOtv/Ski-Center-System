@@ -38,7 +38,9 @@
             this.lblPersonNr = new System.Windows.Forms.Label();
             this.txtBoxAnställningsNr = new System.Windows.Forms.TextBox();
             this.btnSökAnställningsNr = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridAnställda)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAnvandarnamn
@@ -54,7 +56,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Location = new System.Drawing.Point(13, 11);
             this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
@@ -66,7 +68,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(480, 182);
+            this.label1.Location = new System.Drawing.Point(480, 185);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 39);
@@ -86,7 +88,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(267, 562);
+            this.btnTillbaka.Location = new System.Drawing.Point(16, 771);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(63, 25);
             this.btnTillbaka.TabIndex = 14;
@@ -144,6 +146,22 @@
             this.btnSökAnställningsNr.UseVisualStyleBackColor = true;
             this.btnSökAnställningsNr.Click += new System.EventHandler(this.btnSökAnställningsNr_Click);
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.lblPersonNr);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 28;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // AnställdaRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,21 +169,21 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.lblPersonNr);
             this.Controls.Add(this.txtBoxAnställningsNr);
             this.Controls.Add(this.btnSökAnställningsNr);
             this.Controls.Add(this.btnÄndra);
             this.Controls.Add(this.btnTaBort);
-            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.gridAnställda);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.lblAnstNr);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnställdaRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnställdaRegister";
             this.Load += new System.EventHandler(this.AnställdaRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAnställda)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +201,6 @@
         private System.Windows.Forms.Label lblPersonNr;
         private System.Windows.Forms.TextBox txtBoxAnställningsNr;
         private System.Windows.Forms.Button btnSökAnställningsNr;
+        private GradientPanel gradientPanel1;
     }
 }

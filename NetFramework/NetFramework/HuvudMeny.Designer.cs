@@ -53,8 +53,8 @@
             // lblAnstNr
             // 
             this.lblAnstNr.AutoSize = true;
-            this.lblAnstNr.BackColor = System.Drawing.Color.White;
-            this.lblAnstNr.Location = new System.Drawing.Point(8, 3);
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(4, 5);
             this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
@@ -85,6 +85,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(460, 270);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
@@ -132,6 +133,7 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.label2);
+            this.gradientPanel1.Controls.Add(this.lblAnstNr);
             this.gradientPanel1.Controls.Add(this.btnLoggaUt);
             this.gradientPanel1.Controls.Add(this.btnKundregister);
             this.gradientPanel1.Controls.Add(this.btnAdmin);
@@ -164,7 +166,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);

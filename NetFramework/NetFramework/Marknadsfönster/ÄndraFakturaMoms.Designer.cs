@@ -37,6 +37,8 @@
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -71,7 +73,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(464, 182);
+            this.lblKund.Location = new System.Drawing.Point(489, 182);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(166, 31);
@@ -87,7 +89,7 @@
             // 
             // btn_Spara
             // 
-            this.btn_Spara.Location = new System.Drawing.Point(824, 500);
+            this.btn_Spara.Location = new System.Drawing.Point(778, 389);
             this.btn_Spara.Name = "btn_Spara";
             this.btn_Spara.Size = new System.Drawing.Size(75, 23);
             this.btn_Spara.TabIndex = 47;
@@ -106,7 +108,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(18, 12);
+            this.label1.Location = new System.Drawing.Point(18, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 45;
@@ -114,12 +116,30 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(227, 500);
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 773);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 44;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.label3);
+            this.gradientPanel1.Controls.Add(this.lblKund);
+            this.gradientPanel1.Controls.Add(this.btn_Spara);
+            this.gradientPanel1.Controls.Add(this.label2);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 53;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
             // ÄndraFakturaMoms
             // 
@@ -127,18 +147,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_NyMoms);
-            this.Controls.Add(this.lblKund);
             this.Controls.Add(this.textBox_GammalMoms);
-            this.Controls.Add(this.btn_Spara);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnTillbaka);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ÄndraFakturaMoms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraFakturaMoms";
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +173,6 @@
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTillbaka;
+        private GradientPanel gradientPanel1;
     }
 }

@@ -42,9 +42,11 @@
             this.Anställningsnummerlbl = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridUthyrning
@@ -92,7 +94,7 @@
             this.lblUthyrning.AutoSize = true;
             this.lblUthyrning.BackColor = System.Drawing.Color.Transparent;
             this.lblUthyrning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUthyrning.Location = new System.Drawing.Point(258, 162);
+            this.lblUthyrning.Location = new System.Drawing.Point(260, 159);
             this.lblUthyrning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUthyrning.Name = "lblUthyrning";
             this.lblUthyrning.Size = new System.Drawing.Size(130, 25);
@@ -160,7 +162,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(708, 447);
+            this.label2.Location = new System.Drawing.Point(720, 447);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
@@ -206,6 +208,23 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.lblUthyrning);
+            this.gradientPanel1.Controls.Add(this.Anställningsnummerlbl);
+            this.gradientPanel1.Controls.Add(this.lblPersNr);
+            this.gradientPanel1.Controls.Add(this.label2);
+            this.gradientPanel1.Controls.Add(this.lblRader);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 16;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // VisaUthyrningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,19 +233,16 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btnTillbaka);
-            this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btnTaBort);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblRader);
             this.Controls.Add(this.btnVäljUthyrning);
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.txtBoxUthyrningsID);
-            this.Controls.Add(this.lblPersNr);
-            this.Controls.Add(this.lblUthyrning);
             this.Controls.Add(this.gridLektioner);
             this.Controls.Add(this.gridUthyrningsRader);
             this.Controls.Add(this.gridUthyrning);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VisaUthyrningar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -235,6 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +274,6 @@
         private System.Windows.Forms.Label Anställningsnummerlbl;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Button btnTillbaka;
+        private GradientPanel gradientPanel1;
     }
 }
