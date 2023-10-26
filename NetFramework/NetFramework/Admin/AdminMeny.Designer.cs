@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(535, 294);
+            this.label1.Location = new System.Drawing.Point(539, 294);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 39);
@@ -72,7 +72,7 @@
             // 
             // btnHanteraAnställd
             // 
-            this.btnHanteraAnställd.Location = new System.Drawing.Point(473, 372);
+            this.btnHanteraAnställd.Location = new System.Drawing.Point(476, 372);
             this.btnHanteraAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHanteraAnställd.Name = "btnHanteraAnställd";
             this.btnHanteraAnställd.Size = new System.Drawing.Size(330, 52);
@@ -83,7 +83,7 @@
             // 
             // btnSkapaAnställd
             // 
-            this.btnSkapaAnställd.Location = new System.Drawing.Point(473, 450);
+            this.btnSkapaAnställd.Location = new System.Drawing.Point(476, 450);
             this.btnSkapaAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSkapaAnställd.Name = "btnSkapaAnställd";
             this.btnSkapaAnställd.Size = new System.Drawing.Size(330, 52);

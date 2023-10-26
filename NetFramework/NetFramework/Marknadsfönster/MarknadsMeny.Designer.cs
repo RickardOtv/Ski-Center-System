@@ -82,7 +82,7 @@
             // 
             // btnVisaStatistik
             // 
-            this.btnVisaStatistik.Location = new System.Drawing.Point(478, 192);
+            this.btnVisaStatistik.Location = new System.Drawing.Point(476, 192);
             this.btnVisaStatistik.Name = "btnVisaStatistik";
             this.btnVisaStatistik.Size = new System.Drawing.Size(330, 52);
             this.btnVisaStatistik.TabIndex = 21;
@@ -92,7 +92,7 @@
             // 
             // btnRegFöretagsKund
             // 
-            this.btnRegFöretagsKund.Location = new System.Drawing.Point(478, 283);
+            this.btnRegFöretagsKund.Location = new System.Drawing.Point(476, 283);
             this.btnRegFöretagsKund.Name = "btnRegFöretagsKund";
             this.btnRegFöretagsKund.Size = new System.Drawing.Size(330, 58);
             this.btnRegFöretagsKund.TabIndex = 22;
@@ -102,7 +102,7 @@
             // 
             // btnÄndraMaxbelopp
             // 
-            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(478, 382);
+            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(476, 382);
             this.btnÄndraMaxbelopp.Name = "btnÄndraMaxbelopp";
             this.btnÄndraMaxbelopp.Size = new System.Drawing.Size(330, 54);
             this.btnÄndraMaxbelopp.TabIndex = 23;
@@ -112,7 +112,7 @@
             // 
             // btn_visaFaktura
             // 
-            this.btn_visaFaktura.Location = new System.Drawing.Point(478, 470);
+            this.btn_visaFaktura.Location = new System.Drawing.Point(476, 470);
             this.btn_visaFaktura.Name = "btn_visaFaktura";
             this.btn_visaFaktura.Size = new System.Drawing.Size(330, 54);
             this.btn_visaFaktura.TabIndex = 24;

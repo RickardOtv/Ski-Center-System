@@ -88,7 +88,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(542, 177);
+            this.label3.Location = new System.Drawing.Point(557, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 39);
@@ -97,7 +97,7 @@
             // 
             // btnVisaUthyrningar
             // 
-            this.btnVisaUthyrningar.Location = new System.Drawing.Point(462, 274);
+            this.btnVisaUthyrningar.Location = new System.Drawing.Point(476, 274);
             this.btnVisaUthyrningar.Name = "btnVisaUthyrningar";
             this.btnVisaUthyrningar.Size = new System.Drawing.Size(330, 52);
             this.btnVisaUthyrningar.TabIndex = 11;
@@ -107,7 +107,7 @@
             // 
             // btnSkapaUthyrning
             // 
-            this.btnSkapaUthyrning.Location = new System.Drawing.Point(462, 357);
+            this.btnSkapaUthyrning.Location = new System.Drawing.Point(476, 357);
             this.btnSkapaUthyrning.Name = "btnSkapaUthyrning";
             this.btnSkapaUthyrning.Size = new System.Drawing.Size(330, 58);
             this.btnSkapaUthyrning.TabIndex = 12;
@@ -117,7 +117,7 @@
             // 
             // btnBokaSkidlektion
             // 
-            this.btnBokaSkidlektion.Location = new System.Drawing.Point(462, 451);
+            this.btnBokaSkidlektion.Location = new System.Drawing.Point(476, 451);
             this.btnBokaSkidlektion.Name = "btnBokaSkidlektion";
             this.btnBokaSkidlektion.Size = new System.Drawing.Size(330, 54);
             this.btnBokaSkidlektion.TabIndex = 13;
@@ -127,7 +127,7 @@
             // 
             // btnÅterlämning
             // 
-            this.btnÅterlämning.Location = new System.Drawing.Point(462, 538);
+            this.btnÅterlämning.Location = new System.Drawing.Point(476, 538);
             this.btnÅterlämning.Name = "btnÅterlämning";
             this.btnÅterlämning.Size = new System.Drawing.Size(330, 48);
             this.btnÅterlämning.TabIndex = 14;
