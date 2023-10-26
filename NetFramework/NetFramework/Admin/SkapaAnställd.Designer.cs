@@ -56,10 +56,10 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(15, 772);
+            this.btnTillbaka.Location = new System.Drawing.Point(14, 768);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(2);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(71, 25);
+            this.btnTillbaka.Size = new System.Drawing.Size(110, 28);
             this.btnTillbaka.TabIndex = 61;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;

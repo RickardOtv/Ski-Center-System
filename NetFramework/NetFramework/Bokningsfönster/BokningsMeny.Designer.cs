@@ -74,10 +74,10 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(13, 774);
+            this.btnTillbaka.Location = new System.Drawing.Point(14, 768);
             this.btnTillbaka.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(58, 22);
+            this.btnTillbaka.Size = new System.Drawing.Size(110, 28);
             this.btnTillbaka.TabIndex = 2;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -121,6 +121,7 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
             this.gradientPanel1.Controls.Add(this.lblAnstNr);
             this.gradientPanel1.Controls.Add(this.txtAnvandarnamn);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,7 +139,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btnVisaBokningar);
-            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnLediga);
             this.Controls.Add(this.btnSkapaBokning);
             this.Controls.Add(this.gradientPanel1);
