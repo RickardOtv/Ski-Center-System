@@ -40,10 +40,10 @@
             // 
             // btnBefintlig
             // 
-            this.btnBefintlig.Location = new System.Drawing.Point(568, 308);
+            this.btnBefintlig.Location = new System.Drawing.Point(525, 310);
             this.btnBefintlig.Margin = new System.Windows.Forms.Padding(2);
             this.btnBefintlig.Name = "btnBefintlig";
-            this.btnBefintlig.Size = new System.Drawing.Size(91, 34);
+            this.btnBefintlig.Size = new System.Drawing.Size(186, 42);
             this.btnBefintlig.TabIndex = 0;
             this.btnBefintlig.Text = "Befintlig kund";
             this.btnBefintlig.UseVisualStyleBackColor = true;
@@ -51,10 +51,10 @@
             // 
             // btnNyKund
             // 
-            this.btnNyKund.Location = new System.Drawing.Point(568, 353);
+            this.btnNyKund.Location = new System.Drawing.Point(525, 370);
             this.btnNyKund.Margin = new System.Windows.Forms.Padding(2);
             this.btnNyKund.Name = "btnNyKund";
-            this.btnNyKund.Size = new System.Drawing.Size(91, 32);
+            this.btnNyKund.Size = new System.Drawing.Size(186, 42);
             this.btnNyKund.TabIndex = 1;
             this.btnNyKund.Text = "Ny Kund";
             this.btnNyKund.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             this.lblTyp.AutoSize = true;
             this.lblTyp.BackColor = System.Drawing.Color.Transparent;
             this.lblTyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTyp.Location = new System.Drawing.Point(519, 263);
+            this.lblTyp.Location = new System.Drawing.Point(519, 247);
             this.lblTyp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTyp.Name = "lblTyp";
             this.lblTyp.Size = new System.Drawing.Size(213, 31);
@@ -107,6 +107,8 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.lblTyp);
+            this.gradientPanel1.Controls.Add(this.btnBefintlig);
+            this.gradientPanel1.Controls.Add(this.btnNyKund);
             this.gradientPanel1.Controls.Add(this.btnTillbaka);
             this.gradientPanel1.Controls.Add(this.lblAnstNr);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,8 +126,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.btnNyKund);
-            this.Controls.Add(this.btnBefintlig);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);

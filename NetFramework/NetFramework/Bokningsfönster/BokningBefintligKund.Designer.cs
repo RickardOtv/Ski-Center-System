@@ -232,7 +232,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(968, 545);
+            this.btnTaBort.Location = new System.Drawing.Point(895, 546);
             this.btnTaBort.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(70, 29);
@@ -266,10 +266,10 @@
             // 
             // btn_Vidare
             // 
-            this.btn_Vidare.Location = new System.Drawing.Point(969, 638);
+            this.btn_Vidare.Location = new System.Drawing.Point(969, 546);
             this.btn_Vidare.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Vidare.Name = "btn_Vidare";
-            this.btn_Vidare.Size = new System.Drawing.Size(70, 21);
+            this.btn_Vidare.Size = new System.Drawing.Size(70, 28);
             this.btn_Vidare.TabIndex = 21;
             this.btn_Vidare.Text = "Klar";
             this.btn_Vidare.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(867, 546);
+            this.button1.Location = new System.Drawing.Point(794, 547);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 28);
@@ -333,8 +333,10 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Controls.Add(this.button1);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.lblKund);
+            this.gradientPanel1.Controls.Add(this.btnTaBort);
             this.gradientPanel1.Controls.Add(this.lblLogi);
             this.gradientPanel1.Controls.Add(this.btn_Vidare);
             this.gradientPanel1.Controls.Add(this.lblRader);
@@ -356,11 +358,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_kollaLogiInfo);
             this.Controls.Add(this.btnKollaPris);
             this.Controls.Add(this.btnVäljKund);
-            this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.gridRader);
             this.Controls.Add(this.btn_sök);

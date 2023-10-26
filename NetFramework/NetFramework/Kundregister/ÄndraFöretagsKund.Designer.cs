@@ -157,7 +157,7 @@
             // 
             // btnSpara
             // 
-            this.btnSpara.Location = new System.Drawing.Point(830, 540);
+            this.btnSpara.Location = new System.Drawing.Point(702, 555);
             this.btnSpara.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(71, 25);
@@ -289,6 +289,7 @@
             this.gradientPanel1.Controls.Add(this.label2);
             this.gradientPanel1.Controls.Add(this.label7);
             this.gradientPanel1.Controls.Add(this.label4);
+            this.gradientPanel1.Controls.Add(this.btnSpara);
             this.gradientPanel1.Controls.Add(this.label3);
             this.gradientPanel1.Controls.Add(this.label5);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -313,7 +314,6 @@
             this.Controls.Add(this.txtBoxAdress);
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.txtBoxKundID);
-            this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.gradientPanel1);

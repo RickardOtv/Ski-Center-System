@@ -176,7 +176,7 @@
             // 
             this.btnGaVidare.Location = new System.Drawing.Point(648, 475);
             this.btnGaVidare.Name = "btnGaVidare";
-            this.btnGaVidare.Size = new System.Drawing.Size(103, 19);
+            this.btnGaVidare.Size = new System.Drawing.Size(103, 26);
             this.btnGaVidare.TabIndex = 24;
             this.btnGaVidare.Text = "Gå vidare";
             this.btnGaVidare.UseVisualStyleBackColor = true;

@@ -136,7 +136,7 @@
             // 
             // btnVäljUthyrning
             // 
-            this.btnVäljUthyrning.Location = new System.Drawing.Point(346, 413);
+            this.btnVäljUthyrning.Location = new System.Drawing.Point(325, 413);
             this.btnVäljUthyrning.Margin = new System.Windows.Forms.Padding(2);
             this.btnVäljUthyrning.Name = "btnVäljUthyrning";
             this.btnVäljUthyrning.Size = new System.Drawing.Size(98, 22);
@@ -171,7 +171,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(236, 413);
+            this.btnTaBort.Location = new System.Drawing.Point(223, 413);
             this.btnTaBort.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(98, 22);
@@ -214,6 +214,8 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Controls.Add(this.btnVäljUthyrning);
+            this.gradientPanel1.Controls.Add(this.btnTaBort);
             this.gradientPanel1.Controls.Add(this.lblUthyrning);
             this.gradientPanel1.Controls.Add(this.Anställningsnummerlbl);
             this.gradientPanel1.Controls.Add(this.lblPersNr);
@@ -234,8 +236,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.btnTaBort);
-            this.Controls.Add(this.btnVäljUthyrning);
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.txtBoxUthyrningsID);
             this.Controls.Add(this.gridLektioner);
