@@ -127,6 +127,7 @@
             this.Controls.Add(this.lblLösenord);
             this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.lblLoggaIn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "LoggaIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

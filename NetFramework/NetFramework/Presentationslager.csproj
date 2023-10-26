@@ -86,6 +86,9 @@
     <Compile Include="Bokningsfönster\BokningsTyp.Designer.cs">
       <DependentUpon>BokningsTyp.cs</DependentUpon>
     </Compile>
+    <Compile Include="GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Kundregister\Kundregister.cs">
       <SubType>Form</SubType>
     </Compile>
