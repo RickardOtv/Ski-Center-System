@@ -118,7 +118,7 @@
             // 
             // btn_taBort
             // 
-            this.btn_taBort.Location = new System.Drawing.Point(229, 504);
+            this.btn_taBort.Location = new System.Drawing.Point(241, 504);
             this.btn_taBort.Name = "btn_taBort";
             this.btn_taBort.Size = new System.Drawing.Size(86, 39);
             this.btn_taBort.TabIndex = 13;
@@ -244,6 +244,7 @@
             this.gradientPanel1.Controls.Add(this.label_BokningsNr);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.btn_tillbaka);
+            this.gradientPanel1.Controls.Add(this.btn_taBort);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
@@ -265,7 +266,6 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btn_sökPersonNr);
             this.Controls.Add(this.textBox_personNr);
-            this.Controls.Add(this.btn_taBort);
             this.Controls.Add(this.btn_ändra);
             this.Controls.Add(this.btnSökBokNr);
             this.Controls.Add(this.txtFilter);
