@@ -45,7 +45,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(657, 306);
+            this.label3.Location = new System.Drawing.Point(718, 306);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 43;
@@ -55,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(309, 306);
+            this.label2.Location = new System.Drawing.Point(372, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 13);
             this.label2.TabIndex = 42;
@@ -63,7 +63,7 @@
             // 
             // textBox_NyRabatt
             // 
-            this.textBox_NyRabatt.Location = new System.Drawing.Point(660, 322);
+            this.textBox_NyRabatt.Location = new System.Drawing.Point(721, 322);
             this.textBox_NyRabatt.Name = "textBox_NyRabatt";
             this.textBox_NyRabatt.Size = new System.Drawing.Size(184, 20);
             this.textBox_NyRabatt.TabIndex = 41;
@@ -73,7 +73,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(485, 180);
+            this.lblKund.Location = new System.Drawing.Point(544, 188);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(174, 31);
@@ -82,14 +82,14 @@
             // 
             // textBox_GammalRabatt
             // 
-            this.textBox_GammalRabatt.Location = new System.Drawing.Point(312, 322);
+            this.textBox_GammalRabatt.Location = new System.Drawing.Point(375, 322);
             this.textBox_GammalRabatt.Name = "textBox_GammalRabatt";
             this.textBox_GammalRabatt.Size = new System.Drawing.Size(184, 20);
             this.textBox_GammalRabatt.TabIndex = 39;
             // 
             // btn_Spara
             // 
-            this.btn_Spara.Location = new System.Drawing.Point(769, 399);
+            this.btn_Spara.Location = new System.Drawing.Point(830, 395);
             this.btn_Spara.Name = "btn_Spara";
             this.btn_Spara.Size = new System.Drawing.Size(75, 23);
             this.btn_Spara.TabIndex = 38;
@@ -129,6 +129,8 @@
             this.gradientPanel1.Angle = 60F;
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.textBox_GammalRabatt);
+            this.gradientPanel1.Controls.Add(this.textBox_NyRabatt);
             this.gradientPanel1.Controls.Add(this.label3);
             this.gradientPanel1.Controls.Add(this.lblKund);
             this.gradientPanel1.Controls.Add(this.btn_Spara);
@@ -148,8 +150,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.textBox_NyRabatt);
-            this.Controls.Add(this.textBox_GammalRabatt);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
