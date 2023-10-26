@@ -57,6 +57,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAnvandarnamn
@@ -70,7 +72,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(3, 6);
+            this.lblAnstNr.Location = new System.Drawing.Point(3, 8);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
             this.lblAnstNr.TabIndex = 10;
@@ -81,7 +83,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(476, 277);
+            this.label1.Location = new System.Drawing.Point(470, 281);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 39);
             this.label1.TabIndex = 12;
@@ -121,7 +123,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(404, 246);
+            this.label2.Location = new System.Drawing.Point(398, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 19;
@@ -332,7 +334,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Location = new System.Drawing.Point(622, 420);
+            this.label15.Location = new System.Drawing.Point(624, 420);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(42, 13);
             this.label15.TabIndex = 45;
@@ -348,6 +350,28 @@
             this.label16.TabIndex = 46;
             this.label16.Text = "Postort:";
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.label14);
+            this.gradientPanel1.Controls.Add(this.label15);
+            this.gradientPanel1.Controls.Add(this.label16);
+            this.gradientPanel1.Controls.Add(this.label2);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.label10);
+            this.gradientPanel1.Controls.Add(this.label13);
+            this.gradientPanel1.Controls.Add(this.label11);
+            this.gradientPanel1.Controls.Add(this.label12);
+            this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 47;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // ÄndraKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,13 +379,6 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -378,17 +395,17 @@
             this.Controls.Add(this.txtBoxAdress);
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.txtBoxKundID);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnTillbaka);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.lblAnstNr);
+            this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ÄndraKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÄndraKund";
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +442,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private GradientPanel gradientPanel1;
     }
 }
