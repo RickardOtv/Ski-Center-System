@@ -36,11 +36,13 @@
             this.btnRegFöretagsKund = new System.Windows.Forms.Button();
             this.btnÄndraMaxbelopp = new System.Windows.Forms.Button();
             this.btn_visaFaktura = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(231, 567);
+            this.btnTillbaka.Location = new System.Drawing.Point(15, 773);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 17;
@@ -71,7 +73,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(522, 113);
+            this.label3.Location = new System.Drawing.Point(522, 119);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(258, 39);
@@ -118,6 +120,21 @@
             this.btn_visaFaktura.UseVisualStyleBackColor = true;
             this.btn_visaFaktura.Click += new System.EventHandler(this.btn_visaFaktura_Click);
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.label3);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 25;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // MarknadsMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,13 +145,14 @@
             this.Controls.Add(this.btnÄndraMaxbelopp);
             this.Controls.Add(this.btnRegFöretagsKund);
             this.Controls.Add(this.btnVisaStatistik);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnTillbaka);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MarknadsMeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarknadsMeny";
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +168,6 @@
         private System.Windows.Forms.Button btnRegFöretagsKund;
         private System.Windows.Forms.Button btnÄndraMaxbelopp;
         private System.Windows.Forms.Button btn_visaFaktura;
+        private GradientPanel gradientPanel1;
     }
 }

@@ -46,8 +46,10 @@
             this.dateFrån = new System.Windows.Forms.DateTimePicker();
             this.dateTill = new System.Windows.Forms.DateTimePicker();
             this.btnKollaPris = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridUtrustning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Anställningsnummerlbl
@@ -104,7 +106,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(247, 573);
+            this.btnTillbaka.Location = new System.Drawing.Point(15, 773);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 12;
@@ -124,7 +126,7 @@
             // 
             // btnKlar
             // 
-            this.btnKlar.Location = new System.Drawing.Point(948, 573);
+            this.btnKlar.Location = new System.Drawing.Point(1192, 773);
             this.btnKlar.Name = "btnKlar";
             this.btnKlar.Size = new System.Drawing.Size(75, 23);
             this.btnKlar.TabIndex = 14;
@@ -154,7 +156,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(479, 204);
+            this.label1.Location = new System.Drawing.Point(476, 203);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 39);
@@ -246,6 +248,22 @@
             this.btnKollaPris.UseVisualStyleBackColor = true;
             this.btnKollaPris.Click += new System.EventHandler(this.btnKollaPris_Click);
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.Anställningsnummerlbl);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Controls.Add(this.btnKlar);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 48;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // UthyrningUtrustning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,23 +278,23 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbTyp);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.txtBoxValdKund);
-            this.Controls.Add(this.btnKlar);
             this.Controls.Add(this.btnTaBort);
-            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.gridRader);
             this.Controls.Add(this.gridUtrustning);
-            this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UthyrningUtrustning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UthyrningUtrustning";
             this.Load += new System.EventHandler(this.UthyrningUtrustning_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridUtrustning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,5 +320,6 @@
         private System.Windows.Forms.DateTimePicker dateFrån;
         private System.Windows.Forms.DateTimePicker dateTill;
         private System.Windows.Forms.Button btnKollaPris;
+        private GradientPanel gradientPanel1;
     }
 }

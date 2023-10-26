@@ -48,11 +48,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblAnstNr = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(393, 479);
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 777);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(103, 19);
             this.btnTillbaka.TabIndex = 3;
@@ -62,7 +64,7 @@
             // 
             // btnGaVidare
             // 
-            this.btnGaVidare.Location = new System.Drawing.Point(739, 479);
+            this.btnGaVidare.Location = new System.Drawing.Point(657, 437);
             this.btnGaVidare.Name = "btnGaVidare";
             this.btnGaVidare.Size = new System.Drawing.Size(103, 19);
             this.btnGaVidare.TabIndex = 4;
@@ -75,7 +77,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(558, 253);
+            this.lblKund.Location = new System.Drawing.Point(561, 252);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(125, 31);
@@ -251,7 +253,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Location = new System.Drawing.Point(4, 12);
             this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
@@ -266,6 +268,22 @@
             this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 27;
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Controls.Add(this.lblKund);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Controls.Add(this.btnGaVidare);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 28;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // BokningNyKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,7 +292,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -290,13 +307,14 @@
             this.Controls.Add(this.txtBoxTelefonNr);
             this.Controls.Add(this.txtBoxAdress);
             this.Controls.Add(this.txtBoxEmail);
-            this.Controls.Add(this.lblKund);
-            this.Controls.Add(this.btnGaVidare);
-            this.Controls.Add(this.btnTillbaka);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "BokningNyKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ny Kund";
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +342,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblAnstNr;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
+        private GradientPanel gradientPanel1;
     }
 }

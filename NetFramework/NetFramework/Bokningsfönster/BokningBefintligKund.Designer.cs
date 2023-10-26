@@ -52,9 +52,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblAnstNr = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridKunder
@@ -91,7 +93,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(481, 112);
+            this.lblKund.Location = new System.Drawing.Point(493, 106);
             this.lblKund.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(125, 31);
@@ -103,7 +105,7 @@
             this.lblLogi.AutoSize = true;
             this.lblLogi.BackColor = System.Drawing.Color.Transparent;
             this.lblLogi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogi.Location = new System.Drawing.Point(455, 378);
+            this.lblLogi.Location = new System.Drawing.Point(457, 378);
             this.lblLogi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogi.Name = "lblLogi";
             this.lblLogi.Size = new System.Drawing.Size(204, 31);
@@ -115,7 +117,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(251, 103);
+            this.label1.Location = new System.Drawing.Point(251, 102);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
@@ -138,7 +140,7 @@
             this.lblFrån.AutoSize = true;
             this.lblFrån.BackColor = System.Drawing.Color.Transparent;
             this.lblFrån.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrån.Location = new System.Drawing.Point(260, 404);
+            this.lblFrån.Location = new System.Drawing.Point(260, 403);
             this.lblFrån.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFrån.Name = "lblFrån";
             this.lblFrån.Size = new System.Drawing.Size(36, 13);
@@ -150,7 +152,7 @@
             this.lblTill.AutoSize = true;
             this.lblTill.BackColor = System.Drawing.Color.Transparent;
             this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTill.Location = new System.Drawing.Point(260, 453);
+            this.lblTill.Location = new System.Drawing.Point(260, 452);
             this.lblTill.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTill.Name = "lblTill";
             this.lblTill.Size = new System.Drawing.Size(28, 13);
@@ -175,7 +177,7 @@
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(253, 621);
+            this.btnAvbryt.Location = new System.Drawing.Point(11, 776);
             this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(70, 21);
@@ -255,7 +257,7 @@
             this.lblRader.AutoSize = true;
             this.lblRader.BackColor = System.Drawing.Color.Transparent;
             this.lblRader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRader.Location = new System.Drawing.Point(755, 378);
+            this.lblRader.Location = new System.Drawing.Point(754, 378);
             this.lblRader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRader.Name = "lblRader";
             this.lblRader.Size = new System.Drawing.Size(257, 31);
@@ -264,7 +266,7 @@
             // 
             // btn_Vidare
             // 
-            this.btn_Vidare.Location = new System.Drawing.Point(990, 621);
+            this.btn_Vidare.Location = new System.Drawing.Point(969, 638);
             this.btn_Vidare.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Vidare.Name = "btn_Vidare";
             this.btn_Vidare.Size = new System.Drawing.Size(70, 21);
@@ -310,7 +312,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Location = new System.Drawing.Point(4, 9);
             this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
@@ -325,6 +327,27 @@
             this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 26;
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.lblKund);
+            this.gradientPanel1.Controls.Add(this.lblLogi);
+            this.gradientPanel1.Controls.Add(this.btn_Vidare);
+            this.gradientPanel1.Controls.Add(this.lblRader);
+            this.gradientPanel1.Controls.Add(this.lblTill);
+            this.gradientPanel1.Controls.Add(this.lblFrån);
+            this.gradientPanel1.Controls.Add(this.btnAvbryt);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 27;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // BokningBefintligKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,29 +356,22 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.lblAnstNr);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_kollaLogiInfo);
             this.Controls.Add(this.btnKollaPris);
-            this.Controls.Add(this.btn_Vidare);
-            this.Controls.Add(this.lblRader);
             this.Controls.Add(this.btnVäljKund);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.gridRader);
             this.Controls.Add(this.btn_sök);
-            this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.dateTill);
             this.Controls.Add(this.dateFrån);
-            this.Controls.Add(this.lblTill);
-            this.Controls.Add(this.lblFrån);
             this.Controls.Add(this.btnSök);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilter);
-            this.Controls.Add(this.lblLogi);
-            this.Controls.Add(this.lblKund);
             this.Controls.Add(this.gridLogi);
             this.Controls.Add(this.gridKunder);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BokningBefintligKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -364,6 +380,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKunder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLogi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRader)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,5 +413,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblAnstNr;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
+        private GradientPanel gradientPanel1;
     }
 }

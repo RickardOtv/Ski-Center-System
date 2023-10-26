@@ -45,8 +45,10 @@
             this.logiGrid = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_TaBortRad = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logiGrid)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSökBokNr
@@ -64,7 +66,7 @@
             // 
             this.label_BokningsNr.AutoSize = true;
             this.label_BokningsNr.BackColor = System.Drawing.Color.Transparent;
-            this.label_BokningsNr.Location = new System.Drawing.Point(210, 206);
+            this.label_BokningsNr.Location = new System.Drawing.Point(210, 207);
             this.label_BokningsNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_BokningsNr.Name = "label_BokningsNr";
             this.label_BokningsNr.Size = new System.Drawing.Size(65, 13);
@@ -96,7 +98,7 @@
             // 
             // btn_tillbaka
             // 
-            this.btn_tillbaka.Location = new System.Drawing.Point(150, 606);
+            this.btn_tillbaka.Location = new System.Drawing.Point(12, 764);
             this.btn_tillbaka.Name = "btn_tillbaka";
             this.btn_tillbaka.Size = new System.Drawing.Size(85, 32);
             this.btn_tillbaka.TabIndex = 11;
@@ -158,7 +160,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(9, 9);
+            this.lblAnstNr.Location = new System.Drawing.Point(3, 9);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
             this.lblAnstNr.TabIndex = 17;
@@ -232,6 +234,23 @@
             this.btn_TaBortRad.UseVisualStyleBackColor = true;
             this.btn_TaBortRad.Click += new System.EventHandler(this.btn_TaBortRad_Click);
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Controls.Add(this.label2);
+            this.gradientPanel1.Controls.Add(this.label_BokningsNr);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btn_tillbaka);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 26;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // VisaBokningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,28 +259,27 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btn_TaBortRad);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.logiGrid);
             this.Controls.Add(this.btn_visaRader);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.lblAnstNr);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_sökPersonNr);
             this.Controls.Add(this.textBox_personNr);
             this.Controls.Add(this.btn_taBort);
             this.Controls.Add(this.btn_ändra);
-            this.Controls.Add(this.btn_tillbaka);
             this.Controls.Add(this.btnSökBokNr);
-            this.Controls.Add(this.label_BokningsNr);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.gridBokningar);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VisaBokningar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "visaBokningar";
             this.Load += new System.EventHandler(this.VisaBokningar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logiGrid)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +304,6 @@
         private System.Windows.Forms.DataGridView logiGrid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_TaBortRad;
+        private GradientPanel gradientPanel1;
     }
 }

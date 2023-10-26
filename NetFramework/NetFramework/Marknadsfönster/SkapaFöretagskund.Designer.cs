@@ -41,6 +41,8 @@
             this.txtBoxAdress = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.btnGaVidare = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +64,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(349, 478);
+            this.btnTillbaka.Location = new System.Drawing.Point(15, 773);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 20;
@@ -75,7 +77,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(456, 254);
+            this.lblKund.Location = new System.Drawing.Point(456, 253);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(314, 31);
@@ -172,13 +174,29 @@
             // 
             // btnGaVidare
             // 
-            this.btnGaVidare.Location = new System.Drawing.Point(730, 478);
+            this.btnGaVidare.Location = new System.Drawing.Point(648, 475);
             this.btnGaVidare.Name = "btnGaVidare";
             this.btnGaVidare.Size = new System.Drawing.Size(103, 19);
             this.btnGaVidare.TabIndex = 24;
             this.btnGaVidare.Text = "Gå vidare";
             this.btnGaVidare.UseVisualStyleBackColor = true;
             this.btnGaVidare.Click += new System.EventHandler(this.btnGaVidare_Click);
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.lblKund);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Controls.Add(this.btnGaVidare);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 32;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
             // SkapaFöretagskund
             // 
@@ -193,15 +211,15 @@
             this.Controls.Add(this.txtBoxTelefonNr);
             this.Controls.Add(this.txtBoxAdress);
             this.Controls.Add(this.txtBoxEmail);
-            this.Controls.Add(this.btnGaVidare);
             this.Controls.Add(this.txtBoxPersonNr);
-            this.Controls.Add(this.lblKund);
-            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SkapaFöretagskund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SkapaFöretagskund";
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +240,6 @@
         private System.Windows.Forms.TextBox txtBoxAdress;
         private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Button btnGaVidare;
+        private GradientPanel gradientPanel1;
     }
 }

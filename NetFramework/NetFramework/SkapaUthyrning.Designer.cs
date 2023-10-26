@@ -39,7 +39,9 @@
             this.BokningsnummerBtn = new System.Windows.Forms.Button();
             this.VäljBtn = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridBokningar
@@ -71,7 +73,7 @@
             // 
             this.Personnummerlbl.AutoSize = true;
             this.Personnummerlbl.BackColor = System.Drawing.Color.Transparent;
-            this.Personnummerlbl.Location = new System.Drawing.Point(365, 231);
+            this.Personnummerlbl.Location = new System.Drawing.Point(365, 227);
             this.Personnummerlbl.Name = "Personnummerlbl";
             this.Personnummerlbl.Size = new System.Drawing.Size(46, 13);
             this.Personnummerlbl.TabIndex = 3;
@@ -99,7 +101,7 @@
             // 
             this.Bokningsnummer.AutoSize = true;
             this.Bokningsnummer.BackColor = System.Drawing.Color.Transparent;
-            this.Bokningsnummer.Location = new System.Drawing.Point(365, 254);
+            this.Bokningsnummer.Location = new System.Drawing.Point(365, 252);
             this.Bokningsnummer.Name = "Bokningsnummer";
             this.Bokningsnummer.Size = new System.Drawing.Size(91, 13);
             this.Bokningsnummer.TabIndex = 6;
@@ -137,7 +139,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(273, 582);
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 773);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 10;
@@ -145,27 +147,43 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click_1);
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 60F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
+            this.gradientPanel1.Controls.Add(this.Personnummerlbl);
+            this.gradientPanel1.Controls.Add(this.Bokningsnummer);
+            this.gradientPanel1.Controls.Add(this.Anställningsnummerlbl);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.TabIndex = 16;
+            this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
             // SkapaUthyrning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.VäljBtn);
             this.Controls.Add(this.BokningsnummerBtn);
             this.Controls.Add(this.KundSokBtn);
-            this.Controls.Add(this.Bokningsnummer);
-            this.Controls.Add(this.Anställningsnummerlbl);
             this.Controls.Add(this.txtAnvandarnamn);
-            this.Controls.Add(this.Personnummerlbl);
             this.Controls.Add(this.txtBoxBokningsID);
             this.Controls.Add(this.txtBoxKundID);
             this.Controls.Add(this.gridBokningar);
+            this.Controls.Add(this.gradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SkapaUthyrning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SkapaUthyrning";
             ((System.ComponentModel.ISupportInitialize)(this.gridBokningar)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +202,6 @@
         private System.Windows.Forms.Button BokningsnummerBtn;
         private System.Windows.Forms.Button VäljBtn;
         private System.Windows.Forms.Button btnTillbaka;
+        private GradientPanel gradientPanel1;
     }
 }
