@@ -110,9 +110,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 36;
-            this.label1.Text = "Antällningsnummer:";
+            this.label1.Text = "Anställningsnummer:";
             // 
             // btnTillbaka
             // 
