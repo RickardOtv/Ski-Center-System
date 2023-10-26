@@ -23,6 +23,7 @@ namespace NetFramework
         private IList<Utrustning> tillgängligUtrustning;
         private Uthyrningsrad valdRad;
         private Bokning valdBokning;
+        //PrivatKundMaxbelopp globalData = PrivatKundMaxbelopp.Instance;
         DateTime från;
         DateTime till;
         Uthyrning nyUthyrning;
@@ -96,6 +97,8 @@ namespace NetFramework
             }
             else
             {
+
+
                 Uthyrningsrad nyUthyrningsRad = kontroller.SkapaUthyrningsRad(från, till, valdUtrustning, nyUthyrning.UthyrningsID);
                 RefreshRader();
                 RefreshUtrustning();
@@ -217,10 +220,19 @@ namespace NetFramework
             momsPris = rabattPris - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
             float slutMomsPris = rabattPris - momsPris;
 
-            MessageBox.Show($"Original Pris: {totalpris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
-            //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
-            kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
-            this.Close();
+            Kund valdKund = kontroller.HittaKund(valdBokning.KundID);
+            MessageBox.Show(valdKund.Maxbeloppskreditgräns.ToString());
+            if ((momsPris + valdFaktura.TotalPris) <= valdKund.Maxbeloppskreditgräns)
+            {
+                MessageBox.Show($"Original Pris: {totalpris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
+                //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
+                kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
+                this.Close();
+            } else
+            {
+                MessageBox.Show($"Det överstiger Maxbeloppkreditgräns:{valdKund.Maxbeloppskreditgräns}kr \nTotalpris för uthyrning är: {momsPris}kr");
+            }
+
         }
         /// <summary>
         /// Metoden kontrollerar priset för uthyrningen baserat på de angivna datumen och den valda utrustningen. Den hanterar felaktiga val av utrustning eller om ingen utrustning har valts och visar det beräknade priset för uthyrningen innan den stängs.

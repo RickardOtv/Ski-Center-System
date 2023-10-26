@@ -190,35 +190,41 @@ namespace NetFramework
         {
             int moms;
             float slutPrisInkMoms;
-            if (gridLogi.SelectedRows.Count > 0)
+            if (nyBokning != null)
             {
-                // Hämta den markerade logien från listan av lediga logier
-                var selectedRow = gridLogi.SelectedRows[0];
-                var rowIndex = selectedRow.Index;
-                if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
+                if (gridLogi.SelectedRows.Count > 0)
                 {
-                    var valdLogi = ledigaLogier[rowIndex];
-
-                    DateTime startDate = dateFrån.Value;
-                    DateTime endDate = dateTill.Value;
-                    decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
-                    if(valdKund.Typ == "Företag"){
-                        moms = 12; 
-                    } else
+                    // Hämta den markerade logien från listan av lediga logier
+                    var selectedRow = gridLogi.SelectedRows[0];
+                    var rowIndex = selectedRow.Index;
+                    if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
                     {
-                        moms = 0;
+                        var valdLogi = ledigaLogier[rowIndex];
+
+                        DateTime startDate = dateFrån.Value;
+                        DateTime endDate = dateTill.Value;
+                        decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
+                        if(valdKund.Typ == "Företag"){
+                            moms = 12; 
+                        } else
+                        {
+                            moms = 0;
+                        }
+                        slutPrisInkMoms = (float)pris - ((float)pris * ((float)moms / 100));
+                        MessageBox.Show($"Original Pris: {pris}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
                     }
-                    slutPrisInkMoms = (float)pris - ((float)pris * ((float)moms / 100));
-                    MessageBox.Show($"Original Pris: {pris}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
+                    else
+                    {
+                        MessageBox.Show("Felaktig logi vald.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Felaktig logi vald.");
-                }
-            }
-            else
+                    MessageBox.Show("Ingen logi vald.");
+                }  
+            } else
             {
-                MessageBox.Show("Ingen logi vald.");
+                MessageBox.Show("Välj först en kund.");
             }
         }
 

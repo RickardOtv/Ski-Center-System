@@ -1,5 +1,6 @@
 ﻿using Affärslager;
 using Datalager;
+using Entitetslager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +42,8 @@ namespace NetFramework
                 HuvudMeny huvudMeny = new HuvudMeny(this, kontroller);
                 huvudMeny.Show();
                 huvudMeny.InloggadAnvandare = txtAnstNr.Text;
-
+                IList<Kund> allaKunder = kontroller.HämtaKunder();
+                kontroller.ÄndraMaxbeloppFörAllaPrivatKunder(allaKunder, 12000);
             }
             else
                 MessageBox.Show("Inloggning misslyckades");

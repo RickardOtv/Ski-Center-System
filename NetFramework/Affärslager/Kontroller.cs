@@ -310,6 +310,12 @@ namespace Affärslager
         {
             return unitOfWork.fakturor.ToList<Faktura>();
         }
+
+        public Kund HämtaFörstaPrivatKund()
+        {
+            Kund hittadKund = unitOfWork.kunder.FirstOrDefault(kund => kund.Typ == "Privat");
+            return hittadKund;
+        }
         public Bokning HittaBokning(string söktBokningsNummer)
         {
             int matadBokningsNr = Int32.Parse(söktBokningsNummer);
@@ -472,6 +478,18 @@ namespace Affärslager
         public void ÄndraFakturaTotalPris(Faktura valdFaktura, float nyttPris)
         {
             valdFaktura.TotalPris = valdFaktura.TotalPris + nyttPris;
+            unitOfWork.SaveChanges();
+        }
+
+        public void ÄndraMaxbeloppFörAllaPrivatKunder(IList<Kund> kunder, int nyttMaxbelopp)
+        {
+            foreach (var kund in kunder)
+            {
+                if(kund.Typ == "Privat")
+                {
+                    kund.Maxbeloppskreditgräns = nyttMaxbelopp;
+                }
+            }
             unitOfWork.SaveChanges();
         }
 

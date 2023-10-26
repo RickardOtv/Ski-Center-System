@@ -116,7 +116,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(877, 523);
+            this.btnTaBort.Location = new System.Drawing.Point(843, 523);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(75, 23);
             this.btnTaBort.TabIndex = 13;
@@ -126,7 +126,7 @@
             // 
             // btnKlar
             // 
-            this.btnKlar.Location = new System.Drawing.Point(1192, 773);
+            this.btnKlar.Location = new System.Drawing.Point(924, 523);
             this.btnKlar.Name = "btnKlar";
             this.btnKlar.Size = new System.Drawing.Size(75, 23);
             this.btnKlar.TabIndex = 14;
@@ -138,6 +138,7 @@
             // 
             this.txtBoxValdKund.Location = new System.Drawing.Point(265, 277);
             this.txtBoxValdKund.Name = "txtBoxValdKund";
+            this.txtBoxValdKund.ReadOnly = true;
             this.txtBoxValdKund.Size = new System.Drawing.Size(120, 20);
             this.txtBoxValdKund.TabIndex = 18;
             this.txtBoxValdKund.Text = "Vald kund:";
@@ -145,8 +146,9 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(650, 347);
+            this.textBox6.Location = new System.Drawing.Point(650, 338);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 20;
             this.textBox6.Text = "Vald utrustning";
@@ -257,6 +259,8 @@
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.btnTillbaka);
             this.gradientPanel1.Controls.Add(this.btnKlar);
+            this.gradientPanel1.Controls.Add(this.btnTaBort);
+            this.gradientPanel1.Controls.Add(this.textBox6);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
@@ -278,9 +282,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbTyp);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.txtBoxValdKund);
-            this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.gridRader);
             this.Controls.Add(this.gridUtrustning);

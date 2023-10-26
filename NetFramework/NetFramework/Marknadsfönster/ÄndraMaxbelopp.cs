@@ -1,4 +1,5 @@
 ﻿using Affärslager;
+using Entitetslager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace NetFramework.Marknadsfönster
         private Kontroller kontroller;
         private LoggaIn loggaIn;
         // Get the global data instance
-        PrivatKundMaxbelopp globalData = PrivatKundMaxbelopp.Instance;
+        //PrivatKundMaxbelopp globalData = PrivatKundMaxbelopp.Instance;
         private int nyttMaxbelopp;
 
         public ÄndraMaxbelopp(LoggaIn loggaIn, Kontroller kontroller)
@@ -25,7 +26,8 @@ namespace NetFramework.Marknadsfönster
             InitializeComponent();
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
-            textBox_GammalMaxbelopp.Text = globalData.GlobalVariable.ToString();
+            Kund hittadFörstaKund = kontroller.HämtaFörstaPrivatKund();
+            textBox_GammalMaxbelopp.Text = hittadFörstaKund.Maxbeloppskreditgräns.ToString();
         }
         public string InloggadAnvandare
         {
@@ -49,7 +51,9 @@ namespace NetFramework.Marknadsfönster
             {
                 if(nyttMaxbelopp >= 0)
                 {
-                    globalData.GlobalVariable = nyttMaxbelopp;
+                    IList<Kund> allaKunder = kontroller.HämtaKunder();
+                    kontroller.ÄndraMaxbeloppFörAllaPrivatKunder(allaKunder, nyttMaxbelopp);
+                    //globalData.GlobalVariable = nyttMaxbelopp;
                     Close();
                 }else
                 {
