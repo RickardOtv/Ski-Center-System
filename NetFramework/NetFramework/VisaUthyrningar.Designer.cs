@@ -200,9 +200,9 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(12, 773);
+            this.btnTillbaka.Location = new System.Drawing.Point(14, 768);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
+            this.btnTillbaka.Size = new System.Drawing.Size(110, 28);
             this.btnTillbaka.TabIndex = 13;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -213,6 +213,7 @@
             this.gradientPanel1.Angle = 60F;
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.btnTillbaka);
             this.gradientPanel1.Controls.Add(this.lblUthyrning);
             this.gradientPanel1.Controls.Add(this.Anställningsnummerlbl);
             this.gradientPanel1.Controls.Add(this.lblPersNr);
@@ -232,7 +233,6 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnVäljUthyrning);

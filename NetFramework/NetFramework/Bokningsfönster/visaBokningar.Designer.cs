@@ -98,9 +98,9 @@
             // 
             // btn_tillbaka
             // 
-            this.btn_tillbaka.Location = new System.Drawing.Point(12, 764);
+            this.btn_tillbaka.Location = new System.Drawing.Point(14, 768);
             this.btn_tillbaka.Name = "btn_tillbaka";
-            this.btn_tillbaka.Size = new System.Drawing.Size(85, 32);
+            this.btn_tillbaka.Size = new System.Drawing.Size(110, 28);
             this.btn_tillbaka.TabIndex = 11;
             this.btn_tillbaka.Text = "Tillbaka";
             this.btn_tillbaka.UseVisualStyleBackColor = true;

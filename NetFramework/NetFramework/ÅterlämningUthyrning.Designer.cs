@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gradientPanel1 = new NetFramework.GradientPanel();
-            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.Anställningsnummerlbl = new System.Windows.Forms.Label();
-            this.Tillbaka = new System.Windows.Forms.Button();
-            this.UthyrningsIDlbl = new System.Windows.Forms.Label();
-            this.TextBoxUthyrningsID = new System.Windows.Forms.TextBox();
             this.SökBtn = new System.Windows.Forms.Button();
-            this.GridÅterlämning = new System.Windows.Forms.DataGridView();
+            this.TextBoxUthyrningsID = new System.Windows.Forms.TextBox();
+            this.Tillbaka = new System.Windows.Forms.Button();
             this.ÅterlämnaBtn = new System.Windows.Forms.Button();
+            this.UthyrningsIDlbl = new System.Windows.Forms.Label();
+            this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
+            this.GridÅterlämning = new System.Windows.Forms.DataGridView();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridÅterlämning)).BeginInit();
             this.SuspendLayout();
@@ -59,14 +59,6 @@
             this.gradientPanel1.TabIndex = 15;
             this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
-            // txtAnvandarnamn
-            // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(118, 6);
-            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
-            this.txtAnvandarnamn.ReadOnly = true;
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(19, 20);
-            this.txtAnvandarnamn.TabIndex = 13;
-            // 
             // Anställningsnummerlbl
             // 
             this.Anställningsnummerlbl.AutoSize = true;
@@ -76,33 +68,6 @@
             this.Anställningsnummerlbl.Size = new System.Drawing.Size(100, 13);
             this.Anställningsnummerlbl.TabIndex = 14;
             this.Anställningsnummerlbl.Text = "Anställningsnummer";
-            // 
-            // Tillbaka
-            // 
-            this.Tillbaka.Location = new System.Drawing.Point(15, 773);
-            this.Tillbaka.Name = "Tillbaka";
-            this.Tillbaka.Size = new System.Drawing.Size(75, 23);
-            this.Tillbaka.TabIndex = 4;
-            this.Tillbaka.Text = "Tillbaka";
-            this.Tillbaka.UseVisualStyleBackColor = true;
-            this.Tillbaka.Click += new System.EventHandler(this.Tillbaka_Click);
-            // 
-            // UthyrningsIDlbl
-            // 
-            this.UthyrningsIDlbl.AutoSize = true;
-            this.UthyrningsIDlbl.BackColor = System.Drawing.Color.Transparent;
-            this.UthyrningsIDlbl.Location = new System.Drawing.Point(317, 193);
-            this.UthyrningsIDlbl.Name = "UthyrningsIDlbl";
-            this.UthyrningsIDlbl.Size = new System.Drawing.Size(99, 13);
-            this.UthyrningsIDlbl.TabIndex = 5;
-            this.UthyrningsIDlbl.Text = "Ange UthyrningsID:";
-            // 
-            // TextBoxUthyrningsID
-            // 
-            this.TextBoxUthyrningsID.Location = new System.Drawing.Point(422, 190);
-            this.TextBoxUthyrningsID.Name = "TextBoxUthyrningsID";
-            this.TextBoxUthyrningsID.Size = new System.Drawing.Size(112, 20);
-            this.TextBoxUthyrningsID.TabIndex = 3;
             // 
             // SökBtn
             // 
@@ -114,16 +79,22 @@
             this.SökBtn.UseVisualStyleBackColor = true;
             this.SökBtn.Click += new System.EventHandler(this.SökBtn_Click);
             // 
-            // GridÅterlämning
+            // TextBoxUthyrningsID
             // 
-            this.GridÅterlämning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridÅterlämning.Location = new System.Drawing.Point(320, 219);
-            this.GridÅterlämning.Name = "GridÅterlämning";
-            this.GridÅterlämning.ReadOnly = true;
-            this.GridÅterlämning.RowHeadersVisible = false;
-            this.GridÅterlämning.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridÅterlämning.Size = new System.Drawing.Size(616, 315);
-            this.GridÅterlämning.TabIndex = 0;
+            this.TextBoxUthyrningsID.Location = new System.Drawing.Point(422, 190);
+            this.TextBoxUthyrningsID.Name = "TextBoxUthyrningsID";
+            this.TextBoxUthyrningsID.Size = new System.Drawing.Size(112, 20);
+            this.TextBoxUthyrningsID.TabIndex = 3;
+            // 
+            // Tillbaka
+            // 
+            this.Tillbaka.Location = new System.Drawing.Point(14, 768);
+            this.Tillbaka.Name = "Tillbaka";
+            this.Tillbaka.Size = new System.Drawing.Size(110, 28);
+            this.Tillbaka.TabIndex = 4;
+            this.Tillbaka.Text = "Tillbaka";
+            this.Tillbaka.UseVisualStyleBackColor = true;
+            this.Tillbaka.Click += new System.EventHandler(this.Tillbaka_Click);
             // 
             // ÅterlämnaBtn
             // 
@@ -134,6 +105,35 @@
             this.ÅterlämnaBtn.Text = "Återlämna";
             this.ÅterlämnaBtn.UseVisualStyleBackColor = true;
             this.ÅterlämnaBtn.Click += new System.EventHandler(this.ÅterlämnaBtn_Click);
+            // 
+            // UthyrningsIDlbl
+            // 
+            this.UthyrningsIDlbl.AutoSize = true;
+            this.UthyrningsIDlbl.BackColor = System.Drawing.Color.Transparent;
+            this.UthyrningsIDlbl.Location = new System.Drawing.Point(317, 193);
+            this.UthyrningsIDlbl.Name = "UthyrningsIDlbl";
+            this.UthyrningsIDlbl.Size = new System.Drawing.Size(99, 13);
+            this.UthyrningsIDlbl.TabIndex = 5;
+            this.UthyrningsIDlbl.Text = "Ange UthyrningsID:";
+            // 
+            // txtAnvandarnamn
+            // 
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(118, 6);
+            this.txtAnvandarnamn.Name = "txtAnvandarnamn";
+            this.txtAnvandarnamn.ReadOnly = true;
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(19, 20);
+            this.txtAnvandarnamn.TabIndex = 13;
+            // 
+            // GridÅterlämning
+            // 
+            this.GridÅterlämning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridÅterlämning.Location = new System.Drawing.Point(320, 219);
+            this.GridÅterlämning.Name = "GridÅterlämning";
+            this.GridÅterlämning.ReadOnly = true;
+            this.GridÅterlämning.RowHeadersVisible = false;
+            this.GridÅterlämning.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridÅterlämning.Size = new System.Drawing.Size(616, 315);
+            this.GridÅterlämning.TabIndex = 0;
             // 
             // ÅterlämningUthyrning
             // 

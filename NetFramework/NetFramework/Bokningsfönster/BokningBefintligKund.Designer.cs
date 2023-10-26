@@ -177,10 +177,10 @@
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(11, 776);
+            this.btnAvbryt.Location = new System.Drawing.Point(14, 768);
             this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(70, 21);
+            this.btnAvbryt.Size = new System.Drawing.Size(110, 28);
             this.btnAvbryt.TabIndex = 14;
             this.btnAvbryt.Text = "Tillbaka";
             this.btnAvbryt.UseVisualStyleBackColor = true;

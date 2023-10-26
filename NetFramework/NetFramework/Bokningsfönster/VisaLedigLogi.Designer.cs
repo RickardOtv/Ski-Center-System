@@ -111,9 +111,9 @@
             // 
             // TillbakaKnapp
             // 
-            this.TillbakaKnapp.Location = new System.Drawing.Point(12, 768);
+            this.TillbakaKnapp.Location = new System.Drawing.Point(14, 768);
             this.TillbakaKnapp.Name = "TillbakaKnapp";
-            this.TillbakaKnapp.Size = new System.Drawing.Size(99, 28);
+            this.TillbakaKnapp.Size = new System.Drawing.Size(110, 28);
             this.TillbakaKnapp.TabIndex = 14;
             this.TillbakaKnapp.Text = "Tillbaka";
             this.TillbakaKnapp.UseVisualStyleBackColor = true;
