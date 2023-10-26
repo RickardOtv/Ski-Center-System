@@ -76,7 +76,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label2.Location = new System.Drawing.Point(543, 201);
+            this.label2.Location = new System.Drawing.Point(547, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 39);
             this.label2.TabIndex = 19;

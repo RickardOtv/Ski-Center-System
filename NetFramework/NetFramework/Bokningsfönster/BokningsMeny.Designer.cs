@@ -41,7 +41,7 @@
             // 
             // btnSkapaBokning
             // 
-            this.btnSkapaBokning.Location = new System.Drawing.Point(476, 287);
+            this.btnSkapaBokning.Location = new System.Drawing.Point(476, 270);
             this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
             this.btnSkapaBokning.Size = new System.Drawing.Size(330, 52);
@@ -52,7 +52,7 @@
             // 
             // btnLediga
             // 
-            this.btnLediga.Location = new System.Drawing.Point(476, 369);
+            this.btnLediga.Location = new System.Drawing.Point(476, 341);
             this.btnLediga.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLediga.Name = "btnLediga";
             this.btnLediga.Size = new System.Drawing.Size(330, 52);
@@ -63,7 +63,7 @@
             // 
             // btnVisaBokningar
             // 
-            this.btnVisaBokningar.Location = new System.Drawing.Point(476, 454);
+            this.btnVisaBokningar.Location = new System.Drawing.Point(476, 412);
             this.btnVisaBokningar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnVisaBokningar.Name = "btnVisaBokningar";
             this.btnVisaBokningar.Size = new System.Drawing.Size(330, 52);
@@ -108,7 +108,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(573, 219);
+            this.label1.Location = new System.Drawing.Point(566, 202);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 39);
