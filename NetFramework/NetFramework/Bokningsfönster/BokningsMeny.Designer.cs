@@ -44,7 +44,7 @@
             this.btnSkapaBokning.Location = new System.Drawing.Point(468, 287);
             this.btnSkapaBokning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSkapaBokning.Name = "btnSkapaBokning";
-            this.btnSkapaBokning.Size = new System.Drawing.Size(314, 44);
+            this.btnSkapaBokning.Size = new System.Drawing.Size(330, 52);
             this.btnSkapaBokning.TabIndex = 0;
             this.btnSkapaBokning.Text = "Bokning av Logi";
             this.btnSkapaBokning.UseVisualStyleBackColor = true;
@@ -52,10 +52,10 @@
             // 
             // btnLediga
             // 
-            this.btnLediga.Location = new System.Drawing.Point(468, 370);
+            this.btnLediga.Location = new System.Drawing.Point(468, 369);
             this.btnLediga.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLediga.Name = "btnLediga";
-            this.btnLediga.Size = new System.Drawing.Size(314, 44);
+            this.btnLediga.Size = new System.Drawing.Size(330, 52);
             this.btnLediga.TabIndex = 1;
             this.btnLediga.Text = "Visa lediga logialternativ";
             this.btnLediga.UseVisualStyleBackColor = true;
@@ -63,10 +63,10 @@
             // 
             // btnVisaBokningar
             // 
-            this.btnVisaBokningar.Location = new System.Drawing.Point(468, 455);
+            this.btnVisaBokningar.Location = new System.Drawing.Point(468, 454);
             this.btnVisaBokningar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnVisaBokningar.Name = "btnVisaBokningar";
-            this.btnVisaBokningar.Size = new System.Drawing.Size(314, 44);
+            this.btnVisaBokningar.Size = new System.Drawing.Size(330, 52);
             this.btnVisaBokningar.TabIndex = 3;
             this.btnVisaBokningar.Text = "Visa bokningar";
             this.btnVisaBokningar.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(115, 3);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;
@@ -96,7 +96,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(4, 6);
+            this.lblAnstNr.Location = new System.Drawing.Point(12, 11);
             this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
@@ -108,7 +108,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(550, 217);
+            this.label1.Location = new System.Drawing.Point(565, 219);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 39);
@@ -120,7 +120,9 @@
             this.gradientPanel1.Angle = 60F;
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.btnVisaBokningar);
             this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnLediga);
             this.gradientPanel1.Controls.Add(this.btnTillbaka);
             this.gradientPanel1.Controls.Add(this.lblAnstNr);
             this.gradientPanel1.Controls.Add(this.txtAnvandarnamn);
@@ -138,8 +140,6 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.btnVisaBokningar);
-            this.Controls.Add(this.btnLediga);
             this.Controls.Add(this.btnSkapaBokning);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

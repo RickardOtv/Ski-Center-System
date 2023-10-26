@@ -65,7 +65,7 @@
             this.lblTyp.AutoSize = true;
             this.lblTyp.BackColor = System.Drawing.Color.Transparent;
             this.lblTyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTyp.Location = new System.Drawing.Point(519, 247);
+            this.lblTyp.Location = new System.Drawing.Point(519, 248);
             this.lblTyp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTyp.Name = "lblTyp";
             this.lblTyp.Size = new System.Drawing.Size(213, 31);
@@ -86,7 +86,7 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(13, 9);
+            this.lblAnstNr.Location = new System.Drawing.Point(12, 11);
             this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
@@ -95,7 +95,7 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 6);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;
             this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);

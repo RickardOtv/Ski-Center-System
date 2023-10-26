@@ -40,7 +40,7 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(115, 8);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;
@@ -72,10 +72,10 @@
             // 
             // btnHanteraAnställd
             // 
-            this.btnHanteraAnställd.Location = new System.Drawing.Point(449, 395);
+            this.btnHanteraAnställd.Location = new System.Drawing.Point(473, 372);
             this.btnHanteraAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHanteraAnställd.Name = "btnHanteraAnställd";
-            this.btnHanteraAnställd.Size = new System.Drawing.Size(364, 34);
+            this.btnHanteraAnställd.Size = new System.Drawing.Size(330, 52);
             this.btnHanteraAnställd.TabIndex = 11;
             this.btnHanteraAnställd.Text = "Hantera anställda";
             this.btnHanteraAnställd.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // 
             // btnSkapaAnställd
             // 
-            this.btnSkapaAnställd.Location = new System.Drawing.Point(449, 467);
+            this.btnSkapaAnställd.Location = new System.Drawing.Point(473, 450);
             this.btnSkapaAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSkapaAnställd.Name = "btnSkapaAnställd";
-            this.btnSkapaAnställd.Size = new System.Drawing.Size(364, 34);
+            this.btnSkapaAnställd.Size = new System.Drawing.Size(330, 52);
             this.btnSkapaAnställd.TabIndex = 12;
             this.btnSkapaAnställd.Text = "Skapa Anställd";
             this.btnSkapaAnställd.UseVisualStyleBackColor = true;
@@ -108,7 +108,9 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.lblAnstNr);
+            this.gradientPanel1.Controls.Add(this.btnSkapaAnställd);
             this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnHanteraAnställd);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
@@ -124,8 +126,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.btnTillbaka);
-            this.Controls.Add(this.btnSkapaAnställd);
-            this.Controls.Add(this.btnHanteraAnställd);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

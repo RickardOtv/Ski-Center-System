@@ -45,7 +45,7 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(115, 8);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;

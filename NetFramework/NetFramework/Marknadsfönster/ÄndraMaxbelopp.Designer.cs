@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 18;
@@ -63,9 +63,9 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(116, 9);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(18, 20);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 19;
             // 
             // button1

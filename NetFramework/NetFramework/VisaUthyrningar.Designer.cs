@@ -184,7 +184,7 @@
             // 
             this.Anställningsnummerlbl.AutoSize = true;
             this.Anställningsnummerlbl.BackColor = System.Drawing.Color.Transparent;
-            this.Anställningsnummerlbl.Location = new System.Drawing.Point(9, 9);
+            this.Anställningsnummerlbl.Location = new System.Drawing.Point(12, 11);
             this.Anställningsnummerlbl.Name = "Anställningsnummerlbl";
             this.Anställningsnummerlbl.Size = new System.Drawing.Size(100, 13);
             this.Anställningsnummerlbl.TabIndex = 12;
@@ -192,10 +192,10 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(115, 6);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(19, 20);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 11;
             // 
             // btnTillbaka
