@@ -1,18 +1,9 @@
 ﻿using System;
 using Affärslager;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
 {
-
-
     public partial class UthyrningsMeny : Form
     {
         private Kontroller kontroller;
@@ -30,6 +21,7 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Knapp för att gå tillbaka till huvudmeny
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
@@ -38,11 +30,7 @@ namespace NetFramework
             this.Close();
         }
 
-        /// <summary>
-        /// Skapar en ny instans av ett SkapaUthyrning-fönster
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Knapp för att gå till skapa uthyrningsfönster
         private void btnSkapaUthyrning_Click(object sender, EventArgs e)
         {
             SkapaUthyrning skapaUthyrning = new SkapaUthyrning(loggaIn, kontroller);
@@ -50,23 +38,15 @@ namespace NetFramework
             skapaUthyrning.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
-        /// <summary>
-        /// Skapar en ny instans av ett fönster för Återlämning av uthyrning
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //knapp för att gå till återlämningsfönster
         private void btnÅterlämning_Click(object sender, EventArgs e)
         {
             ÅterlämningUthyrning återlämningUthyrning = new ÅterlämningUthyrning(loggaIn, kontroller);
             återlämningUthyrning.Show();
             återlämningUthyrning.InloggadAnvandare = txtAnvandarnamn.Text;
-
         }
-        /// <summary>
-        /// Skapar en ny instans av ett fönster för Visa Uthyrningar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Knapp för att gå till visa uthyrningarfönster
         private void btnVisaUthyrningar_Click(object sender, EventArgs e)
         {
             VisaUthyrningar visaUthyrningar = new VisaUthyrningar(loggaIn, kontroller);

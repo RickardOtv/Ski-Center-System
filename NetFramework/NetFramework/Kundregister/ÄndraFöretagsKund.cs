@@ -2,13 +2,6 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -19,7 +12,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Kund valdKund;
-        private int result;
+        int result;
 
         public ÄndraFöretagsKund(LoggaIn loggaIn, Kontroller kontroller, Kund kund)
         {
@@ -44,17 +37,16 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        /// <summary>
-        /// Denna metod btnSpara_Click sparar ändringar som gjorts i informationen för en kund. Den hämtar de nya värdena från textfälten för personnummer, namn, adress, e-post, postort, kreditgräns, postnummer och telefonnummer. Sedan uppdateras kundens information med de nya värdena genom att anropa metoden ÄndraKund i kontroller med de uppdaterade värdena. Efter att ändringarna har sparats visas en bekräftelsemeddelande och fönstret stängs.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Sparar ändringar gjord på kund
         private void btnSpara_Click(object sender, EventArgs e)
         {
+            //Kollar så att inmattningar matchar rätt format
             if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:"))
             {
                 MessageBox.Show("Fyll i alla rader tack!");
@@ -100,10 +92,8 @@ namespace NetFramework
                 MessageBox.Show("Ange en giltigt Kreditgräns", "Ogiltigt Kreditgräns", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxKredit.Focus();
             }
-            else
+            else //Om inmatning matchade rätt format
             {
-
-
                 string nyttPersonNr = txtBoxPersonNr.Text;
                 string nyttNamn = txtboxNamn.Text;
                 string nyAdress = txtBoxAdress.Text;
@@ -124,7 +114,6 @@ namespace NetFramework
                 kontroller.ÄndraKund(nyttPersonNr, nyttNamn, nyTelefonNr, nyPostNr, nyPostOrt, "Företag", nyAdress, nyEmail, nyKreditgrans, valdKund);
 
                 MessageBox.Show("Kund uppdaterad!");
-
                 this.Close();
             }
         }

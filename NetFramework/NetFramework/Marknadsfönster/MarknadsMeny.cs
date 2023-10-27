@@ -1,13 +1,6 @@
 ﻿using Affärslager;
 using NetFramework.Marknadsfönster;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -29,6 +22,7 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Knapp för att gå tillbaka till huvudmeny
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
@@ -36,14 +30,7 @@ namespace NetFramework
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
-        private void btnVisaStatistik_Click(object sender, EventArgs e)
-        {
-            VisaStatistik visaStatistik = new VisaStatistik(loggaIn, kontroller);
-            visaStatistik.Show();
-            visaStatistik.InloggadAnvandare = txtAnvandarnamn.Text;
-            this.Close();
-        }
-
+        //Knapp för att gå till meny för registrering av ny företagskund
         private void btnRegFöretagsKund_Click(object sender, EventArgs e)
         {
             SkapaFöretagskund skapaFöretagskund = new SkapaFöretagskund(loggaIn, kontroller);
@@ -52,6 +39,7 @@ namespace NetFramework
             this.Close();
         }
 
+        //Knapp för at gå till meny där maxbelopp syns och kan ändras
         private void btnÄndraMaxbelopp_Click(object sender, EventArgs e)
         {
             ÄndraMaxbelopp ändraMaxbelopp = new ÄndraMaxbelopp(loggaIn, kontroller);
@@ -60,6 +48,7 @@ namespace NetFramework
             this.Close();
         }
 
+        //Knapp för att gå till vy med fakturor
         private void btn_visaFaktura_Click(object sender, EventArgs e)
         {
             VisaFakturor visaFakturor = new VisaFakturor(loggaIn, kontroller);

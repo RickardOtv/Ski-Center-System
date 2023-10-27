@@ -1,15 +1,8 @@
 ﻿using Affärslager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace NetFramework
@@ -18,8 +11,6 @@ namespace NetFramework
     {
         private Kontroller kontroller;
         private LoggaIn loggaIn;
-        private int resault;
-        private int distance;
         PrivatKundMaxbelopp globalData = PrivatKundMaxbelopp.Instance;
 
         public BokningNyKund(LoggaIn loggaIn, Kontroller kontroller)
@@ -35,14 +26,10 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-        /// <summary>
-        /// Metoden btnGaVidare_Click hanterar händelsen när användaren klickar på en knapp för att fortsätta. Den validerar användarens inmatade uppgifter inklusive personnummer, namn, telefonnummer, e-postadress, adress, postnummer och postort. Om något av de obligatoriska fälten är tomt eller om någon inmatning inte följer det förväntade formatet, visas ett varningsmeddelande för användaren som specificerar vilket fält som behöver korrigeras. Om alla inmatningar är giltiga skapas en ny kund med de angivna uppgifterna, och en bekräftelse visas innan formuläret stängs och nästa fönster öppnas.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Skapar en ny kund
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
-
+            //Kollar så att alla textboxes är inmatade korrekt
             if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:"))
             {
                 MessageBox.Show("Fyll i alla rader tack!");
@@ -83,7 +70,7 @@ namespace NetFramework
                 MessageBox.Show("Ange ett giltigt Postnr", "Ogiltigt Postnr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxPostNr.Focus();
             }
-            else
+            else // Om alla boxes är skrivna korrekt så skapas kunden
             {
 
                 string personnummer = txtBoxPersonNr.Text;
@@ -94,17 +81,13 @@ namespace NetFramework
                 string postNr = txtBoxPostNr.Text;
                 string postOrt = txtBoxOrt.Text;
 
-
                 Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, "Privat", globalData.GlobalVariable);
                 MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
                 BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
                 this.Close();
                 befintligKund.Show();
-
             }
         }
-
-
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {

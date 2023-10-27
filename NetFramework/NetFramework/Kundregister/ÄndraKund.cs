@@ -2,13 +2,6 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -42,13 +35,11 @@ namespace NetFramework
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
-        /// <summary>
-        /// Denna metod btnSpara_Click sparar ändringar som gjorts i informationen för en kund. Den hämtar de nya värdena från textfälten för personnummer, namn, adress, e-post, postort, postnummer och telefonnummer. Sedan uppdateras kundens information med de nya värdena genom att anropa metoden ÄndraKund i kontroller med de uppdaterade värdena. Efter att ändringarna har sparats visas en bekräftelsemeddelande och fönstret stängs.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Sparar den nya infromationen om kund
         private void btnSpara_Click(object sender, EventArgs e)
         {
+            //Kollar så att inmatning matchar rätt format
             if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:"))
             {
                 MessageBox.Show("Fyll i alla rader tack!");
@@ -89,7 +80,7 @@ namespace NetFramework
                 MessageBox.Show("Ange ett giltigt Postnr", "Ogiltigt Postnr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxPostNr.Focus();
             }
-            else
+            else //Om inmatning matchar rätt format
             {
                 string nyttPersonNr = txtBoxPersonNr.Text;
                 string nyttNamn = txtboxNamn.Text;
@@ -113,6 +104,7 @@ namespace NetFramework
             }  
         }
 
+        //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();

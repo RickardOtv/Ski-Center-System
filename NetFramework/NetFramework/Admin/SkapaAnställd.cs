@@ -1,13 +1,7 @@
 ﻿using Affärslager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -32,33 +26,39 @@ namespace NetFramework
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
+            // Kontrollera om någon av inmatningsfälten är tomt eller inte valt
             if ((txtBoxFörnamn.Text == "Förnamn:") | (txtBoxEfternamn.Text == "Efternamn:") | (txtBoxLösenord.Text == "Lösenord:") | string.IsNullOrEmpty((string)cmbBehörighet.SelectedItem))
             {
                 MessageBox.Show("Fyll i alla rader tack!");
             }
             else if (!kontroller.IsValidName(txtBoxFörnamn.Text))
             {
+                // Kontrollera om förnamnet är giltigt och visa felmeddelande om inte
                 MessageBox.Show("Ange ett giltigt Förnamn", "Ogiltig Förnamn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxFörnamn.Focus();
             }
             else if (!kontroller.IsValidName(txtBoxEfternamn.Text))
             {
+                // Kontrollera om efternamnet är giltigt och visa felmeddelande om inte
                 MessageBox.Show("Ange en giltig Efternamn", "Ogiltig Efternamn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxEfternamn.Focus();
             }
             else
             {
+                // Om alla valideringar passerar, skapa en ny anställd
                 string förnamn = txtBoxFörnamn.Text;
                 string efternamn = txtBoxEfternamn.Text;
                 string lösenord = txtBoxLösenord.Text;
                 string behörighet = cmbBehörighet.Text;
 
                 Anställd nyAnställd = kontroller.SkapaNyAnställd(förnamn, efternamn, lösenord, behörighet);
+
+                // Visa meddelande om att en ny anställd har skapats
                 MessageBox.Show($"Ny Anställd skapad!\n Namn: {nyAnställd.Förnamn} {nyAnställd.Efternamn}\n AnställningsNr: {nyAnställd.AnställningsNr}\n Behörighet: {nyAnställd.Behörighet}");
                 this.Close();
             }
-
         }
+
 
         private void txtBoxFörnamn_Enter(object sender, EventArgs e)
         {

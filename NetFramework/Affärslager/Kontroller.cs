@@ -450,9 +450,17 @@ namespace Affärslager
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == personNummer);
         }
+        public Kund HittaKundPåNamn(string namn)
+        {
+            return unitOfWork.kunder.FirstOrDefault(k => k.Namn == namn);
+        }
         public Anställd HittaAnställd(int anställningsNr)
         {
             return unitOfWork.anställda.FirstOrDefault(a => a.AnställningsNr == anställningsNr);
+        }
+        public IList<Anställd> HittaFlerSpecifikaAnställda (int anställningsNr)
+        {
+            return unitOfWork.anställda.Where(a => a.AnställningsNr == anställningsNr).ToList();
         }
         public Logi HittaLogi(string logiID)
         {

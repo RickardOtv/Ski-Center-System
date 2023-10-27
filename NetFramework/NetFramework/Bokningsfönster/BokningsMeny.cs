@@ -1,12 +1,5 @@
 ﻿using Affärslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -22,12 +15,14 @@ namespace NetFramework
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
         }
+
         public string InloggadAnvandare
         {
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Gå till Lediga Logi
         private void btnLediga_Click(object sender, EventArgs e)
         {
             VisaLedigLogi ledigLogi = new VisaLedigLogi(loggaIn, kontroller);
@@ -35,6 +30,7 @@ namespace NetFramework
             ledigLogi.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
+        //Gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
@@ -42,6 +38,7 @@ namespace NetFramework
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
+        //Påbörja skapande av bokning
         private void btnSkapaBokning_Click(object sender, EventArgs e)
         {
             BokningsTyp bokningsTyp = new BokningsTyp(loggaIn, kontroller);
@@ -49,6 +46,7 @@ namespace NetFramework
             bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
+        //Visa alla bokningar
         private void btnVisaBokningar_Click(object sender, EventArgs e)
         {
             VisaBokningar visabokningar = new VisaBokningar(loggaIn, kontroller);

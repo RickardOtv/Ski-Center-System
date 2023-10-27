@@ -2,14 +2,9 @@
 using Entitetslager;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -33,11 +28,7 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-        /// <summary>
-        /// Metoden button1_Click_1 öppnar en anslutning till en databas och utför en SQL-fråga för att hämta tillgängliga boenden inom ett specificerat tidsintervall. Den använder två DateTime-objekt för att representera start- och slutdatumet för sökningen. En SQL-fråga används för att hämta de tillgängliga boendena från databasen baserat på det specificerade tidsintervallet. Resultatet av frågan används sedan för att fylla en DataGridView-kontroll med information om tillgängliga boenden. Om det uppstår något undantag under processen stängs anslutningen till databasen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Hämtar alla lediga login i valt intervall
         private void button1_Click_1(object sender, EventArgs e)
         {
             string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -89,16 +80,7 @@ namespace NetFramework
         }
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Metoden button2_Click kontrollerar om det finns markerade rader i en DataGridView-kontroll. Om en rad är markerad hämtas informationen om den specifika raden och dess motsvarande pris baserat på valda datum. Denna information visas sedan i en dialogruta. Om ingen rad är markerad eller om den valda raden är ogiltig, visas lämpliga meddelanden.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Kollar pris på ett valt logi inom valt intervall
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -126,12 +108,7 @@ namespace NetFramework
             }
         }
 
-
-
-
-
-
-
+        //Knapp för att gå tillbaka
         private void TillbakaKnapp_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -1,13 +1,6 @@
 ﻿using Affärslager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework.Marknadsfönster
@@ -33,18 +26,21 @@ namespace NetFramework.Marknadsfönster
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
+
+        //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Knapp för att spara den nya rabatten
         private void btn_Spara_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox_NyRabatt.Text, out nyRabatt) /*|| string.IsNullOrEmpty(textBox_NyRabatt.Text)*/)
-            {
+            //Kollar så att inmatning är ett helt nummer
+            if (int.TryParse(textBox_NyRabatt.Text, out nyRabatt))
+            {   //Kollar så att inmatning är en procentsats
                 if (kontroller.IsValidIntegerForPrecent(nyRabatt))
                 {
-
                     kontroller.ÄndraFakturaRabatt(valdFaktura, nyRabatt);
                     Close();
                 }
@@ -58,7 +54,5 @@ namespace NetFramework.Marknadsfönster
                 MessageBox.Show("Matta in det nya värdet först, tack!");
             }
         }
-
-
     }
 }

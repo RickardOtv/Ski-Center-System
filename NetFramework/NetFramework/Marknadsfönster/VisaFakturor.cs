@@ -2,14 +2,8 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework.Marknadsfönster
@@ -32,6 +26,7 @@ namespace NetFramework.Marknadsfönster
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Fyller gridFakturor med fakturor
         internal void RefreshFakturor()
         {
             var fakturor = kontroller.HämtaFakturor();
@@ -45,29 +40,37 @@ namespace NetFramework.Marknadsfönster
             gridFakturor.Columns["Rabattsats"].DisplayIndex = 3;
 
         }
+
+        //Laddar faktura grid med fakturor när form öppnas
         private void FakturaRegister_Load(object sender, EventArgs e)
         {
             RefreshFakturor();
         }
 
+        //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Knapp för att ändra rabatt på specifik faktura
         private void btnÄndraRabatt_Click(object sender, EventArgs e)
         {
             valdFaktura = gridFakturor.SelectedRows[0].DataBoundItem as Faktura;
+            //Kollar så att en faktura är vald
             if (gridFakturor.SelectedRows != null)
             {
                 ÄndraFakturaRabatt ändraFaktura = new ÄndraFakturaRabatt(loggaIn, kontroller, valdFaktura);
                 ändraFaktura.FormClosed += ÄndraFaktura_FormClosed;
                 ändraFaktura.Show();
                 ändraFaktura.InloggadAnvandare = txtAnvandarnamn.Text;
+            } else
+            {
+                MessageBox.Show("Välj först en faktura, tack!", "Confirmation");
             }
         }
 
-
+        //Knapp för att ta bort en faktura
         private void btnTaBort_Click(object sender, EventArgs e)
         {
             valdFaktura = gridFakturor.SelectedRows[0].DataBoundItem as Faktura;
@@ -75,6 +78,7 @@ namespace NetFramework.Marknadsfönster
             DialogResult result = MessageBox.Show("Är du säker att du vill ta bort faktura?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                //Kollar så att en faktura är vald
                 if (gridFakturor.SelectedRows != null)
                 {
                     //valdFaktura = kontroller.HittaFaktura(valdFaktura.FakturaID);
@@ -93,14 +97,17 @@ namespace NetFramework.Marknadsfönster
             }
         }
 
+        //Knapp för att söka efter faktura på bokningsNr
         private void btnSökBokningsNr_Click(object sender, EventArgs e)
         {
+            //Kollar så att inmatning matchar format
             if (kontroller.IsDigitsOnly(txtBoxBokningsID.Text) && !string.IsNullOrEmpty(txtBoxBokningsID.Text))
             {
                 RefreshFakturor();
                 int matadBokningsNr = int.Parse(txtBoxBokningsID.Text);
                 var matchadeFakturor = unitOfWork.fakturor.Where(a => a.BokningsID == matadBokningsNr).ToList();
 
+                //Kollar ifall nån faktura var hittad
                 if (matchadeFakturor.Count > 0)
                 {
                     gridFakturor.DataSource = matchadeFakturor;
@@ -116,9 +123,11 @@ namespace NetFramework.Marknadsfönster
             }
         }
 
+        //Knapp för att kunna ändra moms för specifik faktura
         private void btn_ÄndraMoms_Click(object sender, EventArgs e)
         {
             valdFaktura = gridFakturor.SelectedRows[0].DataBoundItem as Faktura;
+            //Kollar så att en faktura är vald
             if (gridFakturor.SelectedRows != null)
             {
                 ÄndraFakturaMoms ändraFaktura = new ÄndraFakturaMoms(loggaIn, kontroller, valdFaktura);
@@ -128,11 +137,13 @@ namespace NetFramework.Marknadsfönster
             }
         }
 
+        //Knapp så att faktura grid uppdateras efter moms/rabatt är ändrar
         private void ÄndraFaktura_FormClosed(object sender, FormClosedEventArgs e)
         {
             RefreshFakturor();
         }
 
+        //Knapp för att se totalt pris på faktura
         private void btn_totalPris_Click(object sender, EventArgs e)
         {
             float totalPris;

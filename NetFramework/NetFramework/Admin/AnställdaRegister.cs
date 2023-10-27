@@ -2,13 +2,6 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -64,7 +57,6 @@ namespace NetFramework
         private void btnTaBort_Click(object sender, EventArgs e)
         {
             valdAnställd = gridAnställda.SelectedRows[0].DataBoundItem as Anställd;
-
             if (gridAnställda.SelectedRows != null)
             {
                 valdAnställd = kontroller.HittaAnställd(valdAnställd.AnställningsNr);
@@ -76,12 +68,14 @@ namespace NetFramework
         }
         private void btnSökAnställningsNr_Click(object sender, EventArgs e)
         {
+            // Kontrollera om inmatningsfältet innehåller endast siffror och inte är tomt
             if (kontroller.IsDigitsOnly(txtBoxAnställningsNr.Text) && !string.IsNullOrEmpty(txtBoxAnställningsNr.Text))
             {
                 RefreshAnställda();
                 int matadAnställningsNr = int.Parse(txtBoxAnställningsNr.Text);
-                var matchadeAnställda = unitOfWork.anställda.Where(a => a.AnställningsNr == matadAnställningsNr).ToList();
+                var matchadeAnställda = kontroller.HittaFlerSpecifikaAnställda(matadAnställningsNr);
 
+                // Om matchande anställda hittas, visa dem i datagrid
                 if (matchadeAnställda.Count > 0)
                 {
                     gridAnställda.DataSource = matchadeAnställda;
@@ -95,9 +89,8 @@ namespace NetFramework
             {
                 MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
             }
-
-
         }
+
         private void ÄndraAnställd_FormClosed(object sender, FormClosedEventArgs e)
         {
             RefreshAnställda();

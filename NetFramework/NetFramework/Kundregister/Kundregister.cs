@@ -2,13 +2,6 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -20,23 +13,22 @@ namespace NetFramework
         private Kontroller kontroller;
         private Kund valdKund;
 
-
-
         public Kundregister(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
         }
+
         public string InloggadAnvandare
         {
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Hämtar alla kunder till grid
         internal void RefreshKunder()
         {
-
             var kunder = kontroller.HämtaKunder();
             gridKunder.DataSource = kunder;
             gridKunder.AutoGenerateColumns = false;
@@ -52,15 +44,14 @@ namespace NetFramework
             gridKunder.Columns["Email"].DisplayIndex = 5;
 
         }
+
+        //Hämtar alla kunder till grid när form öppnas
         private void Kundregister_Load(object sender, EventArgs e)
         {
             RefreshKunder();
         }
-        /// <summary>
-        /// Denna metod btnTaBort_Click hämtar den valda kunden från den valda raden i kundrutfältet och tar sedan bort kunden genom att använda kontroller.TaBortKund-metoden. Efter borttagningen uppdateras kundlistan och en dialogruta visas som bekräftar borttagningen av den specifika kunden med hjälp av kundens ID, personnummer och namn.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
+        //Knapp för att ta bort en kund
         private void btnTaBort_Click(object sender, EventArgs e)
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
@@ -74,7 +65,6 @@ namespace NetFramework
                     kontroller.TaBortKund(valdKund);
                     RefreshKunder();
                     MessageBox.Show($"Tog Bort Kund: {valdKund.KundID} \nMed personnummer: {valdKund.Personnummer} \n Namn: {valdKund.Namn}");
-
                 }
                 else
                 {
@@ -85,20 +75,18 @@ namespace NetFramework
             {
 
             }
-
         }
-        /// <summary>
-        /// Denna metod btnAndra_Click hanterar händelsen när användaren klickar på knappen "Ändra". Den börjar med att hämta den valda kunden från den valda raden i kundrutfältet och sedan kontrollera behörigheten för inloggad användare. Beroende på kundtyp och behörighet öppnas antingen formuläret för att ändra företagskund eller privatkund. Dialogrutan "Du har ej rätt behörighet" visas om användaren inte har tillräckliga behörigheter för att ändra företagskunden. Efter att ha öppnat formuläret för ändring av kund, visas det med information om inloggad användare.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Knapp för att kunna få upp meny för att ändra kund
         private void btnAndra_Click(object sender, EventArgs e)
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
             string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
 
+            //Kollar så att kund är vald
             if (gridKunder.SelectedRows != null)
             {
+                //Öppnar rätt "Ändra Form" till rätt kund typ
                 if (valdKund.Typ == "Företag")
                 {
                     if (inmatning == "Admin" || inmatning == "Marknad")
@@ -120,8 +108,7 @@ namespace NetFramework
 
         }
 
-
-
+        //Knapp för att gå tillbaka till huvudmeny
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
@@ -129,43 +116,37 @@ namespace NetFramework
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
+        //Refresh knapp för att uppdatera kund grid med ändringar som gjorts på kunder
         private void button1_Click(object sender, EventArgs e)
         {
             RefreshKunder();
         }
-        /// <summary>
-        /// Denna metoden btnSokNamn_Click hanterar händelsen när användaren klickar på knappen "Sök" baserat på namn. Den tar in det inmatade namnet från textfältet och söker efter matchande kunder i databasen. Om det finns matchande kunder visas de i data grid-vyn, annars visas ett meddelande om att inga matchningar hittades.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
+        //Knapp för att söka på en specifik kund genom namn
         private void btnSokNamn_Click(object sender, EventArgs e)
         {
-
             string matadNamn = txtBoxNamn.Text;
-            var matchadeKunder = unitOfWork.kunder.Where(k => k.Namn == matadNamn).ToList();
+            var matchadeKunder = kontroller.HittaKundPåNamn(matadNamn);
 
-            if (matchadeKunder.Count > 0)
+            //Kollar ifall kund hittades eller inte
+            if (matchadeKunder != null)
             {
                 gridKunder.DataSource = matchadeKunder;
             }
             else
             {
-                MessageBox.Show("Inget matchande personnummer hittades, försök igen");
+                MessageBox.Show("Inget matchande namn hittades, försök igen");
             }
-
         }
-        /// <summary>
-        /// Denna metod btnSokPersonNr_Click hanterar händelsen när användaren klickar på knappen "Sök" baserat på personnummer. Den tar in det inmatade personnumret från textfältet och söker efter matchande kunder i databasen. Om det finns matchande kunder visas de i data grid-vyn, annars visas ett meddelande om att inga matchningar hittades.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Knapp för att söka på specifik kund genom personNr
         private void btnSokPersonNr_Click(object sender, EventArgs e)
         {
-
             string matadPeronNr = txtBoxPersonNr.Text;
-            var matchadeKunder = unitOfWork.kunder.Where(k => k.Personnummer == matadPeronNr).ToList();
+            var matchadeKunder = kontroller.HittaKund(matadPeronNr);
 
-            if (matchadeKunder.Count > 0)
+            //Kollar om specifik kund hittades eller inte
+            if (matchadeKunder != null)
             {
                 gridKunder.DataSource = matchadeKunder;
             }
@@ -173,30 +154,6 @@ namespace NetFramework
             {
                 MessageBox.Show("Inget matchande personnummer hittades, försök igen");
             }
-
-
-        }
-
-        private void lblPersonNr_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxPersonNr_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void lblNamn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxNamn_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

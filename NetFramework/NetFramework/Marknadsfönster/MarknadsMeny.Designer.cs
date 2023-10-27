@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnVisaStatistik = new System.Windows.Forms.Button();
             this.btnRegFöretagsKund = new System.Windows.Forms.Button();
             this.btnÄndraMaxbelopp = new System.Windows.Forms.Button();
             this.btn_visaFaktura = new System.Windows.Forms.Button();
@@ -42,9 +41,10 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(12, 768);
+            this.btnTillbaka.Location = new System.Drawing.Point(16, 945);
+            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(110, 28);
+            this.btnTillbaka.Size = new System.Drawing.Size(147, 34);
             this.btnTillbaka.TabIndex = 17;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -54,18 +54,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Location = new System.Drawing.Point(16, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(130, 16);
             this.label1.TabIndex = 18;
             this.label1.Text = "Anställningsnummer:";
             // 
             // txtAnvandarnamn
             // 
             this.txtAnvandarnamn.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(164, 10);
+            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(17, 22);
             this.txtAnvandarnamn.TabIndex = 19;
             // 
             // label3
@@ -73,28 +75,19 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(517, 202);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(689, 249);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 39);
+            this.label3.Size = new System.Drawing.Size(305, 48);
             this.label3.TabIndex = 20;
             this.label3.Text = "Marknadsmeny";
             // 
-            // btnVisaStatistik
-            // 
-            this.btnVisaStatistik.Location = new System.Drawing.Point(476, 270);
-            this.btnVisaStatistik.Name = "btnVisaStatistik";
-            this.btnVisaStatistik.Size = new System.Drawing.Size(330, 52);
-            this.btnVisaStatistik.TabIndex = 21;
-            this.btnVisaStatistik.Text = "Visa Statistik";
-            this.btnVisaStatistik.UseVisualStyleBackColor = true;
-            this.btnVisaStatistik.Click += new System.EventHandler(this.btnVisaStatistik_Click);
-            // 
             // btnRegFöretagsKund
             // 
-            this.btnRegFöretagsKund.Location = new System.Drawing.Point(476, 341);
+            this.btnRegFöretagsKund.Location = new System.Drawing.Point(635, 404);
+            this.btnRegFöretagsKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegFöretagsKund.Name = "btnRegFöretagsKund";
-            this.btnRegFöretagsKund.Size = new System.Drawing.Size(330, 58);
+            this.btnRegFöretagsKund.Size = new System.Drawing.Size(440, 71);
             this.btnRegFöretagsKund.TabIndex = 22;
             this.btnRegFöretagsKund.Text = "Registrera företagskund ";
             this.btnRegFöretagsKund.UseVisualStyleBackColor = true;
@@ -102,9 +95,10 @@
             // 
             // btnÄndraMaxbelopp
             // 
-            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(476, 412);
+            this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(635, 507);
+            this.btnÄndraMaxbelopp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnÄndraMaxbelopp.Name = "btnÄndraMaxbelopp";
-            this.btnÄndraMaxbelopp.Size = new System.Drawing.Size(330, 54);
+            this.btnÄndraMaxbelopp.Size = new System.Drawing.Size(440, 66);
             this.btnÄndraMaxbelopp.TabIndex = 23;
             this.btnÄndraMaxbelopp.Text = "Maxbelopp";
             this.btnÄndraMaxbelopp.UseVisualStyleBackColor = true;
@@ -112,9 +106,10 @@
             // 
             // btn_visaFaktura
             // 
-            this.btn_visaFaktura.Location = new System.Drawing.Point(476, 488);
+            this.btn_visaFaktura.Location = new System.Drawing.Point(635, 601);
+            this.btn_visaFaktura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_visaFaktura.Name = "btn_visaFaktura";
-            this.btn_visaFaktura.Size = new System.Drawing.Size(330, 54);
+            this.btn_visaFaktura.Size = new System.Drawing.Size(440, 66);
             this.btn_visaFaktura.TabIndex = 24;
             this.btn_visaFaktura.Text = "Visa Fakturor";
             this.btn_visaFaktura.UseVisualStyleBackColor = true;
@@ -127,27 +122,28 @@
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
             this.gradientPanel1.Controls.Add(this.label3);
             this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.btnRegFöretagsKund);
             this.gradientPanel1.Controls.Add(this.btnTillbaka);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
+            this.gradientPanel1.Size = new System.Drawing.Size(1705, 994);
             this.gradientPanel1.TabIndex = 25;
             this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
             // MarknadsMeny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1279, 808);
+            this.ClientSize = new System.Drawing.Size(1705, 994);
             this.Controls.Add(this.btn_visaFaktura);
             this.Controls.Add(this.btnÄndraMaxbelopp);
-            this.Controls.Add(this.btnRegFöretagsKund);
-            this.Controls.Add(this.btnVisaStatistik);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MarknadsMeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarknadsMeny";
@@ -164,7 +160,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnVisaStatistik;
         private System.Windows.Forms.Button btnRegFöretagsKund;
         private System.Windows.Forms.Button btnÄndraMaxbelopp;
         private System.Windows.Forms.Button btn_visaFaktura;

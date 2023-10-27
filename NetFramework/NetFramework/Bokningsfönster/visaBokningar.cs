@@ -2,16 +2,9 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -22,7 +15,6 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Bokning valdBokning;
-        private Logi valdLogi;
         private Bokningsrad valdRad;
 
         public VisaBokningar(LoggaIn loggaIn, Kontroller kontroller)
@@ -38,21 +30,21 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-
+        //Hämta bokningar
         internal void RefreshBokningar()
         {
             var bokningar = kontroller.HämtaBokningar();
             gridBokningar.DataSource = bokningar;
-
             gridBokningar.AutoGenerateColumns = false;
             gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
             gridBokningar.Columns["KundID"].DisplayIndex = 1;
             gridBokningar.Columns["Kund"].Visible = false;
 
         }
+
+        //Hämta Logi
         internal void RefreshRader(Bokning valdBokning)
         {
-            //Logi
             var rader = kontroller.HämtaRader(valdBokning.BokningsID);
             gridBokningar.AutoGenerateColumns = false;
             logiGrid.DataSource = rader;
@@ -66,27 +58,24 @@ namespace NetFramework
             logiGrid.Columns["BokningsID"].DisplayIndex = 4;
         }
 
-
+        //Load så att data visas på datagrids
         public void VisaBokningar_Load(object sender, EventArgs e)
         {
             RefreshBokningar();
         }
 
+        //Knapp för att gå tillbaka
         private void btn_tillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        /// <summary>
-        /// Metoden btn_ändra_Click hanterar händelsen när användaren klickar på en knapp för att ändra en bokning. Den kontrollerar om någon rad är markerad i griden för bokningsrader. Om minst en rad är markerad öppnas fönstret för att ändra bokningen med informationen om den valda raden. Om ingen rad är markerad visas ett meddelande som uppmanar användaren att välja en rad för att redigera.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //knapp för att få upp meny för att kunna ändra en bokning
         private void btn_ändra_Click(object sender, EventArgs e)
         {
+            //Kollar så att minst en rad är vald
             if (logiGrid.SelectedRows.Count > 0)
             {
-                // At least one row is selected.
                 valdRad = logiGrid.SelectedRows[0].DataBoundItem as Bokningsrad;
                 ÄndraBokning ändraBokning = new ÄndraBokning(loggaIn, kontroller, valdRad);
                 ändraBokning.Show();
@@ -94,12 +83,11 @@ namespace NetFramework
             }
             else
             {
-                // No row is selected. Show a message or handle it as needed.
-                MessageBox.Show("Please select a row to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Välj först en rad.", "Ingen rad vald", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        //Ej Klar
+        //Tar bort en bokning
         private void btn_taBort_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
@@ -120,11 +108,7 @@ namespace NetFramework
         }
 
 
-        /// <summary>
-        /// Metoden btnSökBokNr_Click hanterar händelsen när användaren klickar på en knapp för att söka efter en bokning med hjälp av bokningsnummer. Den kontrollerar om det inmatade bokningsnumret enbart innehåller siffror och inte är tomt. Om detta är fallet används det inmatade bokningsnumret för att söka efter en matchande bokning i systemet. Om en matchande bokning hittas visas den i griden för bokningar. Om ingen matchning hittas visas ett meddelande som uppmanar användaren att försöka igen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Knapp för att söka efter en specifik bokning på bokningsNr
         private void btnSökBokNr_Click(object sender, EventArgs e)
         {
             Bokning matchadBokning;
@@ -148,11 +132,7 @@ namespace NetFramework
         }
 
 
-        /// <summary>
-        /// Metoden btn_sökPersonNr_Click hanterar händelsen när användaren klickar på en knapp för att söka efter bokningar baserat på personnummer. Den tar in det inmatade personnumret och använder det för att söka efter matchande bokningar i databasen. Om det finns matchande bokningar visas de i griden för bokningar. Om inga matchningar hittas visas ett meddelande som uppmanar användaren att försöka igen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Knapp för att söka efter en specifik bokning på personNr
         private void btn_sökPersonNr_Click(object sender, EventArgs e)
         {
             string matadPersonNr = textBox_personNr.Text;
@@ -168,30 +148,28 @@ namespace NetFramework
             }
         }
 
-
-
+        //Knapp för att visa logi (rader) som tillhör en bokning
         private void btn_visaRader_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshRader(valdBokning);
         }
 
+        //Knapp för att ladda om datagrid så att man får uppdateringar
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshBokningar();
             RefreshRader(valdBokning);
         }
-        /// <summary>
-        /// Metoden btn_TaBortRad_Click hanterar händelsen när användaren klickar på en knapp för att ta bort en bokningsrad. Den kontrollerar om någon rad är markerad i griden för bokningsrader. Om minst en rad är markerad visas en bekräftelsedialogruta för att säkerställa att användaren vill ta bort den valda raden. Om användaren bekräftar borttagningen tas den valda bokningsraden bort från systemet och rutorna för bokningsrader uppdateras. Om ingen rad är markerad visas ett meddelande som uppmanar användaren att välja en rad för att ta bort.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
+        //Knapp för att kunna ta bort ett logi (rad) från en bokning
         private void btn_TaBortRad_Click(object sender, EventArgs e)
         {
+            //Kollar så att minst en rad är vald
             if (logiGrid.SelectedRows.Count > 0)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Är du säker att du vill ta bort detta logi?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -207,8 +185,7 @@ namespace NetFramework
             }
             else
             {
-                // No row is selected. Show a message or handle it as needed.
-                MessageBox.Show("Please select a row to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Välj först en rad.", "Ingen rad vald", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

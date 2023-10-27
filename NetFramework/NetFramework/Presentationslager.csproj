@@ -125,12 +125,6 @@
     <Compile Include="Marknadsfönster\VisaFakturor.Designer.cs">
       <DependentUpon>VisaFakturor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marknadsfönster\VisaStatistik.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Marknadsfönster\VisaStatistik.Designer.cs">
-      <DependentUpon>VisaStatistik.cs</DependentUpon>
-    </Compile>
     <Compile Include="Marknadsfönster\ÄndraFakturaMoms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Marknadsfönster\VisaFakturor.resx">
       <DependentUpon>VisaFakturor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Marknadsfönster\VisaStatistik.resx">
-      <DependentUpon>VisaStatistik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marknadsfönster\ÄndraFakturaMoms.resx">
       <DependentUpon>ÄndraFakturaMoms.cs</DependentUpon>

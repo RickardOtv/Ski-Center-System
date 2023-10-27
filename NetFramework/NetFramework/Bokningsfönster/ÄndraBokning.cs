@@ -2,13 +2,6 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -32,24 +25,19 @@ namespace NetFramework
             endDatePicker.Value = valdRad.Till;
         }
 
-
-
         public string InloggadAnvandare
         {
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
-
-
+        
+        //Knapp för att gå tillbaka
         private void btn_Tillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        /// <summary>
-        /// Metoden btn_Spara_För_Alla extraherar start- och slutdatum från respektive datumväljare och använder dessa datum tillsammans med en specifik bokningsrad för att uppdatera alla bokningsrader. Efter uppdatering visas en dialogruta som bekräftar den uppdaterade bokningen tillsammans med dess uppdaterade detaljer, inklusive det nya priset om det har justerats. Slutligen stängs det nuvarande fönstret.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Sparar nytt valt intervall för alla logi på en bokning
         private void btn_Spara_För_Alla(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
@@ -61,9 +49,7 @@ namespace NetFramework
             }
             else if (startDate > endDate)
             {
-
                 MessageBox.Show($"Från Datum måste vara tidigare än Till Datum");
-
             }
             else
             {
@@ -72,11 +58,8 @@ namespace NetFramework
                 this.Close();
             }
         }
-        /// <summary>
-        /// Metoden btn_Spara_För_En extraherar start- och slutdatum från respektive datumväljare och använder dessa datum tillsammans med en specifik bokningsrad för att uppdatera en enskild bokningsrad. Efter uppdatering visas en dialogruta som bekräftar den uppdaterade bokningen tillsammans med dess uppdaterade detaljer, inklusive det nya priset om det har justerats. Slutligen stängs det nuvarande fönstret.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Sparar nytt valt intervall för ett specifik logi på en bokning
         private void btn_Spara_För_En(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
@@ -88,9 +71,7 @@ namespace NetFramework
             }
             else if (startDate > endDate)
             {
-
                 MessageBox.Show($"Från Datum måste vara tidigare än Till Datum");
-
             }
             else
             {

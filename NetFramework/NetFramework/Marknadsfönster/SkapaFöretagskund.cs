@@ -1,13 +1,7 @@
 ﻿using Affärslager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework.Marknadsfönster
@@ -30,17 +24,16 @@ namespace NetFramework.Marknadsfönster
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             Close();
         }
-        /// <summary>
-        /// Denna metod btnGaVidare_Click kontrollerar att alla nödvändiga fält är ifyllda och att informationen i fälten är giltig. Om något fält är tomt eller innehåller ogiltig information visas ett meddelande om fel och fokus flyttas till det relevanta fältet. Om alla inmatade värden är giltiga och alla fält är ifyllda skapas en ny kund genom att anropa SkapaNyKund-metoden i kontroller. Efter att kunden har skapats visas en bekräftelsemeddelande och fönstret stängs.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Knapp för att skapa den nya företagskunden
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
+            //Kollar så att inmattning matchar rätt format
             if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:") | (txtBoxKredit.Text == "Kreditgräns:") | !int.TryParse(txtBoxKredit.Text, out distance))
             {
                 MessageBox.Show("Fyll i alla rader tack!");
@@ -81,9 +74,8 @@ namespace NetFramework.Marknadsfönster
                 MessageBox.Show("Ange ett giltigt Postnr", "Ogiltigt Postnr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxPostNr.Focus();
             }
-            else
+            else //Om all inmattning matchar rätt format
             {
-
                 string personnummer = txtBoxPersonNr.Text;
                 string namn = txtboxNamn.Text;
                 string telefonnummer = txtBoxTelefonNr.Text;
@@ -93,14 +85,13 @@ namespace NetFramework.Marknadsfönster
                 string postOrt = txtBoxOrt.Text;
                 int maxbeloppskreditgräns = int.Parse(txtBoxKredit.Text);
 
-
                 Kund nyKund = kontroller.SkapaNyKund(personnummer, namn, telefonnummer, email, adress, postNr, postOrt, "Företag", maxbeloppskreditgräns);
                 MessageBox.Show($"Ny kund skapad!\n Namn: {nyKund.Namn}\n Personnummer: {nyKund.Personnummer}\n kredit: {nyKund.Maxbeloppskreditgräns}");
-                BokningBefintligKund befintligKund = new BokningBefintligKund(loggaIn, kontroller);
                 this.Close();
             }
         }
 
+        #region Enter/Leave Textboxar
         private void txtboxPersonNr_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxPersonNr = (TextBox)sender;
@@ -119,7 +110,6 @@ namespace NetFramework.Marknadsfönster
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-
         private void textBoxNamn_Enter(object sender, EventArgs e)
         {
             TextBox txtboxNamn = (TextBox)sender;
@@ -147,7 +137,6 @@ namespace NetFramework.Marknadsfönster
                 txtBoxEmail.Text = "";
                 txtBoxEmail.ForeColor = SystemColors.WindowText; // Återställ textfärg om den har ändrats
             }
-
         }
         private void txtBoxEmail_Leave(object sender, EventArgs e)
         {
@@ -176,7 +165,6 @@ namespace NetFramework.Marknadsfönster
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-
         private void txtBoxTelefonNr_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxTelefonNr = (TextBox)sender;
@@ -213,7 +201,6 @@ namespace NetFramework.Marknadsfönster
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-
         private void txtBoxOrt_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxOrt = (TextBox)sender;
@@ -232,7 +219,6 @@ namespace NetFramework.Marknadsfönster
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-
         private void txtBoxKredit_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxKredit = (TextBox)sender;
@@ -251,5 +237,6 @@ namespace NetFramework.Marknadsfönster
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
+        #endregion
     }
 }

@@ -3,18 +3,10 @@ using Datalager;
 using Entitetslager;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace NetFramework
 {
@@ -24,10 +16,7 @@ namespace NetFramework
         private LoggaIn loggaInMeny;
         private Kontroller kontroller;
         private Kund valdKund;
-        Logi valdLogi;
         Bokningsrad valdRad;
-        DateTime från;
-        DateTime till;
         Bokning nyBokning;
         private List<Logi> ledigaLogier;
 
@@ -43,8 +32,10 @@ namespace NetFramework
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
+
         /// <summary>
-        /// Metoden RefreshLogi ansluter till en databas och hämtar lediga logier baserat på de specificerade datumen. Den använder en LEFT JOIN-fråga för att hitta lediga logier som inte är bokade under den angivna tidsperioden. Den fyller sedan en datagrid med den resulterande datan och anger rubriker för kolumnerna. Om det uppstår ett undantag stängs anslutningen till databasen.
+        /// Metoden RefreshLogi ansluter till en databas och hämtar lediga logier baserat på de specificerade datumen. 
+        /// Den använder en LEFT JOIN-fråga för att hitta lediga logier som inte är bokade under den angivna tidsperioden.
         /// </summary>
         internal void RefreshLogi()
         {
@@ -135,28 +126,27 @@ namespace NetFramework
 
         private void BokningBefintligKund_Load(object sender, EventArgs e)
         {
-            //RefreshLogi();
             RefreshKunder();
         }
-        /// <summary>
-        /// Metoden btnAvbryt_Click hanterar händelsen när användaren klickar på en knapp för att avbryta en bokning. Om en ny bokning har påbörjats, uppmanas användaren att bekräfta avbrytandet av bokningen. Om användaren bekräftar avbrytandet tas bokningen bort och fönstret stängs. Om användaren väljer att inte avbryta eller om ingen bokning pågår, stängs fönstret utan att några ändringar görs.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Hanterar avbryt av en bokning
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
+            // Kontrollera om det finns en ny bokning
             if (nyBokning != null)
             {
-
                 DialogResult result = MessageBox.Show("Om du går tillbaka så avbryter du bokningen", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                 if (result == DialogResult.Yes)
                 {
                     kontroller.TaBortBokning(nyBokning);
+
                     BokningsTyp bokningsTyp = new BokningsTyp(loggaInMeny, kontroller);
                     bokningsTyp.Show();
                     bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
                     this.Close();
                 }
+                // Om användaren väljer att inte avbryta, gör inget
                 else if (result == DialogResult.No)
                 {
 
@@ -164,21 +154,19 @@ namespace NetFramework
             }
             else
             {
+                // Om det inte finns någon ny bokning, öppna bara BokningsTyp-formuläret
                 BokningsTyp bokningsTyp = new BokningsTyp(loggaInMeny, kontroller);
                 bokningsTyp.Show();
                 bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
                 this.Close();
             }
         }
-        /// <summary>
-        /// Metoden hanterar händelsen när användaren klickar på en knapp för att söka efter en kund med det angivna personnumret. Den söker i databasen efter en kund som matchar det angivna personnumret och uppdaterar griden med den matchade kunden om den hittas, annars visas ett meddelande som uppmanar användaren att försöka igen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Söker upp kund på deras personNr
         private void btnSök_Click(object sender, EventArgs e)
         {
             string matatPersNr = txtFilter.Text;
-            var matchadKund = unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == matatPersNr);
+            var matchadKund = kontroller.HittaKund(matatPersNr);
             if (matchadKund != null)
             {
                 gridKunder.DataSource = new List<Kund> { matchadKund };
@@ -188,11 +176,8 @@ namespace NetFramework
                 MessageBox.Show("Kund ej hittad, försök igen");
             }
         }
-        /// <summary>
-        /// Metoden btnKollaPris_Click hanterar händelsen när användaren klickar på en knapp för att kontrollera priset för logi. Den kontrollerar om en logi är markerad i griden och hämtar information om den valda logien från listan över tillgängliga logier. Den beräknar priset för logien baserat på de valda datumen och logitypen och visar det beräknade priset i ett meddelande. Om ingen logi är vald eller om en ogiltig logi har valts visas ett felmeddelande.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Kollar pris på ett logi för ett specifikt interavall 
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
             int moms;
@@ -208,6 +193,7 @@ namespace NetFramework
                     {
                         var valdLogi = ledigaLogier[rowIndex];
 
+                        //Hämtar datumen för bokning
                         DateTime startDate = dateFrån.Value;
                         DateTime endDate = dateTill.Value;
                         decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
@@ -238,31 +224,32 @@ namespace NetFramework
             }
         }
 
-        private void txtFilter_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        /// <summary>
-        /// Metoden hanterar händelsen när användaren klickar på en knapp för att lägga till en ny bokningsrad. Den kontrollerar om en kund har valts och om en logi är markerad i griden. Om en kund är vald och en logi är markerad hämtas information om den valda logien från listan över tillgängliga logier. En ny bokningsrad skapas med informationen om de valda datumen, den valda logien och det aktuella boknings-ID:t. Ett meddelande visas med information om den skapade bokningsraden innan rutorna för bokningsraderna och logierna uppdateras. Om ingen logi är vald eller om en ogiltig logi har valts visas ett felmeddelande. Om ingen kund har valts visas ett meddelande som uppmanar användaren att först välja en kund.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Knappen lägger till ett logi till bokningen
         private void btnLäggTill_Click(object sender, EventArgs e)
         {
+            // Kontrollera om en kund är vald
             if (valdKund != null)
             {
+                // Kontrollera om några rader är markerade i gridLogi
                 if (gridLogi.SelectedRows.Count > 0)
                 {
-                    // Hämta den markerade logien från listan av lediga logier
+                    // Hämta den första markerade raden från listan av lediga logier
                     var selectedRow = gridLogi.SelectedRows[0];
                     var rowIndex = selectedRow.Index;
+
+                    // Kontrollera att rowIndex är inom korrekta gränser
                     if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
                     {
+                        // Kontrollera att Från-datumet inte är samma som Till-datumet
                         if (dateFrån.Text != dateTill.Text)
                         {
+                            // Kontrollera att Från-datumet är före Till-datumet
                             if (DateTime.Parse(dateFrån.Text) < DateTime.Parse(dateTill.Text))
                             {
+                                // Hämta den valda logien
                                 var valdLogi = ledigaLogier[rowIndex];
+
                                 DateTime startDate = DateTime.Parse(dateFrån.Text);
                                 DateTime endDate = DateTime.Parse(dateTill.Text);
                                 Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
@@ -274,7 +261,6 @@ namespace NetFramework
                             {
                                 MessageBox.Show("Från datum måste vara större än Till datum.");
                             }
-
                         }
                         else
                         {
@@ -290,14 +276,14 @@ namespace NetFramework
                 {
                     MessageBox.Show("Ingen logi vald.");
                 }
-
             }
             else
             {
-                MessageBox.Show("Välj först kund. ");
+                MessageBox.Show("Välj först en kund.");
             }
         }
 
+        //Knapp för att ta bort valt logi från bokning
         private void btnTaBort_Click(object sender, EventArgs e)
         {
 
@@ -321,34 +307,42 @@ namespace NetFramework
             MessageBox.Show($"Vald kund: {valdKund.Namn}");
         }
 
+        //Knapp för att väl skapa bokning när man är klar
         private void btnKlar_Click(object sender, EventArgs e)
         {
+            // Kontrollera om en ny bokning finns
             if (nyBokning != null)
             {
+                // Kontrollera om några rader är markerade i gridRader
                 if (gridRader.SelectedRows.Count > 0)
                 {
                     decimal totalSumma = 0;
-                    int momsSatts = 0;
-                    int rabattsatts = 0;
-                    float slutPrisInkMoms;
-                    DateTime minDatum = new DateTime(3008, 1, 1);
-                    DateTime maxDatum = new DateTime(2008, 1, 1);
+                    int momsSatts = 0; 
+                    int rabattsatts = 0; 
+                    float slutPrisInkMoms; 
+                    DateTime minDatum = new DateTime(3008, 1, 1); 
+                    DateTime maxDatum = new DateTime(2008, 1, 1); 
 
                     foreach (DataGridViewRow row in gridRader.Rows)
                     {
                         if (row.Tag is Bokningsrad bokningsrad)
                         {
-                            // Call your method on the Bokningsrad object
                             Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
 
-                            //Något gör så att det blir en extra dag, därför tar jag bort den här
+                            // Justera Till-datum så att det inte finns en extra dag
                             DateTime newTillDate = bokningsrad.Till.AddDays(-1);
+
+                            // Hämta priset för bokningsraden och lägg till i den totala kostnaden
                             decimal pris = kontroller.KollaPris(bokningsrad.Från, newTillDate, ettLogi.Typ);
                             totalSumma += pris;
+
+                            // Uppdatera minDatum om det finns en tidigare starttid
                             if (minDatum > bokningsrad.Från)
                             {
                                 minDatum = bokningsrad.Från;
                             }
+
+                            // Uppdatera maxDatum om det finns en senare sluttid
                             if (maxDatum < bokningsrad.Till)
                             {
                                 maxDatum = bokningsrad.Till;
@@ -356,12 +350,16 @@ namespace NetFramework
                         }
                     }
 
+                    // Om kunden är av typen "Företag," sätt momsSatts till 12%
                     if (valdKund.Typ == "Företag")
                     {
                         momsSatts = 12;
                     }
+
+                    // Skapa en faktura och räkna ut slutpriset inklusive moms
                     Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
                     slutPrisInkMoms = (float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100);
+
                     MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {slutPrisInkMoms}kr\nMoms: {nyFaktura.Momsats}%\nTotalPris (Ink Moms): {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HuvudMeny huvudMeny = new HuvudMeny(loggaInMeny, kontroller);
                     huvudMeny.Show();
@@ -379,15 +377,13 @@ namespace NetFramework
             }
         }
 
+
         private void btn_sökLogi_Click(object sender, EventArgs e)
         {
             RefreshLogi();
         }
-        /// <summary>
-        /// Metoden btnLogiInfo_Click hanterar händelsen när användaren klickar på en knapp för att visa information om den valda logien. Den kontrollerar om en logi är markerad i griden och hämtar information om den valda logien från listan över tillgängliga logier. Beroende på logitypen visas specifik information om logien i en dialogruta. Om ingen logi är vald eller om en ogiltig logi har valts visas ett felmeddelande.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Knapp för att visa information om valt logi
         private void btnLogiInfo_Click(object sender, EventArgs e)
         {
             if (gridLogi.SelectedRows.Count > 0)
@@ -398,6 +394,7 @@ namespace NetFramework
                 if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
                 {
                     var valdLogi = ledigaLogier[rowIndex];
+                    //Visar olika information beroende på typen av logi
                     switch (valdLogi.Typ)
                     {
                         case "LGH.1":
@@ -429,13 +426,9 @@ namespace NetFramework
             {
                 MessageBox.Show("Ingen logi vald.");
             }
-
         }
-        /// <summary>
-        /// Metoden btnTotalSumma_Click hanterar händelsen när användaren klickar på en knapp för att beräkna den totala summan för bokningen. Den itererar över varje rad i griden och hämtar information om bokningsraden. Genom att använda kontrollermetoder hämtar den information om logitypen och beräknar priset för varje bokningsrad baserat på uthyrningsperioden och logitypen. Den kumulativa summan för varje bokningsrad läggs sedan till för att få den totala summan för bokningen, som sedan visas i ett meddelande.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //Knapp för att räkna ut den totala summan för bokningen
         private void btnTotalSumma_Click(object sender, EventArgs e)
         {
             decimal totalSumma = 0;
@@ -448,12 +441,13 @@ namespace NetFramework
                 {
                     if (row.Tag is Bokningsrad bokningsrad)
                     {
-                        // Call your method on the Bokningsrad object
+                        // Hämta den valda bokningsraden och tillhörande Logi-objekt
                         Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
 
-
-                        //Något gör så att det blir en extra dag, därför tar jag bort den här
+                        // Ta bort en dag från Till-datum, så det räknas rätt
                         DateTime newDate = bokningsrad.Till.AddDays(-1);
+
+                        // Hämta priset för bokningsraden och lägg till i den totala kostnaden
                         decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
                         totalSumma += pris;
                     }
@@ -473,8 +467,6 @@ namespace NetFramework
             {
                 MessageBox.Show("Ingen logi vald.");
             }
-
         }
-
     }
 }

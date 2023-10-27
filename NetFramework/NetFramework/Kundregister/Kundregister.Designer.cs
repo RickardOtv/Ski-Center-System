@@ -143,7 +143,6 @@
             this.lblNamn.Size = new System.Drawing.Size(38, 13);
             this.lblNamn.TabIndex = 18;
             this.lblNamn.Text = "Namn:";
-            this.lblNamn.Click += new System.EventHandler(this.lblNamn_Click);
             // 
             // txtBoxNamn
             // 
@@ -152,7 +151,6 @@
             this.txtBoxNamn.Name = "txtBoxNamn";
             this.txtBoxNamn.Size = new System.Drawing.Size(171, 20);
             this.txtBoxNamn.TabIndex = 19;
-            this.txtBoxNamn.TextChanged += new System.EventHandler(this.txtBoxNamn_TextChanged);
             // 
             // txtBoxPersonNr
             // 
@@ -161,7 +159,6 @@
             this.txtBoxPersonNr.Name = "txtBoxPersonNr";
             this.txtBoxPersonNr.Size = new System.Drawing.Size(171, 20);
             this.txtBoxPersonNr.TabIndex = 20;
-            this.txtBoxPersonNr.TextChanged += new System.EventHandler(this.txtBoxPersonNr_TextChanged);
             // 
             // lblPersonNr
             // 
@@ -173,7 +170,6 @@
             this.lblPersonNr.Size = new System.Drawing.Size(80, 13);
             this.lblPersonNr.TabIndex = 21;
             this.lblPersonNr.Text = "Personnummer:";
-            this.lblPersonNr.Click += new System.EventHandler(this.lblPersonNr_Click);
             // 
             // btnSokNamn
             // 

@@ -1,13 +1,6 @@
 ﻿using Affärslager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework.Marknadsfönster
@@ -33,15 +26,20 @@ namespace NetFramework.Marknadsfönster
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
+
+        //Knapp för att kunna gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Knapp för att spara den nya momsen
         private void btn_Spara_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox_NyMoms.Text, out nyMoms) /*|| string.IsNullOrEmpty(textBox_NyRabatt.Text)*/)
+            //Kollar så att inmatning är ett helt nummer
+            if (int.TryParse(textBox_NyMoms.Text, out nyMoms))
             {
+                //Kollar så att inmatning är en procent sats
                 if (kontroller.IsValidIntegerForPrecent(nyMoms))
                 {
                     kontroller.ÄndraFakturaMoms(valdFaktura, nyMoms);
