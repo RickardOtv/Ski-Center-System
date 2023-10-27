@@ -96,60 +96,70 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnSök_Click(object sender, EventArgs e)
         {
-            int matadUthyrningsID = int.Parse(txtBoxUthyrningsID.Text);
-            var matchadeUthyrningar = unitOfWork.uthyrningar.Where(u => u.UthyrningsID == matadUthyrningsID).ToList();
 
-            if (matchadeUthyrningar.Count > 0)
+
+            String söktBokningsNummer = txtBoxUthyrningsID.Text;
+            if (kontroller.IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
             {
-                gridUthyrning.DataSource = matchadeUthyrningar;
+                int matadUthyrningsID = int.Parse(txtBoxUthyrningsID.Text);
+                var matchadeUthyrningar = unitOfWork.uthyrningar.Where(u => u.UthyrningsID == matadUthyrningsID).ToList();
+
+                if (matchadeUthyrningar.Count > 0)
+                {
+                    gridUthyrning.DataSource = matchadeUthyrningar;
+                }
+                else
+                {
+                    MessageBox.Show("Inget matchande UthyrningsID hittades, försök igen");
+                }
             }
             else
             {
-                MessageBox.Show("Inget matchande personnummer hittades, försök igen");
+                MessageBox.Show("Mata in ett giltigt UthyrningsID, försök igen");
             }
-
         }
-        /// <summary>
-        /// Metoden hanterar händelsen när användaren klickar på en knapp för att ta bort en uthyrning. Den markerar den valda uthyrningen och frågar användaren om de är säkra på att de vill ta bort den. Om användaren bekräftar borttagningen tas uthyrningen bort och griden uppdateras, annars görs ingen åtgärd.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnTaBort_Click(object sender, EventArgs e)
+   
+    /// <summary>
+    /// Metoden hanterar händelsen när användaren klickar på en knapp för att ta bort en uthyrning. Den markerar den valda uthyrningen och frågar användaren om de är säkra på att de vill ta bort den. Om användaren bekräftar borttagningen tas uthyrningen bort och griden uppdateras, annars görs ingen åtgärd.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void btnTaBort_Click(object sender, EventArgs e)
+    {
+        valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
+        DialogResult result = MessageBox.Show("Är du säker att du vill ta bort uthyrningen?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (result == DialogResult.Yes)
         {
-            valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
-            DialogResult result = MessageBox.Show("Är du säker att du vill ta bort uthyrningen?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (gridUthyrning.SelectedRows != null)
             {
-                if (gridUthyrning.SelectedRows != null)
-                {
-                    kontroller.TaBortUthyrning(valdUthyrning);
-                    RefreshUthyrningar();
-                }
-            }
-            else if (result == DialogResult.No)
-            {
-
+                kontroller.TaBortUthyrning(valdUthyrning);
+                RefreshUthyrningar();
             }
         }
-
-        private void txtBoxUthyrningsID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPersNr_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUthyrning_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridUthyrning_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        else if (result == DialogResult.No)
         {
 
         }
     }
+
+    private void txtBoxUthyrningsID_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void lblPersNr_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void lblUthyrning_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void gridUthyrning_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
 }
+    }
