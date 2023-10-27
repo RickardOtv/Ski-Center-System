@@ -62,7 +62,6 @@
             this.gridUthyrning.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridUthyrning.Size = new System.Drawing.Size(229, 176);
             this.gridUthyrning.TabIndex = 0;
-            this.gridUthyrning.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridUthyrning_CellContentClick);
             // 
             // gridUthyrningsRader
             // 
@@ -100,7 +99,6 @@
             this.lblUthyrning.Size = new System.Drawing.Size(130, 25);
             this.lblUthyrning.TabIndex = 3;
             this.lblUthyrning.Text = "Välj uthyrning";
-            this.lblUthyrning.Click += new System.EventHandler(this.lblUthyrning_Click);
             // 
             // lblPersNr
             // 
@@ -112,7 +110,6 @@
             this.lblPersNr.Size = new System.Drawing.Size(71, 13);
             this.lblPersNr.TabIndex = 4;
             this.lblPersNr.Text = "UthyrningsID:";
-            this.lblPersNr.Click += new System.EventHandler(this.lblPersNr_Click);
             // 
             // txtBoxUthyrningsID
             // 
@@ -121,7 +118,6 @@
             this.txtBoxUthyrningsID.Name = "txtBoxUthyrningsID";
             this.txtBoxUthyrningsID.Size = new System.Drawing.Size(75, 20);
             this.txtBoxUthyrningsID.TabIndex = 5;
-            this.txtBoxUthyrningsID.TextChanged += new System.EventHandler(this.txtBoxUthyrningsID_TextChanged);
             // 
             // btnSök
             // 

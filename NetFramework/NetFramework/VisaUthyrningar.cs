@@ -2,13 +2,8 @@
 using Datalager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFramework
@@ -19,21 +14,21 @@ namespace NetFramework
         private Kontroller kontroller;
         private LoggaIn loggaIn;
         Uthyrning valdUthyrning;
-        Uthyrning hittadUthyrning;
-        Kund hittadKund;
-        Bokning matchadBokning;
+
         public VisaUthyrningar(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
             this.loggaIn = loggaIn;
             this.kontroller = kontroller;
         }
+
         public string InloggadAnvandare
         {
             get { return txtAnvandarnamn.Text; }
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Fyller på gridUthyrning med uthyrningar
         internal void RefreshUthyrningar()
         {
             var uthyrningar = kontroller.HämtaAllaUthyrningar();
@@ -44,13 +39,15 @@ namespace NetFramework
             gridUthyrning.Columns["BokningsID"].DisplayIndex = 1;
         }
 
-
+        //Fyller på girduthyrning med specifik uthyrning
         public void RefreshUthyrningarSpecifik(int uthyrningsID)
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
             var uthyrningar = kontroller.HämtaUthyrningar(uthyrningsID);
             gridUthyrning.DataSource = uthyrningar;
         }
+
+        //Fyller på gridUthyrningsRader (utrusning) som matchar en uthyrning
         public void RefreshRader()
         {
             var rader = kontroller.HämtaUthyrningsRad(valdUthyrning.UthyrningsID);
@@ -66,17 +63,14 @@ namespace NetFramework
             gridUthyrningsRader.Columns["Till"].DisplayIndex = 3;
             gridUthyrningsRader.Columns["UthyrningsID"].DisplayIndex = 4;
         }
-        public void RefreshLektioner()
-        {
-            var lektioner = kontroller.HämtaLektioner(valdUthyrning.BokningsID);
-            gridLektioner.DataSource = lektioner;
-        }
 
+        //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Knapp för att välja uthyrning som info ska visas om
         private void btnVäljUthyrning_Click(object sender, EventArgs e)
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
@@ -85,25 +79,23 @@ namespace NetFramework
             RefreshRader();
         }
 
+        //Load för att fylla på grid med uthyrningar när form öppnas
         private void VisaUthyrningar_Load(object sender, EventArgs e)
         {
             RefreshUthyrningar();
         }
-        /// <summary>
-        /// Metoden hanterar händelsen när användaren klickar på en knapp och söker efter matchande uthyrnings-ID i en databas. Om ett matchande uthyrnings-ID hittas, uppdateras griden med de matchande uthyrningarna, annars visas ett meddelande som uppmanar användaren att försöka igen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        //söker efter uthyrningar baserat på matchande uthyrnings-ID
         private void btnSök_Click(object sender, EventArgs e)
         {
-
-
             String söktBokningsNummer = txtBoxUthyrningsID.Text;
+            //Kollar så att inmatning har rätt format
             if (kontroller.IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
             {
                 int matadUthyrningsID = int.Parse(txtBoxUthyrningsID.Text);
                 var matchadeUthyrningar = unitOfWork.uthyrningar.Where(u => u.UthyrningsID == matadUthyrningsID).ToList();
 
+                //Kollar om det finns matchande uthyrningar
                 if (matchadeUthyrningar.Count > 0)
                 {
                     gridUthyrning.DataSource = matchadeUthyrningar;
@@ -118,48 +110,24 @@ namespace NetFramework
                 MessageBox.Show("Mata in ett giltigt UthyrningsID, försök igen");
             }
         }
-   
-    /// <summary>
-    /// Metoden hanterar händelsen när användaren klickar på en knapp för att ta bort en uthyrning. Den markerar den valda uthyrningen och frågar användaren om de är säkra på att de vill ta bort den. Om användaren bekräftar borttagningen tas uthyrningen bort och griden uppdateras, annars görs ingen åtgärd.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void btnTaBort_Click(object sender, EventArgs e)
-    {
-        valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
-        DialogResult result = MessageBox.Show("Är du säker att du vill ta bort uthyrningen?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        if (result == DialogResult.Yes)
+
+        //Knapp för att ta bort en uthyrning
+        private void btnTaBort_Click(object sender, EventArgs e)
         {
-            if (gridUthyrning.SelectedRows != null)
+            valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
+            DialogResult result = MessageBox.Show("Är du säker att du vill ta bort uthyrningen?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                kontroller.TaBortUthyrning(valdUthyrning);
-                RefreshUthyrningar();
+                if (gridUthyrning.SelectedRows != null)
+                {
+                    kontroller.TaBortUthyrning(valdUthyrning);
+                    RefreshUthyrningar();
+                }
+            }
+            else if (result == DialogResult.No)
+            {
+
             }
         }
-        else if (result == DialogResult.No)
-        {
-
-        }
-    }
-
-    private void txtBoxUthyrningsID_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblPersNr_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblUthyrning_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void gridUthyrning_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-
     }
 }
-    }

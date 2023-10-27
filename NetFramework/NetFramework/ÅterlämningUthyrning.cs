@@ -1,15 +1,8 @@
 ﻿using Affärslager;
 using Entitetslager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NetFramework
 {
@@ -18,6 +11,7 @@ namespace NetFramework
         private Kontroller kontroller;
         private LoggaIn loggaIn;
         private Uthyrningsrad valdRad;
+
         public ÅterlämningUthyrning(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
@@ -31,11 +25,13 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
+        //Knapp för att gå tillbaka
         private void Tillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Uppdaterar GridÅterlämning med bokningar
         internal void RefreshBokningar()
         {
             var bokningar = kontroller.HämtaBokningar();
@@ -44,9 +40,9 @@ namespace NetFramework
             GridÅterlämning.Columns["BokningsID"].DisplayIndex = 0;
             GridÅterlämning.Columns["KundID"].DisplayIndex = 1;
             GridÅterlämning.Columns["Kund"].Visible = false;
-
         }
 
+        //Uppdaterar GridÅterlämning med Utrustning som tillhör en specifik uthyrning
         internal void RefreshRader(int id)
         {
             var rader = kontroller.HämtaUthyrningsRad(id);
@@ -60,9 +56,8 @@ namespace NetFramework
             GridÅterlämning.Columns["Till"].DisplayIndex = 3;
             GridÅterlämning.Columns["UthyrningsID"].DisplayIndex = 4;
         }
-        /// <summary>
-        /// Metoden HittaRättUthyrningsID kontrollerar om det angivna ID:t är en giltig heltalsvärde och uppdaterar uthyrningsraderna med det angivna ID:et om det är giltigt. Om det angivna ID:t inte är ett giltigt heltal, visas ett felmeddelande som uppmanar användaren att ange siffror.
-        /// </summary>
+
+        //Söker och uppdaterar GridÅterlämning med utrusningar så som matchar ett specifikt uthyrningsID
         private void HittaRättUthyrningsID()
         {
             if (int.TryParse(TextBoxUthyrningsID.Text, out int angivetID))
@@ -75,12 +70,14 @@ namespace NetFramework
             }
         }
 
+        //Knapp för att söka efter Utrustning som tillhör en specifik uthyrning
         private void SökBtn_Click(object sender, EventArgs e)
         {
             int.TryParse(TextBoxUthyrningsID.Text, out int angivetID);
 
             var rader = kontroller.HämtaUthyrningsRad(angivetID);
             bool isEmpty = !rader.Any();
+            //Kollar om det finns någon sån utrustning uthyrd
             if (!isEmpty)
             {
                 HittaRättUthyrningsID();
@@ -91,15 +88,10 @@ namespace NetFramework
             }
         }
 
-
-        
-        /// <summary>
-        /// Metoden hanterar händelsen när användaren klickar på en knapp för att återlämna en vara. Den kontrollerar om en rad är markerad i griden och frågar användaren om de är säkra på att de vill återlämna varan. Om användaren bekräftar återlämningen tas den valda raden bort och uthyrningsraderna uppdateras med det aktuella uthyrnings-ID:t. Om ingen rad är vald visas en varning för att välja en rad.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Knapp för att återlämna en vald utrusning
         private void ÅterlämnaBtn_Click(object sender, EventArgs e)
         {
+            //Kollar om nån utrustning är vald
             if (GridÅterlämning.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("Är du säker på att denna vara ska återlämnas?", "Godkännande", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

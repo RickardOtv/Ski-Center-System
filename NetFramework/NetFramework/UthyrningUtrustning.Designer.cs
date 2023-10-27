@@ -142,7 +142,6 @@
             this.txtBoxValdKund.Size = new System.Drawing.Size(120, 20);
             this.txtBoxValdKund.TabIndex = 18;
             this.txtBoxValdKund.Text = "Vald kund:";
-            this.txtBoxValdKund.TextChanged += new System.EventHandler(this.txtBoxValdKund_TextChanged);
             // 
             // textBox6
             // 
