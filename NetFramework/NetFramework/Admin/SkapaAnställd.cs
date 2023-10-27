@@ -57,7 +57,7 @@ namespace NetFramework
                 MessageBox.Show($"Ny Anställd skapad!\n Namn: {nyAnställd.Förnamn} {nyAnställd.Efternamn}\n AnställningsNr: {nyAnställd.AnställningsNr}\n Behörighet: {nyAnställd.Behörighet}");
                 this.Close();
             }
-            
+
         }
 
         private void txtBoxFörnamn_Enter(object sender, EventArgs e)

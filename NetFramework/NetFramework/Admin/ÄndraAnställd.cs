@@ -31,7 +31,7 @@ namespace NetFramework
             txtBoxEfternamn.Text = anställd.Efternamn.ToString();
             txtBoxLösenord.Text = anställd.Lösenord.ToString();
             cmbBehörighet.Text = anställd.Behörighet.ToString();
-         
+
         }
 
         public string InloggadAnvandare

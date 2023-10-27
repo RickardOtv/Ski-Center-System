@@ -145,21 +145,28 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
-            if(nyBokning != null)
+            if (nyBokning != null)
             {
-                
+
                 DialogResult result = MessageBox.Show("Om du går tillbaka så avbryter du bokningen", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     kontroller.TaBortBokning(nyBokning);
+                    BokningsTyp bokningsTyp = new BokningsTyp(loggaInMeny, kontroller);
+                    bokningsTyp.Show();
+                    bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
                     this.Close();
                 }
                 else if (result == DialogResult.No)
                 {
 
                 }
-            } else
+            }
+            else
             {
+                BokningsTyp bokningsTyp = new BokningsTyp(loggaInMeny, kontroller);
+                bokningsTyp.Show();
+                bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
                 this.Close();
             }
         }
@@ -204,9 +211,11 @@ namespace NetFramework
                         DateTime startDate = dateFrån.Value;
                         DateTime endDate = dateTill.Value;
                         decimal pris = kontroller.KollaPris(startDate, endDate, valdLogi.Typ);
-                        if(valdKund.Typ == "Företag"){
-                            moms = 12; 
-                        } else
+                        if (valdKund.Typ == "Företag")
+                        {
+                            moms = 12;
+                        }
+                        else
                         {
                             moms = 0;
                         }
@@ -221,8 +230,9 @@ namespace NetFramework
                 else
                 {
                     MessageBox.Show("Ingen logi vald.");
-                }  
-            } else
+                }
+            }
+            else
             {
                 MessageBox.Show("Välj först en kund.");
             }
@@ -239,7 +249,7 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnLäggTill_Click(object sender, EventArgs e)
         {
-            if(valdKund != null)
+            if (valdKund != null)
             {
                 if (gridLogi.SelectedRows.Count > 0)
                 {
@@ -248,9 +258,9 @@ namespace NetFramework
                     var rowIndex = selectedRow.Index;
                     if (rowIndex >= 0 && rowIndex < ledigaLogier.Count)
                     {
-                        if(dateFrån.Text != dateTill.Text)
+                        if (dateFrån.Text != dateTill.Text)
                         {
-                            if(DateTime.Parse(dateFrån.Text) < DateTime.Parse(dateTill.Text))
+                            if (DateTime.Parse(dateFrån.Text) < DateTime.Parse(dateTill.Text))
                             {
                                 var valdLogi = ledigaLogier[rowIndex];
                                 DateTime startDate = DateTime.Parse(dateFrån.Text);
@@ -259,12 +269,14 @@ namespace NetFramework
                                 MessageBox.Show($"Ny bokningsrad har skapats med Logi: {valdLogi.LogiID}\nBokningsID: {nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
                                 RefreshRader();
                                 RefreshLogi();
-                            } else
+                            }
+                            else
                             {
                                 MessageBox.Show("Från datum måste vara större än Till datum.");
                             }
 
-                        } else
+                        }
+                        else
                         {
                             MessageBox.Show("Kan inte ha samma Från och Till datum.");
                         }
@@ -279,10 +291,11 @@ namespace NetFramework
                     MessageBox.Show("Ingen logi vald.");
                 }
 
-            }  else
+            }
+            else
             {
                 MessageBox.Show("Välj först kund. ");
-            } 
+            }
         }
 
         private void btnTaBort_Click(object sender, EventArgs e)
@@ -295,10 +308,10 @@ namespace NetFramework
                 RefreshRader();
                 RefreshLogi();
             }
-                else
-                {
-                    MessageBox.Show("Måste först välja rad");
-                }
+            else
+            {
+                MessageBox.Show("Måste först välja rad");
+            }
         }
 
         private void btnVäljKund_Click(object sender, EventArgs e)
@@ -312,50 +325,53 @@ namespace NetFramework
         {
             if (nyBokning != null)
             {
-            if (gridRader.SelectedRows.Count > 0)
-            {
-                decimal totalSumma = 0;
-                int momsSatts = 0;
-                int rabattsatts = 0;
-                float slutPrisInkMoms;
-                DateTime minDatum = new DateTime(3008, 1, 1);
-                DateTime maxDatum = new DateTime(2008, 1, 1);
-
-                foreach (DataGridViewRow row in gridRader.Rows)
+                if (gridRader.SelectedRows.Count > 0)
                 {
-                    if (row.Tag is Bokningsrad bokningsrad)
-                    {
-                        // Call your method on the Bokningsrad object
-                        Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+                    decimal totalSumma = 0;
+                    int momsSatts = 0;
+                    int rabattsatts = 0;
+                    float slutPrisInkMoms;
+                    DateTime minDatum = new DateTime(3008, 1, 1);
+                    DateTime maxDatum = new DateTime(2008, 1, 1);
 
-                        //Något gör så att det blir en extra dag, därför tar jag bort den här
-                        DateTime newTillDate = bokningsrad.Till.AddDays(-1);
-                        decimal pris = kontroller.KollaPris(bokningsrad.Från, newTillDate, ettLogi.Typ);
-                        totalSumma += pris;
-                            if(minDatum > bokningsrad.Från)
+                    foreach (DataGridViewRow row in gridRader.Rows)
+                    {
+                        if (row.Tag is Bokningsrad bokningsrad)
                         {
-                            minDatum = bokningsrad.Från;
-                        }
-                        if (maxDatum < bokningsrad.Till)
-                        {
-                            maxDatum = bokningsrad.Till;
+                            // Call your method on the Bokningsrad object
+                            Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+
+                            //Något gör så att det blir en extra dag, därför tar jag bort den här
+                            DateTime newTillDate = bokningsrad.Till.AddDays(-1);
+                            decimal pris = kontroller.KollaPris(bokningsrad.Från, newTillDate, ettLogi.Typ);
+                            totalSumma += pris;
+                            if (minDatum > bokningsrad.Från)
+                            {
+                                minDatum = bokningsrad.Från;
+                            }
+                            if (maxDatum < bokningsrad.Till)
+                            {
+                                maxDatum = bokningsrad.Till;
+                            }
                         }
                     }
-                }
 
-                if (valdKund.Typ == "Företag")
-                {
-                    momsSatts = 12;
+                    if (valdKund.Typ == "Företag")
+                    {
+                        momsSatts = 12;
+                    }
+                    Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
+                    slutPrisInkMoms = (float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100);
+                    MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {slutPrisInkMoms}kr\nMoms: {nyFaktura.Momsats}%\nTotalPris (Ink Moms): {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HuvudMeny huvudMeny = new HuvudMeny(loggaInMeny, kontroller);
+                    huvudMeny.Show();
+                    huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+                    this.Close();
                 }
-                Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
-                slutPrisInkMoms = (float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100);
-                MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {slutPrisInkMoms}kr\nMoms: {nyFaktura.Momsats}%\nTotalPris (Ink Moms): {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show($"Välj först ett Logi, tack!");
-            }
+                else
+                {
+                    MessageBox.Show($"Välj först ett Logi, tack!");
+                }
             }
             else
             {
@@ -425,38 +441,39 @@ namespace NetFramework
             decimal totalSumma = 0;
             float slutPrisInkMoms;
             int moms;
-            
-                if (gridRader.SelectedRows.Count > 0)
+
+            if (gridRader.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in gridRader.Rows)
                 {
-                    foreach (DataGridViewRow row in gridRader.Rows)
+                    if (row.Tag is Bokningsrad bokningsrad)
                     {
-                        if (row.Tag is Bokningsrad bokningsrad)
-                        {
-                            // Call your method on the Bokningsrad object
-                            Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
+                        // Call your method on the Bokningsrad object
+                        Logi ettLogi = kontroller.HittaLogi(bokningsrad.LogiID);
 
 
-                            //Något gör så att det blir en extra dag, därför tar jag bort den här
-                            DateTime newDate = bokningsrad.Till.AddDays(-1);
-                            decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
-                            totalSumma += pris;
-                        }
+                        //Något gör så att det blir en extra dag, därför tar jag bort den här
+                        DateTime newDate = bokningsrad.Till.AddDays(-1);
+                        decimal pris = kontroller.KollaPris(bokningsrad.Från, newDate, ettLogi.Typ);
+                        totalSumma += pris;
                     }
-                    if (valdKund.Typ == "Företag")
-                    {
-                        moms = 12;
-                    }
-                    else
-                    {
-                        moms = 0;
-                    }
-                    slutPrisInkMoms = (float)totalSumma * ((float)moms / 100);
-                    MessageBox.Show($"Pris Ink Moms: {totalSumma}kr\nMoms: {slutPrisInkMoms}kr\nMoms: {moms}%");
-                } else
+                }
+                if (valdKund.Typ == "Företag")
+                {
+                    moms = 12;
+                }
+                else
+                {
+                    moms = 0;
+                }
+                slutPrisInkMoms = (float)totalSumma * ((float)moms / 100);
+                MessageBox.Show($"Pris Ink Moms: {totalSumma}kr\nMoms: {slutPrisInkMoms}kr\nMoms: {moms}%");
+            }
+            else
             {
                 MessageBox.Show("Ingen logi vald.");
             }
-            
+
         }
 
     }

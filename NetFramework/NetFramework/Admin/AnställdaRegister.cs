@@ -90,12 +90,13 @@ namespace NetFramework
                 {
                     MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Inget matchande anställningsnummer hittades, försök igen");
             }
 
-            
+
         }
         private void ÄndraAnställd_FormClosed(object sender, FormClosedEventArgs e)
         {

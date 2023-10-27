@@ -11,8 +11,8 @@ using System.Windows.Forms;
 
 namespace NetFramework
 {
-  
-    
+
+
     public partial class UthyrningsMeny : Form
     {
         private Kontroller kontroller;
@@ -35,6 +35,7 @@ namespace NetFramework
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
             huvudMeny.Show();
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         /// <summary>

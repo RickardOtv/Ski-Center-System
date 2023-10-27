@@ -69,7 +69,7 @@ namespace NetFramework
 
         public void VisaBokningar_Load(object sender, EventArgs e)
         {
-            RefreshBokningar(); 
+            RefreshBokningar();
         }
 
         private void btn_tillbaka_Click(object sender, EventArgs e)

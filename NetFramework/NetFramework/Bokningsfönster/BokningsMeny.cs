@@ -19,8 +19,8 @@ namespace NetFramework
         public BokningsMeny(LoggaIn loggaIn, Kontroller kontroller)
         {
             InitializeComponent();
-           this.loggaIn = loggaIn;
-           this.kontroller = kontroller;
+            this.loggaIn = loggaIn;
+            this.kontroller = kontroller;
         }
         public string InloggadAnvandare
         {
@@ -33,7 +33,6 @@ namespace NetFramework
             VisaLedigLogi ledigLogi = new VisaLedigLogi(loggaIn, kontroller);
             ledigLogi.Show();
             ledigLogi.InloggadAnvandare = txtAnvandarnamn.Text;
-            this.Close();
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -48,7 +47,6 @@ namespace NetFramework
             BokningsTyp bokningsTyp = new BokningsTyp(loggaIn, kontroller);
             bokningsTyp.Show();
             bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
-            this.Close();
         }
 
         private void btnVisaBokningar_Click(object sender, EventArgs e)
@@ -56,7 +54,6 @@ namespace NetFramework
             VisaBokningar visabokningar = new VisaBokningar(loggaIn, kontroller);
             visabokningar.Show();
             visabokningar.InloggadAnvandare = txtAnvandarnamn.Text;
-            this.Close();
         }
     }
 }

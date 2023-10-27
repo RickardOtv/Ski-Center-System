@@ -77,8 +77,22 @@ namespace NetFramework
 
         private void SökBtn_Click(object sender, EventArgs e)
         {
-            HittaRättUthyrningsID();
+            int.TryParse(TextBoxUthyrningsID.Text, out int angivetID);
+
+            var rader = kontroller.HämtaUthyrningsRad(angivetID);
+            bool isEmpty = !rader.Any();
+            if (!isEmpty)
+            {
+                HittaRättUthyrningsID();
+            }
+            else
+            {
+                MessageBox.Show("Inga rader hittade.");
+            }
         }
+
+
+        
         /// <summary>
         /// Metoden hanterar händelsen när användaren klickar på en knapp för att återlämna en vara. Den kontrollerar om en rad är markerad i griden och frågar användaren om de är säkra på att de vill återlämna varan. Om användaren bekräftar återlämningen tas den valda raden bort och uthyrningsraderna uppdateras med det aktuella uthyrnings-ID:t. Om ingen rad är vald visas en varning för att välja en rad.
         /// </summary>
@@ -93,14 +107,14 @@ namespace NetFramework
                 if (result == DialogResult.Yes)
                 {
                     valdRad = GridÅterlämning.SelectedRows[0].DataBoundItem as Uthyrningsrad;
-                    
+
                     //Hämtar rätt info för återlämning
                     Uthyrning valdUthyrning = kontroller.HittaUthyrningFrånRad(valdRad.UthyrningsID);
                     Faktura valdFaktura = kontroller.HittaFaktura(valdUthyrning.BokningsID);
                     string typ = kontroller.HämtaUthyrningsTyp(valdRad.UtrustningsID);
                     decimal pris = kontroller.KollaUthyrningsPris(valdRad.Från, valdRad.Till, typ);
                     valdFaktura.TotalPris = valdFaktura.TotalPris + (float)pris;
-                    
+
                     //Visar klar faktura osv
                     MessageBox.Show($"Faktura med ID: {valdFaktura.BokningsID} \nHar nytt totalpris på: {valdFaktura.TotalPris}kr \nRabatt: {valdFaktura.Rabattsats}% \nMoms: {valdFaktura.Momsats}%\n\nUthyrning Återlämnad med ID: {valdRad.UthyrningsID}\nRadID: {valdRad.UthyrningsradID}\nFrån {valdRad.Från.ToShortDateString()} \nTill: {valdRad.Till.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     kontroller.TaBortUthyrningsRad(valdRad);

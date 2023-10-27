@@ -47,23 +47,25 @@ namespace NetFramework.Marknadsfönster
         private void btnSpara_Click(object sender, EventArgs e)
         {
             // Access and modify the global variable
-            if(int.TryParse(textBox_nyttMaxbelopp.Text, out nyttMaxbelopp) || string.IsNullOrEmpty(textBox_nyttMaxbelopp.Text))
+            if (int.TryParse(textBox_nyttMaxbelopp.Text, out nyttMaxbelopp) || string.IsNullOrEmpty(textBox_nyttMaxbelopp.Text))
             {
-                if(nyttMaxbelopp >= 0)
+                if (nyttMaxbelopp >= 0)
                 {
                     IList<Kund> allaKunder = kontroller.HämtaKunder();
                     kontroller.ÄndraMaxbeloppFörAllaPrivatKunder(allaKunder, nyttMaxbelopp);
                     //globalData.GlobalVariable = nyttMaxbelopp;
                     Close();
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Maxbelopp får inte vara ett negativt värde, tack!");
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Matta in ett nytt maxbelopp först, tack!");
             }
-            
+
         }
     }
 }

@@ -186,58 +186,67 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnKlar_Click(object sender, EventArgs e)
         {
-            float slutPrisInkMoms;
-            int moms;
-            float prisInkRabatt = 0;
-            float momsPris;
-            decimal totalpris = 0;
-            foreach (DataGridViewRow row in gridRader.Rows)
+            if (gridRader.SelectedRows.Count > 0)
             {
-                if (row.DataBoundItem != null && row.DataBoundItem is Uthyrningsrad rad)
+                float slutPrisInkMoms;
+                int moms;
+                float prisInkRabatt = 0;
+                float momsPris;
+                decimal totalpris = 0;
+                foreach (DataGridViewRow row in gridRader.Rows)
                 {
-                    DateTime från = rad.Från;
-                    DateTime till = rad.Till; // Assuming you have 'Till' property in your Uthyrningsrad
-                    string typ = kontroller.HämtaUthyrningsTyp(rad.UtrustningsID);
-                    int totalDays = (int)(till - från).TotalDays + 1; // Including both from and to dates
+                    if (row.DataBoundItem != null && row.DataBoundItem is Uthyrningsrad rad)
+                    {
+                        DateTime från = rad.Från;
+                        DateTime till = rad.Till; // Assuming you have 'Till' property in your Uthyrningsrad
+                        string typ = kontroller.HämtaUthyrningsTyp(rad.UtrustningsID);
+                        int totalDays = (int)(till - från).TotalDays + 1; // Including both from and to dates
 
-                    if (totalDays > 5)
-                    {
-                        MessageBox.Show("Spannet får inte vara längre än fem dagar.");
-                    }
-                    else if ((typ == "SkoterLynx" || typ == "SkoterViking") && (totalDays == 2 || totalDays == 4))
-                    {
-                        MessageBox.Show("Skoter kan inte hyras i två eller fyra dagar. Vänligen välj en, tre eller fem dagar.");
-                    }
-                    else
-                    {
-                        totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
+                        if (totalDays > 5)
+                        {
+                            MessageBox.Show("Spannet får inte vara längre än fem dagar.");
+                        }
+                        else if ((typ == "SkoterLynx" || typ == "SkoterViking") && (totalDays == 2 || totalDays == 4))
+                        {
+                            MessageBox.Show("Skoter kan inte hyras i två eller fyra dagar. Vänligen välj en, tre eller fem dagar.");
+                        }
+                        else
+                        {
+                            totalpris += kontroller.KollaUthyrningsPris(från, till, typ);
+                        }
                     }
                 }
-            }
-            Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
-            // Om rabatten är mer än 0%
-            if(valdFaktura.Rabattsats != 0)
-            {
-                prisInkRabatt = (float)totalpris - ((float)totalpris * ((float)valdFaktura.Rabattsats / 100));
-            } else
-            {
-                // Totalpris - priset av rabatten = totalpriset inklusive rabatt på sig 
-                prisInkRabatt = (float)totalpris - prisInkRabatt;
-            }
-            //Lägger till moms
-            momsPris = prisInkRabatt - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
-            //float slutMomsPris = prisInkRabatt - momsPris;
+                Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
+                // Om rabatten är mer än 0%
+                if (valdFaktura.Rabattsats != 0)
+                {
+                    prisInkRabatt = (float)totalpris - ((float)totalpris * ((float)valdFaktura.Rabattsats / 100));
+                }
+                else
+                {
+                    // Totalpris - priset av rabatten = totalpriset inklusive rabatt på sig 
+                    prisInkRabatt = (float)totalpris - prisInkRabatt;
+                }
+                //Lägger till moms
+                momsPris = prisInkRabatt - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
+                //float slutMomsPris = prisInkRabatt - momsPris;
 
-            Kund valdKund = kontroller.HittaKund(valdBokning.KundID);
-            if ((prisInkRabatt + valdFaktura.TotalPris) <= valdKund.Maxbeloppskreditgräns)
+                Kund valdKund = kontroller.HittaKund(valdBokning.KundID);
+                if ((prisInkRabatt + valdFaktura.TotalPris) <= valdKund.Maxbeloppskreditgräns)
+                {
+                    MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nRabatt: -{(float)totalpris * ((float)valdFaktura.Rabattsats / 100)}kr\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)totalpris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms): {prisInkRabatt}kr");
+                    //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
+                    kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show($"Det överstiger Maxbeloppkreditgräns:{valdKund.Maxbeloppskreditgräns}kr \nTotalpris (Ink Moms) för uthyrning är: {prisInkRabatt}kr");
+                }
+            }
+            else
             {
-                MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nRabatt: -{(float)totalpris * ((float)valdFaktura.Rabattsats / 100)}kr\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)totalpris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms): {prisInkRabatt}kr");
-                //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
-                kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
-                this.Close();
-            } else
-            {
-                MessageBox.Show($"Det överstiger Maxbeloppkreditgräns:{valdKund.Maxbeloppskreditgräns}kr \nTotalpris (Ink Moms) för uthyrning är: {prisInkRabatt}kr");
+                MessageBox.Show($"Välj först ett Logi, tack!");
             }
 
         }
@@ -254,36 +263,43 @@ namespace NetFramework
             float prisInkMomOchRabatt;
             DateTime från = DateTime.Parse(dateFrån.Text);
             DateTime till = DateTime.Parse(dateTill.Text);
-            valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
-            if (gridUtrustning.SelectedRows.Count > 0)
+            if (DateTime.Parse(dateFrån.Text) < DateTime.Parse(dateTill.Text))
             {
-                var valdRad = gridUtrustning.SelectedRows[0];
-                var rowIndex = valdRad.Index;
-                if (rowIndex >= 0 && rowIndex < tillgängligUtrustning.Count)
+                valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
+                if (gridUtrustning.SelectedRows.Count > 0)
                 {
+                    var valdRad = gridUtrustning.SelectedRows[0];
+                    var rowIndex = valdRad.Index;
+                    if (rowIndex >= 0 && rowIndex < tillgängligUtrustning.Count)
+                    {
 
-                    DateTime startDate = dateFrån.Value;
-                    DateTime endDate = dateTill.Value;
-                    Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
-                    decimal pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
+                        DateTime startDate = dateFrån.Value;
+                        DateTime endDate = dateTill.Value;
+                        Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
+                        decimal pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
 
 
-                    prisInkrabattPris = (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
-                    //float rabattIKr = (float)pris - prisInkrabattPris;
-                    //Lägger till moms
-                    prisInkMomOchRabatt= prisInkrabattPris - ((float)pris * ((float)valdFaktura.Momsats / 100));
-                    //float slutMomsPris = prisInkrabattPris - prisInkMomOchRabatt;
+                        prisInkrabattPris = (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
+                        //float rabattIKr = (float)pris - prisInkrabattPris;
+                        //Lägger till moms
+                        prisInkMomOchRabatt = prisInkrabattPris - ((float)pris * ((float)valdFaktura.Momsats / 100));
+                        //float slutMomsPris = prisInkrabattPris - prisInkMomOchRabatt;
 
-                    MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)pris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms & Rabatt): {prisInkrabattPris}kr");
+                        MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)pris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms & Rabatt): {prisInkrabattPris}kr");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Felaktig utrustning vald.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Felaktig utrustning vald.");
+                    MessageBox.Show("Ingen logi vald.");
                 }
             }
             else
             {
-                MessageBox.Show("Ingen logi vald.");
+                MessageBox.Show("Från datum måste vara större än Till datum.");
             }
         }
 

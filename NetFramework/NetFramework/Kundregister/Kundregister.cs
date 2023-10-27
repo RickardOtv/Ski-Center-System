@@ -20,7 +20,7 @@ namespace NetFramework
         private Kontroller kontroller;
         private Kund valdKund;
 
-        
+
 
         public Kundregister(LoggaIn loggaIn, Kontroller kontroller)
         {
@@ -36,7 +36,7 @@ namespace NetFramework
 
         internal void RefreshKunder()
         {
-            
+
             var kunder = kontroller.HämtaKunder();
             gridKunder.DataSource = kunder;
             gridKunder.AutoGenerateColumns = false;
@@ -50,7 +50,7 @@ namespace NetFramework
             gridKunder.Columns["Namn"].DisplayIndex = 3;
             gridKunder.Columns["Telefonnummer"].DisplayIndex = 4;
             gridKunder.Columns["Email"].DisplayIndex = 5;
-            
+
         }
         private void Kundregister_Load(object sender, EventArgs e)
         {
@@ -75,7 +75,8 @@ namespace NetFramework
                     RefreshKunder();
                     MessageBox.Show($"Tog Bort Kund: {valdKund.KundID} \nMed personnummer: {valdKund.Personnummer} \n Namn: {valdKund.Namn}");
 
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Välj först en kund, tack!", "Confirmation");
                 }
@@ -98,7 +99,7 @@ namespace NetFramework
 
             if (gridKunder.SelectedRows != null)
             {
-                if(valdKund.Typ == "Företag")
+                if (valdKund.Typ == "Företag")
                 {
                     if (inmatning == "Admin" || inmatning == "Marknad")
                     {
@@ -108,17 +109,18 @@ namespace NetFramework
                     }
                     else
                         MessageBox.Show("Du har ej rätt behörighet.");
-                } else
+                }
+                else
                 {
                     ÄndraKund ändraKund = new ÄndraKund(loggaIn, kontroller, valdKund);
                     ändraKund.Show();
                     ändraKund.InloggadAnvandare = txtAnvandarnamn.Text;
                 }
             }
-           
+
         }
 
-       
+
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
@@ -138,7 +140,7 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnSokNamn_Click(object sender, EventArgs e)
         {
-            
+
             string matadNamn = txtBoxNamn.Text;
             var matchadeKunder = unitOfWork.kunder.Where(k => k.Namn == matadNamn).ToList();
 
@@ -150,7 +152,7 @@ namespace NetFramework
             {
                 MessageBox.Show("Inget matchande personnummer hittades, försök igen");
             }
-            
+
         }
         /// <summary>
         /// Denna metod btnSokPersonNr_Click hanterar händelsen när användaren klickar på knappen "Sök" baserat på personnummer. Den tar in det inmatade personnumret från textfältet och söker efter matchande kunder i databasen. Om det finns matchande kunder visas de i data grid-vyn, annars visas ett meddelande om att inga matchningar hittades.
@@ -159,7 +161,7 @@ namespace NetFramework
         /// <param name="e"></param>
         private void btnSokPersonNr_Click(object sender, EventArgs e)
         {
-            
+
             string matadPeronNr = txtBoxPersonNr.Text;
             var matchadeKunder = unitOfWork.kunder.Where(k => k.Personnummer == matadPeronNr).ToList();
 
@@ -171,7 +173,7 @@ namespace NetFramework
             {
                 MessageBox.Show("Inget matchande personnummer hittades, försök igen");
             }
-            
+
 
         }
 
@@ -185,7 +187,7 @@ namespace NetFramework
 
         }
 
-       
+
 
         private void lblNamn_Click(object sender, EventArgs e)
         {

@@ -21,7 +21,7 @@ namespace NetFramework
         private Bokning valdBokning;
         private Uthyrning nyUthyrning;
         private LoggaIn loggaInMeny;
-        
+
         public SkapaUthyrning(LoggaIn loggain, Kontroller kontroller)
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace NetFramework
             gridBokningar.Columns["BokningsID"].DisplayIndex = 0;
             gridBokningar.Columns["KundID"].DisplayIndex = 1;
             gridBokningar.Columns["Kund"].Visible = false;
-        
+
         }
         public void SkapaUthyrning_Load(object sender, EventArgs e)
         {
@@ -86,16 +86,23 @@ namespace NetFramework
         /// <param name="e"></param>
         private void BokningsnummerBtn_Click(object sender, EventArgs e)
         {
-            int matadBokningsID = int.Parse(txtBoxBokningsID.Text);
-            var matchadeBokningar = unitOfWork.bokningar.Where(b => b.BokningsID == matadBokningsID).ToList();
-
-            if (matchadeBokningar.Count > 0)
+            Bokning matchadBokning;
+            String söktBokningsNummer = txtBoxBokningsID.Text;
+            if (kontroller.IsDigitsOnly(söktBokningsNummer) && !string.IsNullOrEmpty(söktBokningsNummer))
             {
-                gridBokningar.DataSource = matchadeBokningar;
+                matchadBokning = kontroller.HittaBokning(söktBokningsNummer);
+                if (matchadBokning != null)
+                {
+                    gridBokningar.DataSource = new List<Bokning> { matchadBokning };
+                }
+                else
+                {
+                    MessageBox.Show("Bokning ej hittad, försök igen");
+                }
             }
             else
             {
-                MessageBox.Show("Inget matchande bokningsID hittades, försök igen");
+                MessageBox.Show("Bokning ej hittad, försök igen");
             }
         }
         /// <summary>
@@ -105,12 +112,19 @@ namespace NetFramework
         /// <param name="e"></param>
         private void KundSokBtn_Click(object sender, EventArgs e)
         {
-            int matadKundID = int.Parse(txtBoxKundID.Text);
-            var matchadeBokningar = unitOfWork.bokningar.Where(b => b.KundID == matadKundID).ToList();
-
-            if (matchadeBokningar.Count > 0)
+            if (kontroller.IsDigitsOnly(txtBoxKundID.Text) && !string.IsNullOrEmpty(txtBoxKundID.Text))
             {
-                gridBokningar.DataSource = matchadeBokningar;
+                int matadKundID = int.Parse(txtBoxKundID.Text);
+                var matchadeBokningar = unitOfWork.bokningar.Where(b => b.KundID == matadKundID).ToList();
+
+                if (matchadeBokningar.Count > 0)
+                {
+                    gridBokningar.DataSource = matchadeBokningar;
+                }
+                else
+                {
+                    MessageBox.Show("Inget matchande kundID hittades, försök igen");
+                }
             }
             else
             {

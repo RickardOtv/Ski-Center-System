@@ -43,14 +43,17 @@ namespace NetFramework
         private void btnGaVidare_Click(object sender, EventArgs e)
         {
 
-            if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:")) {
+            if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:"))
+            {
                 MessageBox.Show("Fyll i alla rader tack!");
-            } else if (!kontroller.IsValidEmail(txtBoxEmail.Text))
+            }
+            else if (!kontroller.IsValidEmail(txtBoxEmail.Text))
             {
                 MessageBox.Show("Ange en giltig e-postadress.", "Ogiltig Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxEmail.Focus();
                 return;
-            } else if (!kontroller.IsValidSwedishSSN(txtBoxPersonNr.Text))
+            }
+            else if (!kontroller.IsValidSwedishSSN(txtBoxPersonNr.Text))
             {
                 MessageBox.Show("Ange ett giltigt PersonNr", "Ogiltig PersonNr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxPersonNr.Focus();
@@ -80,7 +83,7 @@ namespace NetFramework
                 MessageBox.Show("Ange ett giltigt Postnr", "Ogiltigt Postnr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxPostNr.Focus();
             }
-            else 
+            else
             {
 
                 string personnummer = txtBoxPersonNr.Text;
@@ -156,7 +159,7 @@ namespace NetFramework
                 txtBoxEmail.Text = "";
                 txtBoxEmail.ForeColor = SystemColors.WindowText; // Återställ textfärg om den har ändrats
             }
-            
+
         }
         private void txtBoxEmail_Leave(object sender, EventArgs e)
         {
@@ -185,7 +188,7 @@ namespace NetFramework
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-        
+
         private void txtBoxTelefonNr_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxTelefonNr = (TextBox)sender;
@@ -222,7 +225,7 @@ namespace NetFramework
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-        
+
         private void txtBoxOrt_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxOrt = (TextBox)sender;
@@ -241,7 +244,7 @@ namespace NetFramework
                 textBox.ForeColor = SystemColors.GrayText; // Ändra textfärg till grå om ingen text har matats in
             }
         }
-        
+
         private void txtBoxKredit_Enter(object sender, EventArgs e)
         {
             TextBox txtBoxKredit = (TextBox)sender;

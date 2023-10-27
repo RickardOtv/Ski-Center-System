@@ -20,7 +20,7 @@ namespace NetFramework
         private LoggaIn loggaIn;
         private Kontroller kontroller;
         private Bokningsrad valdBokningsrad;
-        
+
         public ÄndraBokning(LoggaIn loggaIn, Kontroller kontroller, Bokningsrad valdRad)
         {
             this.loggaIn = loggaIn;
@@ -31,7 +31,7 @@ namespace NetFramework
             startDatePicker.Value = valdRad.Från;
             endDatePicker.Value = valdRad.Till;
         }
-        
+
 
 
         public string InloggadAnvandare
@@ -43,7 +43,7 @@ namespace NetFramework
 
         private void btn_Tillbaka_Click(object sender, EventArgs e)
         {
-            this.Close();        
+            this.Close();
         }
         /// <summary>
         /// Metoden btn_Spara_För_Alla extraherar start- och slutdatum från respektive datumväljare och använder dessa datum tillsammans med en specifik bokningsrad för att uppdatera alla bokningsrader. Efter uppdatering visas en dialogruta som bekräftar den uppdaterade bokningen tillsammans med dess uppdaterade detaljer, inklusive det nya priset om det har justerats. Slutligen stängs det nuvarande fönstret.

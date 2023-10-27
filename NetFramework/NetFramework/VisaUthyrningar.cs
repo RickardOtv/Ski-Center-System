@@ -43,8 +43,8 @@ namespace NetFramework
             gridUthyrning.Columns["UthyrningsID"].DisplayIndex = 0;
             gridUthyrning.Columns["BokningsID"].DisplayIndex = 1;
         }
-        
-        
+
+
         public void RefreshUthyrningarSpecifik(int uthyrningsID)
         {
             valdUthyrning = gridUthyrning.SelectedRows[0].DataBoundItem as Uthyrning;
@@ -65,7 +65,7 @@ namespace NetFramework
             gridUthyrningsRader.Columns["Från"].DisplayIndex = 2;
             gridUthyrningsRader.Columns["Till"].DisplayIndex = 3;
             gridUthyrningsRader.Columns["UthyrningsID"].DisplayIndex = 4;
-        }   
+        }
         public void RefreshLektioner()
         {
             var lektioner = kontroller.HämtaLektioner(valdUthyrning.BokningsID);

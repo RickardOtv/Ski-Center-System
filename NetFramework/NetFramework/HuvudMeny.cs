@@ -110,7 +110,9 @@ namespace NetFramework
                 this.Close();
             }
             else
+            {
                 MessageBox.Show("Du har ej rätt behörighet.");
+            }
         }
         /// <summary>
         /// Stänger ner huvudmenyn och öppnar ett nytt inloggningsfönster
