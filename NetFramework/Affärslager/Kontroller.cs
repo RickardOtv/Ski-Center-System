@@ -19,7 +19,7 @@ namespace Affärslager
 
         private UnitOfWork unitOfWork;
         private List<Utrustning> allUtrustning = new List<Utrustning>();
-        public Kontroller() 
+        public Kontroller()
         {
             using (var unitOfWork = new UnitOfWork())
             {
@@ -53,7 +53,7 @@ namespace Affärslager
             return false;
         }
 
-        
+
         #region Skapa metoder
         /// <summary>
         /// Metoden "SkapaBokning" skapar en ny bokning kopplad till en given kund i databasen. Bokningen läggs till i databasen och ändringarna sparas. Den nyskapade bokningen returneras.
@@ -89,11 +89,11 @@ namespace Affärslager
         }
 
 
-        
+
         public Faktura SkapaFaktura(int bokningsID, int moms, int rabattsats, float totalpris)
         {
             Faktura nyFaktura = new Faktura(bokningsID, moms, rabattsats, totalpris);
-            unitOfWork.fakturor.Add(nyFaktura); 
+            unitOfWork.fakturor.Add(nyFaktura);
             unitOfWork.SaveChanges();
             return nyFaktura;
         }
@@ -471,7 +471,7 @@ namespace Affärslager
         public void ÄndraFakturaMoms(Faktura valdFaktura, int nyMoms)
         {
             valdFaktura.Momsats = nyMoms;
-            valdFaktura.TotalPris= valdFaktura.TotalPris - (valdFaktura.TotalPris * (nyMoms / 100));
+            valdFaktura.TotalPris = valdFaktura.TotalPris - (valdFaktura.TotalPris * (nyMoms / 100));
             unitOfWork.SaveChanges();
         }
 
@@ -485,7 +485,7 @@ namespace Affärslager
         {
             foreach (var kund in kunder)
             {
-                if(kund.Typ == "Privat")
+                if (kund.Typ == "Privat")
                 {
                     kund.Maxbeloppskreditgräns = nyttMaxbelopp;
                 }
@@ -676,8 +676,8 @@ namespace Affärslager
 
             return totalPrice;
         }
-        
-        
+
+
         #region Format-validering
         public bool IsDigitsOnly(string str)
         {
