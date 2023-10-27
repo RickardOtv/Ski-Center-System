@@ -40,7 +40,7 @@
             // 
             // btnBefintlig
             // 
-            this.btnBefintlig.Location = new System.Drawing.Point(525, 310);
+            this.btnBefintlig.Location = new System.Drawing.Point(547, 310);
             this.btnBefintlig.Margin = new System.Windows.Forms.Padding(2);
             this.btnBefintlig.Name = "btnBefintlig";
             this.btnBefintlig.Size = new System.Drawing.Size(186, 42);
@@ -51,7 +51,7 @@
             // 
             // btnNyKund
             // 
-            this.btnNyKund.Location = new System.Drawing.Point(525, 370);
+            this.btnNyKund.Location = new System.Drawing.Point(547, 369);
             this.btnNyKund.Margin = new System.Windows.Forms.Padding(2);
             this.btnNyKund.Name = "btnNyKund";
             this.btnNyKund.Size = new System.Drawing.Size(186, 42);
@@ -65,7 +65,7 @@
             this.lblTyp.AutoSize = true;
             this.lblTyp.BackColor = System.Drawing.Color.Transparent;
             this.lblTyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTyp.Location = new System.Drawing.Point(519, 248);
+            this.lblTyp.Location = new System.Drawing.Point(532, 246);
             this.lblTyp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTyp.Name = "lblTyp";
             this.lblTyp.Size = new System.Drawing.Size(213, 31);

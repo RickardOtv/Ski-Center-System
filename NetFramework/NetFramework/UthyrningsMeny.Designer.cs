@@ -50,9 +50,8 @@
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1705, 994);
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
             this.gradientPanel1.TabIndex = 19;
             this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
@@ -61,19 +60,18 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(740, 249);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(555, 202);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 48);
+            this.label3.Size = new System.Drawing.Size(163, 39);
             this.label3.TabIndex = 17;
             this.label3.Text = "Uthyrning";
             // 
             // btnÅterlämning
             // 
-            this.btnÅterlämning.Location = new System.Drawing.Point(635, 508);
-            this.btnÅterlämning.Margin = new System.Windows.Forms.Padding(4);
+            this.btnÅterlämning.Location = new System.Drawing.Point(476, 412);
             this.btnÅterlämning.Name = "btnÅterlämning";
-            this.btnÅterlämning.Size = new System.Drawing.Size(440, 64);
+            this.btnÅterlämning.Size = new System.Drawing.Size(330, 52);
             this.btnÅterlämning.TabIndex = 14;
             this.btnÅterlämning.Text = "Återlämning";
             this.btnÅterlämning.UseVisualStyleBackColor = true;
@@ -81,10 +79,9 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(19, 945);
-            this.btnTillbaka.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTillbaka.Location = new System.Drawing.Point(14, 768);
             this.btnTillbaka.Name = "btnTillbaka";
-            this.btnTillbaka.Size = new System.Drawing.Size(147, 34);
+            this.btnTillbaka.Size = new System.Drawing.Size(110, 28);
             this.btnTillbaka.TabIndex = 16;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
@@ -94,28 +91,25 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(16, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 16);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Anställningsnummer:";
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(164, 10);
-            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(17, 22);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 18;
             // 
             // btnVisaUthyrningar
             // 
-            this.btnVisaUthyrningar.Location = new System.Drawing.Point(635, 332);
-            this.btnVisaUthyrningar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVisaUthyrningar.Location = new System.Drawing.Point(476, 270);
             this.btnVisaUthyrningar.Name = "btnVisaUthyrningar";
-            this.btnVisaUthyrningar.Size = new System.Drawing.Size(440, 64);
+            this.btnVisaUthyrningar.Size = new System.Drawing.Size(330, 52);
             this.btnVisaUthyrningar.TabIndex = 11;
             this.btnVisaUthyrningar.Text = "Visa Uthyrningar";
             this.btnVisaUthyrningar.UseVisualStyleBackColor = true;
@@ -123,10 +117,9 @@
             // 
             // btnSkapaUthyrning
             // 
-            this.btnSkapaUthyrning.Location = new System.Drawing.Point(635, 420);
-            this.btnSkapaUthyrning.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSkapaUthyrning.Location = new System.Drawing.Point(476, 341);
             this.btnSkapaUthyrning.Name = "btnSkapaUthyrning";
-            this.btnSkapaUthyrning.Size = new System.Drawing.Size(440, 71);
+            this.btnSkapaUthyrning.Size = new System.Drawing.Size(330, 58);
             this.btnSkapaUthyrning.TabIndex = 12;
             this.btnSkapaUthyrning.Text = "Skapa Uthyrning";
             this.btnSkapaUthyrning.UseVisualStyleBackColor = true;
@@ -134,17 +127,16 @@
             // 
             // UthyrningsMeny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1705, 994);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btnSkapaUthyrning);
             this.Controls.Add(this.btnVisaUthyrningar);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UthyrningsMeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UthyrningsMeny";

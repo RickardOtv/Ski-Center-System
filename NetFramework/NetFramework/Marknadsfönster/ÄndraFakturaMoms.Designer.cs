@@ -45,7 +45,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(666, 308);
+            this.label3.Location = new System.Drawing.Point(718, 306);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 52;
@@ -55,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(318, 308);
+            this.label2.Location = new System.Drawing.Point(372, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 51;
@@ -63,7 +63,7 @@
             // 
             // textBox_NyMoms
             // 
-            this.textBox_NyMoms.Location = new System.Drawing.Point(669, 324);
+            this.textBox_NyMoms.Location = new System.Drawing.Point(721, 322);
             this.textBox_NyMoms.Name = "textBox_NyMoms";
             this.textBox_NyMoms.Size = new System.Drawing.Size(184, 20);
             this.textBox_NyMoms.TabIndex = 50;
@@ -73,7 +73,7 @@
             this.lblKund.AutoSize = true;
             this.lblKund.BackColor = System.Drawing.Color.Transparent;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(489, 182);
+            this.lblKund.Location = new System.Drawing.Point(557, 188);
             this.lblKund.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(166, 31);
@@ -82,14 +82,14 @@
             // 
             // textBox_GammalMoms
             // 
-            this.textBox_GammalMoms.Location = new System.Drawing.Point(321, 324);
+            this.textBox_GammalMoms.Location = new System.Drawing.Point(375, 322);
             this.textBox_GammalMoms.Name = "textBox_GammalMoms";
             this.textBox_GammalMoms.Size = new System.Drawing.Size(184, 20);
             this.textBox_GammalMoms.TabIndex = 48;
             // 
             // btn_Spara
             // 
-            this.btn_Spara.Location = new System.Drawing.Point(778, 389);
+            this.btn_Spara.Location = new System.Drawing.Point(830, 395);
             this.btn_Spara.Name = "btn_Spara";
             this.btn_Spara.Size = new System.Drawing.Size(75, 23);
             this.btn_Spara.TabIndex = 47;
