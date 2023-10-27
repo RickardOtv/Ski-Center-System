@@ -33,11 +33,14 @@ namespace NetFramework
             VisaLedigLogi ledigLogi = new VisaLedigLogi(loggaIn, kontroller);
             ledigLogi.Show();
             ledigLogi.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            Close();
+            HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
+            huvudMeny.Show();
+            huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         private void btnSkapaBokning_Click(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace NetFramework
             BokningsTyp bokningsTyp = new BokningsTyp(loggaIn, kontroller);
             bokningsTyp.Show();
             bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btnVisaBokningar_Click(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace NetFramework
             VisaBokningar visabokningar = new VisaBokningar(loggaIn, kontroller);
             visabokningar.Show();
             visabokningar.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
     }
 }

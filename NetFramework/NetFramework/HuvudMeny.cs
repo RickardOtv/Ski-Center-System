@@ -38,6 +38,7 @@ namespace NetFramework
             Kundregister kundregister = new Kundregister(loggaInMeny, kontroller);
             kundregister.InloggadAnvandare = txtAnvandarnamn.Text;
             kundregister.Show();
+            this.Close();
         }
         /// <summary>
         /// Metoden kontrollerar användarens behörighet genom att hitta behörigheten för det angivna användarnamnet och öppnar en marknads-meny om användaren har antingen "Admin" eller "Marknad" behörighet, annars visas ett meddelande som indikerar att användaren saknar rätt behörighet.
@@ -69,8 +70,8 @@ namespace NetFramework
                 AdminMeny adminMeny = new AdminMeny(loggaInMeny, kontroller);
                 adminMeny.InloggadAnvandare = txtAnvandarnamn.Text;
                 adminMeny.Show();
-                
-                
+                this.Close();
+
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");
@@ -88,6 +89,7 @@ namespace NetFramework
                 UthyrningsMeny uthyrningsMeny = new UthyrningsMeny(loggaInMeny, kontroller);
                 uthyrningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
                 uthyrningsMeny.Show();
+                this.Close();
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");
@@ -105,6 +107,7 @@ namespace NetFramework
                 BokningsMeny bokningsMeny = new BokningsMeny(loggaInMeny, kontroller);
                 bokningsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
                 bokningsMeny.Show();
+                this.Close();
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");

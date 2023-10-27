@@ -32,7 +32,9 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            Close();
+            HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
+            huvudMeny.Show();
+            huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         /// <summary>
@@ -47,10 +49,6 @@ namespace NetFramework
             skapaUthyrning.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
-        private void btnBokaSkidlektion_Click(object sender, EventArgs e)
-        {
-
-        }
         /// <summary>
         /// Skapar en ny instans av ett fönster för Återlämning av uthyrning
         /// </summary>

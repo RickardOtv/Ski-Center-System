@@ -122,7 +122,9 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
+            huvudMeny.Show();
+            huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)

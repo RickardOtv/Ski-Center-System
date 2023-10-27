@@ -67,6 +67,7 @@ namespace NetFramework
                 UthyrningUtrustning uthyrningUtrustning = new UthyrningUtrustning(loggaInMeny, kontroller, valdBokning, nyUthyrning);
                 uthyrningUtrustning.InloggadAnvandare = txtAnvandarnamn.Text;
                 uthyrningUtrustning.Show();
+                this.Close();
             }
             else
             {

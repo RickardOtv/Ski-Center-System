@@ -349,7 +349,7 @@ namespace NetFramework
                 }
                 Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
                 slutPrisInkMoms = (float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100);
-                MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {slutPrisInkMoms}kr\nMoms: {nyFaktura.Momsats}%\nTotalPris: {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {slutPrisInkMoms}kr\nMoms: {nyFaktura.Momsats}%\nTotalPris (Ink Moms): {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else

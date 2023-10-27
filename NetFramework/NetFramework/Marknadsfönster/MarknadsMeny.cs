@@ -31,7 +31,9 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            Close();
+            HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
+            huvudMeny.Show();
+            huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
 
         private void btnVisaStatistik_Click(object sender, EventArgs e)
@@ -39,6 +41,7 @@ namespace NetFramework
             VisaStatistik visaStatistik = new VisaStatistik(loggaIn, kontroller);
             visaStatistik.Show();
             visaStatistik.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btnRegFöretagsKund_Click(object sender, EventArgs e)
@@ -46,6 +49,7 @@ namespace NetFramework
             SkapaFöretagskund skapaFöretagskund = new SkapaFöretagskund(loggaIn, kontroller);
             skapaFöretagskund.Show();
             skapaFöretagskund.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btnÄndraMaxbelopp_Click(object sender, EventArgs e)
@@ -53,6 +57,7 @@ namespace NetFramework
             ÄndraMaxbelopp ändraMaxbelopp = new ÄndraMaxbelopp(loggaIn, kontroller);
             ändraMaxbelopp.Show();
             ändraMaxbelopp.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         private void btn_visaFaktura_Click(object sender, EventArgs e)
@@ -60,6 +65,7 @@ namespace NetFramework
             VisaFakturor visaFakturor = new VisaFakturor(loggaIn, kontroller);
             visaFakturor.Show();
             visaFakturor.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
     }
 }

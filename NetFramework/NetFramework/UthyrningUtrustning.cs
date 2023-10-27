@@ -171,6 +171,7 @@ namespace NetFramework
             }
             else
             {
+
                 this.Close();
             }
         }
@@ -187,7 +188,7 @@ namespace NetFramework
         {
             float slutPrisInkMoms;
             int moms;
-            float rabattPris;
+            float prisInkRabatt = 0;
             float momsPris;
             decimal totalpris = 0;
             foreach (DataGridViewRow row in gridRader.Rows)
@@ -214,23 +215,29 @@ namespace NetFramework
                 }
             }
             Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
-            rabattPris = (float)totalpris - ((float)totalpris * ((float)valdFaktura.Rabattsats / 100));
-            float slutRabattPris = (float)totalpris - rabattPris;
+            // Om rabatten är mer än 0%
+            if(valdFaktura.Rabattsats != 0)
+            {
+                prisInkRabatt = (float)totalpris - ((float)totalpris * ((float)valdFaktura.Rabattsats / 100));
+            } else
+            {
+                // Totalpris - priset av rabatten = totalpriset inklusive rabatt på sig 
+                prisInkRabatt = (float)totalpris - prisInkRabatt;
+            }
             //Lägger till moms
-            momsPris = rabattPris - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
-            float slutMomsPris = rabattPris - momsPris;
+            momsPris = prisInkRabatt - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
+            //float slutMomsPris = prisInkRabatt - momsPris;
 
             Kund valdKund = kontroller.HittaKund(valdBokning.KundID);
-            MessageBox.Show(valdKund.Maxbeloppskreditgräns.ToString());
-            if ((momsPris + valdFaktura.TotalPris) <= valdKund.Maxbeloppskreditgräns)
+            if ((prisInkRabatt + valdFaktura.TotalPris) <= valdKund.Maxbeloppskreditgräns)
             {
-                MessageBox.Show($"Original Pris: {totalpris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
+                MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nRabatt: -{(float)totalpris * ((float)valdFaktura.Rabattsats / 100)}kr\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)totalpris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms): {prisInkRabatt}kr");
                 //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
                 kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
                 this.Close();
             } else
             {
-                MessageBox.Show($"Det överstiger Maxbeloppkreditgräns:{valdKund.Maxbeloppskreditgräns}kr \nTotalpris för uthyrning är: {momsPris}kr");
+                MessageBox.Show($"Det överstiger Maxbeloppkreditgräns:{valdKund.Maxbeloppskreditgräns}kr \nTotalpris (Ink Moms) för uthyrning är: {prisInkRabatt}kr");
             }
 
         }
@@ -243,8 +250,8 @@ namespace NetFramework
         {
             float slutPrisInkMoms;
             int moms;
-            float rabattPris;
-            float momsPris;
+            float prisInkrabattPris;
+            float prisInkMomOchRabatt;
             DateTime från = DateTime.Parse(dateFrån.Text);
             DateTime till = DateTime.Parse(dateTill.Text);
             valdUtrustning = gridUtrustning.SelectedRows[0].DataBoundItem as Utrustning;
@@ -261,13 +268,13 @@ namespace NetFramework
                     decimal pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
 
 
-                    rabattPris = (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
-                    float slutRabattPris = (float)pris - rabattPris;
+                    prisInkrabattPris = (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
+                    //float rabattIKr = (float)pris - prisInkrabattPris;
                     //Lägger till moms
-                    momsPris = rabattPris - ((float)pris * ((float)valdFaktura.Momsats / 100));
-                    float slutMomsPris = rabattPris - momsPris;
+                    prisInkMomOchRabatt= prisInkrabattPris - ((float)pris * ((float)valdFaktura.Momsats / 100));
+                    //float slutMomsPris = prisInkrabattPris - prisInkMomOchRabatt;
 
-                    MessageBox.Show($"Original Pris: {pris} \nRabatt: -{slutRabattPris}kr\nMoms: -{slutMomsPris}kr \n\nTotalpris: {momsPris}kr");
+                    MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)pris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms & Rabatt): {prisInkrabattPris}kr");
                 }
                 else
                 {

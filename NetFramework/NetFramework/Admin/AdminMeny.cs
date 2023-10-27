@@ -32,6 +32,7 @@ namespace NetFramework
             AnställdaRegister anställdaRegister = new AnställdaRegister(loggaInMeny, kontroller);
             anställdaRegister.InloggadAnvandare = txtAnvandarnamn.Text;
             anställdaRegister.Show();
+            this.Close();
         }
 
         private void btnSkapaAnställd_Click(object sender, EventArgs e)
@@ -39,11 +40,14 @@ namespace NetFramework
             SkapaAnställd skapaAnställd = new SkapaAnställd(loggaInMeny, kontroller);
             skapaAnställd.InloggadAnvandare = txtAnvandarnamn.Text;
             skapaAnställd.Show();
+            this.Close();
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HuvudMeny huvudMeny = new HuvudMeny(loggaInMeny, kontroller);
+            huvudMeny.Show();
+            huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
         }
     }
 }
