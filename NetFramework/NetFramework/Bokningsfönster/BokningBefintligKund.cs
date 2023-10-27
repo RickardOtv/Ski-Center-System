@@ -189,7 +189,7 @@ namespace NetFramework
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
             int moms;
-            float slutPrisInkMoms;
+            float PrisInkMoms;
             if (nyBokning != null)
             {
                 if (gridLogi.SelectedRows.Count > 0)
@@ -210,8 +210,8 @@ namespace NetFramework
                         {
                             moms = 0;
                         }
-                        slutPrisInkMoms = (float)pris - ((float)pris * ((float)moms / 100));
-                        MessageBox.Show($"Original Pris: {pris}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
+                        PrisInkMoms = (float)pris * ((float)moms / 100);
+                        MessageBox.Show($"Pris Ink Moms: {pris}kr\nMoms: {PrisInkMoms}kr\nMoms: {moms}%");
                     }
                     else
                     {
@@ -256,7 +256,7 @@ namespace NetFramework
                                 DateTime startDate = DateTime.Parse(dateFrån.Text);
                                 DateTime endDate = DateTime.Parse(dateTill.Text);
                                 Bokningsrad nyBokningsrad = kontroller.SkapaBokningsRad(startDate, endDate, valdLogi, nyBokning.BokningsID);
-                                MessageBox.Show($"Ny bokningsrad har skapats med Logi:{valdLogi.LogiID}\nBokningsID:{nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
+                                MessageBox.Show($"Ny bokningsrad har skapats med Logi: {valdLogi.LogiID}\nBokningsID: {nyBokning.BokningsID}\nBokningsradID som genererats: {nyBokningsrad.BokningsradID}");
                                 RefreshRader();
                                 RefreshLogi();
                             } else
@@ -305,7 +305,7 @@ namespace NetFramework
         {
             valdKund = gridKunder.SelectedRows[0].DataBoundItem as Kund;
             nyBokning = kontroller.SkapaBokning(valdKund);
-            MessageBox.Show($"Vald kund:{valdKund.Namn}");
+            MessageBox.Show($"Vald kund: {valdKund.Namn}");
         }
 
         private void btnKlar_Click(object sender, EventArgs e)
@@ -348,8 +348,8 @@ namespace NetFramework
                     momsSatts = 12;
                 }
                 Faktura nyFaktura = kontroller.SkapaFaktura(nyBokning.BokningsID, momsSatts, rabattsatts, (float)totalSumma);
-                slutPrisInkMoms = (float)nyFaktura.TotalPris - ((float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100));
-                MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {nyFaktura.Momsats}%\nTotalPris: {slutPrisInkMoms}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                slutPrisInkMoms = (float)nyFaktura.TotalPris * ((float)nyFaktura.Momsats / 100);
+                MessageBox.Show($"Bokning skapad: \nBokningsID: {nyBokning.BokningsID} \nFrån {minDatum.ToShortDateString()} \nTill: {maxDatum.ToShortDateString()}  \n\nTillhörande Faktura:\nFakturaID: {nyFaktura.FakturaID} \nRabatt: {nyFaktura.Rabattsats}% \nMoms: {slutPrisInkMoms}kr\nMoms: {nyFaktura.Momsats}%\nTotalPris: {nyFaktura.TotalPris}kr", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
@@ -450,8 +450,8 @@ namespace NetFramework
                     {
                         moms = 0;
                     }
-                    slutPrisInkMoms = (float)totalSumma - ((float)totalSumma * ((float)moms / 100));
-                    MessageBox.Show($"Original Pris: {totalSumma}kr\nPris Ink Moms:{slutPrisInkMoms}kr\nMoms: {moms} %");
+                    slutPrisInkMoms = (float)totalSumma * ((float)moms / 100);
+                    MessageBox.Show($"Pris Ink Moms: {totalSumma}kr\nMoms: {slutPrisInkMoms}kr\nMoms: {moms}%");
                 } else
             {
                 MessageBox.Show("Ingen logi vald.");
