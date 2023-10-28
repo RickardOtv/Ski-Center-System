@@ -491,6 +491,10 @@ namespace Affärslager
         {
             return unitOfWork.skidlektioner.Where(l => l.LektionsID == lektionsID).ToList();
         }
+        public IList<Bokning> HämtaKundensBokningar(int kundID)
+        {
+            return unitOfWork.bokningar.Where(b => b.KundID == kundID).ToList();
+        }
         public IList<Logi> HämtaTillgängligLogi()
         {
             return unitOfWork.logier.ToList<Logi>();

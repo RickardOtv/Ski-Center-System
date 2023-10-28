@@ -111,7 +111,7 @@ namespace NetFramework
             if (kontroller.IsDigitsOnly(txtBoxKundID.Text) && !string.IsNullOrEmpty(txtBoxKundID.Text))
             {
                 int matadKundID = int.Parse(txtBoxKundID.Text);
-                var matchadeBokningar = unitOfWork.bokningar.Where(b => b.KundID == matadKundID).ToList();
+                var matchadeBokningar = kontroller.HämtaKundensBokningar(matadKundID);
 
                 //Kollar om nån bokning hittades
                 if (matchadeBokningar.Count > 0)
