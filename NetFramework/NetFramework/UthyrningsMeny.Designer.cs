@@ -59,16 +59,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(555, 202);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(529, 189);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 39);
+            this.label3.Size = new System.Drawing.Size(224, 54);
             this.label3.TabIndex = 17;
             this.label3.Text = "Uthyrning";
             // 
             // btnÅterlämning
             // 
+            this.btnÅterlämning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnÅterlämning.Location = new System.Drawing.Point(476, 412);
             this.btnÅterlämning.Name = "btnÅterlämning";
             this.btnÅterlämning.Size = new System.Drawing.Size(330, 52);
@@ -107,6 +108,7 @@
             // 
             // btnVisaUthyrningar
             // 
+            this.btnVisaUthyrningar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisaUthyrningar.Location = new System.Drawing.Point(476, 270);
             this.btnVisaUthyrningar.Name = "btnVisaUthyrningar";
             this.btnVisaUthyrningar.Size = new System.Drawing.Size(330, 52);
@@ -117,6 +119,7 @@
             // 
             // btnSkapaUthyrning
             // 
+            this.btnSkapaUthyrning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkapaUthyrning.Location = new System.Drawing.Point(476, 341);
             this.btnSkapaUthyrning.Name = "btnSkapaUthyrning";
             this.btnSkapaUthyrning.Size = new System.Drawing.Size(330, 58);

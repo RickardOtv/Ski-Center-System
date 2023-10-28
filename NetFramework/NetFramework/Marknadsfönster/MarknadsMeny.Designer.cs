@@ -71,16 +71,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(517, 202);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(467, 189);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 39);
+            this.label3.Size = new System.Drawing.Size(345, 54);
             this.label3.TabIndex = 20;
             this.label3.Text = "Marknadsmeny";
             // 
             // btnRegFöretagsKund
             // 
+            this.btnRegFöretagsKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegFöretagsKund.Location = new System.Drawing.Point(476, 270);
             this.btnRegFöretagsKund.Name = "btnRegFöretagsKund";
             this.btnRegFöretagsKund.Size = new System.Drawing.Size(330, 58);
@@ -91,6 +92,7 @@
             // 
             // btnÄndraMaxbelopp
             // 
+            this.btnÄndraMaxbelopp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnÄndraMaxbelopp.Location = new System.Drawing.Point(476, 341);
             this.btnÄndraMaxbelopp.Name = "btnÄndraMaxbelopp";
             this.btnÄndraMaxbelopp.Size = new System.Drawing.Size(330, 54);
@@ -101,6 +103,7 @@
             // 
             // btn_visaFaktura
             // 
+            this.btn_visaFaktura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_visaFaktura.Location = new System.Drawing.Point(476, 412);
             this.btn_visaFaktura.Name = "btn_visaFaktura";
             this.btn_visaFaktura.Size = new System.Drawing.Size(330, 54);

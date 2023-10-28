@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
-            this.lblAnstNr = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnHanteraAnställd = new System.Windows.Forms.Button();
-            this.btnSkapaAnställd = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
             this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.lblAnstNr = new System.Windows.Forms.Label();
+            this.btnSkapaAnställd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnHanteraAnställd = new System.Windows.Forms.Button();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,51 +46,6 @@
             this.txtAnvandarnamn.ReadOnly = true;
             this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 9;
-            // 
-            // lblAnstNr
-            // 
-            this.lblAnstNr.AutoSize = true;
-            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(13, 11);
-            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAnstNr.Name = "lblAnstNr";
-            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
-            this.lblAnstNr.TabIndex = 8;
-            this.lblAnstNr.Text = "Anställningsnummer:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(547, 202);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 39);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Adminmeny";
-            // 
-            // btnHanteraAnställd
-            // 
-            this.btnHanteraAnställd.Location = new System.Drawing.Point(476, 270);
-            this.btnHanteraAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnHanteraAnställd.Name = "btnHanteraAnställd";
-            this.btnHanteraAnställd.Size = new System.Drawing.Size(330, 52);
-            this.btnHanteraAnställd.TabIndex = 11;
-            this.btnHanteraAnställd.Text = "Hantera anställda";
-            this.btnHanteraAnställd.UseVisualStyleBackColor = true;
-            this.btnHanteraAnställd.Click += new System.EventHandler(this.btnHanteraAnställd_Click);
-            // 
-            // btnSkapaAnställd
-            // 
-            this.btnSkapaAnställd.Location = new System.Drawing.Point(476, 341);
-            this.btnSkapaAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSkapaAnställd.Name = "btnSkapaAnställd";
-            this.btnSkapaAnställd.Size = new System.Drawing.Size(330, 52);
-            this.btnSkapaAnställd.TabIndex = 12;
-            this.btnSkapaAnställd.Text = "Skapa Anställd";
-            this.btnSkapaAnställd.UseVisualStyleBackColor = true;
-            this.btnSkapaAnställd.Click += new System.EventHandler(this.btnSkapaAnställd_Click);
             // 
             // btnTillbaka
             // 
@@ -117,6 +72,53 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
             this.gradientPanel1.TabIndex = 16;
             this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
+            // 
+            // lblAnstNr
+            // 
+            this.lblAnstNr.AutoSize = true;
+            this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnstNr.Location = new System.Drawing.Point(13, 11);
+            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnstNr.Name = "lblAnstNr";
+            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
+            this.lblAnstNr.TabIndex = 8;
+            this.lblAnstNr.Text = "Anställningsnummer:";
+            // 
+            // btnSkapaAnställd
+            // 
+            this.btnSkapaAnställd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSkapaAnställd.Location = new System.Drawing.Point(476, 341);
+            this.btnSkapaAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSkapaAnställd.Name = "btnSkapaAnställd";
+            this.btnSkapaAnställd.Size = new System.Drawing.Size(330, 52);
+            this.btnSkapaAnställd.TabIndex = 12;
+            this.btnSkapaAnställd.Text = "Skapa Anställd";
+            this.btnSkapaAnställd.UseVisualStyleBackColor = true;
+            this.btnSkapaAnställd.Click += new System.EventHandler(this.btnSkapaAnställd_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(509, 189);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(270, 54);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Adminmeny";
+            // 
+            // btnHanteraAnställd
+            // 
+            this.btnHanteraAnställd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHanteraAnställd.Location = new System.Drawing.Point(476, 270);
+            this.btnHanteraAnställd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnHanteraAnställd.Name = "btnHanteraAnställd";
+            this.btnHanteraAnställd.Size = new System.Drawing.Size(330, 52);
+            this.btnHanteraAnställd.TabIndex = 11;
+            this.btnHanteraAnställd.Text = "Hantera anställda";
+            this.btnHanteraAnställd.UseVisualStyleBackColor = true;
+            this.btnHanteraAnställd.Click += new System.EventHandler(this.btnHanteraAnställd_Click);
             // 
             // AdminMeny
             // 

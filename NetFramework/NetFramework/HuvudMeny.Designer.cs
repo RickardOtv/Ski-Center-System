@@ -43,11 +43,11 @@
             // 
             // txtAnvandarnamn
             // 
-            this.txtAnvandarnamn.Location = new System.Drawing.Point(164, 10);
-            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtAnvandarnamn.Location = new System.Drawing.Point(123, 8);
+            this.txtAnvandarnamn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAnvandarnamn.Name = "txtAnvandarnamn";
             this.txtAnvandarnamn.ReadOnly = true;
-            this.txtAnvandarnamn.Size = new System.Drawing.Size(17, 22);
+            this.txtAnvandarnamn.Size = new System.Drawing.Size(14, 20);
             this.txtAnvandarnamn.TabIndex = 17;
             // 
             // gradientPanel1
@@ -66,9 +66,8 @@
             this.gradientPanel1.Controls.Add(this.btnMarknad);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1705, 994);
+            this.gradientPanel1.Size = new System.Drawing.Size(1279, 808);
             this.gradientPanel1.TabIndex = 10;
             this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
@@ -76,11 +75,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label2.Location = new System.Drawing.Point(729, 249);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.label2.Location = new System.Drawing.Point(507, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 48);
+            this.label2.Size = new System.Drawing.Size(274, 54);
             this.label2.TabIndex = 19;
             this.label2.Text = "Huvudmeny";
             // 
@@ -88,19 +86,18 @@
             // 
             this.lblAnstNr.AutoSize = true;
             this.lblAnstNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnstNr.Location = new System.Drawing.Point(16, 14);
-            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAnstNr.Location = new System.Drawing.Point(12, 11);
+            this.lblAnstNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnstNr.Name = "lblAnstNr";
-            this.lblAnstNr.Size = new System.Drawing.Size(130, 16);
+            this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
             this.lblAnstNr.TabIndex = 16;
             this.lblAnstNr.Text = "Anställningsnummer:";
             // 
             // btnLoggaUt
             // 
-            this.btnLoggaUt.Location = new System.Drawing.Point(19, 945);
-            this.btnLoggaUt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoggaUt.Location = new System.Drawing.Point(14, 768);
             this.btnLoggaUt.Name = "btnLoggaUt";
-            this.btnLoggaUt.Size = new System.Drawing.Size(147, 34);
+            this.btnLoggaUt.Size = new System.Drawing.Size(110, 28);
             this.btnLoggaUt.TabIndex = 9;
             this.btnLoggaUt.Text = "Logga ut";
             this.btnLoggaUt.UseVisualStyleBackColor = true;
@@ -108,10 +105,11 @@
             // 
             // btnKundregister
             // 
-            this.btnKundregister.Location = new System.Drawing.Point(635, 698);
-            this.btnKundregister.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnKundregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKundregister.Location = new System.Drawing.Point(476, 567);
+            this.btnKundregister.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnKundregister.Name = "btnKundregister";
-            this.btnKundregister.Size = new System.Drawing.Size(440, 64);
+            this.btnKundregister.Size = new System.Drawing.Size(330, 52);
             this.btnKundregister.TabIndex = 18;
             this.btnKundregister.Text = "Kundregister";
             this.btnKundregister.UseVisualStyleBackColor = true;
@@ -119,10 +117,11 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(635, 601);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Location = new System.Drawing.Point(476, 488);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(440, 64);
+            this.btnAdmin.Size = new System.Drawing.Size(330, 52);
             this.btnAdmin.TabIndex = 14;
             this.btnAdmin.Text = "Adminvy";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -130,11 +129,11 @@
             // 
             // btn_BokningsMeny
             // 
-            this.btn_BokningsMeny.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BokningsMeny.Location = new System.Drawing.Point(635, 332);
-            this.btn_BokningsMeny.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btn_BokningsMeny.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BokningsMeny.Location = new System.Drawing.Point(476, 270);
+            this.btn_BokningsMeny.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_BokningsMeny.Name = "btn_BokningsMeny";
-            this.btn_BokningsMeny.Size = new System.Drawing.Size(440, 64);
+            this.btn_BokningsMeny.Size = new System.Drawing.Size(330, 52);
             this.btn_BokningsMeny.TabIndex = 11;
             this.btn_BokningsMeny.Text = "Bokning";
             this.btn_BokningsMeny.UseVisualStyleBackColor = true;
@@ -142,10 +141,11 @@
             // 
             // btnUthyrning
             // 
-            this.btnUthyrning.Location = new System.Drawing.Point(635, 420);
-            this.btnUthyrning.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnUthyrning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUthyrning.Location = new System.Drawing.Point(476, 341);
+            this.btnUthyrning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUthyrning.Name = "btnUthyrning";
-            this.btnUthyrning.Size = new System.Drawing.Size(440, 64);
+            this.btnUthyrning.Size = new System.Drawing.Size(330, 52);
             this.btnUthyrning.TabIndex = 12;
             this.btnUthyrning.Text = "Uthyrning";
             this.btnUthyrning.UseVisualStyleBackColor = true;
@@ -153,10 +153,11 @@
             // 
             // btnMarknad
             // 
-            this.btnMarknad.Location = new System.Drawing.Point(635, 507);
-            this.btnMarknad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnMarknad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarknad.Location = new System.Drawing.Point(476, 412);
+            this.btnMarknad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnMarknad.Name = "btnMarknad";
-            this.btnMarknad.Size = new System.Drawing.Size(440, 64);
+            this.btnMarknad.Size = new System.Drawing.Size(330, 52);
             this.btnMarknad.TabIndex = 13;
             this.btnMarknad.Text = "Marknadsvy";
             this.btnMarknad.UseVisualStyleBackColor = true;
@@ -164,14 +165,14 @@
             // 
             // HuvudMeny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1705, 994);
+            this.ClientSize = new System.Drawing.Size(1279, 808);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HuvudMeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HuvudMeny";
