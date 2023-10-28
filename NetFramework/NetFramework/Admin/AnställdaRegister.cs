@@ -45,6 +45,7 @@ namespace NetFramework
         private void btnÄndra_Click(object sender, EventArgs e)
         {
             valdAnställd = gridAnställda.SelectedRows[0].DataBoundItem as Anställd;
+            //Kontrollerar om nån anställd är vald
             if (gridAnställda.SelectedRows != null)
             {
                 ÄndraAnställd ändraAnställd = new ÄndraAnställd(loggaIn, kontroller, valdAnställd);
@@ -52,11 +53,16 @@ namespace NetFramework
                 ändraAnställd.Show();
                 ändraAnställd.InloggadAnvandare = txtAnvandarnamn.Text;
             }
+            else
+            {
+                MessageBox.Show("Välj först en anställd");
+            }
         }
 
         private void btnTaBort_Click(object sender, EventArgs e)
         {
             valdAnställd = gridAnställda.SelectedRows[0].DataBoundItem as Anställd;
+            //Kontrollerar om nån anställd är vald
             if (gridAnställda.SelectedRows != null)
             {
                 valdAnställd = kontroller.HittaAnställd(valdAnställd.AnställningsNr);
@@ -64,6 +70,9 @@ namespace NetFramework
                 RefreshAnställda();
                 MessageBox.Show($"Tog Bort Anställd: {valdAnställd.AnställningsNr} \nMed behörighet: {valdAnställd.Behörighet} \n Namn: {valdAnställd.Förnamn} {valdAnställd.Efternamn}");
 
+            } else
+            {
+                MessageBox.Show("Välj först en anställd");
             }
         }
         private void btnSökAnställningsNr_Click(object sender, EventArgs e)
