@@ -83,7 +83,7 @@ namespace NetFramework
         }
 
         //Knapp för att gå tillbaka
-        private void TillbakaKnapp_Click(object sender, EventArgs e)
+        private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }

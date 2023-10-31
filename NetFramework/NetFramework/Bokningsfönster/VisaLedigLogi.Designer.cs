@@ -96,7 +96,7 @@
             this.TillbakaKnapp.TabIndex = 14;
             this.TillbakaKnapp.Text = "Tillbaka";
             this.TillbakaKnapp.UseVisualStyleBackColor = true;
-            this.TillbakaKnapp.Click += new System.EventHandler(this.TillbakaKnapp_Click);
+            this.TillbakaKnapp.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
             // label1
             // 
