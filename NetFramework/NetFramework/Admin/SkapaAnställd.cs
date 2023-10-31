@@ -55,6 +55,9 @@ namespace NetFramework
 
                 // Visa meddelande om att en ny anställd har skapats
                 MessageBox.Show($"Ny Anställd skapad!\n Namn: {nyAnställd.Förnamn} {nyAnställd.Efternamn}\n AnställningsNr: {nyAnställd.AnställningsNr}\n Behörighet: {nyAnställd.Behörighet}");
+                AdminMeny adminMeny = new AdminMeny(loggaIn, kontroller);
+                adminMeny.Show();
+                adminMeny.InloggadAnvandare = txtAnvandarnamn.Text;
                 this.Close();
             }
         }
@@ -122,6 +125,9 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
+            AdminMeny adminMeny = new AdminMeny(loggaIn, kontroller);
+            adminMeny.Show();
+            adminMeny.InloggadAnvandare = txtAnvandarnamn.Text;
             this.Close();
         }
 

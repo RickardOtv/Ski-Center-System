@@ -41,6 +41,7 @@ namespace NetFramework
             HuvudMeny huvudMeny = new HuvudMeny(loggaInMeny, kontroller);
             huvudMeny.Show();
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
     }
 }
