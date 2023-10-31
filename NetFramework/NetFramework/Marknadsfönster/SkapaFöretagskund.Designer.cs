@@ -178,7 +178,7 @@
             this.btnGaVidare.Name = "btnGaVidare";
             this.btnGaVidare.Size = new System.Drawing.Size(103, 26);
             this.btnGaVidare.TabIndex = 24;
-            this.btnGaVidare.Text = "Gå vidare";
+            this.btnGaVidare.Text = "Spara";
             this.btnGaVidare.UseVisualStyleBackColor = true;
             this.btnGaVidare.Click += new System.EventHandler(this.btnGaVidare_Click);
             // 
