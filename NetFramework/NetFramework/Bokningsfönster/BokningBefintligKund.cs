@@ -377,12 +377,6 @@ namespace NetFramework
             }
         }
 
-
-        private void btn_sökLogi_Click(object sender, EventArgs e)
-        {
-            RefreshLogi();
-        }
-
         //Knapp för att visa information om valt logi
         private void btnLogiInfo_Click(object sender, EventArgs e)
         {
@@ -467,6 +461,11 @@ namespace NetFramework
             {
                 MessageBox.Show("Ingen logi vald.");
             }
+        }
+
+        private void btnSökLogi_Click(object sender, EventArgs e)
+        {
+            RefreshLogi();
         }
     }
 }

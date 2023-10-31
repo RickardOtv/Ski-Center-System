@@ -95,7 +95,7 @@
             this.btn_Spara.TabIndex = 38;
             this.btn_Spara.Text = "Spara";
             this.btn_Spara.UseVisualStyleBackColor = true;
-            this.btn_Spara.Click += new System.EventHandler(this.btn_Spara_Click);
+            this.btn_Spara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
             // txtAnvandarnamn
             // 

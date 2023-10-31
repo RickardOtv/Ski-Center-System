@@ -70,7 +70,7 @@
             this.btnGaVidare.TabIndex = 4;
             this.btnGaVidare.Text = "Gå vidare";
             this.btnGaVidare.UseVisualStyleBackColor = true;
-            this.btnGaVidare.Click += new System.EventHandler(this.btnGaVidare_Click);
+            this.btnGaVidare.Click += new System.EventHandler(this.btnGåVidare_Click);
             // 
             // lblKund
             // 

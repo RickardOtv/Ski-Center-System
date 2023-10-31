@@ -32,13 +32,13 @@ namespace NetFramework
         }
         
         //Knapp för att gå tillbaka
-        private void btn_Tillbaka_Click(object sender, EventArgs e)
+        private void btnTillbaka_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         //Sparar nytt valt intervall för alla logi på en bokning
-        private void btn_Spara_För_Alla(object sender, EventArgs e)
+        private void btnSparaFörAlla_Click(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);
@@ -60,7 +60,7 @@ namespace NetFramework
         }
 
         //Sparar nytt valt intervall för ett specifik logi på en bokning
-        private void btn_Spara_För_En(object sender, EventArgs e)
+        private void btnSparaFörEn_Click(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(startDatePicker.Text);
             DateTime endDate = DateTime.Parse(endDatePicker.Text);

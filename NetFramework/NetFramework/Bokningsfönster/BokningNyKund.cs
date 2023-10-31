@@ -27,7 +27,7 @@ namespace NetFramework
         }
 
         //Skapar en ny kund
-        private void btnGaVidare_Click(object sender, EventArgs e)
+        private void btnGåVidare_Click(object sender, EventArgs e)
         {
             //Kollar så att alla textboxes är inmatade korrekt
             if ((txtBoxPersonNr.Text == "Personnummer: (YYYYMMDDXXXX)") | (txtboxNamn.Text == "Namn:") | (txtBoxTelefonNr.Text == "Telefonnummer:") | (txtBoxEmail.Text == "Email:") | (txtBoxAdress.Text == "Adress:") | (txtBoxOrt.Text == "Postort:"))

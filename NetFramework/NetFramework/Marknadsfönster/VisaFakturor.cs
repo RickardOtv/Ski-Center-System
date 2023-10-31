@@ -127,7 +127,7 @@ namespace NetFramework.Marknadsfönster
         }
 
         //Knapp för att kunna ändra moms för specifik faktura
-        private void btn_ÄndraMoms_Click(object sender, EventArgs e)
+        private void btnÄndraMoms_Click(object sender, EventArgs e)
         {
             valdFaktura = gridFakturor.SelectedRows[0].DataBoundItem as Faktura;
             //Kollar så att en faktura är vald
@@ -147,7 +147,7 @@ namespace NetFramework.Marknadsfönster
         }
 
         //Knapp för att se totalt pris på faktura
-        private void btn_totalPris_Click(object sender, EventArgs e)
+        private void btnTotalPris_Click(object sender, EventArgs e)
         {
             float totalPris;
             float rabattPris;

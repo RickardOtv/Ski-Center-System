@@ -137,7 +137,7 @@
             this.btn_BokningsMeny.TabIndex = 11;
             this.btn_BokningsMeny.Text = "Bokning";
             this.btn_BokningsMeny.UseVisualStyleBackColor = true;
-            this.btn_BokningsMeny.Click += new System.EventHandler(this.btn_BokningsMeny_Click);
+            this.btn_BokningsMeny.Click += new System.EventHandler(this.btnBokningsMeny_Click);
             // 
             // btnUthyrning
             // 

@@ -34,7 +34,7 @@ namespace NetFramework.Marknadsfönster
         }
 
         //Knapp för att spara den nya rabatten
-        private void btn_Spara_Click(object sender, EventArgs e)
+        private void btnSpara_Click(object sender, EventArgs e)
         {
             //Kollar så att inmatning är ett helt nummer
             if (int.TryParse(textBox_NyRabatt.Text, out nyRabatt))

@@ -54,7 +54,7 @@
             this.btn_Tillbaka.TabIndex = 0;
             this.btn_Tillbaka.Text = "Tillbaka";
             this.btn_Tillbaka.UseVisualStyleBackColor = true;
-            this.btn_Tillbaka.Click += new System.EventHandler(this.btn_Tillbaka_Click);
+            this.btn_Tillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
             // btn_Spara
             // 
@@ -64,7 +64,7 @@
             this.btn_Spara.TabIndex = 1;
             this.btn_Spara.Text = "Spara Alla";
             this.btn_Spara.UseVisualStyleBackColor = true;
-            this.btn_Spara.Click += new System.EventHandler(this.btn_Spara_För_Alla);
+            this.btn_Spara.Click += new System.EventHandler(this.btnSparaFörAlla_Click);
             // 
             // label_TillDatum
             // 
@@ -155,7 +155,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Spara En";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btn_Spara_För_En);
+            this.button1.Click += new System.EventHandler(this.btnSparaFörEn_Click);
             // 
             // label2
             // 

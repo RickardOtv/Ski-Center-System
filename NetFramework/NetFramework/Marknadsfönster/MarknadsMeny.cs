@@ -50,7 +50,7 @@ namespace NetFramework
         }
 
         //Knapp för att gå till vy med fakturor
-        private void btn_visaFaktura_Click(object sender, EventArgs e)
+        private void btnVisaFaktura_Click(object sender, EventArgs e)
         {
             VisaFakturor visaFakturor = new VisaFakturor(loggaIn, kontroller);
             visaFakturor.Show();

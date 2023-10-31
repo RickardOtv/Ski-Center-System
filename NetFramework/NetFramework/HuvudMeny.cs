@@ -78,7 +78,7 @@ namespace NetFramework
         }
 
         //Öppnar en bokningsmeny om användaren har behörigheten "Bokare" eller "Admin"
-        private void btn_BokningsMeny_Click(object sender, EventArgs e)
+        private void btnBokningsMeny_Click(object sender, EventArgs e)
         {
             string inmatning = kontroller.HittaBehörighet(int.Parse(txtAnvandarnamn.Text));
             if (inmatning == "Bokare" || inmatning == "Admin")

@@ -156,7 +156,7 @@
             this.btn_ÄndraMoms.TabIndex = 35;
             this.btn_ÄndraMoms.Text = "Ändra Moms";
             this.btn_ÄndraMoms.UseVisualStyleBackColor = true;
-            this.btn_ÄndraMoms.Click += new System.EventHandler(this.btn_ÄndraMoms_Click);
+            this.btn_ÄndraMoms.Click += new System.EventHandler(this.btnÄndraMoms_Click);
             // 
             // btn_totalPris
             // 
@@ -166,7 +166,7 @@
             this.btn_totalPris.TabIndex = 36;
             this.btn_totalPris.Text = "Totalpris";
             this.btn_totalPris.UseVisualStyleBackColor = true;
-            this.btn_totalPris.Click += new System.EventHandler(this.btn_totalPris_Click);
+            this.btn_totalPris.Click += new System.EventHandler(this.btnTotalPris_Click);
             // 
             // gradientPanel1
             // 

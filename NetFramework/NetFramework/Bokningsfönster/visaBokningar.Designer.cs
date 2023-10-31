@@ -114,7 +114,7 @@
             this.btn_ändra.TabIndex = 12;
             this.btn_ändra.Text = "Ändra";
             this.btn_ändra.UseVisualStyleBackColor = true;
-            this.btn_ändra.Click += new System.EventHandler(this.btn_ändra_Click);
+            this.btn_ändra.Click += new System.EventHandler(this.btnÄndra_Click);
             // 
             // btn_taBort
             // 
@@ -124,7 +124,7 @@
             this.btn_taBort.TabIndex = 13;
             this.btn_taBort.Text = "Ta Bort";
             this.btn_taBort.UseVisualStyleBackColor = true;
-            this.btn_taBort.Click += new System.EventHandler(this.btn_taBort_Click);
+            this.btn_taBort.Click += new System.EventHandler(this.btnTaBort_Click);
             // 
             // textBox_personNr
             // 
@@ -143,7 +143,7 @@
             this.btn_sökPersonNr.TabIndex = 15;
             this.btn_sökPersonNr.Text = "Sök";
             this.btn_sökPersonNr.UseVisualStyleBackColor = true;
-            this.btn_sökPersonNr.Click += new System.EventHandler(this.btn_sökPersonNr_Click);
+            this.btn_sökPersonNr.Click += new System.EventHandler(this.btnSökPersonNr_Click);
             // 
             // label1
             // 
@@ -186,7 +186,7 @@
             this.btn_Refresh.Text = "↻ ";
             this.btn_Refresh.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Refresh.UseVisualStyleBackColor = true;
-            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            this.btn_Refresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btn_visaRader
             // 
@@ -196,7 +196,7 @@
             this.btn_visaRader.TabIndex = 20;
             this.btn_visaRader.Text = "Visa Info";
             this.btn_visaRader.UseVisualStyleBackColor = true;
-            this.btn_visaRader.Click += new System.EventHandler(this.btn_visaRader_Click);
+            this.btn_visaRader.Click += new System.EventHandler(this.btnVisaRader_Click);
             // 
             // logiGrid
             // 
@@ -232,7 +232,7 @@
             this.btn_TaBortRad.TabIndex = 25;
             this.btn_TaBortRad.Text = "Ta Bort";
             this.btn_TaBortRad.UseVisualStyleBackColor = true;
-            this.btn_TaBortRad.Click += new System.EventHandler(this.btn_TaBortRad_Click);
+            this.btn_TaBortRad.Click += new System.EventHandler(this.btnTaBortRad_Click);
             // 
             // gradientPanel1
             // 

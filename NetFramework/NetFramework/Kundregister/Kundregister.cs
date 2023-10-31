@@ -118,7 +118,7 @@ namespace NetFramework
         }
 
         //Refresh knapp för att uppdatera kund grid med ändringar som gjorts på kunder
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshKunder();
         }

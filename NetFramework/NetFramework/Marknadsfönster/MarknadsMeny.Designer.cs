@@ -110,7 +110,7 @@
             this.btn_visaFaktura.TabIndex = 24;
             this.btn_visaFaktura.Text = "Visa Fakturor";
             this.btn_visaFaktura.UseVisualStyleBackColor = true;
-            this.btn_visaFaktura.Click += new System.EventHandler(this.btn_visaFaktura_Click);
+            this.btn_visaFaktura.Click += new System.EventHandler(this.btnVisaFaktura_Click);
             // 
             // gradientPanel1
             // 

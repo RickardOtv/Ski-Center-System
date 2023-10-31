@@ -71,7 +71,7 @@ namespace NetFramework
         }
 
         //knapp för att få upp meny för att kunna ändra en bokning
-        private void btn_ändra_Click(object sender, EventArgs e)
+        private void btnÄndra_Click(object sender, EventArgs e)
         {
             //Kollar så att minst en rad är vald
             if (logiGrid.SelectedRows.Count > 0)
@@ -88,7 +88,7 @@ namespace NetFramework
         }
 
         //Tar bort en bokning
-        private void btn_taBort_Click(object sender, EventArgs e)
+        private void btnTaBort_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -133,7 +133,7 @@ namespace NetFramework
 
 
         //Knapp för att söka efter en specifik bokning på personNr
-        private void btn_sökPersonNr_Click(object sender, EventArgs e)
+        private void btnSökPersonNr_Click(object sender, EventArgs e)
         {
             string matadPersonNr = textBox_personNr.Text;
             var matchadeBokningar = kontroller.HämtaBokningPåPersonNr(matadPersonNr);
@@ -149,14 +149,14 @@ namespace NetFramework
         }
 
         //Knapp för att visa logi (rader) som tillhör en bokning
-        private void btn_visaRader_Click(object sender, EventArgs e)
+        private void btnVisaRader_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshRader(valdBokning);
         }
 
         //Knapp för att ladda om datagrid så att man får uppdateringar
-        private void btn_Refresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             valdBokning = gridBokningar.SelectedRows[0].DataBoundItem as Bokning;
             RefreshBokningar();
@@ -164,7 +164,7 @@ namespace NetFramework
         }
         
         //Knapp för att kunna ta bort ett logi (rad) från en bokning
-        private void btn_TaBortRad_Click(object sender, EventArgs e)
+        private void btnTaBortRad_Click(object sender, EventArgs e)
         {
             //Kollar så att minst en rad är vald
             if (logiGrid.SelectedRows.Count > 0)

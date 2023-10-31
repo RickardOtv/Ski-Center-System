@@ -195,7 +195,7 @@
             this.btn_sök.TabIndex = 15;
             this.btn_sök.Text = "Sök";
             this.btn_sök.UseVisualStyleBackColor = true;
-            this.btn_sök.Click += new System.EventHandler(this.btn_sökLogi_Click);
+            this.btn_sök.Click += new System.EventHandler(this.btnSökLogi_Click);
             // 
             // txtFilter
             // 

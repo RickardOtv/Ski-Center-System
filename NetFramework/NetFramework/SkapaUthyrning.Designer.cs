@@ -115,7 +115,7 @@
             this.KundSokBtn.TabIndex = 7;
             this.KundSokBtn.Text = "Sök Personnummer";
             this.KundSokBtn.UseVisualStyleBackColor = true;
-            this.KundSokBtn.Click += new System.EventHandler(this.KundSokBtn_Click);
+            this.KundSokBtn.Click += new System.EventHandler(this.btnKundSok_Click);
             // 
             // BokningsnummerBtn
             // 
@@ -125,7 +125,7 @@
             this.BokningsnummerBtn.TabIndex = 8;
             this.BokningsnummerBtn.Text = "Sök Bokningsnummer";
             this.BokningsnummerBtn.UseVisualStyleBackColor = true;
-            this.BokningsnummerBtn.Click += new System.EventHandler(this.BokningsnummerBtn_Click);
+            this.BokningsnummerBtn.Click += new System.EventHandler(this.btnBokningsnummer_Click);
             // 
             // VäljBtn
             // 
@@ -135,7 +135,7 @@
             this.VäljBtn.TabIndex = 9;
             this.VäljBtn.Text = "Välj";
             this.VäljBtn.UseVisualStyleBackColor = true;
-            this.VäljBtn.Click += new System.EventHandler(this.VäljBtn_Click);
+            this.VäljBtn.Click += new System.EventHandler(this.btnVälj_Click);
             // 
             // btnTillbaka
             // 

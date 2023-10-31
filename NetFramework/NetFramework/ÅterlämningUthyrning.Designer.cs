@@ -77,7 +77,7 @@
             this.SökBtn.TabIndex = 1;
             this.SökBtn.Text = "Sök";
             this.SökBtn.UseVisualStyleBackColor = true;
-            this.SökBtn.Click += new System.EventHandler(this.SökBtn_Click);
+            this.SökBtn.Click += new System.EventHandler(this.btnSök_Click);
             // 
             // TextBoxUthyrningsID
             // 
@@ -104,7 +104,7 @@
             this.ÅterlämnaBtn.TabIndex = 2;
             this.ÅterlämnaBtn.Text = "Återlämna";
             this.ÅterlämnaBtn.UseVisualStyleBackColor = true;
-            this.ÅterlämnaBtn.Click += new System.EventHandler(this.ÅterlämnaBtn_Click);
+            this.ÅterlämnaBtn.Click += new System.EventHandler(this.btnÅterlämna_Click);
             // 
             // UthyrningsIDlbl
             // 

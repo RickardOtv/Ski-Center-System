@@ -71,7 +71,7 @@ namespace NetFramework
         }
 
         //Knapp för att söka efter Utrustning som tillhör en specifik uthyrning
-        private void SökBtn_Click(object sender, EventArgs e)
+        private void btnSök_Click(object sender, EventArgs e)
         {
             int.TryParse(TextBoxUthyrningsID.Text, out int angivetID);
 
@@ -89,7 +89,7 @@ namespace NetFramework
         }
 
         //Knapp för att återlämna en vald utrusning
-        private void ÅterlämnaBtn_Click(object sender, EventArgs e)
+        private void btnÅterlämna_Click(object sender, EventArgs e)
         {
             //Kollar om nån utrustning är vald
             if (GridÅterlämning.SelectedRows.Count > 0)

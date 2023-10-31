@@ -50,7 +50,7 @@ namespace NetFramework
         }
 
         //knapp skapar en uthyrning baserat på den valda bokningen
-        private void VäljBtn_Click(object sender, EventArgs e)
+        private void btnVälj_Click(object sender, EventArgs e)
         {
             //Kollar om en bokning var vald
             if (gridBokningar.SelectedRows.Count > 0)
@@ -79,7 +79,7 @@ namespace NetFramework
         }
 
         //Söker efter bokningar med matchande inmatat bokningsnummer
-        private void BokningsnummerBtn_Click(object sender, EventArgs e)
+        private void btnBokningsnummer_Click(object sender, EventArgs e)
         {
             Bokning matchadBokning;
             String söktBokningsNummer = txtBoxBokningsID.Text;
@@ -105,7 +105,7 @@ namespace NetFramework
         }
 
         //Söker efter bokningar med matchande inmatat kundID
-        private void KundSokBtn_Click(object sender, EventArgs e)
+        private void btnKundSok_Click(object sender, EventArgs e)
         {
             //Kollar så att inmatning rätt formaterad
             if (kontroller.IsDigitsOnly(txtBoxKundID.Text) && !string.IsNullOrEmpty(txtBoxKundID.Text))
