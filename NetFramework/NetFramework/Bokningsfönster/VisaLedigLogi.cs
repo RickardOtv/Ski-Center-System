@@ -30,7 +30,7 @@ namespace NetFramework
         }
 
         //Hämtar alla lediga login i valt intervall
-        private void sökLedigLogiKnapp_Click(object sender, EventArgs e)
+        private void btnSökLedigLogi_Click(object sender, EventArgs e)
         {
             UppdateraLogiGrid();
         }
@@ -58,7 +58,7 @@ namespace NetFramework
         }
 
         //Kollar pris på ett valt logi inom valt intervall
-        private void kollaPrisKnappen_Click(object sender, EventArgs e)
+        private void btnKollaPris_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {

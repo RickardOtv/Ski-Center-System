@@ -146,7 +146,7 @@
             this.sökLedigLogiKnapp.TabIndex = 17;
             this.sökLedigLogiKnapp.Text = "Sök Ledig Logi";
             this.sökLedigLogiKnapp.UseVisualStyleBackColor = true;
-            this.sökLedigLogiKnapp.Click += new System.EventHandler(this.sökLedigLogiKnapp_Click);
+            this.sökLedigLogiKnapp.Click += new System.EventHandler(this.btnSökLedigLogi_Click);
             // 
             // kollaPrisKnappen
             // 
@@ -156,7 +156,7 @@
             this.kollaPrisKnappen.TabIndex = 18;
             this.kollaPrisKnappen.Text = "Kolla Pris";
             this.kollaPrisKnappen.UseVisualStyleBackColor = true;
-            this.kollaPrisKnappen.Click += new System.EventHandler(this.kollaPrisKnappen_Click);
+            this.kollaPrisKnappen.Click += new System.EventHandler(this.btnKollaPris_Click);
             // 
             // VisaLedigLogi
             // 
