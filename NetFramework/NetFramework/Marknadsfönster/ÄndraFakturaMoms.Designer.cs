@@ -122,6 +122,7 @@
             this.btnTillbaka.TabIndex = 44;
             this.btnTillbaka.Text = "Tillbaka";
             this.btnTillbaka.UseVisualStyleBackColor = true;
+            this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
             // gradientPanel1
             // 

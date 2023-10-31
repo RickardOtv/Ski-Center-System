@@ -30,7 +30,7 @@ namespace NetFramework.Marknadsfönster
         //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         //Knapp för att spara den nya rabatten
