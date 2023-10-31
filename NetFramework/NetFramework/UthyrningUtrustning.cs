@@ -129,7 +129,7 @@ namespace NetFramework
                 float slutPrisInkMoms;
                 int moms;
                 float prisInkRabatt = 0;
-                float momsPris;
+                float prisUtanMoms;
                 decimal totalpris = 0;
                 //Går igenom varje rad i uthyrningen
                 foreach (DataGridViewRow row in gridRader.Rows)
@@ -159,7 +159,7 @@ namespace NetFramework
                 // Om rabatten är mer än 0%
                 if (valdFaktura.Rabattsats != 0)
                 {
-                    prisInkRabatt = (float)totalpris - ((float)totalpris * ((float)valdFaktura.Rabattsats / 100));
+                    prisInkRabatt = kontroller.prisInkMomsOchRabatt(totalpris, valdFaktura);
                 }
                 else
                 {
@@ -167,7 +167,7 @@ namespace NetFramework
                     prisInkRabatt = (float)totalpris - prisInkRabatt;
                 }
                 //Lägger till moms
-                momsPris = prisInkRabatt - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
+                prisUtanMoms = kontroller.prisInkRabattExkMoms(prisInkRabatt, totalpris, valdFaktura);
                 //float slutMomsPris = prisInkRabatt - momsPris;
 
                 Kund valdKund = kontroller.HittaKund(valdBokning.KundID);
@@ -177,7 +177,7 @@ namespace NetFramework
                 {
                     MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nRabatt: -{(float)totalpris * ((float)valdFaktura.Rabattsats / 100)}kr\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)totalpris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms): {prisInkRabatt}kr");
                     //MessageBox.Show($"Totalpris för hela uthyrningen: {totalpris}kr");
-                    kontroller.ÄndraFakturaTotalPris(valdFaktura, momsPris);
+                    kontroller.ÄndraFakturaTotalPris(valdFaktura, prisUtanMoms);
                     this.Close();
                 }
                 else
@@ -194,10 +194,9 @@ namespace NetFramework
         //Knapp för att kolla pris på specifik utrustning
         private void btnKollaPris_Click(object sender, EventArgs e)
         {
-            float slutPrisInkMoms;
             int moms;
             float prisInkrabattPris;
-            float prisInkMomOchRabatt;
+            decimal pris;
             DateTime från = DateTime.Parse(dateFrån.Text);
             DateTime till = DateTime.Parse(dateTill.Text);
 
@@ -212,10 +211,10 @@ namespace NetFramework
                     if (rowIndex >= 0 && rowIndex < tillgängligUtrustning.Count)
                     {
                         Faktura valdFaktura = kontroller.HittaFaktura(valdBokning.BokningsID);
-                        decimal pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
+                        pris = kontroller.KollaUthyrningsPris(från, till, valdUtrustning.Typ);
 
                         //Uträkning av pris inklusive rabatt
-                        prisInkrabattPris = (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
+                        prisInkrabattPris = kontroller.prisInkMomsOchRabatt(pris, valdFaktura);
                         MessageBox.Show($"Rabatt: {valdFaktura.Rabattsats}%\nMoms: {valdFaktura.Momsats}%\nMoms: {(float)pris * ((float)valdFaktura.Momsats / 100)}kr \n\nTotalpris (Ink Moms & Rabatt): {prisInkrabattPris}kr");
                     }
                     else

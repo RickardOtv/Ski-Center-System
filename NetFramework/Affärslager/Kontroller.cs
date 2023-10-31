@@ -237,6 +237,16 @@ namespace Affärslager
             return totalPrice;
         }
 
+        public float prisInkMomsOchRabatt(decimal pris, Faktura valdFaktura)
+        {
+            return (float)pris - ((float)pris * ((float)valdFaktura.Rabattsats / 100));
+        }
+
+        public float prisInkRabattExkMoms(float prisInkRabatt, decimal totalpris, Faktura valdFaktura)
+        {
+            return prisInkRabatt - ((float)totalpris * ((float)valdFaktura.Momsats / 100));
+        }
+
 
         #region Skapa metoder
         /// <summary>
