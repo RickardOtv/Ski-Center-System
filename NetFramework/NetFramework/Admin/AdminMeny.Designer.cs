@@ -116,7 +116,7 @@
             this.btnHanteraAnställd.Name = "btnHanteraAnställd";
             this.btnHanteraAnställd.Size = new System.Drawing.Size(330, 52);
             this.btnHanteraAnställd.TabIndex = 11;
-            this.btnHanteraAnställd.Text = "Hantera anställda";
+            this.btnHanteraAnställd.Text = "Hantera Anställda";
             this.btnHanteraAnställd.UseVisualStyleBackColor = true;
             this.btnHanteraAnställd.Click += new System.EventHandler(this.btnHanteraAnställd_Click);
             // 
