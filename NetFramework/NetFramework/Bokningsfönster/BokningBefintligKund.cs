@@ -34,10 +34,6 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-        /// <summary>
-        /// Metoden RefreshLogi ansluter till en databas och hämtar lediga logier baserat på de specificerade datumen. 
-        /// Den använder en LEFT JOIN-fråga för att hitta lediga logier som inte är bokade under den angivna tidsperioden.
-        /// </summary>
         internal void RefreshLogi()
         {
             try

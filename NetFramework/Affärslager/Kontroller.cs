@@ -613,7 +613,6 @@ namespace Affärslager
         }
         public List<Logi> HämtaLedigaLogier(DateTime startDate, DateTime endDate)
         {
-            // Använd dbContext för att hämta lediga logier baserat på datumvillkoren
             var ledigaLogier = unitOfWork.logier
                 .Where(logi => unitOfWork.bokningsRader
                     .All(rad => rad.LogiID != logi.LogiID || endDate < rad.Från || startDate > rad.Till))
