@@ -629,6 +629,16 @@ namespace Affärslager
             Utrustning utrustning = unitOfWork.utrustningar.FirstOrDefault(u => u.UtrustningsID == utrustningsID);
             return utrustning;
         }
+        public List<Logi> HämtaLedigaLogier(DateTime startDate, DateTime endDate)
+        {
+            var ledigaLogier = unitOfWork.logier
+                .Where(logi => unitOfWork.bokningsRader
+                    .All(rad => rad.LogiID != logi.LogiID || endDate < rad.Från || startDate > rad.Till))
+                .ToList();
+
+            return ledigaLogier;
+        }
+
 
         #endregion
         #region Ändra metoder

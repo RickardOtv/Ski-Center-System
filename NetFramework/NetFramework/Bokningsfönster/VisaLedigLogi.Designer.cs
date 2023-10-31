@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.startDatePicker = new System.Windows.Forms.DateTimePicker();
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
             this.lblAnstNr = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.TillbakaKnapp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new NetFramework.GradientPanel();
+            this.sökLedigLogiKnapp = new System.Windows.Forms.Button();
+            this.kollaPrisKnappen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,16 +55,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(550, 229);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(371, 468);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Sök ledig logi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // startDatePicker
             // 
@@ -97,16 +87,6 @@
             this.lblAnstNr.Size = new System.Drawing.Size(103, 13);
             this.lblAnstNr.TabIndex = 10;
             this.lblAnstNr.Text = "Anställningsnummer:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(371, 510);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 37);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Kolla pris";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TillbakaKnapp
             // 
@@ -145,6 +125,8 @@
             this.gradientPanel1.Angle = 60F;
             this.gradientPanel1.BackColor = System.Drawing.Color.GhostWhite;
             this.gradientPanel1.BottomColor = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.kollaPrisKnappen);
+            this.gradientPanel1.Controls.Add(this.sökLedigLogiKnapp);
             this.gradientPanel1.Controls.Add(this.TillbakaKnapp);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.label2);
@@ -156,6 +138,26 @@
             this.gradientPanel1.TabIndex = 17;
             this.gradientPanel1.TopColor = System.Drawing.SystemColors.HotTrack;
             // 
+            // sökLedigLogiKnapp
+            // 
+            this.sökLedigLogiKnapp.Location = new System.Drawing.Point(371, 469);
+            this.sökLedigLogiKnapp.Name = "sökLedigLogiKnapp";
+            this.sökLedigLogiKnapp.Size = new System.Drawing.Size(144, 35);
+            this.sökLedigLogiKnapp.TabIndex = 17;
+            this.sökLedigLogiKnapp.Text = "Sök Ledig Logi";
+            this.sökLedigLogiKnapp.UseVisualStyleBackColor = true;
+            this.sökLedigLogiKnapp.Click += new System.EventHandler(this.btnSökLedigLogi_Click);
+            // 
+            // kollaPrisKnappen
+            // 
+            this.kollaPrisKnappen.Location = new System.Drawing.Point(371, 511);
+            this.kollaPrisKnappen.Name = "kollaPrisKnappen";
+            this.kollaPrisKnappen.Size = new System.Drawing.Size(144, 40);
+            this.kollaPrisKnappen.TabIndex = 18;
+            this.kollaPrisKnappen.Text = "Kolla Pris";
+            this.kollaPrisKnappen.UseVisualStyleBackColor = true;
+            this.kollaPrisKnappen.Click += new System.EventHandler(this.btnKollaPris_Click);
+            // 
             // VisaLedigLogi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,12 +165,10 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1279, 808);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.endDatePicker);
             this.Controls.Add(this.startDatePicker);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VisaLedigLogi";
@@ -185,15 +185,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SökLedigLogi;
         private System.Windows.Forms.DateTimePicker startDatePicker;
         private System.Windows.Forms.DateTimePicker endDatePicker;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
         private System.Windows.Forms.Label lblAnstNr;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button kollaPrisKnapp;
         private System.Windows.Forms.Button TillbakaKnapp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private GradientPanel gradientPanel1;
+        private System.Windows.Forms.Button sökLedigLogiKnapp;
+        private System.Windows.Forms.Button kollaPrisKnappen;
     }
 }

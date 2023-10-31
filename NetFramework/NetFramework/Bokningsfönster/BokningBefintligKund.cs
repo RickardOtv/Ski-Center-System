@@ -4,6 +4,7 @@ using Entitetslager;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,57 +34,26 @@ namespace NetFramework
             set { txtAnvandarnamn.Text = value; }
         }
 
-        /// <summary>
-        /// Metoden RefreshLogi ansluter till en databas och hämtar lediga logier baserat på de specificerade datumen. 
-        /// Den använder en LEFT JOIN-fråga för att hitta lediga logier som inte är bokade under den angivna tidsperioden.
-        /// </summary>
         internal void RefreshLogi()
         {
-            string cs = "Data Source=sqlutb2.hb.se,56077;Initial Catalog=suht2304;User ID=suht2304;Password=smax99;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            SqlConnection conn = new SqlConnection(cs);
-
             try
             {
-                conn.Open();
-
                 DateTime startDate = dateFrån.Value;
                 DateTime endDate = dateTill.Value;
 
-                string select = "SELECT Logi.* " +
-                       "FROM Logi " +
-                       "LEFT JOIN Bokningsrad ON Logi.LogiID = Bokningsrad.LogiID " +
-                       "AND (@EndDate >= Bokningsrad.Från AND @StartDate <= Bokningsrad.Till) " +
-                       "WHERE Bokningsrad.Från IS NULL";
+                
+                ledigaLogier = kontroller.HämtaLedigaLogier(startDate, endDate);
 
-                var c = new SqlConnection(cs);
-                var dataAdapter = new SqlDataAdapter(select, c);
+                // You may need to adjust gridLogi for data binding
+                gridLogi.DataSource = ledigaLogier;
 
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
-
-                var commandBuilder = new SqlCommandBuilder(dataAdapter);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                gridLogi.ReadOnly = true;
-
-                // Spara de lediga logierna i listan ledigaLogier
-                ledigaLogier = ds.Tables[0].AsEnumerable().Select(row =>
-                    new Logi
-                    {
-                        LogiID = row.Field<string>("LogiID"),
-                        Typ = row.Field<string>("Typ")
-                        // Fyll i med andra fält som behövs
-                    }).ToList();
-
-                gridLogi.DataSource = ds.Tables[0];
-
-                // Tabellnamn för Logidel
+                // Assuming gridLogi is a DataGridView
                 gridLogi.Columns["LogiID"].HeaderText = "LogiID för boende";
                 gridLogi.Columns["Typ"].HeaderText = "Typ av boende";
             }
             catch (Exception ex)
             {
-                conn.Close();
+                // Handle exceptions here
             }
         }
         internal void RefreshRader()
