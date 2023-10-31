@@ -44,22 +44,16 @@ namespace NetFramework
 
         internal void RefreshLogi(DateTime startDate, DateTime endDate)
         {
-            try
-            {
-                // Anropa din metod från entitetslagerprojektet för att hämta lediga logier
-                var ledigaLogier = kontroller.HämtaLedigaLogier(startDate, endDate);
+            // Anropa din metod från entitetslagerprojektet för att hämta lediga logier
+            var ledigaLogier = kontroller.HämtaLedigaLogier(startDate, endDate);
 
-                // Uppdatera ditt användargränssnitt med lediga logier
-                dataGridView1.DataSource = ledigaLogier;
+            // Uppdatera ditt användargränssnitt med lediga logier
+            dataGridView1.DataSource = ledigaLogier;
 
-                // Ställ in kolumnrubriker om det behövs
-                dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
-                dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
-            }
-            catch (Exception ex)
-            {
-                // Hantera eventuella fel här
-            }
+            // Ställ in kolumnrubriker om det behövs
+            dataGridView1.Columns["LogiID"].HeaderText = "LogiID för boende";
+            dataGridView1.Columns["Typ"].HeaderText = "Typ av boende";
+
         }
 
 

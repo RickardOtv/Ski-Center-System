@@ -42,7 +42,7 @@ namespace NetFramework
                 DateTime endDate = dateTill.Value;
 
                 
-                var ledigaLogier = kontroller.HämtaLedigaLogier(startDate, endDate);
+                ledigaLogier = kontroller.HämtaLedigaLogier(startDate, endDate);
 
                 // You may need to adjust gridLogi for data binding
                 gridLogi.DataSource = ledigaLogier;
