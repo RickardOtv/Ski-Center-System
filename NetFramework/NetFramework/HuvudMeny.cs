@@ -40,6 +40,7 @@ namespace NetFramework
                 MarknadsMeny marknadsMeny = new MarknadsMeny(loggaInMeny, kontroller);
                 marknadsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
                 marknadsMeny.Show();
+                this.Close();
             }
             else
                 MessageBox.Show("Du har ej rätt behörighet.");

@@ -91,6 +91,9 @@ namespace NetFramework
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
+            BokningsTyp bokningsTyp = new BokningsTyp(loggaIn, kontroller);
+            bokningsTyp.Show();
+            bokningsTyp.InloggadAnvandare = txtAnvandarnamn.Text;
             this.Close();
         }
 

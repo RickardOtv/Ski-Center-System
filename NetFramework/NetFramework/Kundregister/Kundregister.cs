@@ -114,6 +114,7 @@ namespace NetFramework
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
             huvudMeny.Show();
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         //Refresh knapp för att uppdatera kund grid med ändringar som gjorts på kunder

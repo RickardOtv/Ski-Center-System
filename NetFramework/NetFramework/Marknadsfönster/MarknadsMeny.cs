@@ -28,6 +28,7 @@ namespace NetFramework
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
             huvudMeny.Show();
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         //Knapp för att gå till meny för registrering av ny företagskund

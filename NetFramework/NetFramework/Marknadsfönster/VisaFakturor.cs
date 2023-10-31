@@ -50,6 +50,9 @@ namespace NetFramework.Marknadsfönster
         //Knapp för att gå tillbaka
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
+            MarknadsMeny marknadsMeny = new MarknadsMeny(loggaIn, kontroller);
+            marknadsMeny.Show();
+            marknadsMeny.InloggadAnvandare = txtAnvandarnamn.Text;
             this.Close();
         }
 

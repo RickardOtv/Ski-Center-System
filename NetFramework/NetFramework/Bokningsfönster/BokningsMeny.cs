@@ -36,6 +36,7 @@ namespace NetFramework
             HuvudMeny huvudMeny = new HuvudMeny(loggaIn, kontroller);
             huvudMeny.Show();
             huvudMeny.InloggadAnvandare = txtAnvandarnamn.Text;
+            this.Close();
         }
 
         //Påbörja skapande av bokning
