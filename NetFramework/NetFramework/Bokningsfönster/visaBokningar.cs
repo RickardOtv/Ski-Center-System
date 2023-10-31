@@ -136,7 +136,7 @@ namespace NetFramework
         private void btn_sökPersonNr_Click(object sender, EventArgs e)
         {
             string matadPersonNr = textBox_personNr.Text;
-            var matchadeBokningar = unitOfWork.bokningar.Where(b => b.Kund.Personnummer == matadPersonNr).ToList();
+            var matchadeBokningar = kontroller.HämtaBokningPåPersonNr(matadPersonNr);
 
             if (matchadeBokningar.Count > 0)
             {

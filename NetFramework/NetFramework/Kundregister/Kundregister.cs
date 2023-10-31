@@ -127,10 +127,10 @@ namespace NetFramework
         private void btnSokNamn_Click(object sender, EventArgs e)
         {
             string matadNamn = txtBoxNamn.Text;
-            var matchadeKunder = kontroller.HittaKundPåNamn(matadNamn);
+            var matchadeKunder = kontroller.HittaKunderPåNamn(matadNamn);
 
             //Kollar ifall kund hittades eller inte
-            if (matchadeKunder != null)
+            if (matchadeKunder.Count > 0)
             {
                 gridKunder.DataSource = matchadeKunder;
             }
@@ -144,10 +144,10 @@ namespace NetFramework
         private void btnSokPersonNr_Click(object sender, EventArgs e)
         {
             string matadPeronNr = txtBoxPersonNr.Text;
-            var matchadeKunder = kontroller.HittaKund(matadPeronNr);
+            var matchadeKunder = kontroller.HittaKunderPåPersonNr(matadPeronNr);
 
             //Kollar om specifik kund hittades eller inte
-            if (matchadeKunder != null)
+            if (matchadeKunder.Count > 0)
             {
                 gridKunder.DataSource = matchadeKunder;
             }

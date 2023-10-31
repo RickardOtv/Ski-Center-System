@@ -450,9 +450,13 @@ namespace Affärslager
         {
             return unitOfWork.kunder.FirstOrDefault(k => k.Personnummer == personNummer);
         }
-        public Kund HittaKundPåNamn(string namn)
+        public IList<Kund> HittaKunderPåNamn(string namn)
         {
-            return unitOfWork.kunder.FirstOrDefault(k => k.Namn == namn);
+            return unitOfWork.kunder.Where(k => k.Namn == namn).ToList();
+        }
+        public IList<Kund> HittaKunderPåPersonNr(string personNr)
+        {
+            return unitOfWork.kunder.Where(k => k.Personnummer == personNr).ToList();
         }
         public Anställd HittaAnställd(int anställningsNr)
         {
@@ -494,6 +498,10 @@ namespace Affärslager
         public IList<Bokning> HämtaKundensBokningar(int kundID)
         {
             return unitOfWork.bokningar.Where(b => b.KundID == kundID).ToList();
+        }
+        public IList<Bokning> HämtaBokningPåPersonNr(string personNr)
+        {
+            return unitOfWork.bokningar.Where(b => b.Kund.Personnummer == personNr).ToList();
         }
         public IList<Logi> HämtaTillgängligLogi()
         {
