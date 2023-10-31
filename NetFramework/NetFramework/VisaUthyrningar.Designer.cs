@@ -30,14 +30,12 @@
         {
             this.gridUthyrning = new System.Windows.Forms.DataGridView();
             this.gridUthyrningsRader = new System.Windows.Forms.DataGridView();
-            this.gridLektioner = new System.Windows.Forms.DataGridView();
             this.lblUthyrning = new System.Windows.Forms.Label();
             this.lblPersNr = new System.Windows.Forms.Label();
             this.txtBoxUthyrningsID = new System.Windows.Forms.TextBox();
             this.btnSök = new System.Windows.Forms.Button();
             this.btnVäljUthyrning = new System.Windows.Forms.Button();
             this.lblRader = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnTaBort = new System.Windows.Forms.Button();
             this.Anställningsnummerlbl = new System.Windows.Forms.Label();
             this.txtAnvandarnamn = new System.Windows.Forms.TextBox();
@@ -45,7 +43,6 @@
             this.gradientPanel1 = new NetFramework.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,17 +73,6 @@
             this.gridUthyrningsRader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridUthyrningsRader.Size = new System.Drawing.Size(482, 242);
             this.gridUthyrningsRader.TabIndex = 1;
-            // 
-            // gridLektioner
-            // 
-            this.gridLektioner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLektioner.Location = new System.Drawing.Point(524, 474);
-            this.gridLektioner.Margin = new System.Windows.Forms.Padding(2);
-            this.gridLektioner.Name = "gridLektioner";
-            this.gridLektioner.RowHeadersWidth = 82;
-            this.gridLektioner.RowTemplate.Height = 33;
-            this.gridLektioner.Size = new System.Drawing.Size(482, 163);
-            this.gridLektioner.TabIndex = 2;
             // 
             // lblUthyrning
             // 
@@ -153,18 +139,6 @@
             this.lblRader.TabIndex = 8;
             this.lblRader.Text = "Uthyrningsrader";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(720, 447);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Skidlektioner";
-            // 
             // btnTaBort
             // 
             this.btnTaBort.Location = new System.Drawing.Point(223, 413);
@@ -215,7 +189,6 @@
             this.gradientPanel1.Controls.Add(this.lblUthyrning);
             this.gradientPanel1.Controls.Add(this.Anställningsnummerlbl);
             this.gradientPanel1.Controls.Add(this.lblPersNr);
-            this.gradientPanel1.Controls.Add(this.label2);
             this.gradientPanel1.Controls.Add(this.lblRader);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
@@ -234,7 +207,6 @@
             this.Controls.Add(this.txtAnvandarnamn);
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.txtBoxUthyrningsID);
-            this.Controls.Add(this.gridLektioner);
             this.Controls.Add(this.gridUthyrningsRader);
             this.Controls.Add(this.gridUthyrning);
             this.Controls.Add(this.gradientPanel1);
@@ -246,7 +218,6 @@
             this.Load += new System.EventHandler(this.VisaUthyrningar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUthyrningsRader)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLektioner)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -258,14 +229,12 @@
 
         private System.Windows.Forms.DataGridView gridUthyrning;
         private System.Windows.Forms.DataGridView gridUthyrningsRader;
-        private System.Windows.Forms.DataGridView gridLektioner;
         private System.Windows.Forms.Label lblUthyrning;
         private System.Windows.Forms.Label lblPersNr;
         private System.Windows.Forms.TextBox txtBoxUthyrningsID;
         private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.Button btnVäljUthyrning;
         private System.Windows.Forms.Label lblRader;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.Label Anställningsnummerlbl;
         private System.Windows.Forms.TextBox txtAnvandarnamn;
