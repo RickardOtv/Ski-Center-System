@@ -15,14 +15,21 @@ namespace NetFramework
         /// </summary>
         internal static UnitOfWork unitOfWork;
         [STAThread]
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
         static void Main()
         {
             unitOfWork = new UnitOfWork();
-
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                SetProcessDPIAware();
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoggaIn());
 
         }
+        
     }
 }
